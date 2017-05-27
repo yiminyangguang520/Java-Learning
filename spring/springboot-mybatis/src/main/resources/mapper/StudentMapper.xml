@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.StudentDao">
+
+    <!-- 方式1 -->
+    <resultMap id="StudentMap" type="org.spring.springboot.domain.Student">
+        <id property="id" column="s_id"/>
+        <result property="name" column="s_name"/>
+        <result property="gender" column="s_gender"/>
+        <result property="major" column="s_major"/>
+        <result property="grade" column="s_grade"/>
+        <association property="teacher" javaType="org.spring.springboot.domain.Teacher">
+            <id property="id" column="t_id"/>
+            <result property="name" column="t_name"/>
+            <result property="gender" column="t_gender"/>
+            <result property="researchArea" column="t_research_area"/>
+            <result property="title" column="t_title"/>
+        </association>
+    </resultMap>
+
+    <!-- 方式2 -->
+    <resultMap id="StudentResultMap" type="org.spring.springboot.domain.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="major" column="major"/>
+        <result property="grade" column="grade"/>
+        <!-- property teacher的teacher_id作为参数传递给select语句 -->
+        <association property="teacher" column="teacher_id" select="getTeacher" />
+    </resultMap>
+
+    <resultMap id="TeacherResultMap" type="org.spring.springboot.domain.Teacher">
+        <id property="id" column="t_id"/>
+        <result property="name" column="t_name"/>
+        <result property="gender" column="t_gender"/>
+        <result property="researchArea" column="t_research_area"/>
+        <result property="title" column="t_title"/>
+    </resultMap>
+
+    <sql id="TeacherBaseColumnList">
+        t.id as t_id, t.name as t_name, t.gender as t_gender, t.research_area as t_research_area, t.title as t_title
+    </sql>
+
+    <select id="getTeacher" parameterType="int" resultMap="TeacherResultMap">
+        SELECT
+        <include refid="TeacherBaseColumnList"></include>
+        FROM teacher t
+        WHERE t.id = #{id}
+    </select>
+
+
+    <sql id="BaseColumnList">
+        s.id as s_id, s.name as s_name, s.gender as s_gender, s.major as s_major, s.grade as s_grade, s.teacher_id as s_teacher_id,
+        t.id as t_id, t.name as t_name, t.gender as t_gender, t.research_area as t_research_area, t.title as t_title
+    </sql>
+
+    <!-- 使用useGeneratedKeys时针对id自增类型，插入数据后返回插入的该条记录的id，并赋值给Student的id属性 -->
+    <insert id="add" parameterType="org.spring.springboot.domain.Student" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO student (name, gender, major, grade, teacher_id) VALUES (#{name}, #{gender}, #{major}, #{gender}, #{teacher.id})
+    </insert>
+
+    <select id="getById" parameterType="int" resultMap="StudentMap">
+        SELECT
+            <include refid="BaseColumnList"/>
+        FROM student s, teacher t
+        WHERE s.teacher_id = t.id AND s.id = #{id}
+    </select>
+
+    <select id="getStudentById" parameterType="int" resultMap="StudentResultMap">
+        SELECT * FROM student s WHERE s.id = #{id}
+    </select>
+
+
+</mapper>

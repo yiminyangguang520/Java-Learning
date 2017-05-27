@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--与以前一样，namespace的值是对应的映射器接口的完整名称-->
+<mapper namespace="org.spring.springboot.dao.TeacherDao">
+    <!--TeacherMapper接口中getById方法对应的SQL语句。
+    查询教师及其指导的学生的信息。由于教师、学生都有
+    id、name、gender等属性，因此给教师的字段都起了别名-->
+    <select id="getById" parameterType="int" resultMap="TeacherResultMap">
+        select t.id t_id, t.name t_name, t.gender t_gender,
+        t.research_area t_research_area, t.title t_title,
+        s.id, s.name, s.gender, s.major, s.grade
+        from teacher t, student s
+        where t.id = #{id} and s.teacher_id = t.id
+    </select>
+
+    <!--教师实体映射-->
+    <resultMap id="TeacherResultMap" type="org.spring.springboot.domain.Teacher">
+        <id property="id" column="t_id"/>
+        <result property="name" column="t_name"/>
+        <result property="gender" column="t_gender"/>
+        <result property="researchArea" column="t_research_area"/>
+        <result property="title" column="t_title"/>
+        <!--需要注意的是，上面的select语句中学生的字段名/别名应与下面的column属性一致。ofType指collection包含的元素的类型，此属性不可少-->
+        <collection property="studentList" ofType="org.spring.springboot.domain.Student">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+            <result property="gender" column="gender"/>
+            <result property="major" column="major"/>
+            <result property="grade" column="grade"/>
+        </collection>
+    </resultMap>
+
+</mapper>

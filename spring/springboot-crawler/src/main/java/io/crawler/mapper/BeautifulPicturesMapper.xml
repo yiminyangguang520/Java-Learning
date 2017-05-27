@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.crawler.dao.BeautifulPicturesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="io.crawler.entity.BeautifulPictures">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="url" property="url"/>
+        <result column="pictureurls_num" property="pictureurlsNum"/>
+        <result column="zan" property="zan"/>
+        <result column="biaoqian" property="biaoqian"/>
+        <result column="keywords" property="keywords"/>
+        <result column="last_update_date" property="lastUpdateDate"/>
+    </resultMap>
+    <select id="selectAll" resultType="io.crawler.entity.BeautifulPictures">
+        SELECT * FROM beautiful_pictures
+    </select>
+</mapper>
