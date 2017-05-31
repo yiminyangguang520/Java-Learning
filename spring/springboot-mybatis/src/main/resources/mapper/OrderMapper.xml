@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.spring.springboot.dao.OrderDao">
+    <resultMap type="org.spring.springboot.domain.User" id="userResult">
+        <id property="id" column="id" />
+        <result property="userName" column="username"/>
+        <result property="userNumber" column="usernumber"/>
+        <result property="loginName" column="loginname"/>
+        <result property="loginPassword" column="loginpassword"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday" />
+    </resultMap>
+
+    <resultMap type="org.spring.springboot.domain.Order" id="orderResult">
+        <id property="oId" column="oid"/>
+        <result property="orderId" column="orderid"/>
+        <result property="message" column="message"/>
+        <!--Mybatis处理“一对多”的关系时，需要用到associasion元素。处理”多对一“用collection元素来实现-->
+        <association property="user" column="user_id" javaType="org.spring.springboot.domain.User" jdbcType="INTEGER" resultMap="userResult">
+        </association>
+    </resultMap>
+
+    <select id="findAllOrders" resultMap="orderResult">
+        select * from orders o left join user u on o.user_id = u.id
+    </select>
+
+    <insert id="saveOrder" parameterType="org.spring.springboot.domain.Order">
+        insert into orders (orderid, message, user_id) values(#{orderId}, #{message}, #{user.id})
+    </insert>
+
+</mapper>

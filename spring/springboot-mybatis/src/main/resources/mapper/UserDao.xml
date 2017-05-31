@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.spring.springboot.dao.UserDao">
+    <resultMap id="userResult" type="org.spring.springboot.domain.User" >
+        <id property="id" column="id"/>
+        <result property="userName" column="username"/>
+        <result property="userNumber" column="usernumber"/>
+        <result property="loginName" column="loginname"/>
+        <result property="password" column="password"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday"/>
+        <!--collection元素映射 user对象中order的集合属性，resultMap指向下面的order的resultMap-->
+        <collection property="orderList" ofType="org.spring.springboot.domain.Order" resultMap="orderResult">
+
+        </collection>
+    </resultMap>
+
+    <resultMap id="orderResult" type="org.spring.springboot.domain.Order" >
+        <id property="oId" column="oid"/>
+        <result property="orderId" column="orderid"/>
+        <result property="message" column="message"/>
+    </resultMap>
+
+    <select id="getUOBN" parameterType="string" resultMap="userResult">
+        select * from user u left join orders o on o.user_id = u.id where u.usernumber = #{usernumber}
+    </select>
+</mapper>

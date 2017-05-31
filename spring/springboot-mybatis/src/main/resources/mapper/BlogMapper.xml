@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.spring.springboot.dao.BlogDao">
+    <resultMap type="org.spring.springboot.domain.Blog" id="BlogResult">
+        <id column="b_id" property="id"/>
+        <result column="b_title" property="title"/>
+        <result column="b_content" property="content"/>
+        <result column="b_owner" property="owner"/>
+        <collection property="comments" ofType="org.spring.springboot.domain.Comment">
+            <id property="id" column="c_id"/>
+            <result property="content" column="c_content"/>
+            <result property="commentDate" column="c_comment_date"/>
+        </collection>
+    </resultMap>
+
+    <resultMap type="org.spring.springboot.domain.Comment" id="CommentResult">
+        <association property="blog" javaType="org.spring.springboot.domain.Blog" column="id" select="selectBlog"/>
+    </resultMap>
+
+    <select id="selectBlog" parameterType="int" resultMap="BlogResult">
+        select b.id as b_id, b.title as b_title, b.content as b_content, b.owner as b_owner, c.id as c_id, c.content as c_content, c.comment_date as c_comment_date
+        from blog b, comment c
+        where b.id = #{id} and c.blog_id = b.id
+    </select>
+
+    <!--  通过Blog来查找Comment   -->
+    <select id="selectCommentsByBlog" parameterType="int" resultMap="CommentResult">
+        select * from comment where blog = #{blogId}
+    </select>
+</mapper>
