@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.spring.springboot.dao.BlogDao">
     <resultMap type="org.spring.springboot.domain.Blog" id="BlogResult">
         <id column="b_id" property="id"/>
@@ -14,7 +15,8 @@
     </resultMap>
 
     <resultMap type="org.spring.springboot.domain.Comment" id="CommentResult">
-        <association property="blog" javaType="org.spring.springboot.domain.Blog" column="id" select="selectBlog"/>
+        <association property="blog" javaType="org.spring.springboot.domain.Blog" column="id"
+                     select="selectBlog"/>
     </resultMap>
 
     <select id="selectBlog" parameterType="int" resultMap="BlogResult">
