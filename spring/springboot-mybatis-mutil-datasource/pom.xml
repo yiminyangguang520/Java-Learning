@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>springboot</groupId>
+  <artifactId>springboot-mybatis-mutil-datasource</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>springboot-mybatis-mutil-datasource :: Spring Boot 实现 Mybatis 多数据源配置</name>
+
+  <!-- Spring Boot 启动父依赖 -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.4.RELEASE</version>
+  </parent>
+
+  <!--<repositories>-->
+    <!--<repository>-->
+      <!--<id>spring-milestones</id>-->
+      <!--<name>Spring Milestones</name>-->
+      <!--<url>http://repo.spring.io/milestone</url>-->
+      <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+      <!--</snapshots>-->
+    <!--</repository>-->
+  <!--</repositories>-->
+
+  <properties>
+    <mybatis-spring-boot>1.2.0</mybatis-spring-boot>
+    <mysql-connector>5.1.39</mysql-connector>
+    <druid>1.1.1</druid>
+    <druid-spring-boot>1.1.1</druid-spring-boot>
+  </properties>
+
+  <dependencies>
+
+    <!-- Spring Boot Web 依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Spring Boot Test 依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Spring Boot Mybatis 依赖 -->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis-spring-boot}</version>
+    </dependency>
+
+    <!-- MySQL 连接驱动依赖 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-connector}</version>
+    </dependency>
+
+    <!-- Druid 数据连接池依赖 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional><!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+    </dependency>
+
+
+    <!--<dependency>-->
+    <!--<groupId>com.alibaba</groupId>-->
+    <!--<artifactId>druid-spring-boot-starter</artifactId>-->
+    <!--<version>${druid-spring-boot}</version>-->
+    <!--</dependency>-->
+
+    <!-- Junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>true</fork><!-- 如果没有该项配置，devtools不会起作用，即应用不会restart -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

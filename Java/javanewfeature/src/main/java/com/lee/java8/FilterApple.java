@@ -40,27 +40,22 @@ public class FilterApple {
     }
 
     public static List<Apple> findGreenApple(List<Apple> apples) {
-
         List<Apple> list = new ArrayList<>();
-
         for (Apple apple : apples) {
             if ("green".equals(apple.getColor())) {
                 list.add(apple);
             }
         }
-
         return list;
     }
 
     public static List<Apple> findApple(List<Apple> apples, String color) {
         List<Apple> list = new ArrayList<>();
-
         for (Apple apple : apples) {
             if (color.equals(apple.getColor())) {
                 list.add(apple);
             }
         }
-
         return list;
     }
 
@@ -88,20 +83,16 @@ public class FilterApple {
         System.out.println(yellowList);*/
 
         List<Apple> lambdaResult = findApple(list, apple -> apple.getColor().equals("green"));
-
         System.out.println(lambdaResult);
 
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName());
             }
         }).start();
 
-
         new Thread(() -> System.out.println(Thread.currentThread().getName())).start();
-
 
         Thread.currentThread().join();
     }

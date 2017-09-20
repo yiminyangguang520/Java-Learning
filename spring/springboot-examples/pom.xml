@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.biostime.cloud</groupId>
+	<artifactId>spring-cloud-demo</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>spring-cloud-demo</name>
+	<description>spring-boot-demos</description>
+	<url>https://projects.spring.io/spring-cloud/</url>
+	<modules>
+	  	<module>spring-boot-simple</module>
+	  	<module>spring-boot-oauth2</module>
+	  	<module>spring-boot-quartz</module>
+	  	<module>spring-boot-demo</module>
+		<module>spring-boot-starter-hello</module>
+		<module>spring-boot-starter-hello-demo</module>
+	</modules>
+</project>

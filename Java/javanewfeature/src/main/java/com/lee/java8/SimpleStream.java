@@ -16,7 +16,6 @@ import static java.util.stream.Collectors.toList;
 public class SimpleStream {
     public static void main(String[] args) {
         //have a dish list (menu)
-
         List<Dish> menu = Arrays.asList(
                 new Dish("pork", false, 800, Dish.Type.MEAT),
                 new Dish("beef", false, 700, Dish.Type.MEAT),
@@ -28,9 +27,8 @@ public class SimpleStream {
                 new Dish("prawns", false, 300, Dish.Type.FISH),
                 new Dish("salmon", false, 450, Dish.Type.FISH));
 
-  /*      Stream<Dish> stream = menu.stream();
-        stream.forEach(System.out::println);
-        stream.forEach(System.out::println);*/
+//        Stream<Dish> stream = menu.stream();
+//        stream.forEach(System.out::println);
 
         Stream<Dish> dishStream = Stream.of(new Dish("prawns", false, 300, Dish.Type.FISH),
                 new Dish("salmon", false, 450, Dish.Type.FISH));
@@ -38,16 +36,16 @@ public class SimpleStream {
 
         System.out.println("=========================");
 
-        List<String> result = menu.stream().filter(d -> {
-
-            System.out.println("filtering->" + d.getName());
-            return d.getCalories() > 300;
-        })
-                .map(d -> {
-                    System.out.println("map->" + d.getName());
-                    return d.getName();
-                })
-                .limit(3).collect(toList());
+        List<String> result = menu.stream()
+            .filter(d -> {
+                System.out.println("filtering->" + d.getName());
+                return d.getCalories() > 300;
+            })
+            .map(d -> {
+                System.out.println("map->" + d.getName());
+                return d.getName();
+            })
+            .limit(3).collect(toList());
 
 
         System.out.println("=======================");
@@ -61,15 +59,18 @@ public class SimpleStream {
     }
 
     private static List<String> getDishNamesByStream(List<Dish> menu) {
-        return menu.parallelStream().filter(d -> {
+        return menu.parallelStream()
+            .filter(d -> {
                     try {
                         Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     return d.getCalories() < 400;
-                }
-        ).sorted(comparing(Dish::getCalories)).map(Dish::getName).collect(toList());
+                })
+            .sorted(comparing(Dish::getCalories))
+            .map(Dish::getName)
+            .collect(toList());
     }
 
     private static List<String> getDishNamesByCollections(List<Dish> menu) {

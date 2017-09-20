@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" class="ng-app:biostimeMKTApp" id="ng-app" ng-app="biostimeMKTApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>会员精准营销系统</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="js/common/calendar/WdatePicker.js"></script>
+    <script type="text/javascript" src="js/lib/angular1.2/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/json/json3.min.js"></script>
+    <script type="text/javascript" src="js/lib/storage/storage.js"></script>
+    <script type="text/javascript" src="js/lib/biostime/biostime.common.js"></script>
+    <script type="text/javascript" src="js/common/common.js"></script>
+    <script type="text/javascript" src="js/common/base.js"></script>
+    <script type="text/javascript" src="js/controller/login_controller.js"></script>
+</head>
+<body  ng-controller="loginController">
+<div class="login_center font_max">会员精准营销系统</div>
+<div class="login_center">
+    <p class="font_center">请先登录</p>
+    <p class="font_small">
+        <input id="userId" type="text" ng-model="userId" placeholder="用户名"/>
+    </p>
+    <p class="font_small">
+        <input id="password" type="password" ng-model="password" placeholder="密码"/>
+    </p>
+    <p class="font_small">
+        <input type="button" ng-click="login($event)" value="  登 录  "/>
+        <input type="button" ng-click="toRegisterdUrl($event)" value="  注 册  "/>
+    </p>
+</div>
+</body>
+</html>

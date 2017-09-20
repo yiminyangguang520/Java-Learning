@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 minute" debug="false">
+  <!--<jmxConfigurator />-->
+
+  <!-- 日志根目录 -->
+  <property name="log_dir" value="/home/breakpad/gcr-logs/collector"/>
+  <!-- 日志最大的历史 30天 -->
+  <property name="maxHistory" value="30"/>
+
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- 典型的日志pattern -->
+    <encoder>
+      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 过滤器，只记录WARN级别的日志 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- 按天回滚 daily -->
+      <fileNamePattern>${log_dir}/error-%d{yyyy-MM-dd}.log
+      </fileNamePattern>
+      <maxHistory>${maxHistory}</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- 演示按时间滚动的策略 -->
+  <appender name="defaultLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${log_dir}/im.log</file>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${log_dir}/im.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!-- 保留 30天数据，默认无限-->
+      <maxHistory>${maxHistory}</maxHistory>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- 综合时间与大小的滚动策略，先按小时滚动，小时内的文件大于10mb时再按大小滚动 -->
+  <appender name="businessLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${log_dir}/business.log</file>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${log_dir}/business-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>10MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS},%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- project default level -->
+  <logger name="org.spring.springboot" level="DEBUG"/>
+
+  <!-- business log 使用独立的appender，不继承Root的appender -->
+  <logger name="business" level="INFO" additivity="false">
+    <appender-ref ref="businessLogFile"/>
+  </logger>
+
+  <!--log4jdbc -->
+  <logger name="jdbc.sqlonly" level="WARN"/>
+  <logger name="jdbc.sqltiming" level="INFO"/>
+  <logger name="jdbc.resultset" level="WARN"/>
+  <logger name="jdbc.connection" level="WARN"/>
+  <logger name="jdbc.audit" level="WARN"/>
+
+  <!--<logger name="com.imkweb.im.dao" level="DEBUG"/>-->
+  <!-- root -->
+  <root level="INFO">
+    <appender-ref ref="console"/>
+    <appender-ref ref="defaultLogFile"/>
+    <appender-ref ref="ERROR"/>
+  </root>
+</configuration>

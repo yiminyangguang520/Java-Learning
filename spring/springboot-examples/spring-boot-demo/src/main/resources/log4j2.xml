@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info" name="demo" packages="com.biostime.loghouse.plugin">
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <LogHouseLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %c.%method-%L %t %ipx %sx{MC} %ax{demo}  MDC%X %msg %n"/>
+        </Console>
+        <RollingFile name="demoAppender" fileName="/opt/logs/demo.log"
+                     filePattern="/opt/logs/demo.log.%d{yyyy-MM-dd}">
+            <LogHouseLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %c.%method-%L %t %ipx %sx{MC} %ax{demo}  MDC%X %msg %n"/>
+            <ThresholdFilter level="trace" onMatch="ACCEPT"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <Logger name="com.biostime.right" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="demoAppender"/>
+        </Logger>
+        <Logger name="org.springframework" level="WARN" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="demoAppender"/>
+        </Logger>
+        <!-- 日志仓库logger -->
+        <Root level="INFO">
+            <appender-ref ref="console"/>
+            <appender-ref ref="demoAppender"/>
+        </Root>
+    </loggers>
+</configuration>

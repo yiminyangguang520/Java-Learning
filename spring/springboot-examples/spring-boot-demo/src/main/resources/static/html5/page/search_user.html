@@ -1,0 +1,66 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" class="ng-app:biostimeMKTApp" id="ng-app" ng-app="biostimeMKTApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>账号查询</title>
+    <link href="../css/public.css" rel="stylesheet" type="text/css">
+    <link href="../css/user.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="../js/common/calendar/WdatePicker.js"></script>
+    <script type="text/javascript" src="../js/lib/angular1.2/angular.min.js"></script>
+    <script type="text/javascript" src="../js/lib/json/json3.min.js"></script>
+    <script type="text/javascript" src="../js/lib/storage/storage.js"></script>
+    <script type="text/javascript" src="../js/lib/biostime/biostime.common.js"></script>
+    <script type="text/javascript" src="../js/common/common.js"></script>
+    <script type="text/javascript" src="../js/controller/search_user_controller.js"></script>
+
+</head>
+
+<body ng-controller="searchController">
+<div class="tabBoxs mb15">
+    <div class="tabsite ovh">账号查询</div>
+    <div class="query-condition">
+        <table>
+            <tr class="tabtr">
+                <td>用户昵称：<input type="text" id="userName" class="tabinput" ng-model="userName" placeholder="昵称" />
+                <td>手机号：<input type="text" id="mobile" class="tabinput" ng-model="mobile" placeholder="手机号" />
+            </tr>
+            <tr class="tabtr">
+                <td colspan="2">
+                    <input type="submit" value="查 询" class="tabbtn ml-btn" ng-click="onSearchUser()" ng-hide="searchUser"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <table width="100%" class="tabConsList" border="0" cellspacing="1" cellpadding="0">
+        <thead>
+            <tr>
+                <th width="5%" align="center">用户ID</th>
+                <th width="5%" align="center">昵称</th>
+                <th width="5%" align="center">手机号</th>
+                <th width="9%" align="center">生日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td width="5%" align="center" ng-bind="user.userId"></td>
+                <td width="5%" align="center" ng-bind="user.userName"></td>
+                <td width="5%" align="center" ng-bind="user.mobile"></td>
+                <td width="9%" align="center" ng-bind="user.birthDay"></td>
+             </tr>
+        </tbody>
+    </table>
+    <div class="listbtn" ng-if="noPager">
+        <button ng-click="pagination.firstPage()" ng-disabled="pagination.isFirstPage()">首页</button>
+        <button ng-click="pagination.prevPage()" ng-disabled="pagination.isFirstPage()">上一页</button>
+		    <span>
+		    	<em ng-bind="pagination.page"></em> / <em ng-bind="pagination.numPages"></em>
+		    </span>
+        <button ng-click="pagination.nextPage()" ng-disabled="pagination.isLastPage()">下一页</button>
+        <button ng-click="pagination.lastPage()" ng-disabled="pagination.isLastPage()">末页</button>
+    </div>
+</div>
+</body>
+</html>
