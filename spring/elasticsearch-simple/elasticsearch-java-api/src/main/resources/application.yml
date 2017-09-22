@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: content-aggregation
+  profiles:
+    active: dev
+  data:
+    elasticsearch:
+      cluster-name: bruce-lee-application
+      cluster-nodes: localhost:9300
+
+logging:
+  config: classpath:log4j2.xml
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck: true
+    serviceUrl:
+      defaultZone: http://test-01.biostime.us:8084/eureka/
+
+

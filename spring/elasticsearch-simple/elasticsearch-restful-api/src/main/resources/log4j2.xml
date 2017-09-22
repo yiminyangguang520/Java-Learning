@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info" name="content-aggregation" packages="com.biostime.loghouse.plugin">
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <LogHouseLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %c.%method-%L %t %ipx %sx{MC} %ax{content-aggregation}  MDC%X %msg %n"/>
+        </Console>
+        <RollingFile name="content-aggregationAppender" fileName="/opt/logs/content-aggregation.log"
+                     filePattern="/opt/logs/content-aggregation.log.%d{yyyy-MM-dd}">
+            <LogHouseLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %c.%method-%L %t %ipx %sx{MC} %ax{content-aggregation}  MDC%X %msg %n"/>
+            <ThresholdFilter level="trace" onMatch="ACCEPT"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <Logger name="global.hh.content" level="INFO" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="content-aggregationAppender"/>
+        </Logger>
+        <Logger name="org.springframework" level="INFO" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="content-aggregationAppender"/>
+        </Logger>
+        <!-- 日志仓库logger -->
+        <Root level="INFO">
+            <appender-ref ref="console"/>
+            <appender-ref ref="content-aggregationAppender"/>
+        </Root>
+    </loggers>
+</configuration>

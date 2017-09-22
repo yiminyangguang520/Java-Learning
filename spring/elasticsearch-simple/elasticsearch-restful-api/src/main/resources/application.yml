@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: content-aggregation
+  profiles:
+    active: dev
+  data:
+    elasticsearch:
+      cluster-name: bruce-lee-application
+      cluster-nodes: localhost:9300
+
+logging:
+  config: classpath:log4j2.xml
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck: true
+    serviceUrl:
+      defaultZone: http://test-01.biostime.us:8084/eureka/
+
+swagger:
+  enabled: true
+  title: "内容全文检索"
+  description: "内容全文检索系统"
+  version: 1.0.0
+  license: "Apache License, Version 2.0"
+  licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0.html"
+  termsOfServiceUrl: "http://localhost:8080/swagger-ui.html"
+  contact:
+    name: shaw
+    url: www.hh.global
+    email: xiaoxiong@hh.global
+  base-package: global.hh.content
+  base-path: /**
+  exclude-path: /error, /ops/**
