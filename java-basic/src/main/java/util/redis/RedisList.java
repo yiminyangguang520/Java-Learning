@@ -2,12 +2,13 @@ package util.redis;
 
 
 import java.util.List;
-
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
 
 /**
  * RedisList通用工具类
+ *
+ * @author litz-a
  */
 public class RedisList {
 

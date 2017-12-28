@@ -1,11 +1,12 @@
 package util.redis;
 
 import java.util.List;
-
 import redis.clients.jedis.Jedis;
 
 /**
  * RedisString通用工具类
+ *
+ * @author litz-a
  */
 public class RedisString {
 

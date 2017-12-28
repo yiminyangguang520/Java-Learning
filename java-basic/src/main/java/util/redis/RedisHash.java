@@ -3,11 +3,12 @@ package util.redis;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import redis.clients.jedis.Jedis;
 
 /**
  * RedisHash工具类
+ *
+ * @author litz-a
  */
 public class RedisHash {
 

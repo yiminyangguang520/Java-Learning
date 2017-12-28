@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+  <settings>
+    <setting name="defaultExecutorType" value="REUSE"/>
+  </settings>
+  <!--
+   <typeAliases>
+     <typeAlias alias="Student"
+   type="com.abc.domain.Student"/>
+
+   增加的教师类型别名
+   <typeAlias alias="Teacher"
+   type="com.abc.domain.Teacher"/>
+   </typeAliases>
+   -->
+  <!--
+  <mappers>
+     <mapper resource="mapper/StudentMapper.xml"/>
+  </mappers>
+ -->
+</configuration>

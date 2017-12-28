@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+  default-autowire="byType" default-lazy-init="false">
+
+  <!-- 自动扫描com.abc.service包及其子包下的所有bean类 -->
+  <context:component-scan base-package="com.abc.service"/>
+
+  <!--本示例采用DBCP数据源，应预先把DBCP的jar包复制到工程的lib目录下。
+ 连接池配置如下-->
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost/courseman"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root"/>
+  </bean>
+
+  <!-- 创建SqlSessionFactory实例 -->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!--dataSource属性指定要用到的数据源-->
+    <property name="dataSource" ref="dataSource"/>
+    <!-- 自动取对应包中不包括包名的类名作为类型别名，多个包之间可以用逗号或分号分开 -->
+    <property name="typeAliasesPackage" value="com.abc.domain"/>
+    <!--configLocation属性指定mybatis的主配置文件-->
+    <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    <!-- 从类路径中加载映射文件，相对于类的根路径-->
+    <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+  </bean>
+
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--basePackage指定要扫描的包，此包及其子包之下的映射器接口
+    都会被搜索到。可指定多个包，包与包之间用逗号或分号分隔-->
+    <property name="basePackage" value="com.abc.mapper"/>
+  </bean>
+
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+
+  <!--配置事务增强处理，指定事务处理策略，transaction-manager属性指定事务管理器。
+ 若事务管理器bean的id即为transactionManager，则
+ transaction-manager的属性可以不指定-->
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <!--所有以find和get开头的方法都是只读的-->
+      <tx:method name="find*" read-only="true"/>
+      <tx:method name="get*" read-only="true"/>
+      <tx:method name="save*"/>
+      <tx:method name="update*"/>
+      <!--其他方法使用默认事务策略-->
+      <tx:method name="*"/>
+    </tx:attributes>
+  </tx:advice>
+
+  <!-- AOP配置-->
+  <aop:config>
+    <!--pointcut元素定义一个切入点，execution()是最常用的切点函数，
+    其中的第一个星号用以匹配方法的返回类型，这里星号表明匹配所有返回类型。
+com.abc.service.*.*(..)表明匹配com.abc.service包下的所有类的所有方法，
+..代表方法参数可以是任意的，包括0个。切入点表达式常见写法可参见：
+http://lavasoft.blog.51cto.com/62575/172292/ -->
+    <aop:pointcut id="myPointcut" expression="execution(public * com.abc.service.*.*(..))"/>
+    <!--将定义好的事务处理策略应用到上述的切入点-->
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
+  </aop:config>
+
+</beans>
