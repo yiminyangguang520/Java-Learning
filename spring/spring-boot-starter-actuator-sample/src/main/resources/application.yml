@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+    username: breakpad
+    password: 1qaz2wsx
+
+# 启用基础认证
+security:
+  basic:
+    enabled: true
+    path: /admin
+  user:
+    name: admin
+    password: admin
+
+management:
+  security:
+    roles: SUPERUSER
+    enabled: true
+  port: 8099
+  context-path: /admin
+
+endpoints:
+  metrics:
+    sensitive: false
+    enabled: true
+  health:
+    sensitive: false
+    enabled: true
