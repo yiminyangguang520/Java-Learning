@@ -21,15 +21,15 @@ package com.mkyong.customer.services;
 
 public class CustomerService
 {
-	String message;
+    String message;
 
-	public String getMessage() {
-		return message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
 ```
 
@@ -39,9 +39,9 @@ If no bean scope is specified in bean configuration file, default to singleton.
 
 ```
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
        <bean id="customerService"
             class="com.mkyong.customer.services.CustomerService" />
@@ -63,16 +63,16 @@ public class App
 {
     public static void main( String[] args )
     {
-    	ApplicationContext context =
-    	 new ClassPathXmlApplicationContext(new String[] {"Spring-Customer.xml"});
+      ApplicationContext context =
+       new ClassPathXmlApplicationContext(new String[] {"Spring-Customer.xml"});
 
-    	CustomerService custA = (CustomerService)context.getBean("customerService");
-    	custA.setMessage("Message by custA");
-    	System.out.println("Message : " + custA.getMessage());
+      CustomerService custA = (CustomerService)context.getBean("customerService");
+      custA.setMessage("Message by custA");
+      System.out.println("Message : " + custA.getMessage());
 
-    	//retrieve it again
-    	CustomerService custB = (CustomerService)context.getBean("customerService");
-    	System.out.println("Message : " + custB.getMessage());
+      //retrieve it again
+      CustomerService custB = (CustomerService)context.getBean("customerService");
+      System.out.println("Message : " + custB.getMessage());
     }
 }
 ```
@@ -92,9 +92,9 @@ If you want a new ‘customerService’ bean instance, every time you call it, u
 
 ```
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
    <bean id="customerService" class="com.mkyong.customer.services.CustomerService"
          scope="prototype"/>
@@ -125,15 +125,15 @@ import org.springframework.stereotype.Service;
 @Scope("prototype")
 public class CustomerService
 {
-	String message;
+    String message;
 
-	public String getMessage() {
-		return message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
 ```
 
@@ -141,12 +141,12 @@ Enable auto component scanning
 
 ```
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
        <context:component-scan base-package="com.mkyong.customer" />
 
