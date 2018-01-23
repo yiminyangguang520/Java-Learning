@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config />
+
+  <bean id="panda" class="com.mkyong.common.Panda" autowire="autodetect"/>
+
+  <bean id="kungfu1111" class="com.mkyong.common.KungFu">
+    <property name="name" value="Shao lin"/>
+  </bean>
+
+  <!--spring 4.*中装配类型只有default、no、byName、byType、constructor等5中装配模式,constructor本质为byType装配-->
+  <!--spring 2.*中装配类型只有default、no、byName、byType、constructor、autodetect等5中装配模式-->
+</beans>
