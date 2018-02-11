@@ -1,0 +1,5 @@
+（一）SSM框架构建积分系统和基本商品检索系统（Spring+SpringMVC+MyBatis+Lucene+Redis+MAVEN）（1）框架整合构建
+
+文章结构：（1）商品数据库的构建；（2）Lucene的整合与测试；
+
+一、商品数据库的构建：（数据库文件会在工程文件给出。）

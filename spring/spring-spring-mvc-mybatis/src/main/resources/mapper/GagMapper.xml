@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhisheng.dao.GagDao">
+  <insert id="insertGag" parameterType="com.zhisheng.model.Gag">
+        INSERT  INTO gag (create_time, gag_time, user_id)
+        VALUES (#{create_time}, #{gag_time}, #{user.id})
+    </insert>
+
+  <select id="selectGagByUserId" parameterType="java.lang.Long" resultType="com.zhisheng.model.Gag">
+        SELECT id, create_time, gag_time from gag
+        where user_id = #{id}
+    </select>
+</mapper>

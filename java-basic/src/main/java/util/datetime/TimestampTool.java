@@ -1,4 +1,4 @@
-package util.datetime.datetime;
+package util.datetime;
 
 import java.sql.Timestamp;
 import java.text.ParseException;

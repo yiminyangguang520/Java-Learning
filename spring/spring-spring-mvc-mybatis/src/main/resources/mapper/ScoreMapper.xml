@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhisheng.dao.ScoreDao">
+  <insert id="insertScore" parameterType="com.zhisheng.model.Score">
+        INSERT  INTO score (change_type,create_time,score,user_id)
+        VALUES (#{changeType},#{create_time},#{score},#{user.id})
+    </insert>
+
+  <update id="updateScore">
+    update score set score = #{scoreCount}
+    where user_id = #{id}
+  </update>
+</mapper>
