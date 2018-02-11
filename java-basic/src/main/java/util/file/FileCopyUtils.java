@@ -12,6 +12,8 @@ import org.apache.commons.io.FileUtils;
 
 /**
  * @author litz-a
+ * As you can see FileChannels is the best way to copy large files.
+ * If you work with even larger files you will notice a much bigger speed difference
  */
 public class FileCopyUtils {
   public static void copyFileUsingFileStreams(File source, File dest) throws IOException {
