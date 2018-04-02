@@ -1,10 +1,10 @@
 package com.lee.java8;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-
-import static java.util.stream.Collectors.toList;
 
 /***************************************
  * @author:Alex Wang
@@ -12,7 +12,8 @@ import static java.util.stream.Collectors.toList;
  * QQ交流群:286081824
  ***************************************/
 public class CompletableFutureInAction5 {
-    public static void main(String[] args) throws InterruptedException {
+
+  public static void main(String[] args) throws InterruptedException {
         /*CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName() + " is running.");
             try {
@@ -51,15 +52,14 @@ public class CompletableFutureInAction5 {
             return CompletableFutureInAction1.get();
         }), () -> System.out.println("done."));*/
 
-        List<CompletableFuture<Double>> collect = Arrays.asList(1, 2, 3, 4)
-                .stream()
-                .map(i -> CompletableFuture.supplyAsync(CompletableFutureInAction1::get))
-                .collect(toList());
+    List<CompletableFuture<Double>> collect = Arrays.asList(1, 2, 3, 4)
+        .stream()
+        .map(i -> CompletableFuture.supplyAsync(CompletableFutureInAction1::get))
+        .collect(toList());
 
-        CompletableFuture.anyOf(collect.toArray(new CompletableFuture[collect.size()]))
-                .thenRun(() -> System.out.println("done"));
+    CompletableFuture.anyOf(collect.toArray(new CompletableFuture[collect.size()]))
+        .thenRun(() -> System.out.println("done"));
 
-
-        Thread.currentThread().join();
-    }
+    Thread.currentThread().join();
+  }
 }

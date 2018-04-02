@@ -8,14 +8,14 @@ package com.lee.java8;
 public class NullPointerException {
 
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 //        String insuranceName = getInsuranceName(new Person());
 
 //        String result = getInsuranceNameByDeepDoubts(new Person());
 
 //        System.out.println(result);
 
-    }
+  }
 
 /*    private static String getInsuranceNameByDeepDoubts(Person person)
     {

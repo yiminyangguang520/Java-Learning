@@ -6,9 +6,10 @@ package com.lee.java8;
  * QQ交流群:286081824
  ***************************************/
 public class Insurance {
-    private String name;
 
-    public String getName() {
-        return name;
-    }
+  private String name;
+
+  public String getName() {
+    return name;
+  }
 }

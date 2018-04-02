@@ -1,11 +1,8 @@
 package com.lee.java8;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.*;
-
-import static java.util.stream.Collectors.toList;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /***************************************
  * @author:Alex Wang
@@ -14,9 +11,9 @@ import static java.util.stream.Collectors.toList;
  ***************************************/
 public class CompletableFutureInAction {
 
-    private static final Random random = new Random(System.currentTimeMillis());
+  private static final Random random = new Random(System.currentTimeMillis());
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+  public static void main(String[] args) throws ExecutionException, InterruptedException {
         /*CompletableFuture<Double> future = new CompletableFuture<>();
         new Thread(() -> {
             try {
@@ -67,21 +64,21 @@ public class CompletableFutureInAction {
         });
         executor.execute(() -> System.out.println("sfsdfsfs"));*/
 
-        Double value = CompletableFuture.supplyAsync(CompletableFutureInAction::get)
-                .whenComplete((v, t) -> System.out.println(">>>>" + v))
-                .thenCompose(i -> CompletableFuture.supplyAsync(() -> i + 10))
-                .get();
-        System.out.println(value);
-    }
+    Double value = CompletableFuture.supplyAsync(CompletableFutureInAction::get)
+        .whenComplete((v, t) -> System.out.println(">>>>" + v))
+        .thenCompose(i -> CompletableFuture.supplyAsync(() -> i + 10))
+        .get();
+    System.out.println(value);
+  }
 
-    private static double get() {
-        try {
-            Thread.sleep(10000L);
-            double v = random.nextDouble();
-            System.out.println(v);
-            return v;
-        } catch (InterruptedException e) {
-            throw new RuntimeException();
-        }
+  private static double get() {
+    try {
+      Thread.sleep(10000L);
+      double v = random.nextDouble();
+      System.out.println(v);
+      return v;
+    } catch (InterruptedException e) {
+      throw new RuntimeException();
     }
+  }
 }

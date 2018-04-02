@@ -8,31 +8,31 @@ package com.lee.java8;
 public class DefaultInAction {
 
 
-    public static void main(String[] args) {
-        C c = new C();
-        c.hello();
+  public static void main(String[] args) {
+    C c = new C();
+    c.hello();
+  }
+
+
+  private interface A {
+
+    default void hello() {
+      System.out.println("==A.hello==");
     }
+  }
 
+  private interface B {
 
-    private interface A {
-
-        default void hello() {
-            System.out.println("==A.hello==");
-        }
+    default void hello() {
+      System.out.println("==B.hello==");
     }
+  }
 
-    private interface B {
+  private static class C implements B, A {
 
-        default void hello() {
-            System.out.println("==B.hello==");
-        }
+    @Override
+    public void hello() {
+      B.super.hello();
     }
-
-    private static class C implements B, A {
-
-        @Override
-        public void hello() {
-            B.super.hello();
-        }
-    }
+  }
 }

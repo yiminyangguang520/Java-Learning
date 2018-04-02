@@ -9,7 +9,7 @@ import java.util.concurrent.CompletableFuture;
  ***************************************/
 public class CompletableFutureInAction4 {
 
-    public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws InterruptedException {
 
         /*CompletableFuture.supplyAsync(() -> 1)
                 .thenApply(i -> Integer.sum(i, 10))
@@ -32,13 +32,13 @@ public class CompletableFutureInAction4 {
                 .thenCombine(CompletableFuture.supplyAsync(() -> 2.0d), (r1, r2) -> r1 + r2)
                 .thenAccept(System.out::println);*/
 
-        CompletableFuture.supplyAsync(() -> 1)
-                .thenAcceptBoth(CompletableFuture.supplyAsync(() -> 2.0d), (r1, r2) -> {
-                    System.out.println(r1);
-                    System.out.println(r2);
-                    System.out.println(r1 + r2);
-                });
+    CompletableFuture.supplyAsync(() -> 1)
+        .thenAcceptBoth(CompletableFuture.supplyAsync(() -> 2.0d), (r1, r2) -> {
+          System.out.println(r1);
+          System.out.println(r2);
+          System.out.println(r1 + r2);
+        });
 
-        Thread.sleep(1000L);
-    }
+    Thread.sleep(1000L);
+  }
 }

@@ -3,7 +3,6 @@ package com.lee.java8;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -12,29 +11,29 @@ import java.util.function.Predicate;
  */
 public class LambdaExpression {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Comparator<Apple> byColor = new Comparator<Apple>() {
-            @Override
-            public int compare(Apple o1, Apple o2) {
-                return o1.getColor().compareTo(o2.getColor());
-            }
-        };
+    Comparator<Apple> byColor = new Comparator<Apple>() {
+      @Override
+      public int compare(Apple o1, Apple o2) {
+        return o1.getColor().compareTo(o2.getColor());
+      }
+    };
 
-        List<Apple> list = Collections.emptyList();
+    List<Apple> list = Collections.emptyList();
 
-        list.sort(byColor);
+    list.sort(byColor);
 
-        Comparator<Apple> byColor2 = (o1, o2) -> o1.getColor().compareTo(o2.getColor());
+    Comparator<Apple> byColor2 = (o1, o2) -> o1.getColor().compareTo(o2.getColor());
 
-        Function<String, Integer> flambda = s -> s.length();
+    Function<String, Integer> flambda = s -> s.length();
 
-        Predicate<Apple> p = (Apple a) -> a.getColor().equals("green");
+    Predicate<Apple> p = (Apple a) -> a.getColor().equals("green");
 
-        Runnable r = ()->{};
+    Runnable r = () -> {
+    };
 
+    Function<Apple, Boolean> f = (a) -> a.getColor().equals("green");
 
-        Function<Apple,Boolean> f = (a)->a.getColor().equals("green");
-
-    }
+  }
 }

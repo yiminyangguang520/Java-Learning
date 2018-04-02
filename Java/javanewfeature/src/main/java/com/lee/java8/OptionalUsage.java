@@ -9,13 +9,13 @@ import java.util.Optional;
  ***************************************/
 public class OptionalUsage {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Optional<Insurance> insuranceOptional = Optional.<Insurance>empty();
+    Optional<Insurance> insuranceOptional = Optional.<Insurance>empty();
 
 //        insuranceOptional.get();
 
-        Optional<Insurance> insuranceOptional1 = Optional.of(new Insurance());
+    Optional<Insurance> insuranceOptional1 = Optional.of(new Insurance());
 
         /*insuranceOptional1.get();
 
@@ -41,19 +41,19 @@ public class OptionalUsage {
 
         nameOptional.ifPresent(System.out::println);*/
 
+    System.out.println(getInsuranceName(null));
+    System.out.println(getInsuranceNameByOptional(null));
+  }
 
-        System.out.println(getInsuranceName(null));
-        System.out.println(getInsuranceNameByOptional(null));
+
+  private static String getInsuranceName(Insurance insurance) {
+    if (null == insurance) {
+      return "unknown";
     }
+    return insurance.getName();
+  }
 
-
-    private static String getInsuranceName(Insurance insurance) {
-        if (null == insurance)
-            return "unknown";
-        return insurance.getName();
-    }
-
-    private static String getInsuranceNameByOptional(Insurance insurance) {
-        return Optional.ofNullable(insurance).map(Insurance::getName).orElse("unknown");
-    }
+  private static String getInsuranceNameByOptional(Insurance insurance) {
+    return Optional.ofNullable(insurance).map(Insurance::getName).orElse("unknown");
+  }
 }

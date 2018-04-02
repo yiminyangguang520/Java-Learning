@@ -9,9 +9,9 @@ import java.util.Optional;
  ***************************************/
 public class Person {
 
-    private Optional<Car> car;
+  private Optional<Car> car;
 
-    public Optional<Car> getCar() {
-        return this.car;
-    }
+  public Optional<Car> getCar() {
+    return this.car;
+  }
 }
