@@ -374,7 +374,7 @@ public class DateUtil {
       }
 
       iday = Integer.parseInt(temp);
-      if (iday < 1 || iday > 31) {
+      if ((iday < 1) || (iday > 31)) {
         iday = 1;
       }
 
@@ -418,13 +418,13 @@ public class DateUtil {
    * @date Mar 11, 2012
    */
   public static final String getDate(Date aDate) {
-    SimpleDateFormat df = null;
+    SimpleDateFormat df;
     String returnValue = "";
     if (aDate != null) {
       df = new SimpleDateFormat(getDatePattern());
       returnValue = df.format(aDate);
     }
-    return (returnValue);
+    return returnValue;
   }
 
   /**
@@ -491,19 +491,20 @@ public class DateUtil {
    */
   public static final Date convertStringToDate(String aMask, String strDate)
       throws ParseException {
-    SimpleDateFormat df = null;
-    Date date = null;
-    df = new SimpleDateFormat(aMask);
+    SimpleDateFormat df = new SimpleDateFormat(aMask);
 
     if (logger.isDebugEnabled()) {
       logger.debug("converting '" + strDate + "' to date with mask '" + aMask + "'");
     }
+
+    Date date;
     try {
       date = df.parse(strDate);
     } catch (ParseException pe) {
       logger.error("ParseException: " + pe);
       throw pe;
     }
+
     return (date);
   }
 
@@ -573,14 +574,15 @@ public class DateUtil {
    */
   @SuppressWarnings("deprecation")
   public static Date addStartTime(Date param) {
-    Date date = param;
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(param);
     try {
-      date.setHours(0);
-      date.setMinutes(0);
-      date.setSeconds(0);
-      return date;
+      calendar.set(Calendar.HOUR_OF_DAY, 0);
+      calendar.set(Calendar.MINUTE, 0);
+      calendar.set(Calendar.SECOND, 0);
+      return calendar.getTime();
     } catch (Exception ex) {
-      return date;
+      return calendar.getTime();
     }
   }
 
@@ -702,8 +704,8 @@ public class DateUtil {
     Calendar dd = Calendar.getInstance();
     dd.setTime(d1);
 
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM");
     while(dd.getTime().before(d2)){
-      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
       String str = sdf.format(dd.getTime());
       System.out.println(str);
       dd.add(Calendar.MONTH, 1);
