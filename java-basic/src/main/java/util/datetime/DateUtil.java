@@ -1,11 +1,13 @@
-package util.datetime.datetime;
+package util.datetime;
 
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -16,7 +18,6 @@ import org.apache.log4j.Logger;
  * @date Mar 11, 2012
  * @modified by
  * @modified date
- * @see com.util.DateUtil
  * @since JDK1.6
  */
 
@@ -379,7 +380,7 @@ public class DateUtil {
 
       Calendar orgcale = Calendar.getInstance();
       orgcale.set(iyear, imonth, iday);
-      temp = this.rollDate(orgcale, Type, Span);
+      temp = rollDate(orgcale, Type, Span);
       return temp;
     } catch (Exception e) {
       return "";
@@ -672,7 +673,47 @@ public class DateUtil {
     return timestamp;
   }
 
-  public static void main(String[] args) {
+  public static List<String> getMonthBetween(String minDate, String maxDate) throws ParseException {
+    ArrayList<String> result = new ArrayList<>();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+
+    Calendar min = Calendar.getInstance();
+    Calendar max = Calendar.getInstance();
+
+    min.setTime(sdf.parse(minDate));
+    min.set(min.get(Calendar.YEAR), min.get(Calendar.MONTH), 1);
+
+    max.setTime(sdf.parse(maxDate));
+    max.set(max.get(Calendar.YEAR), max.get(Calendar.MONTH), 2);
+
+    Calendar curr = min;
+    while (curr.before(max)) {
+      result.add(sdf.format(curr.getTime()));
+      curr.add(Calendar.MONTH, 1);
+    }
+
+    return result;
+  }
+
+  public static void getMonthMarginBetween(String minDate, String maxDate) throws ParseException {
+    Date d1 = new SimpleDateFormat("yyyy-MM").parse(minDate);
+    Date d2 = new SimpleDateFormat("yyyy-MM").parse(maxDate);
+
+    Calendar dd = Calendar.getInstance();
+    dd.setTime(d1);
+
+    while(dd.getTime().before(d2)){
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+      String str = sdf.format(dd.getTime());
+      System.out.println(str);
+      dd.add(Calendar.MONTH, 1);
+    }
+  }
+
+  public static void main(String[] args) throws ParseException {
     System.out.println(getYear() + "|" + getMonth() + "|" + getDate());
+    List<String> resultList = getMonthBetween("2017-05-01", "2018-05-01");
+    resultList.forEach(System.out::println);
+    getMonthMarginBetween("2017-04-30", "2018-05-01");
   }
 } 

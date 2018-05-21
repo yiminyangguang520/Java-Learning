@@ -237,7 +237,12 @@ public class TimestampTool {
     return tp;
   }
 
-  // 获取指定日期之后的日期字符串 如 2007-04-15 后一天 就是 2007-04-16
+  /**
+   * 获取指定日期之后的日期字符串 如 2007-04-15 后一天 就是 2007-04-16
+   * @param strDate
+   * @param day
+   * @return
+   */
   public static String getNextDay(String strDate, int day) {
     if (strDate != null && !strDate.equals("")) {
       Calendar cal1 = Calendar.getInstance();
@@ -254,7 +259,12 @@ public class TimestampTool {
     }
   }
 
-  // 获取指定日期之后的日期字符串 如 2007-02-28 后一年 就是 2008-02-29 （含闰年）
+  /**
+   * 获取指定日期之后的日期字符串 如 2007-02-28 后一年 就是 2008-02-29 （含闰年）
+   * @param strDate
+   * @param year
+   * @return
+   */
   public static String getNextYear(String strDate, int year) {
     Calendar cal1 = Calendar.getInstance();
     String[] string = strDate.trim().split("-");
@@ -318,7 +328,8 @@ public class TimestampTool {
   private static int getMondayPlus() {
     Calendar calendar = Calendar.getInstance();
     // 获得今天是一周的第几天，正常顺序是星期日是第一天，星期一是第二天......
-    int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK); // 星期日是第一天
+    // 星期日是第一天
+    int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
     return (dayOfWeek == 1) ? -6 : 2 - dayOfWeek;
   }
 
@@ -329,7 +340,8 @@ public class TimestampTool {
    * @return java.util.Date
    */
   public static Date getMondayOfWeek(int week) {
-    int mondayPlus = getMondayPlus(); // 相距周一的天数差
+    // 相距周一的天数差
+    int mondayPlus = getMondayPlus();
     GregorianCalendar current = new GregorianCalendar();
     current.add(GregorianCalendar.DATE, mondayPlus + 7 * week);
     return current.getTime();
@@ -357,7 +369,8 @@ public class TimestampTool {
    */
   public static String[] getDaysOfWeek(int week) {
     String[] days = new String[7];
-    Date monday = getMondayOfWeek(week); // 获得距本周前或后的某周周一
+    // 获得距本周前或后的某周周一
+    Date monday = getMondayOfWeek(week);
     Timestamp t = new Timestamp(monday.getTime());
     days[0] = getStrDate(t);
     for (int i = 1; i < 7; i++) {
@@ -375,11 +388,16 @@ public class TimestampTool {
    */
   public static Date mccUTC2Date(long utc) {
     Date d = new Date();
-    d.setTime(utc * 1000); // 转成毫秒
+    // 转成毫秒
+    d.setTime(utc * 1000);
     return d;
   }
 
-  // 将长时间格式字符串转换为时间 yyyy-MM-dd HH:mm:ss
+  /**
+   * 将长时间格式字符串转换为时间 yyyy-MM-dd HH:mm:ss
+   * @param strDate
+   * @return
+   */
   public static Date strToDateLong(String strDate) {
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     ParsePosition pos = new ParsePosition(0);
@@ -391,7 +409,11 @@ public class TimestampTool {
     return strtodate;
   }
 
-  // 将 yyyy-MM-dd HH:mm 格式字符串转换为时间
+  /**
+   * 将 yyyy-MM-dd HH:mm 格式字符串转换为时间
+   * @param strDate
+   * @return
+   */
   public static Date strToDateTime(String strDate) {
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     ParsePosition pos = new ParsePosition(0);
@@ -403,7 +425,11 @@ public class TimestampTool {
     return strtodate;
   }
 
-  // 根据输入的字符串返回日期字符串 2006-07-07 22:10 2006-07-07
+  /**
+   * 根据输入的字符串返回日期字符串 2006-07-07 22:10 2006-07-07
+   * @param str
+   * @return
+   */
   public static String getStrDate(String str) {
     if (str.length() > 10) {
       String[] string = str.trim().split(" ");
@@ -413,13 +439,20 @@ public class TimestampTool {
     }
   }
 
-  // 获取当前时间的字符串 2006-07-07 22:10:10 2006-07-07_221010
+  /**
+   * 获取当前时间的字符串 2006-07-07 22:10:10 2006-07-07_221010
+   * @return
+   */
   public static String getStrDateTime() {
     Timestamp d = crunttime();
     return d.toString().substring(0, 19).replace(":", "").replace(" ", "_");
   }
 
-  // 根据日期字符串，返回今天，昨天或日期
+  /**
+   * 根据日期字符串，返回今天，昨天或日期
+   * @param str
+   * @return
+   */
   public static String getDayOrDate(String str) {
     if (str != null && !str.equals("")) {
       if (getNextDay(str, 0).equals(getCurrentDate())) {
@@ -433,7 +466,10 @@ public class TimestampTool {
     return str;
   }
 
-  // 返回当前日期所在星期，2对应星期一
+  /**
+   * 返回当前日期所在星期，2对应星期一
+   * @return
+   */
   public static int getMonOfWeek() {
     Calendar cal1 = Calendar.getInstance();
     cal1.setTime(new Date());
@@ -477,7 +513,8 @@ public class TimestampTool {
 
   public static int getDaysBetween(java.util.Calendar d1,
       java.util.Calendar d2) {
-    if (d1.after(d2)) { // swap dates so that d1 is start and d2 is end
+    // swap dates so that d1 is start and d2 is end
+    if (d1.after(d2)) {
       java.util.Calendar swap = d1;
       d1 = d2;
       d2 = swap;
@@ -495,7 +532,12 @@ public class TimestampTool {
     return days;
   }
 
-  // 得到两个日期之间的年
+  /**
+   * 得到两个日期之间的年
+   * @param starDate
+   * @param endDate
+   * @return 日期之间的年
+   */
   public static int dateDiffYear(String starDate, String endDate) {
     int result = 0;
     Calendar d1 = Calendar.getInstance();
@@ -504,7 +546,8 @@ public class TimestampTool {
     d2.setTime(parseDate(endDate));
 
     // 日期大小翻转
-    if (d1.after(d2)) { // swap dates so that d1 is start and d2 is end
+    // swap dates so that d1 is start and d2 is end
+    if (d1.after(d2)) {
       java.util.Calendar swap = d1;
       d1 = d2;
       d2 = swap;
@@ -527,7 +570,11 @@ public class TimestampTool {
     return result;
   }
 
-  // 获取年龄
+  /**
+   * 获取年龄
+   * @param starDate
+   * @return
+   */
   public static int getAgeByBirth(String starDate) {
     return dateDiffYear(starDate, getCurrentDate());
   }
