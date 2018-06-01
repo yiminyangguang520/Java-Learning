@@ -1,0 +1,17 @@
+# application.yml
+
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: mail.glodon.com
+    username: username@gmail.com
+    password: secret
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
