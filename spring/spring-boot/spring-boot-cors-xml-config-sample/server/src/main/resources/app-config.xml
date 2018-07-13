@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xsi:schemaLocation="
+      http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+  <mvc:annotation-driven/>
+  <mvc:cors>
+    <mvc:mapping path="/customers"
+      allowed-origins="http://localhost:8080, http://localhost:9000"
+      allowed-methods="POST, GET, PUT, DELETE"
+      allowed-headers="Content-Type"
+      exposed-headers="header-1, header-2"
+      allow-credentials="false"
+      max-age="6000"/>
+  </mvc:cors>
+
+</beans>
