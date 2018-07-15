@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: RabbitMQ-Demo
+  rabbitmq:
+    host: 192.168.144.45
+    port: 5672
+    username: admin
+    password: admin
+    #virtual-host: test
+    publisher-confirms: true # 开启确认消息是否到达交换器，需要设置 true
+    publisher-returns: true # 开启确认消息是否到达队列，需要设置 true

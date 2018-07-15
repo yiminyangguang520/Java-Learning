@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: RabbitMQ-Demo
+  rabbitmq:
+    host: 192.168.144.45
+    port: 5672
+    username: admin
+    password: admin
+    #virtual-host: test
+    publisher-confirms: true
+    publisher-returns: true
