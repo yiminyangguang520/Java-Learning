@@ -1,0 +1,16 @@
+auth-server: http://demo.baomidou.com:8082/sso-server
+server:
+  port: 8084
+  servlet:
+    context-path: /client2
+security:
+  oauth2:
+    client:
+      client-id: merryyou2
+      client-secret: merryyousecrect2
+      user-authorization-uri: ${auth-server}/oauth/authorize
+      access-token-uri: ${auth-server}/oauth/token
+      registered-redirect-uri: http://xxlssoclient2.com:8084/client2
+    resource:
+      jwt:
+        key-uri: ${auth-server}/oauth/token_key

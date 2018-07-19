@@ -1,0 +1,23 @@
+version: '3'
+services:
+  sso-login:
+   image: hub.c.163.com/longfeizheng/sso-server:2.0
+   restart: always
+   ports:
+     - "8082:8082"
+#   command:
+#    - "--server.port=8082"
+  sso-taobao:
+    image: hub.c.163.com/longfeizheng/sso-client1:2.0
+    restart: always
+    ports:
+      - 8083:8083
+    links:
+      - sso-login
+  sso-tmall:
+    image: hub.c.163.com/longfeizheng/sso-client2:2.0
+    restart: always
+    ports:
+      - 8084:8084
+    links:
+      - sso-login

@@ -1,0 +1,19 @@
+auth-server: http://demo.baomidou.com:8082/sso-server # sso-server地址
+server:
+  port: 8083
+  servlet:
+    context-path: /client1
+security:
+  oauth2:
+    client:
+      client-id: merryyou1
+      client-secret: merryyousecrect1
+      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
+      registered-redirect-uri: http://xxlssoclient1.com:8083/client1
+    resource:
+      jwt:
+        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+logging:
+  level:
+    org.springframework: debug
