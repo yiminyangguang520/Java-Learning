@@ -4,7 +4,7 @@ import java.util.Arrays;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.stereotype.Component;
+import org.springframework.web.util.WebUtils;
 
 /**
  * @author litz-a
@@ -47,25 +47,15 @@ public class CookieUtil {
    * 查询value
    */
   public static String getValue(HttpServletRequest request, String key) {
-    Cookie cookie = get(request, key);
-    if (cookie != null) {
-      return cookie.getValue();
-    }
-    return null;
+    Cookie cookie = WebUtils.getCookie(request, key);
+    return cookie != null ? cookie.getValue() : null;
   }
 
   /**
    * 查询Cookie
    */
   private static Cookie get(HttpServletRequest request, String key) {
-    Cookie[] arr_cookie = request.getCookies();
-    if (arr_cookie != null && arr_cookie.length > 0) {
-      return Arrays.stream(arr_cookie)
-          .filter(cookie -> cookie.getName().equals(key))
-          .findFirst()
-          .orElse(null);
-    }
-    return null;
+    return WebUtils.getCookie(request, key);
   }
 
   /**
