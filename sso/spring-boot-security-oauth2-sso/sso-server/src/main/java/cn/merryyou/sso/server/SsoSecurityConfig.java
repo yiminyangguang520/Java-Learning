@@ -1,5 +1,6 @@
 package cn.merryyou.sso.server;
 
+import cn.merryyou.sso.security.CustomLogoutSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 /**
  * spring Security配置 Created on 2017/12/26.
@@ -39,12 +41,16 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
     return new BCryptPasswordEncoder();
   }
 
+  @Bean
+  public LogoutSuccessHandler logoutSuccessHandler() {
+    return new CustomLogoutSuccessHandler();
+  }
+
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.formLogin().loginPage("/authentication/require")
+    http.formLogin()
+        .loginPage("/authentication/require")
         .loginProcessingUrl("/authentication/form")
-        .and()
-        .logout()
         .and()
         .authorizeRequests()
         .antMatchers("/authentication/require",
@@ -61,7 +67,13 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
         .permitAll()
         .anyRequest().authenticated()
         .and()
-        .csrf().disable();
+        .csrf().disable()
+        .logout()
+        .logoutUrl("/exit")
+        .deleteCookies("JSESSIONID")
+        .invalidateHttpSession(false)
+        .logoutSuccessHandler(logoutSuccessHandler())
+         ;
 //        http.formLogin().and().authorizeRequests().anyRequest().authenticated();
   }
 

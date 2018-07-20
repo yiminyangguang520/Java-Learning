@@ -73,7 +73,7 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
   @Bean
   public JwtAccessTokenConverter jwtAccessTokenConverter() {
     JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-    converter.setSigningKey("merryyou");
+    converter.setSigningKey("sso-server");
     return converter;
   }
 }

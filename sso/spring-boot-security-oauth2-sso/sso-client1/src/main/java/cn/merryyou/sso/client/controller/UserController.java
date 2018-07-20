@@ -14,4 +14,5 @@ public class UserController {
   public Authentication user(Authentication user) {
     return user;
   }
+
 }
