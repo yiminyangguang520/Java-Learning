@@ -1,8 +1,10 @@
 auth-server: http://demo.baomidou.com:8082/sso-server # sso-server地址
+
 server:
   port: 8083
   servlet:
     context-path: /client1
+
 security:
   oauth2:
     client:

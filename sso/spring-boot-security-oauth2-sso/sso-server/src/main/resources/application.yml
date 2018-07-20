@@ -17,6 +17,7 @@ spring:
     prefer-file-system-access: true
     suffix: .ftl
     template-loader-path: classpath:/templates/
-logging:
-  level:
-    org.springframework: debug
+
+#logging:
+#  level:
+#    org.springframework: debug

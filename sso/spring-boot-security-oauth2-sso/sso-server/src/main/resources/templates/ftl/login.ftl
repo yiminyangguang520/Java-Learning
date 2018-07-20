@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>登录界面</title>
-  <link rel="stylesheet" href="/uaa/css/reset.css"/>
-  <link rel="stylesheet" href="/uaa/css/common.css"/>
-  <link rel="stylesheet" href="/uaa/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/sso-server/css/reset.css"/>
+  <link rel="stylesheet" href="/sso-server/css/common.css"/>
+  <link rel="stylesheet" href="/sso-server/css/font-awesome.min.css"/>
 </head>
 <body>
 <div class="wrap login_wrap">
@@ -18,7 +18,7 @@
         <div class="login_title">
           登录
         </div>
-        <form action="/uaa/authentication/form" method="post">
+        <form action="/sso-server/authentication/form" method="post">
 
           <div class="form_text_ipt">
             <input name="username" type="text" placeholder="域账号">
@@ -61,7 +61,7 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="/uaa/js/jquery.min.js"></script>
-<script type="text/javascript" src="/uaa/js/common.js"></script>
+<script type="text/javascript" src="/sso-server/js/jquery.min.js"></script>
+<script type="text/javascript" src="/sso-server/js/common.js"></script>
 </body>
 </html>
