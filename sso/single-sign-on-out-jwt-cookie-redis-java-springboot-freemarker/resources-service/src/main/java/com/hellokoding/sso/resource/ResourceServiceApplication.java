@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @author litz-a
  */
 @SpringBootApplication
-public class WebApplication {
+public class ResourceServiceApplication {
 
   @Value("${services.auth}")
   private String authService;
@@ -27,7 +27,7 @@ public class WebApplication {
   }
 
   public static void main(String[] args) throws Exception {
-    SpringApplication.run(WebApplication.class, args);
+    SpringApplication.run(ResourceServiceApplication.class, args);
   }
 }
 
