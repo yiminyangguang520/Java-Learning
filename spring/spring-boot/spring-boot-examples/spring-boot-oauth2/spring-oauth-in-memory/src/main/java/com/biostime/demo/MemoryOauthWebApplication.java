@@ -3,10 +3,7 @@ package com.biostime.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -16,50 +13,51 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
 
+/**
+ * @author litz-a
+ */
 @EnableResourceServer
 @SpringBootApplication
 @RestController
 public class MemoryOauthWebApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MemoryOauthWebApplication.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(MemoryOauthWebApplication.class, args);
+  }
+
+  @RequestMapping("/")
+  public String home() {
+    return "Hello World";
+  }
+
+  @Configuration
+  @EnableAuthorizationServer
+  protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+      endpoints.authenticationManager(authenticationManager);
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World";
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+      oauthServer.allowFormAuthenticationForClients();
     }
 
-    @Configuration
-    @EnableAuthorizationServer
-    protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
-
-        @Autowired
-        private AuthenticationManager authenticationManager;
-        @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-            endpoints.authenticationManager(authenticationManager);
-        }
-
-        @Override
-        public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-            oauthServer.allowFormAuthenticationForClients();
-        }
-
-        @Override
-        public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients.inMemory()
-                    .withClient("in-memory-oauth")
-                    .authorizedGrantTypes("client_credentials", "password")
-                    .authorities("ROLE_CLIENT")
-                    .scopes("read")
-                    .resourceIds("in-memory-oauth2-resource")
-                    .secret("BT_2016@").accessTokenValiditySeconds(20);
-        }
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+      clients.inMemory()
+          .withClient("in-memory-oauth")
+          .authorizedGrantTypes("client_credentials", "password")
+          .authorities("ROLE_CLIENT")
+          .scopes("read")
+          .resourceIds("in-memory-oauth2-resource")
+          .secret("BT_2016@").accessTokenValiditySeconds(20);
     }
+  }
 }

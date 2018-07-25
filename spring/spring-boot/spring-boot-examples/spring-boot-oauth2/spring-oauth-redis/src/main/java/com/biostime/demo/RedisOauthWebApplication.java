@@ -22,40 +22,43 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RedisOauthWebApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(RedisOauthWebApplication.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(RedisOauthWebApplication.class, args);
+  }
+
+  @RequestMapping("/")
+  public String home() {
+    return "Hello World";
+  }
+
+  @Configuration
+  @EnableAuthorizationServer
+  protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private RedisConnectionFactory connectionFactory;
+
+    @Autowired
+    private RedisClientDetailsService clientDetailsService;
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+      RedisTokenStore tokenStore = new RedisTokenStore(connectionFactory);
+      tokenStore.setPrefix("spring:oauth2:");
+      endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore);
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World";
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+      oauthServer.allowFormAuthenticationForClients();
     }
 
-    @Configuration
-    @EnableAuthorizationServer
-    protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
-
-        @Autowired
-        private AuthenticationManager authenticationManager;
-        @Autowired
-        private RedisConnectionFactory connectionFactory;
-        @Autowired
-        private RedisClientDetailsService clientDetailsService;
-        @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-            RedisTokenStore tokenStore = new RedisTokenStore(connectionFactory);
-            tokenStore.setPrefix("spring:oauth2:");
-            endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore);
-        }
-
-        @Override
-        public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-            oauthServer.allowFormAuthenticationForClients();
-        }
-
-        @Override
-        public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients.withClientDetails(clientDetailsService).build();
-        }
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+      clients.withClientDetails(clientDetailsService).build();
     }
+  }
 }

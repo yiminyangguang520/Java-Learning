@@ -1,5 +1,6 @@
 package com.biostime.demo;
 
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,53 +16,52 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
-
 
 @EnableResourceServer
 @SpringBootApplication
 @RestController
 public class JdbcOauthWebApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(JdbcOauthWebApplication.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(JdbcOauthWebApplication.class, args);
+  }
+
+  @RequestMapping("/")
+  public String home() {
+    return "Hello World";
+  }
+
+  @Configuration
+  @EnableAuthorizationServer
+  protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private DataSource dataSource;
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+      endpoints.authenticationManager(authenticationManager).tokenStore(new JdbcTokenStore(dataSource)).approvalStoreDisabled();
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World";
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+      oauthServer.allowFormAuthenticationForClients();
     }
 
-    @Configuration
-    @EnableAuthorizationServer
-    protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+      /*   jdbc管理*/
+      /*  clients.jdbc(dataSource).build();*/
 
-        @Autowired
-        private AuthenticationManager authenticationManager;
-        @Autowired
-        private DataSource dataSource;
-        @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-            endpoints.authenticationManager(authenticationManager).tokenStore(new JdbcTokenStore(dataSource)).approvalStoreDisabled();
-        }
-
-        @Override
-        public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-            oauthServer.allowFormAuthenticationForClients();
-        }
-
-        @Override
-        public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            /*   jdbc管理*/
-          /*  clients.jdbc(dataSource).build();*/
-
-            /*第一次初始化使用*/
-            clients.jdbc(dataSource).withClient("jdbc-oauth")
-            .authorizedGrantTypes("client_credentials", "password")
-            .authorities("ROLE_CLIENT")
-            .scopes("read")
-            .resourceIds("jdbc-oauth2-resource")
-            .secret("BT_2016@").accessTokenValiditySeconds(20);
-        }
+      /*第一次初始化使用*/
+      clients.jdbc(dataSource).withClient("jdbc-oauth")
+          .authorizedGrantTypes("client_credentials", "password")
+          .authorities("ROLE_CLIENT")
+          .scopes("read")
+          .resourceIds("jdbc-oauth2-resource")
+          .secret("BT_2016@").accessTokenValiditySeconds(20);
     }
+  }
 }
