@@ -2,6 +2,10 @@ auth-server: http://localhost:8081/authserver
 resource-server: http://localhost:8082/resource
 server:
   port: 8080
+  servlet:
+    session:
+      cookie:
+        name: ui
 security:
   oauth2:
     client:
