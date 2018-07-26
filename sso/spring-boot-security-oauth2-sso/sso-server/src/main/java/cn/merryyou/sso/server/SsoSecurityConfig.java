@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,6 +21,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
  * @author zlf
  * @since 1.0
  */
+@Order(1)
 @Configuration
 public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -61,6 +63,7 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
             "/**/*.png",
             "/**/*.woff2",
             "/oauth/*",
+            "/user/*",
             "/login",
             "/exit"
         )

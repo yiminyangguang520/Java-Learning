@@ -1,16 +1,37 @@
-auth-server: http://demo.baomidou.com:8082/sso-server
+auth-server: http://demo.baomidou.com:8082/sso-server # sso-server地址
+
 server:
   port: 8084
   servlet:
     context-path: /client2
+    session:
+      cookie:
+        name: auth_session
+
 security:
   oauth2:
     client:
       client-id: merryyou2
       client-secret: merryyousecrect2
-      user-authorization-uri: ${auth-server}/oauth/authorize
-      access-token-uri: ${auth-server}/oauth/token
-      registered-redirect-uri: http://xxlssoclient2.com:8084/client2
+      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
+#      registered-redirect-uri: http://xxlssoclient1.com:8083/client1
+#      scope: all,read,write
+#      use-current-uri: false
+#      authentication-scheme: form
     resource:
-      jwt:
-        key-uri: ${auth-server}/oauth/token_key
+      token-info-uri: ${auth-server}/oauth/check_token
+#      user-info-uri: ${auth-server}/user
+#      prefer-token-info: true # 如果同时配置了token-info-uri 和 user-info-uri，这个现象设置使用哪个取验证授权
+#      jwt:
+#        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+
+
+logging:
+  level:
+    org.springframework.security: Debug
+
+
+spring:
+  thymeleaf:
+    cache: false

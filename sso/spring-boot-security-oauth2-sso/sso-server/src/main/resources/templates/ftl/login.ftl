@@ -21,12 +21,12 @@
         <form action="/sso-server/authentication/form" method="post">
 
           <div class="form_text_ipt">
-            <input name="username" type="text" placeholder="域账号">
+            <input name="username" type="text" placeholder="域账号" value="gehdev">
           </div>
           <div class="ececk_warning"><span>手机号/邮箱不能为空</span></div>
           <div class="_warning"><span>${message!''}</span></div>
           <div class="form_text_ipt">
-            <input name="password" type="password" placeholder="密码">
+            <input name="password" type="password" placeholder="密码" value="1qaz!QAZ">
           </div>
           <div class="ececk_warning"><span>密码不能为空</span></div>
         <#--<div class="form_check_ipt">-->

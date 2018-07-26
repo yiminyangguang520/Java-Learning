@@ -4,6 +4,9 @@ server:
   port: 8083
   servlet:
     context-path: /client1
+    session:
+      cookie:
+        name: auth_session
 
 security:
   oauth2:
@@ -12,10 +15,23 @@ security:
       client-secret: merryyousecrect1
       user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
       access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
-      registered-redirect-uri: http://xxlssoclient1.com:8083/client1
+#      registered-redirect-uri: http://xxlssoclient1.com:8083/client1
+#      scope: all,read,write
+#      use-current-uri: false
+#      authentication-scheme: form
     resource:
-      jwt:
-        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+      token-info-uri: ${auth-server}/oauth/check_token
+#      user-info-uri: ${auth-server}/user
+#      prefer-token-info: true # 如果同时配置了token-info-uri 和 user-info-uri，这个现象设置使用哪个取验证授权
+#      jwt:
+#        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+
+
 logging:
   level:
-    org.springframework: debug
+    org.springframework.security: Debug
+
+
+spring:
+  thymeleaf:
+    cache: false
