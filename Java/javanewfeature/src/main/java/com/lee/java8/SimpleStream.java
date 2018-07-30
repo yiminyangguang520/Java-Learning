@@ -3,6 +3,7 @@ package com.lee.java8;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
+import com.lee.java8.modle.Dish;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,7 +11,9 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Created by lee on 2016/10/18.
+ *
+ * @author lee
+ * @date 2016/10/18
  */
 public class SimpleStream {
 
@@ -27,8 +30,8 @@ public class SimpleStream {
         new Dish("prawns", false, 300, Dish.Type.FISH),
         new Dish("salmon", false, 450, Dish.Type.FISH));
 
-//        Stream<Dish> stream = menu.stream();
-//        stream.forEach(System.out::println);
+    Stream<Dish> stream = menu.stream();
+    stream.forEach(System.out::println);
 
     Stream<Dish> dishStream = Stream.of(new Dish("prawns", false, 300, Dish.Type.FISH),
         new Dish("salmon", false, 450, Dish.Type.FISH));
@@ -50,10 +53,10 @@ public class SimpleStream {
     System.out.println("=======================");
     System.out.println(result);
 
-/*        List<String> dishNamesByCollections = getDishNamesByCollections(menu);
-        System.out.println(dishNamesByCollections);*/
-      /*  List<String> dishNamesByStreams = getDishNamesByStream(menu);
-        System.out.println(dishNamesByStreams);*/
+    List<String> dishNamesByCollections = getDishNamesByCollections(menu);
+    System.out.println(dishNamesByCollections);
+    List<String> dishNamesByStreams = getDishNamesByStream(menu);
+    System.out.println(dishNamesByStreams);
 
   }
 

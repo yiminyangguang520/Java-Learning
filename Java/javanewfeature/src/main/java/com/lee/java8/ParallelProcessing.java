@@ -13,9 +13,9 @@ public class ParallelProcessing {
 
   public static void main(String[] args) {
     System.out.println("The best process time(normalAdd)=>" + measureSumPerformance(ParallelProcessing::normalAdd, 100_000_000) + " MS");
-//        System.out.println("The best process time(iterateStream)=>" + measureSumPerformance(ParallelProcessing::iterateStream, 10_000_000) + " MS");
-    //System.out.println("The best process time(parallelStream)=>" + measureSumPerformance(ParallelProcessing::parallelStream, 10_000_000) + " MS");
-//        System.out.println("The best process time(parallelStream2)=>" + measureSumPerformance(ParallelProcessing::parallelStream2, 10_000_000) + " MS");
+    System.out.println("The best process time(iterateStream)=>" + measureSumPerformance(ParallelProcessing::iterateStream, 10_000_000) + " MS");
+    System.out.println("The best process time(parallelStream)=>" + measureSumPerformance(ParallelProcessing::parallelStream, 10_000_000) + " MS");
+    System.out.println("The best process time(parallelStream2)=>" + measureSumPerformance(ParallelProcessing::parallelStream2, 10_000_000) + " MS");
     System.out.println("The best process time(parallelStream3)=>" + measureSumPerformance(ParallelProcessing::parallelStream3, 100_000_000) + " MS");
   }
 
@@ -25,7 +25,7 @@ public class ParallelProcessing {
       long startTimestamp = System.currentTimeMillis();
       long result = adder.apply(limit);
       long duration = System.currentTimeMillis() - startTimestamp;
-//            System.out.println("The result of sum=>" + result);
+      System.out.println("The result of sum=>" + result);
       if (duration < fastest) {
         fastest = duration;
       }

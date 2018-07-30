@@ -8,6 +8,7 @@ package com.lee.java8;
 
 import static com.lee.java8.CollectorsAction.menu;
 
+import com.lee.java8.modle.Dish;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.LinkedList;

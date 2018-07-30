@@ -1,5 +1,8 @@
 package com.lee.java8;
 
+import com.lee.java8.modle.Car;
+import com.lee.java8.modle.Insurance;
+import com.lee.java8.modle.Person;
 import java.util.Optional;
 
 /***************************************

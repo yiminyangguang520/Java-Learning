@@ -2,6 +2,7 @@ package com.lee.java8;
 
 import static java.util.stream.Collectors.toList;
 
+import com.lee.java8.modle.Dish;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

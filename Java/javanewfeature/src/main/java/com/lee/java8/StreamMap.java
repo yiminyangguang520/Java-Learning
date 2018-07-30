@@ -1,5 +1,6 @@
 package com.lee.java8;
 
+import com.lee.java8.modle.Dish;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -27,7 +28,7 @@ public class StreamMap {
     String[] words = {"Hello", "World"};
 
     //{h,e,l,l,o},{W,o,r,l,d}
-    Stream<String[]> stream = Arrays.stream(words).map(w -> w.split(""));//Stream<String[]>
+    Stream<String[]> stream = Arrays.stream(words).map(w -> w.split(""));
 
     //H,e,l,l,o,W,o,r,l,d
     Stream<String> stringStream = stream.flatMap(Arrays::stream);
