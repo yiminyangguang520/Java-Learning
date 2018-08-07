@@ -1,0 +1,19 @@
+app:
+  name: springboot-jwt-demo
+
+jwt:
+  header: Authorization
+  expires_in: 300 # 5 minutes
+  mobile_expires_in: 600 # 10 minutes
+  secret: queenvictoria
+
+spring:
+  jpa:
+    hibernate:
+      # possible values: validate | update | create | create-drop
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/myDatabase?autoReconnect=true&characterEncoding=utf8&useSSL=false
+    username: breakpad
+    password: 1qaz2wsx!@#
+    driver-class-name: com.mysql.jdbc.Driver
