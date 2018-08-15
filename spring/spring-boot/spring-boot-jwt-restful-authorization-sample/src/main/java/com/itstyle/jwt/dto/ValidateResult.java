@@ -1,4 +1,4 @@
-package com.itstyle.jwt.vo;
+package com.itstyle.jwt.dto;
 
 import io.jsonwebtoken.Claims;
 import lombok.Getter;

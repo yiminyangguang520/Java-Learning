@@ -1,4 +1,4 @@
-package com.itstyle.jwt.vo;
+package com.itstyle.jwt.dto;
 
 /**
  * @author litz-a

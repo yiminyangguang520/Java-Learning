@@ -1,16 +1,16 @@
 package com.itstyle.jwt.interceptor;
 
+import com.alibaba.fastjson.JSON;
 import com.itstyle.jwt.constant.Constant;
 import com.itstyle.jwt.util.JwtUtils;
-import com.itstyle.jwt.vo.ResponseModel;
-import com.itstyle.jwt.vo.ResultStatus;
-import com.itstyle.jwt.vo.ValidateResult;
+import com.itstyle.jwt.dto.ResponseModel;
+import com.itstyle.jwt.dto.ResultStatus;
+import com.itstyle.jwt.dto.ValidateResult;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.method.HandlerMethod;
@@ -28,12 +28,7 @@ public class SysInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
     if (handler instanceof HandlerMethod) {
-      String authHeader = request.getHeader("token");
-      if (StringUtils.isEmpty(authHeader)) {
-        log.info("验证失败");
-        print(response, ResponseModel.error(ResultStatus.TOKEN_NOT_EXIST));
-        return false;
-      } else {
+      String authHeader = request.getHeader(Constant.TOKEN_HEADER);
       ValidateResult validateResult = JwtUtils.validateJWT(authHeader);
       if (validateResult.isSuccess()) {
         return true;
@@ -52,7 +47,6 @@ public class SysInterceptor implements HandlerInterceptor {
         }
         return false;
       }
-      }
     }
     return true;
   }
@@ -63,7 +57,7 @@ public class SysInterceptor implements HandlerInterceptor {
       response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
       response.setHeader("Cache-Control", "no-cache, must-revalidate");
       PrintWriter writer = response.getWriter();
-      writer.write(message.toString());
+      writer.write(JSON.toJSONString(message));
       writer.flush();
       writer.close();
     } catch (IOException e) {
@@ -83,5 +77,6 @@ public class SysInterceptor implements HandlerInterceptor {
   @Override
   public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
       throws Exception {
+
   }
 }  

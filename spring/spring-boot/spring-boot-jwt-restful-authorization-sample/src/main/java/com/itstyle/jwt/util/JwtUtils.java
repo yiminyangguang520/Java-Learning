@@ -1,7 +1,7 @@
 package com.itstyle.jwt.util;
 
 import com.itstyle.jwt.constant.Constant;
-import com.itstyle.jwt.vo.ValidateResult;
+import com.itstyle.jwt.dto.ValidateResult;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtBuilder;
@@ -22,7 +22,7 @@ public class JwtUtils {
   /**
    * 签发JWT
    * @param id 用户ID
-   * @param subject 可以是JSON数据 尽可能少
+   * @param subject 用户信息
    * @param ttlMillis
    * @return
    */
@@ -82,10 +82,5 @@ public class JwtUtils {
         .setSigningKey(secretKey)
         .parseClaimsJws(jwt)
         .getBody();
-  }
-
-  public static void main(String[] args) {
-    ValidateResult validateResult = validateJWT("");
-    System.out.println(validateResult.toString());
   }
 }

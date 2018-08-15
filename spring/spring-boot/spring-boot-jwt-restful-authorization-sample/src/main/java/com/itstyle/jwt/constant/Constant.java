@@ -62,7 +62,12 @@ public class Constant {
   public static final String AUTHORIZATION = "authorization";
 
   /**
-   * jwt issuer
+   * 存放Authorization的header字段
+   */
+  public static final String TOKEN_HEADER = "token";
+
+  /**
+   * jwt 签发者
    */
   public static final String JWT_ISSUER = "GSPP";
 }

@@ -1,4 +1,4 @@
-package com.itstyle.jwt.vo;
+package com.itstyle.jwt.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

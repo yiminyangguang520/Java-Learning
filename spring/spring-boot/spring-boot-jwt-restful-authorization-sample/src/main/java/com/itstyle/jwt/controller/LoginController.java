@@ -1,13 +1,10 @@
 package com.itstyle.jwt.controller;
 
-import com.itstyle.jwt.constant.Constant;
 import com.itstyle.jwt.constant.Domain;
 import com.itstyle.jwt.model.User;
 import com.itstyle.jwt.service.TokenManager;
 import com.itstyle.jwt.service.UserService;
-import com.itstyle.jwt.util.JwtUtils;
-import com.itstyle.jwt.vo.CustomResponse;
-import com.itstyle.jwt.vo.ResponseModel;
+import com.itstyle.jwt.dto.ResponseModel;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
