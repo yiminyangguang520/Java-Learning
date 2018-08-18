@@ -31,21 +31,24 @@ public class FileServiceImpl implements FileService {
 
   @Override
   public void removeFile(String id) {
-    fileRepository.delete(id);
+    fileRepository.deleteById(id);
   }
 
   @Override
-  public File getFileById(String id) {
-    return fileRepository.findOne(id);
+  public Optional<File> getFileById(String id) {
+    return fileRepository.findById(id);
   }
 
   @Override
   public List<File> listFilesByPage(int pageIndex, int pageSize) {
-    Sort sort = new Sort(Direction.DESC, "uploadDate");
-    Pageable pageable = new PageRequest(pageIndex, pageSize, sort);
+    Page<File> page = null;
+    List<File> list = null;
 
-    Page<File> page = fileRepository.findAll(pageable);
-    List<File> list = page.getContent();
+    Sort sort = new Sort(Direction.DESC, "uploadDate");
+    Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
+
+    page = fileRepository.findAll(pageable);
+    list = page.getContent();
     return list;
   }
 }

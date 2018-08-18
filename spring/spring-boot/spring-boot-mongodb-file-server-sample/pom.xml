@@ -3,15 +3,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.waylau</groupId>
-  <artifactId>mongodb-file-server</artifactId>
+  <groupId>com.lee</groupId>
+  <artifactId>spring-boot-mongodb-file-server-sample</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
+
+  <name>spring-boot-mongodb-file-server-sample</name>
+  <description>The first Spring Boot project</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.9.RELEASE</version>
+    <version>2.0.3.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
@@ -20,9 +24,10 @@
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>
     </dependency>
 
     <dependency>
@@ -32,17 +37,13 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-mongodb</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
     <dependency>
@@ -64,4 +65,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>

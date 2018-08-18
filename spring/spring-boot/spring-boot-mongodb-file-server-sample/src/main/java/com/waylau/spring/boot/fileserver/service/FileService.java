@@ -18,7 +18,7 @@ public interface FileService {
   /**
    * 保存文件
    * @param file
-   * @return
+   * @return File
    */
   File saveFile(File file);
 
@@ -33,7 +33,7 @@ public interface FileService {
    * @param id
    * @return
    */
-  File getFileById(String id);
+  Optional<File> getFileById(String id);
 
   /**
    * 分页查询，按上传时间降序

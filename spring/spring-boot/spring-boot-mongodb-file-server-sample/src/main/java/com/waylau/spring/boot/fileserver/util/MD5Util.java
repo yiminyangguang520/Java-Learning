@@ -21,7 +21,7 @@ public class MD5Util {
     MessageDigest md = MessageDigest.getInstance("MD5");
     byte[] dataBytes = new byte[1024];
 
-    int nread = 0;
+    int nread;
     while ((nread = is.read(dataBytes)) != -1) {
       md.update(dataBytes, 0, nread);
     }

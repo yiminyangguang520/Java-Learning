@@ -28,8 +28,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * @author litz-a
  * 允许所有域名访问
+ * @author litz-a
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @Controller
@@ -66,19 +66,17 @@ public class FileController {
   @GetMapping("files/{id}")
   @ResponseBody
   public ResponseEntity<Object> serveFile(@PathVariable String id) throws UnsupportedEncodingException {
-
-    File file = fileService.getFileById(id);
-
-    if (file != null) {
+    Optional<File> file = fileService.getFileById(id);
+    if (file.isPresent()) {
       return ResponseEntity.ok()
-          .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; fileName=" + new String(file.getName().getBytes("utf-8"), "ISO-8859-1"))
+          .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; fileName=" + new String(file.get().getName().getBytes("utf-8"), "ISO-8859-1"))
           .header(HttpHeaders.CONTENT_TYPE, "application/octet-stream")
-          .header(HttpHeaders.CONTENT_LENGTH, file.getSize() + "").header("Connection", "close")
-          .body(file.getContent().getData());
+          .header(HttpHeaders.CONTENT_LENGTH, file.get().getSize() + "")
+          .header("Connection", "close")
+          .body(file.get().getContent().getData());
     } else {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
     }
-
   }
 
   /**
@@ -87,16 +85,17 @@ public class FileController {
   @GetMapping("/view/{id}")
   @ResponseBody
   public ResponseEntity<Object> serveFileOnline(@PathVariable String id) {
-    File file = fileService.getFileById(id);
-    if (file != null) {
+    Optional<File> file = fileService.getFileById(id);
+    if (file.isPresent()) {
       return ResponseEntity.ok()
-          .header(HttpHeaders.CONTENT_DISPOSITION, "fileName=\"" + file.getName() + "\"")
-          .header(HttpHeaders.CONTENT_TYPE, file.getContentType())
-          .header(HttpHeaders.CONTENT_LENGTH, file.getSize() + "").header("Connection", "close")
-          .body(file.getContent().getData());
+          .header(HttpHeaders.CONTENT_DISPOSITION, "fileName=\"" + file.get().getName() + "\"")
+          .header(HttpHeaders.CONTENT_TYPE, file.get().getContentType())
+          .header(HttpHeaders.CONTENT_LENGTH, file.get().getSize() + "").header("Connection", "close")
+          .body(file.get().getContent().getData());
     } else {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
     }
+
   }
 
   /**
@@ -127,7 +126,7 @@ public class FileController {
   @PostMapping("/upload")
   @ResponseBody
   public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
-    File returnFile = null;
+    File returnFile;
     try {
       File f = new File(file.getOriginalFilename(), file.getContentType(), file.getSize(),
           new Binary(file.getBytes()));
@@ -135,12 +134,10 @@ public class FileController {
       returnFile = fileService.saveFile(f);
       String path = "//" + serverAddress + ":" + serverPort + "/view/" + returnFile.getId();
       return ResponseEntity.status(HttpStatus.OK).body(path);
-
     } catch (IOException | NoSuchAlgorithmException ex) {
       ex.printStackTrace();
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
     }
-
   }
 
   /**
