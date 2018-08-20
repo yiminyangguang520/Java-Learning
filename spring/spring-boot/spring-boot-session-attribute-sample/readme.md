@@ -1,0 +1,1 @@
+https://grokonez.com/spring-framework/spring-boot/spring-sessionattribute-annotation-spring-mvc
