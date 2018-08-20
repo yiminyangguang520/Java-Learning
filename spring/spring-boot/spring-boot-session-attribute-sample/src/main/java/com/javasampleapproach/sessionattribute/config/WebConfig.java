@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 @ComponentScan("com.javasampleapproach.sessionattribute")
-public class AppConfig implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
 
   @Autowired
   CounterInterceptor counterInterceptor;
