@@ -1,0 +1,33 @@
+server:                  #配置server
+  tomcat:       #springboot乱码解决
+    uri-encoding: UTF-8
+  port: 8091
+
+spring:
+  http:       #springboot乱码解决
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: HTML5
+  application:
+    name: dubbo-consumer
+
+dubbo:
+  application:
+    id: dubbo-consumer
+    name: dubbo-consumer
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20880
+  registry:
+    address: zookeeper://localhost:2181
+    timeout: 100000
+
+demo:
+  service:
+    version: 1.0.0
