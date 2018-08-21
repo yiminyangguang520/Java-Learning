@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.javasampleapproach</groupId>
-  <artifactId>spring-boot-form-custom-validation-sample</artifactId>
+  <artifactId>spring-form-validation-sample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>spring-boot-form-custom-validation-sample</name>
-  <description>Demo Project for Spring Form Custom Validation</description>
+  <name>spring-form-validation-sample</name>
+  <description>Demo Project for Spring Form Validation</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -43,9 +43,8 @@
     </dependency>
 
     <dependency>
-      <groupId>commons-validator</groupId>
-      <artifactId>commons-validator</artifactId>
-      <version>1.6</version>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
     </dependency>
 
     <dependency>
