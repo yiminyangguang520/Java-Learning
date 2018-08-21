@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <bean id="customer1_1" class="com.javasampleapproach.beanscope.Customer">
+    <property name="name" ref="name1"/>
+  </bean>
+
+  <bean id="customer1_2" class="com.javasampleapproach.beanscope.Customer">
+    <property name="name" ref="name1"/>
+  </bean>
+
+  <!-- <<bean id="name1" class="com.javasampleapproach.beanscope.Name"> The
+    following is equivalent, though redundant (singleton scope is the default) -->
+  <bean id="name1" class="com.javasampleapproach.beanscope.Name" scope="singleton">
+    <property name="firstName" value="Jack"/>
+    <property name="lastName" value="Smith"/>
+  </bean>
+
+  <bean id="customer2_1" class="com.javasampleapproach.beanscope.Customer">
+    <property name="name" ref="name2"/>
+  </bean>
+
+  <bean id="customer2_2" class="com.javasampleapproach.beanscope.Customer">
+    <property name="name" ref="name2"/>
+  </bean>
+
+  <bean id="name2" class="com.javasampleapproach.beanscope.Name" scope="prototype">
+    <property name="firstName" value="Adam"/>
+    <property name="lastName" value="Johnson"/>
+  </bean>
+
+</beans>

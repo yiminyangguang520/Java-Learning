@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean name="customer" class="com.javasampleapproach.beanpostprocessors.bean.Customer">
+    <property name="name" value="Jack"/>
+  </bean>
+
+  <bean name="customerService" init-method="customInitBean" destroy-method="customDestroyBean"
+    class="com.javasampleapproach.beanpostprocessors.service.CustomerService">
+    <property name="customer" ref="customer"/>
+  </bean>
+
+  <!--
+   @PostConstruct and @PreDestroy annotations which are part of javax.annotation package will be annotated to methods:
+   postConstruct() and preDestroy(). To use those annotations,
+   we must add bean for org.springframework.context.annotation.CommonAnnotationBeanPostProcessor in Bean Configuration File
+   -->
+  <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+  <bean class="com.javasampleapproach.beanpostprocessors.bean.CustomBeanPostProcessor"/>
+</beans>
