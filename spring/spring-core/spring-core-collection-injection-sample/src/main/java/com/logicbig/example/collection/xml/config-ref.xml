@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean
+    id="testBean"
+    class="com.logicbig.example.collection.xml.ListInjectionRefExample$TestBean">
+    <constructor-arg>
+      <list value-type="logicbig.example.collection.collection.xml.ListInjectionRefExample$RefBean">
+        <ref bean="refBean1"/>
+        <ref bean="refBean2"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  <bean
+    id="refBean1"
+    class="com.logicbig.example.collection.xml.ListInjectionRefExample$RefBean">
+    <property
+      name="str"
+      value="ref bean one str"/>
+  </bean>
+
+  <bean
+    id="refBean2"
+    class="com.logicbig.example.collection.xml.ListInjectionRefExample$RefBean">
+    <property
+      name="str"
+      value="ref bean two str"/>
+  </bean>
+</beans>

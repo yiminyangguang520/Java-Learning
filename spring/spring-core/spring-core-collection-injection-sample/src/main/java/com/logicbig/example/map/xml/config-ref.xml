@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean
+    id="testBean"
+    class="com.logicbig.example.map.xml.MapInjectionRefExample$TestBean">
+    <constructor-arg>
+      <map
+        key-type="java.lang.String"
+        value-type="com.logicbig.example.map.xml.MapInjectionRefExample$RefBean">
+        <entry
+          key="one"
+          value-ref="refBean1"/>
+        <entry
+          key="two"
+          value-ref="refBean2"/>
+
+      </map>
+    </constructor-arg>
+  </bean>
+
+  <bean
+    id="refBean1"
+    class="com.logicbig.example.map.xml.MapInjectionRefExample$RefBean">
+    <property
+      name="str"
+      value="ref bean one str"/>
+  </bean>
+
+  <bean
+    id="refBean2"
+    class="com.logicbig.example.map.xml.MapInjectionRefExample$RefBean">
+    <property
+      name="str"
+      value="ref bean two str"/>
+  </bean>
+</beans>
