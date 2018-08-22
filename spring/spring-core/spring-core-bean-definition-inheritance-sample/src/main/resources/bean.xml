@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <bean id="customerService"
+    class="com.javasampleapproach.beaninheritance.service.CustomerService">
+    <property name="welcomeMessage" value="Hello!"/>
+    <property name="customerName" value="Jack."/>
+  </bean>
+
+  <bean id="anotherCustomerService" parent="customerService">
+    <property name="welcomeMessage" value="Hi...!"/>
+  </bean>
+
+  <bean id="telephoneService" class="com.javasampleapproach.beaninheritance.service.SpecificService" parent="customerService">
+    <property name="welcomeMessage" value="Hello...!"/>
+    <property name="serviceName" value="Telephone Service."/>
+  </bean>
+
+  <bean id="beanWelcomeTemplate" abstract="true">
+    <property name="welcomeMessage" value="Hello! Welcome to "/>
+  </bean>
+
+  <bean id="consultationService" class="com.javasampleapproach.beaninheritance.service.SpecificService" parent="beanWelcomeTemplate">
+    <property name="serviceName" value="Consultation Service."/>
+  </bean>
+
+</beans>

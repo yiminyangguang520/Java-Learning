@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <bean id="req" class="org.websparrow.beans.RequiredType">
+
+    <property name="empName">
+      <util:list list-class="java.util.Vector">
+        <value>Atul</value>
+        <value>Sandeep</value>
+      </util:list>
+    </property>
+
+    <property name="empId">
+      <util:set set-class="java.util.TreeSet">
+        <value>WSO1101</value>
+        <value>WSO1201</value>
+      </util:set>
+    </property>
+
+    <property name="empIdName">
+      <util:map map-class="java.util.Hashtable">
+        <entry key="WSO1" value="Vipul"/>
+        <entry key="WSO2" value="Mukul"/>
+        <entry key="WSO3" value="Ankita"/>
+      </util:map>
+    </property>
+
+  </bean>
+
+</beans>

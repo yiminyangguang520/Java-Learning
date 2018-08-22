@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <bean id="customerService" class="com.javasampleapproach.injectcollections.service.CustomerService">
+
+    <property name="serviceSet">
+      <set>
+        <value>Telephone Service</value>
+        <value>Consultation Service</value>
+      </set>
+    </property>
+
+    <property name="channelServiceMap">
+      <map>
+        <entry key="1" value="Telephone Service"/>
+        <entry key="2" value="Consultation Service"/>
+      </map>
+    </property>
+
+    <property name="customerList">
+      <list>
+        <ref bean="customer1"/>
+        <ref bean="customer2"/>
+      </list>
+    </property>
+
+    <property name="language">
+      <map>
+        <entry key="EN" value="English"/>
+        <entry key="FR" value="French"/>
+        <entry key="EN_FR" value-ref="bilingualENFR"/>
+      </map>
+    </property>
+
+  </bean>
+
+  <bean id="customer1" class="com.javasampleapproach.injectcollections.model.Customer">
+    <property name="id" value="1"/>
+    <property name="firstName" value="Jack"/>
+    <property name="lastName" value="Smith"/>
+  </bean>
+
+  <bean id="customer2" class="com.javasampleapproach.injectcollections.model.Customer">
+    <property name="id" value="2"/>
+    <property name="firstName" value="Adam"/>
+    <property name="lastName" value="Johnson"/>
+  </bean>
+
+  <bean id="bilingualENFR" class="com.javasampleapproach.injectcollections.model.Bilingual">
+    <property name="firstLanguage" value="English"/>
+    <property name="secondLanguage" value="French"/>
+  </bean>
+
+</beans>
