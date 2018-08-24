@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <classPathEntry location="C:\Users\litz-a\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
+  <context id="generate" targetRuntime="MyBatis3">
+
+    <!-- 注释 -->
+    <commentGenerator>
+      <property name="suppressAllComments" value="false" /><!-- 是否取消注释 -->
+      <property name="suppressDate" value="false" />  <!-- 是否生成注释代时间戳 -->
+    </commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+      connectionURL="jdbc:mysql://localhost:3306/cache?generateSimpleParameterMetadata=true"
+      userId="breakpad" password="1qaz2wsx!@#"/>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!-- generate Model-->
+    <javaModelGenerator targetPackage="com.us.example.model"
+      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
+      <property name="enableSubPackages" value="true"/>
+      <!-- 是否针对string类型的字段在set的时候进行trim调用 -->
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <!-- generate xml -->
+    <sqlMapGenerator targetPackage="mapper"
+      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\resources">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <!-- generate Mapper -->
+    <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.us.example.dao"
+      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+    <table schema="" tableName="msg" alias="msg" domainObjectName="Message"
+      enableDeleteByExample="true" enableUpdateByExample="true"/>
+    <table schema="" tableName="sys_role" alias="role" domainObjectName="Role"
+      enableDeleteByExample="true" enableUpdateByExample="true"/>
+    <table schema="" tableName="sys_user" alias="user" domainObjectName="User"
+      enableDeleteByExample="true" enableUpdateByExample="true"/>
+    <table schema="" tableName="sys_permission" alias="permission" domainObjectName="Permission"
+      enableDeleteByExample="true" enableUpdateByExample="true"/>
+    <!--<table schema="" tableName="sys_permission_role" alias="permission_role" domainObjectName="Product"-->
+      <!--enableDeleteByExample="true" enableUpdateByExample="true"/>-->
+    <!--<table schema="" tableName="gcr_signature" alias="sig" domainObjectName="Signature"-->
+      <!--enableDeleteByExample="true" enableUpdateByExample="true"/>-->
+    <!--<table schema="" tableName="gcr_version" alias="ver" domainObjectName="Version"-->
+      <!--enableDeleteByExample="true" enableUpdateByExample="true"/>-->
+  </context>
+</generatorConfiguration>
