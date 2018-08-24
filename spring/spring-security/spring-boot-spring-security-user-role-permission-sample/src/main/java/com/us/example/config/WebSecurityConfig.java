@@ -12,9 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 /**
- *
- * @author yangyibo
- * @date 17/1/18
+ * @author litz-a
  */
 @Configuration
 @EnableWebSecurity

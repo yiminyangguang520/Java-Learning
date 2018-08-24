@@ -16,9 +16,7 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.stereotype.Service;
 
 /**
- *
- * @author yangyibo
- * @date 17/1/19
+ * @author litz-a
  */
 @Service
 public class CustomFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {

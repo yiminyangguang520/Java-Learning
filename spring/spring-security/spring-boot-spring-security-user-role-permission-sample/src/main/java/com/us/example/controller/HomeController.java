@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- *
- * @author yangyibo
- * @date 17/1/18
+ * @author litz-a
  */
 @Controller
 public class HomeController {

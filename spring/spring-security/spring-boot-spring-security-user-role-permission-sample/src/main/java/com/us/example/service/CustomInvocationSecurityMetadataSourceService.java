@@ -2,11 +2,9 @@ package com.us.example.service;
 
 import com.us.example.dao.PermissionMapper;
 import com.us.example.model.Permission;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,9 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Service;
 
 /**
- *
- * @author yangyibo
- * @date 17/1/19
+ * @author litz-a
  */
 @Service
 public class CustomInvocationSecurityMetadataSourceService implements FilterInvocationSecurityMetadataSource {
