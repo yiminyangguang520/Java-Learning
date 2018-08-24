@@ -1,13 +1,13 @@
 package com.us.example.service;
 
 import java.util.Collection;
-import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 /**
@@ -36,18 +36,22 @@ public class CustomAccessDecisionManager implements AccessDecisionManager {
     if (null == configAttributes || configAttributes.size() <= 0) {
       return;
     }
-    ConfigAttribute c;
-    String needRole;
-    for (Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
-      c = iter.next();
-      needRole = c.getAttribute();
-      for (GrantedAuthority ga : authentication.getAuthorities()) {
-        if (needRole.trim().equals(ga.getAuthority())) {
-          return;
-        }
-      }
+
+    List<String> needRoleList = configAttributes.stream()
+        .map(configAttribute -> configAttribute.getAttribute().trim())
+        .collect(Collectors.toList());
+
+    List<String> authorityList = authentication.getAuthorities().stream()
+        .map(grantedAuthority -> grantedAuthority.getAuthority())
+        .collect(Collectors.toList());
+
+    // 判断两个集合中是否有想等的元素
+    boolean result = needRoleList.stream()
+        .anyMatch(item -> authorityList.stream().anyMatch(item::equals));
+
+    if (!result) {
+      throw new AccessDeniedException("no right");
     }
-    throw new AccessDeniedException("no right");
   }
 
 
