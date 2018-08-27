@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Security</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <form action="#" class="form-signin">
+        <h2 class="form-signin-heading">Hello Spring Security</h2>
+        <h5 class="form-signin-heading content-adjust">Anyone can access this page</h5>
+        <div th:if="${session.user} != null">
+            <h5 class="form-signin-heading content-adjust">Your username is <span th:text="${session.user.username}"></span></h5>
+            <a href="/user/index" th:href="@{/user/index}" class="btn btn-success btn-block">To Security page</a>
+        </div>
+        <div th:if="${session.user} == null">
+            <a href="/index" th:href="@{/login}" class="btn btn-primary btn-block">To Login page</a>
+        </div>
+    </form>
+    <div th:fragment="logout" class="logout" th:if="${session.user} != null">
+        <form action="#" th:action="@{/logout}" method="post" class="form-signin">
+            <button class="btn btn-warning btn-block" type="submit">Log out</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

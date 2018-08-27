@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:security="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+       ">
+
+  <!--登录页面不进行安全校验-->
+  <security:http pattern="/login.html*" security="none"/>
+  <!--静态资源不进行安全校验-->
+  <security:http pattern="/static/**" security="none"/>
+
+
+  <!--定义用户详细信息类，用于获取用户信息-->
+  <bean id="userDetailService" class="com.lee.security.UserDetailsServiceImpl"/>
+
+  <!--资源元数据，获取某个资源（页面）可以被哪些角色访问-->
+  <bean id="securityMetadataSource" class="com.lee.security.SecurityMetadataSource"/>
+
+  <!--访问决策器，判定用户拥有的角色是否可以访问某个资源（页面）-->
+  <bean id="accessDecisionManager" class="com.lee.security.AccessDecisionManagerImpl"/>
+
+  <!--认证管理器，实现用户认证-->
+  <security:authentication-manager alias="authenticationManager">
+    <security:authentication-provider user-service-ref="userDetailService"/>
+  </security:authentication-manager>
+
+
+  <!--自定义过滤器-->
+  <bean id="securityFilter" class="com.lee.security.FilterSecurityInterceptor">
+    <property name="securityMetadataSource" ref="securityMetadataSource"/>
+    <property name="accessDecisionManager" ref="accessDecisionManager"/>
+    <property name="authenticationManager" ref="authenticationManager"/>
+  </bean>
+
+
+  <!--指定访问被拒时的页面-->
+  <security:http>
+    <!--访问拒绝页面-->
+    <security:access-denied-handler error-page="/denied.html"/>
+    <!--指定登录页面-->
+    <security:form-login login-page="/login.html"/>
+    <!--指定登出url和登出后的跳转页面-->
+    <security:logout invalidate-session="false" logout-success-url="/index.html" logout-url="/j_spring_security_logout"/>
+    <security:session-management>
+      <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
+    </security:session-management>
+    <!--添加自定义的过滤器-->
+    <security:custom-filter ref="securityFilter" before="FILTER_SECURITY_INTERCEPTOR"/>
+  </security:http>
+
+</beans>
