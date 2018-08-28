@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http
         .authorizeRequests()
           .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+          .antMatchers("/*.js").permitAll()
           .anyRequest().authenticated()
         .and()
         .formLogin()
