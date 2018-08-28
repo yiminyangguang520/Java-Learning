@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.us</groupId>
-  <artifactId>spring-boot-spring-security-user-role-permission-sample</artifactId>
+  <groupId>com.example</groupId>
+  <artifactId>spring-boot-spring-security-user-role-1-sample</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-  <name>spring-boot-spring-security-user-role-permission-sample</name>
-
+  
+  <name>spring-boot-spring-security-user-role-1-sample</name>
+  
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -37,6 +37,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
+
 
     <dependency>
       <groupId>org.thymeleaf.extras</groupId>
@@ -67,49 +68,17 @@
 
     <dependency>
       <groupId>org.apache.commons</groupId>
-      <artifactId>commons-collections4</artifactId>
-      <version>4.2</version>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
-
   </dependencies>
+
   <build>
     <plugins>
-
-      <!--&lt;!&ndash;打依赖包&ndash;&gt;-->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>2.3</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-
-      <plugin>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-maven-plugin</artifactId>
-        <configuration>
-          <configurationFile>src\main\resources\generator-config.xml</configurationFile>
-        </configuration>
-        <executions>
-          <execution>
-            <id>generate mybatis artifacts</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
+
 </project>
