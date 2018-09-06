@@ -1,5 +1,8 @@
 package com.wanari.customlogin.example.config.security.constant;
 
+/**
+ * @author litz-a
+ */
 public final class Roles {
 
   public static final String DETONATOR_ROLE = "DETONATOR";

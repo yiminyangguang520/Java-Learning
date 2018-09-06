@@ -5,3 +5,20 @@ This is an example project for my [blog post](http://leaks.wanari.com/2017/11/28
 ## Installation
 
 There is a Maven wrapper pushed to the repository so you can run the project with that file (`mvnw` or `mvnw.cmd`).
+
+## Test
+
+| post request                 | post body                                                   | response                                                     |
+| ---------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| http://localhost:8080/login  | {<br/>	"login": "detonator",
+	"password": "detonator"
+} | {<br/>    "login": "detonator",
+    "roles": [
+        "DETONATOR",
+        "USER"
+    ]
+} |
+| http://localhost:8080/logout | {<br/>	"login": "detonator",
+	"password": "detonator"
+} | "Bye!"                                                       |
+

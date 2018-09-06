@@ -1,0 +1,38 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /sso-server
+spring:
+  freemarker:
+    allow-request-override: false
+    allow-session-override: false
+    cache: true
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
+  redis:
+    host: 192.168.144.45
+    port: 6379
+    database: 1
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+    timeout: 5000
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth2?useUnicode=true&characterEncoding=utf8
+    username: breakpad
+    password: 1qaz2wsx!@#
+
+#logging:
+#  level:
+#    org.springframework: debug

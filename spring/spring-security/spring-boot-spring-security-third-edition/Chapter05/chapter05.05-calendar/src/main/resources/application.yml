@@ -1,0 +1,29 @@
+#------------------------------------------------------------------------------#
+# Application YAML #
+# inside ./src/main/resources/application.yml
+#------------------------------------------------------------------------------#
+debug: false
+
+spring:
+  ## Thymeleaf configuration:
+  thymeleaf:
+    cache: false
+    mode: HTML
+  resources:
+    cache:
+      period: 0ms
+
+  # MongoDB
+  data:
+    mongodb:
+      uri: mongodb://gcrapp:gcr1qaz2wsx@192.168.144.44:20000,192.168.144.45:20000,192.168.144.46:20000/gcrs
+
+# Turn off Security for Actuator:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+##---------------------------------------------------------------------------##
