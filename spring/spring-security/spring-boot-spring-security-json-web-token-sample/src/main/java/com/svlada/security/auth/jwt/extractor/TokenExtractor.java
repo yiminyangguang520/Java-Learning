@@ -9,5 +9,8 @@ package com.svlada.security.auth.jwt.extractor;
  */
 public interface TokenExtractor {
 
-  public String extract(String payload);
+  /**
+   * extract
+   */
+  String extract(String payload);
 }

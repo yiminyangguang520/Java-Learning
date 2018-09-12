@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
  * Aug 5, 2016
  */
 @Component
-@SuppressWarnings("unchecked")
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
   private final JwtSettings jwtSettings;

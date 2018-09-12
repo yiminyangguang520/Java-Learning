@@ -1,0 +1,48 @@
+<html ng-app="uploadApp">
+<head>
+  <meta charset="utf8"/>
+  <title>Document Upload</title>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body ng-controller="docController">
+<div class="container">
+  <div class="col-md-6">
+    <div class="row">
+      <h2>Upload Document</h2>
+      <table class="table table-bordered">
+        <tr>
+          <td><input type="file" class="custom-file-input" file-model="file"></td>
+
+        </tr>
+        <tr>
+          <td>
+            <button ng-click="upload()">Upload</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="doc in docList">
+          <td><a href="/doc/{{doc.id}}">{{doc.docName}}</a></td>
+          <td><a href="/doc/{{doc.id}}" target="_blank">Download</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="lib/plugin/jquery-2.2.1.min.js"></script>
+<script src="lib/plugin/bootstrap.min.js"></script>
+<script src="lib/plugin/angular.min.js"></script>
+<script src="documentService.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
