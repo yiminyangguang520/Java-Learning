@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   private CalendarUserRepository userRepository;
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 
     CalendarUser user = userRepository.findByEmail(username);

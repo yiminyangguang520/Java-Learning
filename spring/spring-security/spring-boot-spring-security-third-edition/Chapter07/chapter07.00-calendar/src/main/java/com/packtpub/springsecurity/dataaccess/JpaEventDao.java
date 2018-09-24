@@ -36,7 +36,7 @@ public class JpaEventDao implements EventDao {
   // --- EventService ---
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public Event getEvent(int eventId) {
     return repository.findById(eventId).get();
   }
@@ -66,7 +66,7 @@ public class JpaEventDao implements EventDao {
   }
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public List<Event> findForUser(final int userId) {
     Event example = new Event();
     CalendarUser cu = new CalendarUser();
@@ -77,7 +77,7 @@ public class JpaEventDao implements EventDao {
   }
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public List<Event> getEvents() {
     return repository.findAll();
   }

@@ -1,9 +1,12 @@
 package com.lee.resttemple.conf;
 
+import java.nio.charset.Charset;
+import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -14,7 +17,10 @@ public class RestTemplateConfig {
 
   @Bean
   public RestTemplate restTemplate(ClientHttpRequestFactory factory) {
-    return new RestTemplate(factory);
+    RestTemplate restTemplate = new RestTemplate(factory);
+    StringHttpMessageConverter converter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
+    restTemplate.getMessageConverters().add(0, converter);
+    return restTemplate;
   }
 
   @Bean

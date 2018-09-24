@@ -1,18 +1,34 @@
 package com.packtpub.springsecurity.repository;
 
 import com.packtpub.springsecurity.domain.PersistentLogin;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import java.util.Date;
 import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+/**
+ * @author litz-a
+ */
 public interface RememberMeTokenRepository extends JpaRepository<PersistentLogin, String> {
 
-    PersistentLogin findBySeries(String series);
-    List<PersistentLogin> findByUsername(String username);
+  /**
+   * findBySeries
+   * @param series
+   * @return
+   */
+  PersistentLogin findBySeries(String series);
 
-    Iterable<PersistentLogin> findByLastUsedAfter(Date expiration);
+  /**
+   * findByUsername
+   * @param username
+   * @return
+   */
+  List<PersistentLogin> findByUsername(String username);
+
+  /**
+   * findByLastUsedAfter
+   * @param expiration
+   * @return
+   */
+  Iterable<PersistentLogin> findByLastUsedAfter(Date expiration);
 
 } // The End...

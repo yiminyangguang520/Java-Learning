@@ -49,13 +49,13 @@ public class JpaCalendarUserDao implements CalendarUserDao {
   // --- CalendarUserDao methods ---
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public CalendarUser getUser(final int id) {
     return userRepository.findById(id).get();
   }
 
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public CalendarUser findUserByEmail(final String email) {
     if (email == null) {
       throw new IllegalArgumentException("email cannot be null");
@@ -69,7 +69,7 @@ public class JpaCalendarUserDao implements CalendarUserDao {
 
   // TODO FIXME Need to add a LIKE clause
   @Override
-  @Transactional(readOnly = true)
+  @Transactional(readOnly = true, rollbackFor = Exception.class)
   public List<CalendarUser> findUsersByEmail(final String email) {
     if (email == null) {
       throw new IllegalArgumentException("email cannot be null");

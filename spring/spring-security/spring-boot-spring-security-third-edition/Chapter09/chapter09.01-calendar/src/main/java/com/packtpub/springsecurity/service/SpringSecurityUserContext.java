@@ -4,6 +4,7 @@ import com.packtpub.springsecurity.domain.CalendarUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -29,7 +30,7 @@ public class SpringSecurityUserContext implements UserContext {
 
   @Autowired
   public SpringSecurityUserContext(final CalendarService calendarService,
-      final UserDetailsService userDetailsService) {
+      @Qualifier("CalendarUserDetailsService") final UserDetailsService userDetailsService) {
     if (calendarService == null) {
       throw new IllegalArgumentException("calendarService cannot be null");
     }

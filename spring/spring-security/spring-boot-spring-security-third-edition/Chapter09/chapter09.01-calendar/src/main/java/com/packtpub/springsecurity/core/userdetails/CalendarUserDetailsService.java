@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * @author Rob Winch
  * @see CalendarUserAuthenticationProvider
  */
-@Component
+@Component("CalendarUserDetailsService")
 public class CalendarUserDetailsService implements UserDetailsService {
 
   private final CalendarUserDao calendarUserDao;
