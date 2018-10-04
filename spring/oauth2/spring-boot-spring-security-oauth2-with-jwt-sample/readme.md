@@ -34,7 +34,7 @@ When a back end server receives a request with a JWT, the first thing it would d
 
 Following are key steps that will be performed while implementing JWT into Spring Framework.
 
-
+![img](https://cdn-images-1.medium.com/max/800/1*7W-KLiT30Bo9LNwVRvvEFQ.png)
 
 
 
@@ -52,7 +52,7 @@ If everything works as expected, our RESTful Spring Boot API will be up and runn
 
 When you clone the project from Github and import it into your favorite IDE, its structure will look similar to the following image. Here, I am using a screenshot from IntelliJ Community Edition IDE. Yours would look slightly different depending on the IDE you use.
 
-
+![img](https://cdn-images-1.medium.com/max/800/1*eKJ0dQQgtV_WPM5uALKPfg.png)
 
 
 
