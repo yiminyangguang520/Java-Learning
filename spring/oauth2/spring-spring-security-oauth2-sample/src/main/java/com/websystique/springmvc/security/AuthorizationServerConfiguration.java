@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -25,6 +26,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
   private TokenStore tokenStore;
 
   @Autowired
+  private PasswordEncoder passwordEncoder;
+
+  @Autowired
   private UserApprovalHandler userApprovalHandler;
 
   @Autowired
@@ -39,11 +43,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
         .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT")
         .scopes("read", "write", "trust")
-        .secret("secret")
-        //Access token is only valid for 2 minutes.
-        .accessTokenValiditySeconds(120)
-        //Refresh token is only valid for 10 minutes.
-        .refreshTokenValiditySeconds(600);
+        .secret(passwordEncoder.encode("secret"))
+        .accessTokenValiditySeconds(1200)//Access token is only valid for 2 minutes.
+        .refreshTokenValiditySeconds(6000);//Refresh token is only valid for 10 minutes.
   }
 
   @Override

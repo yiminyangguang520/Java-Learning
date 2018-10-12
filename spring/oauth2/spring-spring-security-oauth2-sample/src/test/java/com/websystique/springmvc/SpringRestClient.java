@@ -78,7 +78,6 @@ public class SpringRestClient {
   /*
    * Send a GET request to get list of all users.
    */
-  @SuppressWarnings({"unchecked", "rawtypes"})
   private static void listAllUsers(AuthTokenInfo tokenInfo) {
     Assert.notNull(tokenInfo, "Authenticate first please......");
 

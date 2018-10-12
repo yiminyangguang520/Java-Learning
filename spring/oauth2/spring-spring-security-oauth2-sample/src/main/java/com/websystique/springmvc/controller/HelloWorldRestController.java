@@ -29,7 +29,7 @@ public class HelloWorldRestController {
 
   //-------------------Retrieve All Users--------------------------------------------------------
 
-  @RequestMapping(value = "/user/", method = RequestMethod.GET)
+  @RequestMapping(value = "/user", method = RequestMethod.GET)
   public ResponseEntity<List<User>> listAllUsers() {
     List<User> users = userService.findAllUsers();
     if (users.isEmpty()) {
@@ -54,7 +54,7 @@ public class HelloWorldRestController {
 
   //-------------------Create a User--------------------------------------------------------
 
-  @RequestMapping(value = "/user/", method = RequestMethod.POST)
+  @RequestMapping(value = "/user", method = RequestMethod.POST)
   public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
     System.out.println("Creating User " + user.getName());
 
@@ -109,7 +109,7 @@ public class HelloWorldRestController {
 
   //------------------- Delete All Users --------------------------------------------------------
 
-  @RequestMapping(value = "/user/", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/user", method = RequestMethod.DELETE)
   public ResponseEntity<User> deleteAllUsers() {
     System.out.println("Deleting All Users");
 

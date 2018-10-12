@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
@@ -24,13 +25,16 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   @Autowired
+  private PasswordEncoder passwordEncoder;
+
+  @Autowired
   private ClientDetailsService clientDetailsService;
 
   @Autowired
   public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
     auth.inMemoryAuthentication()
-        .withUser("bill").password("abc123").roles("ADMIN").and()
-        .withUser("bob").password("abc123").roles("USER");
+        .withUser("bill").password(passwordEncoder.encode("abc123")).roles("ADMIN").and()
+        .withUser("bob").password(passwordEncoder.encode("abc123")).roles("USER");
   }
 
   @Override
