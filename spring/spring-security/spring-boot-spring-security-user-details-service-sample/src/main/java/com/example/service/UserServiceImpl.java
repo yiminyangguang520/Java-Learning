@@ -17,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,7 +36,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
   private RoleRepository roleRepository;
 
   @Autowired
-  private BCryptPasswordEncoder bCryptPasswordEncoder;
+  private PasswordEncoder passwordEncoder;
 
   @Override
   public User findUserByEmail(String email) {
@@ -44,8 +45,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
   @Override
   public void saveUser(User user) {
-    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
     user.setActive(true);
+
+    // 采用h2数据库时,需要在role表中首先创建一条ADMIN记录,为了避免启动后手动创建,故在注册用户时,临时创建一条ADMIN记录
+    Role role = new Role();
+    role.setRole("ADMIN");
+    roleRepository.save(role);
+
     Role userRole = roleRepository.findByRole("ADMIN");
     user.setRoles(new HashSet<>(Arrays.asList(userRole)));
     userRepository.save(user);

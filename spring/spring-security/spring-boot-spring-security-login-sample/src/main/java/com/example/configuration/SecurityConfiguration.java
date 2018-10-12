@@ -46,6 +46,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests()
         .antMatchers("/").permitAll()
+        .antMatchers("/console/**").permitAll()
         .antMatchers("/login").permitAll()
         .antMatchers("/registration").permitAll()
         .antMatchers("/admin/**").hasAuthority("ADMIN")
@@ -65,6 +66,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .logoutSuccessUrl("/");
 
     http.exceptionHandling().accessDeniedPage("/access-denied");
+    
+        http.headers().frameOptions().disable();
+
   }
 
   @Override

@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
@@ -21,7 +22,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   @Autowired
-  private BCryptPasswordEncoder bCryptPasswordEncoder;
+  private PasswordEncoder passwordEncoder;
 
   @Autowired
   @Qualifier("userService")
@@ -31,7 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth
         .userDetailsService(userDetailsService)
-        .passwordEncoder(bCryptPasswordEncoder);
+        .passwordEncoder(passwordEncoder);
   }
 
   @Override
@@ -39,6 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests()
         .antMatchers("/").permitAll()
+        .antMatchers("/h2-console/**").permitAll()
         .antMatchers("/login").permitAll()
         .antMatchers("/registration").permitAll()
         .antMatchers("/admin/**").hasAuthority("ADMIN")
@@ -55,20 +57,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     http.logout()
         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-        .logoutSuccessUrl("/");
+        .logoutSuccessUrl("/")
+        .deleteCookies("JSESSIONID")
+        .invalidateHttpSession(true)
+        .clearAuthentication(true);
 
     http.exceptionHandling().accessDeniedPage("/access-denied");
+
+    http.headers().frameOptions().disable();
   }
 
   @Override
   public void configure(WebSecurity web) throws Exception {
     web
         .ignoring()
-        .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+        .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/*.js");
   }
 
   @Bean
-  public BCryptPasswordEncoder passwordEncoder() {
+  public PasswordEncoder passwordEncoder() {
     BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
     return bCryptPasswordEncoder;
   }

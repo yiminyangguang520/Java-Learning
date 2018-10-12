@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security.xsd">
+
+  <security:http>
+    <security:access-denied-handler error-page="/403page"/>
+    <security:intercept-url pattern="/mathematician**" access="ROLE_MATHEMATICIANS"/>
+    <security:intercept-url pattern="/chemist**" access="ROLE_CHEMISTS"/>
+    <security:logout logout-success-url="/login?logout"/>
+    <security:http-basic/>
+  </security:http>
+
+  <security:authentication-manager>
+    <security:authentication-provider ref="ldapAuthProvider"/>
+  </security:authentication-manager>
+
+  <!-- LDAP Config -->
+  <bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+    <constructor-arg value="ldap://ldap.forumsys.com:389/"/>
+    <property name="userDn" value="cn=read-only-admin,dc=example,dc=com"/>
+    <property name="password" value="password"/>
+  </bean>
+
+  <bean id="ldapAuthProvider" class="com.jcombat.security.CachingLdapAuthenticationProvider">
+    <constructor-arg ref="ldapAuthenticator"/>
+    <constructor-arg ref="ldapAuthoritiesPopulator"/>
+  </bean>
+
+  <bean id="userSearch" class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch">
+    <constructor-arg index="0" value="dc=example,dc=com"/>
+    <constructor-arg index="1" value="(uid={0})"/>
+    <constructor-arg index="2" ref="contextSource"/>
+    <property name="searchSubtree" value="true"/>
+  </bean>
+
+  <bean id="ldapAuthenticator" class="org.springframework.security.ldap.authentication.BindAuthenticator">
+    <constructor-arg ref="contextSource"/>
+    <property name="userSearch" ref="userSearch"/>
+  </bean>
+
+  <bean id="ldapAuthoritiesPopulator" class="org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator">
+    <constructor-arg ref="contextSource"/>
+    <constructor-arg value="dc=example,dc=com"/>
+    <property name="groupSearchFilter" value="(uniqueMember={0})"/>
+    <property name="groupRoleAttribute" value="cn"/>
+    <property name="rolePrefix" value="ROLE_"/>
+  </bean>
+</beans>

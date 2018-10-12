@@ -1,0 +1,2 @@
+insert into users (username, password, enabled) values('admin', '$2a$10$u74J.9rOyNT5WK4wyc97detltGG2ZRVFNtfTwVJPZDivMWkMFiKkS', true);
+insert into authorities(username, authority) values('admin', 'ROLE_ADMIN');

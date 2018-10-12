@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title id="pageTitle">myCalendar - Please Login</title>
+    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet"/>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form th:action="@{/login}" method="POST" class="form-signin">
+            <div th:if="${param.error != null}" class="alert alert-danger">
+                <strong>Failed to login.</strong>
+                <span th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
+          <span th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}">Invalid credentials</span>
+        </span>
+            </div>
+            <div th:if="${param.logout != null}" class="alert alert-success">
+                You have been logged out.
+            </div>
+
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" id="username" name="username" autofocus="autofocus" class="form-control" placeholder="username"/>
+            <input type="password" id="password" name="password" class="form-control" placeholder="password"/>
+            <input type="checkbox" id="remember-me" name="obscure-remember-me" th:checked="true"/>
+            <label for="remember-me">remember me</label>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer :: foot"></th:block> /*/-->
+
+</body>
+</html>

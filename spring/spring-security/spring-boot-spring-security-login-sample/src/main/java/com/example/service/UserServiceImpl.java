@@ -37,6 +37,12 @@ public class UserServiceImpl implements UserService {
   public void saveUser(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
     user.setActive(1);
+
+    // 采用h2数据库时,需要在role表中首先创建一条ADMIN记录,为了避免启动后手动创建,故在注册用户时,临时创建一条ADMIN记录
+    Role role = new Role();
+    role.setRole("ADMIN");
+    roleRepository.save(role);
+
     Role userRole = roleRepository.findByRole("ADMIN");
     user.setRoles(new HashSet<>(Arrays.asList(userRole)));
     userRepository.save(user);
