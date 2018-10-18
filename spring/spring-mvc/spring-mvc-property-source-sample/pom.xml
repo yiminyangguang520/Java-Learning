@@ -10,7 +10,7 @@
   <name>spring-mvc-property-source-sample</name>
 
   <properties>
-    <springframework.version>5.0.4.RELEASE</springframework.version>
+    <springframework.version>5.0.8.RELEASE</springframework.version>
   </properties>
 
   <dependencies>
