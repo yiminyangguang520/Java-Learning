@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.lee.mybatis.model.Menu">
+    <id column="menu_id" jdbcType="INTEGER" property="id"/>
+    <result column="menu_value" jdbcType="VARCHAR" property="value"/>
+    <result column="menu_display_value" jdbcType="VARCHAR" property="displayValue"/>
+    <result column="menu_url" jdbcType="VARCHAR" property="url"/>
+    <result column="menu_category" jdbcType="INTEGER" property="category"/>
+    <result column="menu_description" jdbcType="VARCHAR" property="description"/>
+    <result column="menu_is_active" jdbcType="TINYINT" property="isActive"/>
+    <result column="menu_last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime"/>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    menu.id as menu_id, menu.value as menu_value, menu.display_value as menu_display_value, 
+    menu.url as menu_url, menu.category as menu_category, menu.description as menu_description, 
+    menu.is_active as menu_is_active, menu.last_update_time as menu_last_update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.lee.mybatis.model.MenuExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List"/>
+    from menu menu
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause"/>
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from menu menu
+    where menu.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from menu
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lee.mybatis.model.MenuExample">
+    delete from menu menu
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause"/>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lee.mybatis.model.Menu">
+    insert into menu (id, value, display_value, 
+      url, category, description, 
+      is_active, last_update_time)
+    values (#{id,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}, #{displayValue,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{category,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{isActive,jdbcType=TINYINT}, #{lastUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lee.mybatis.model.Menu">
+    insert into menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="value != null">
+        value,
+      </if>
+      <if test="displayValue != null">
+        display_value,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="isActive != null">
+        is_active,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="displayValue != null">
+        #{displayValue,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isActive != null">
+        #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lee.mybatis.model.MenuExample" resultType="java.lang.Long">
+    select count(*) from menu menu
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause"/>
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update menu menu
+    <set>
+      <if test="record.id != null">
+        menu.id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.value != null">
+        menu.value = #{record.value,jdbcType=VARCHAR},
+      </if>
+      <if test="record.displayValue != null">
+        menu.display_value = #{record.displayValue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url != null">
+        menu.url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.category != null">
+        menu.category = #{record.category,jdbcType=INTEGER},
+      </if>
+      <if test="record.description != null">
+        menu.description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isActive != null">
+        menu.is_active = #{record.isActive,jdbcType=TINYINT},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        menu.last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause"/>
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update menu menu
+    set menu.id = #{record.id,jdbcType=INTEGER},
+    menu.value = #{record.value,jdbcType=VARCHAR},
+    menu.display_value = #{record.displayValue,jdbcType=VARCHAR},
+    menu.url = #{record.url,jdbcType=VARCHAR},
+    menu.category = #{record.category,jdbcType=INTEGER},
+    menu.description = #{record.description,jdbcType=VARCHAR},
+    menu.is_active = #{record.isActive,jdbcType=TINYINT},
+    menu.last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause"/>
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lee.mybatis.model.Menu">
+    update menu
+    <set>
+      <if test="value != null">
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="displayValue != null">
+        display_value = #{displayValue,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lee.mybatis.model.Menu">
+    update menu
+    set value = #{value,jdbcType=VARCHAR},
+      display_value = #{displayValue,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      category = #{category,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      is_active = #{isActive,jdbcType=TINYINT},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

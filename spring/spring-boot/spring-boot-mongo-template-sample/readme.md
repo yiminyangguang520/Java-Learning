@@ -1,0 +1,1 @@
+https://www.journaldev.com/18156/spring-boot-mongodb#spring-data-mongodb-8211-mongotemplate

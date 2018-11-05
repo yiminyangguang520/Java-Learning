@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.AccountBillMapper">
+  <resultMap id="BaseResultMap" type="com.lee.mybatis.model.AccountBill">
+    <id column="account_bill_id" jdbcType="INTEGER" property="id" />
+    <result column="account_bill_statistics_date" jdbcType="DATE" property="statisticsDate" />
+    <result column="account_bill_borrow_money" jdbcType="DECIMAL" property="borrowMoney" />
+    <result column="account_bill_loan_money" jdbcType="DECIMAL" property="loanMoney" />
+    <result column="account_bill_create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="account_bill_update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="account_bill_deleted_date" jdbcType="TIMESTAMP" property="deletedDate" />
+    <result column="account_bill_deleted" jdbcType="TINYINT" property="deleted" />
+    <result column="account_bill_account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="account_bill_customer_id" jdbcType="INTEGER" property="customerId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    account_bill.id as account_bill_id, account_bill.statistics_date as account_bill_statistics_date, 
+    account_bill.borrow_money as account_bill_borrow_money, account_bill.loan_money as account_bill_loan_money, 
+    account_bill.create_date as account_bill_create_date, account_bill.update_date as account_bill_update_date, 
+    account_bill.deleted_date as account_bill_deleted_date, account_bill.deleted as account_bill_deleted, 
+    account_bill.account_id as account_bill_account_id, account_bill.customer_id as account_bill_customer_id
+  </sql>
+  <select id="selectByExample" parameterType="com.lee.mybatis.model.AccountBillExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from account_bill account_bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account_bill account_bill
+    where account_bill.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from account_bill
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lee.mybatis.model.AccountBillExample">
+    delete from account_bill account_bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lee.mybatis.model.AccountBill">
+    insert into account_bill (id, statistics_date, borrow_money, 
+      loan_money, create_date, update_date, 
+      deleted_date, deleted, account_id, 
+      customer_id)
+    values (#{id,jdbcType=INTEGER}, #{statisticsDate,jdbcType=DATE}, #{borrowMoney,jdbcType=DECIMAL}, 
+      #{loanMoney,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{deletedDate,jdbcType=TIMESTAMP}, #{deleted,jdbcType=TINYINT}, #{accountId,jdbcType=INTEGER}, 
+      #{customerId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lee.mybatis.model.AccountBill">
+    insert into account_bill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="statisticsDate != null">
+        statistics_date,
+      </if>
+      <if test="borrowMoney != null">
+        borrow_money,
+      </if>
+      <if test="loanMoney != null">
+        loan_money,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="deletedDate != null">
+        deleted_date,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+      <if test="accountId != null">
+        account_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="statisticsDate != null">
+        #{statisticsDate,jdbcType=DATE},
+      </if>
+      <if test="borrowMoney != null">
+        #{borrowMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="loanMoney != null">
+        #{loanMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedDate != null">
+        #{deletedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lee.mybatis.model.AccountBillExample" resultType="java.lang.Long">
+    select count(*) from account_bill account_bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update account_bill account_bill
+    <set>
+      <if test="record.id != null">
+        account_bill.id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.statisticsDate != null">
+        account_bill.statistics_date = #{record.statisticsDate,jdbcType=DATE},
+      </if>
+      <if test="record.borrowMoney != null">
+        account_bill.borrow_money = #{record.borrowMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanMoney != null">
+        account_bill.loan_money = #{record.loanMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createDate != null">
+        account_bill.create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateDate != null">
+        account_bill.update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.deletedDate != null">
+        account_bill.deleted_date = #{record.deletedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.deleted != null">
+        account_bill.deleted = #{record.deleted,jdbcType=TINYINT},
+      </if>
+      <if test="record.accountId != null">
+        account_bill.account_id = #{record.accountId,jdbcType=INTEGER},
+      </if>
+      <if test="record.customerId != null">
+        account_bill.customer_id = #{record.customerId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update account_bill account_bill
+    set account_bill.id = #{record.id,jdbcType=INTEGER},
+      account_bill.statistics_date = #{record.statisticsDate,jdbcType=DATE},
+      account_bill.borrow_money = #{record.borrowMoney,jdbcType=DECIMAL},
+      account_bill.loan_money = #{record.loanMoney,jdbcType=DECIMAL},
+      account_bill.create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      account_bill.update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      account_bill.deleted_date = #{record.deletedDate,jdbcType=TIMESTAMP},
+      account_bill.deleted = #{record.deleted,jdbcType=TINYINT},
+      account_bill.account_id = #{record.accountId,jdbcType=INTEGER},
+      account_bill.customer_id = #{record.customerId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lee.mybatis.model.AccountBill">
+    update account_bill
+    <set>
+      <if test="statisticsDate != null">
+        statistics_date = #{statisticsDate,jdbcType=DATE},
+      </if>
+      <if test="borrowMoney != null">
+        borrow_money = #{borrowMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="loanMoney != null">
+        loan_money = #{loanMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedDate != null">
+        deleted_date = #{deletedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        deleted = #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="accountId != null">
+        account_id = #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lee.mybatis.model.AccountBill">
+    update account_bill
+    set statistics_date = #{statisticsDate,jdbcType=DATE},
+      borrow_money = #{borrowMoney,jdbcType=DECIMAL},
+      loan_money = #{loanMoney,jdbcType=DECIMAL},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      deleted_date = #{deletedDate,jdbcType=TIMESTAMP},
+      deleted = #{deleted,jdbcType=TINYINT},
+      account_id = #{accountId,jdbcType=INTEGER},
+      customer_id = #{customerId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

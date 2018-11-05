@@ -79,4 +79,4 @@ public class SpringSecurityUserContext implements UserContext {
     SecurityContextHolder.getContext().setAuthentication(authentication);
   }
 
-} // The End...
+}

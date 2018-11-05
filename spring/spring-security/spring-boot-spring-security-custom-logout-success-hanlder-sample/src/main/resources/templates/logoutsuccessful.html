@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <title>Welcome Security with Spring Boot!</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="container" style="margin:50px">
+<div class="row col-sm-5"
+     style="border: 1px ridge #003312; padding:20px; float: none; margin: 0 auto;">
+  <h1>Logout Successfully!</h1>
+  <a style="color: blue" th:href="@{/}">Home Page</a>
+  <br/>
+  <a style="color: blue" th:href="@{/login}">Login Page</a>
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.grokonez.jwtauthentication.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author litz-a
  */
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class TestRestAPIs {
 
   @GetMapping("/api/test/user")
@@ -19,7 +21,7 @@ public class TestRestAPIs {
   @GetMapping("/api/test/pm")
   @PreAuthorize("hasRole('PM') or hasRole('ADMIN')")
   public String projectManagementAccess() {
-    return ">>> Board Management Project";
+		return ">>> Project Management Board";
   }
 
   @GetMapping("/api/test/admin")

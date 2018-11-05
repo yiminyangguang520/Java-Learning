@@ -27,8 +27,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
   private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-      "classpath:/META-INF/resources/", "classpath:/resources/",
-      "classpath:/static/", "classpath:/public/"};
+      "classpath:/META-INF/resources/",
+      "classpath:/resources/",
+      "classpath:/static/",
+      "classpath:/public/"
+  };
 
   @Override
   public void addResourceHandlers(final ResourceHandlerRegistry registry) {
@@ -40,13 +43,16 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     // Add WebJars for Bootstrap & jQuery
     if (!registry.hasMappingForPattern("/webjars/**")) {
-      registry.addResourceHandler("/webjars/**").addResourceLocations(
-          "classpath:/META-INF/resources/webjars/").resourceChain(true);
+      registry
+          .addResourceHandler("/webjars/**")
+          .addResourceLocations("classpath:/META-INF/resources/webjars/")
+          .resourceChain(true);
     }
 
     if (!registry.hasMappingForPattern("/**")) {
-      registry.addResourceHandler("/**").addResourceLocations(
-          CLASSPATH_RESOURCE_LOCATIONS);
+      registry
+          .addResourceHandler("/**")
+          .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
 
     }
   }
@@ -55,10 +61,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
   public void addViewControllers(final ViewControllerRegistry registry) {
     super.addViewControllers(registry);
 
-    registry.addViewController("/login/form")
-        .setViewName("login");
-    registry.addViewController("/errors/403")
-        .setViewName("/errors/403");
+    registry.addViewController("/login/form").setViewName("login");
+    registry.addViewController("/errors/403").setViewName("/errors/403");
 
     registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
   }

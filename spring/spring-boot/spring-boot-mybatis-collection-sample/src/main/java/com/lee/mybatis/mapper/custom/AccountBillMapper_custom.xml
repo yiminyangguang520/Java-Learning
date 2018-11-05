@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.AccountBillMapper">
+  <update id="markDeletedByPrimarykey" parameterType="java.lang.Integer">
+    update account_bill
+      set deleted = 1, deleted_date = NOW()
+    where id = #{accountBillId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByAccountId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from account_bill account_bill
+    where account_bill.account_id = #{accountId,jdbcType=INTEGER} and account_bill.deleted = 0
+  </select>
+</mapper>

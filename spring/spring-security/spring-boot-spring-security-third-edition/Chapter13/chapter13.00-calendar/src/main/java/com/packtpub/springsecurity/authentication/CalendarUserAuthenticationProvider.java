@@ -23,8 +23,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @author Rob Winch
  * @see CalendarUserDetailsService
  */
-// Resolves a circular dependency:
-//@Component
 public class CalendarUserAuthenticationProvider implements AuthenticationProvider {
 
   private final CalendarService calendarService;

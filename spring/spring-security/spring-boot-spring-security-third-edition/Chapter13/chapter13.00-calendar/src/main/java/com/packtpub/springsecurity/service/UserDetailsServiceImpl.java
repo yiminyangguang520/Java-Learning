@@ -31,8 +31,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     CalendarUser user = userRepository.findByEmail(username);
 
     if (user == null) {
-      throw new UsernameNotFoundException("username " + username
-          + " not found");
+      throw new UsernameNotFoundException("username " + username + " not found");
     }
 
     Set<GrantedAuthority> grantedAuthorities = new HashSet<>();

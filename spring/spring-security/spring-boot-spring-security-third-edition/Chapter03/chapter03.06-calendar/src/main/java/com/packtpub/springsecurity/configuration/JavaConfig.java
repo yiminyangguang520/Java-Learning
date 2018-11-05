@@ -10,4 +10,4 @@ import org.springframework.context.annotation.Import;
 @Import({SecurityConfig.class, DataSourceConfig.class})
 public class JavaConfig {
 
-} // The end...
+}

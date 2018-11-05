@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.AccountMapper">
+  <update id="markDeletedByPrimarykey" parameterType="java.lang.Integer">
+    update account
+      set deleted = 1
+    where id = #{accountId,jdbcType=INTEGER}
+  </update>
+
+  <!--BaseResultMapWithBill与BaseResultMapWithBillInfo是等价的(两种不同方式)  resultMap="com.lee.mybatis.dao.AccountBillMapper.BaseResultMap"-->
+  <resultMap id="BaseResultMapWithBill" type="com.lee.mybatis.model.Account" extends="BaseResultMap">
+    <collection property="accountBillList" ofType="com.lee.mybatis.model.AccountBill" select="com.lee.mybatis.dao.AccountBillMapper.selectByAccountId" column="account_id"/>
+  </resultMap>
+
+  <resultMap id="BaseResultMapWithBillInfo" type="com.lee.mybatis.model.Account" extends="BaseResultMap">
+    <collection property="accountBillList" ofType="com.lee.mybatis.model.AccountBill">
+      <id property="id" column="account_bill_id"/>
+      <result property="statisticsDate" column="account_bill_statistics_date"/>
+      <result property="borrowMoney" column="account_bill_borrow_money"/>
+      <result property="loanMoney" column="account_bill_loan_money"/>
+      <result property="createDate" column="account_bill_create_date"/>
+      <result property="updateDate" column="account_bill_update_date"/>
+      <result property="deletedDate" column="account_bill_deleted_date"/>
+      <result property="deleted" column="account_bill_deleted"/>
+      <result property="accountId" column="account_bill_account_id"/>
+      <result property="customerId" column="account_bill_customer_id"/>
+    </collection>
+  </resultMap>
+
+  <select id="selectWithAccountBillByExample" parameterType="com.lee.mybatis.model.AccountExample" resultMap="BaseResultMapWithBillInfo">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="com.lee.mybatis.dao.AccountBillMapper.Base_Column_List"/>
+    from account account
+    left join account_bill account_bill on account_bill.account_id = account.id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <!--<select id="selectWithAccountBillByCustomerId" parameterType="java.lang.Integer" resultMap="BaseResultMapWithBill">-->
+    <!--select-->
+    <!--<include refid="Base_Column_List" />-->
+    <!--,-->
+    <!--<include refid="com.lee.mybatis.dao.AccountBillMapper.Base_Column_List"/>-->
+    <!--from-->
+      <!--account account-->
+      <!--left join (select * from account_bill where deleted = 0) account_bill on account_bill.account_id = account.id-->
+    <!--where-->
+      <!--account.customer_id = #{customerId}-->
+      <!--and account.deleted = 0-->
+      <!--and (account_bill.deleted = 0 OR account_bill.deleted IS NULL)-->
+    <!--order by account_create_date desc-->
+  <!--</select>-->
+
+  <select id="selectWithAccountBillByCustomerId" parameterType="java.lang.Integer" resultMap="BaseResultMapWithBill">
+    select
+    <include refid="Base_Column_List" />
+    from
+    account account
+    where
+    account.customer_id = #{customerId}
+    and account.deleted = 0
+    order by account_create_date desc
+  </select>
+</mapper>

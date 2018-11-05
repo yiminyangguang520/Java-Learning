@@ -140,8 +140,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // Exception Handling
     http.exceptionHandling()
-        .accessDeniedPage("/errors/403")
-    ;
+        .accessDeniedPage("/errors/403");
 
     // Enable <frameset> in order to use H2 web console
     http.headers().frameOptions().disable();
@@ -156,13 +155,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     return new CalendarUserAuthenticationProvider(calendarService, passwordEncoder);
   }
 
-//    @Description("UserDetailsByNameServiceWrapper")
-//    @Bean
-//    public UserDetailsByNameServiceWrapper authenticationUserDetailsService(final UserDetailsService userDetailsService){
-//        return new UserDetailsByNameServiceWrapper(){{
-//            setUserDetailsService(calendarUserDetailsService);
-//        }};
-//    }
+
+//  @Bean
+//  @Description("UserDetailsByNameServiceWrapper")
+//  public UserDetailsByNameServiceWrapper authenticationUserDetailsService(final UserDetailsService calendarUserDetailsService) {
+//    return new UserDetailsByNameServiceWrapper() {{
+//      setUserDetailsService(calendarUserDetailsService);
+//    }};
+//  }
 
 
   /**
@@ -186,9 +186,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Thymeleaf needs to use the Thymeleaf configured FilterSecurityInterceptor
     // and not the default Filter from AutoConfiguration.
     final HttpSecurity http = getHttp();
-    web.postBuildAction(() -> {
-      web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class));
-    });
+    web.postBuildAction(() -> web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class)));
   }
 
 }

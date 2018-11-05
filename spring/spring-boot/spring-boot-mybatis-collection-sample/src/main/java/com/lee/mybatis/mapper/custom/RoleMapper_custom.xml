@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.RoleMapper">
+
+  <resultMap id="BaseRoleResultMap" type="com.lee.mybatis.model.Role">
+    <id column="id" property="id" jdbcType="INTEGER"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="is_active" property="isActive" jdbcType="BOOLEAN"/>
+    <result column="description" property="description" jdbcType="VARCHAR"/>
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP"/>
+    <collection property="menus" ofType="com.lee.mybatis.model.Menu" javaType="java.util.ArrayList" select="com.lee.mybatis.dao.MenuMapper.getMenusByRoleId" column="id"/>
+  </resultMap>
+
+  <resultMap id="BaseRoleResultMapInfo" type="com.lee.mybatis.model.Role">
+    <id column="id" property="id" jdbcType="INTEGER"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="is_active" property="isActive" jdbcType="BOOLEAN"/>
+    <result column="description" property="description" jdbcType="VARCHAR"/>
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP"/>
+    <collection property="menus" ofType="com.lee.mybatis.model.Menu" javaType="java.util.ArrayList">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="value" property="value" jdbcType="VARCHAR"/>
+      <result column="display_value" property="displayValue" jdbcType="VARCHAR"/>
+      <result column="url" property="url" jdbcType="VARCHAR"/>
+      <result column="category" property="category" jdbcType="INTEGER"/>
+      <result column="description" property="description" jdbcType="VARCHAR"/>
+      <result column="is_active" property="isActive" jdbcType="BIT"/>
+      <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP"/>
+    </collection>
+  </resultMap>
+
+
+  <select id="getRoles" parameterType="java.lang.Integer" resultMap="BaseRoleResultMap">
+    SELECT
+      id,
+      `name`,
+      is_active,
+      description,
+      last_update_time
+    FROM
+      role
+    where id = #{id}
+  </select>
+
+  <select id="getRoleByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseRoleResultMapInfo">
+    SELECT
+      r.id,
+      r.NAME,
+      r.description,
+      r.is_active,
+      r.last_update_time,
+      m.id,
+      m.`value`,
+      m.display_value,
+      m.url,
+      m.category,
+      m.description,
+      m.is_active,
+      m.last_update_time
+    FROM
+      role r
+      LEFT JOIN role_menu_xref rmx ON r.id = rmx.role_id
+      LEFT JOIN menu m ON m.id = rmx.menu_id
+    WHERE
+      r.id = #{roleId,jdbcType=INTEGER}
+  </select>
+</mapper>

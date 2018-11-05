@@ -51,7 +51,7 @@ public class FilterInvocationServiceSecurityMetadataSource
   @Override
   public void afterPropertiesSet() throws Exception {
     List<RequestConfigMapping> requestConfigMappings = requestConfigMappingService.getRequestConfigMappings();
-    LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>>(requestConfigMappings.size());
+    LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<>(requestConfigMappings.size());
     for (RequestConfigMapping requestConfigMapping : requestConfigMappings) {
       RequestMatcher matcher = requestConfigMapping.getMatcher();
       requestMap.put(matcher, requestConfigMapping.getAttributes());
