@@ -64,4 +64,18 @@
     WHERE
       r.id = #{roleId,jdbcType=INTEGER}
   </select>
+
+  <select id="getRoleByUserId" parameterType="java.lang.Integer" resultType="com.lee.mybatis.model.Role">
+    SELECT
+      r.id,
+      r.`name`,
+      r.is_active,
+      r.description,
+      r.last_update_time
+    FROM
+      role r
+      LEFT JOIN user_role ur ON r.id = ur.role_id
+    WHERE
+      user_id = #{userId, jdbcType=INTEGER}
+  </select>
 </mapper>

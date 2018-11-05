@@ -18,18 +18,18 @@
       userId="root" password="gcrs1qaz2wsx"/>
 
     <!-- !!!! Model Configurations !!!! -->
-    <javaModelGenerator targetPackage="com.lee.mybatis.model" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-security\spring-boot-mybatis-collection-sample\src\main\java">
+    <javaModelGenerator targetPackage="com.lee.mybatis.model" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-boot\spring-boot-mybatis-collection-sample\src\main\java">
       <property name="enableSubPackages" value="false"/>
       <property name="trimStrings" value="true"/>
     </javaModelGenerator>
 
     <!-- !!!! Mapper XML Configurations !!!! -->
-    <sqlMapGenerator targetPackage="com.lee.mybatis.mapper.generate" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-security\spring-boot-mybatis-collection-sample\src\main\java">
+    <sqlMapGenerator targetPackage="com.lee.mybatis.mapper.generate" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-boot\spring-boot-mybatis-collection-sample\src\main\java">
       <property name="enableSubPackages" value="true"/>
     </sqlMapGenerator>
 
     <!-- !!!! Mapper Interface Configurations !!!! -->
-    <javaClientGenerator targetPackage="com.lee.mybatis.dao" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-security\spring-boot-mybatis-collection-sample\src\main\java" type="XMLMAPPER">
+    <javaClientGenerator targetPackage="com.lee.mybatis.dao" targetProject="D:\workspace\GitHub\spring\Java-Learning\spring\spring-boot\spring-boot-mybatis-collection-sample\src\main\java" type="XMLMAPPER">
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
 
@@ -40,9 +40,13 @@
       <!--enableSelectByExample="true" enableUpdateByExample="true"/>-->
     <!--<table tableName="role_menu_xref" alias="role_menu" domainObjectName="MenuRole" enableCountByExample="true" enableDeleteByExample="true"-->
       <!--enableSelectByExample="true" enableUpdateByExample="true"/>-->
-    <table tableName="account" alias="account" domainObjectName="Account" enableCountByExample="true" enableDeleteByExample="true"
-    enableSelectByExample="true" enableUpdateByExample="true"/>
-    <table tableName="account_bill" alias="account_bill" domainObjectName="AccountBill" enableCountByExample="true"
-    enableDeleteByExample="true" enableSelectByExample="true" enableUpdateByExample="true"/>
+    <!--<table tableName="account" alias="account" domainObjectName="Account" enableCountByExample="true" enableDeleteByExample="true"-->
+    <!--enableSelectByExample="true" enableUpdateByExample="true"/>-->
+    <!--<table tableName="account_bill" alias="account_bill" domainObjectName="AccountBill" enableCountByExample="true"-->
+    <!--enableDeleteByExample="true" enableSelectByExample="true" enableUpdateByExample="true"/>-->
+    <table tableName="user" alias="user" domainObjectName="User" enableCountByExample="true" enableDeleteByExample="true"
+      enableSelectByExample="true" enableUpdateByExample="true"/>
+    <table tableName="user_role" alias="user_role" domainObjectName="UserRole" enableCountByExample="true"
+      enableDeleteByExample="true" enableSelectByExample="true" enableUpdateByExample="true"/>
   </context>
 </generatorConfiguration>

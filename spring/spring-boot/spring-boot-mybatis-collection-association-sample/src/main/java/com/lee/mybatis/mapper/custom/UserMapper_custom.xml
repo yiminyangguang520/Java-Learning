@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.mybatis.dao.UserMapper">
+
+  <!--方式1-->
+  <resultMap id="BaseUserModelResultMap" type="com.lee.mybatis.model.User">
+    <id column="id" property="id" javaType="java.lang.Integer" jdbcType="INTEGER"></id>
+    <result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"></result>
+    <result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"></result>
+    <result column="enabled" property="enabled" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <result column="expired" property="expired" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <result column="locked" property="locked" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <association property="role" javaType="com.lee.mybatis.model.Role" column="id" select="com.lee.mybatis.dao.RoleMapper.getRoleByUserId"/>
+  </resultMap>
+
+  <select id="getAllUsers" resultMap="BaseUserModelResultMap">
+    select
+      id,
+      username,
+      `password`,
+      enabled,
+      expired,
+      locked
+    from user
+  </select>
+
+
+  <!--方式2-->
+  <resultMap id="BaseUserModelResultMapInfo" type="com.lee.mybatis.model.User">
+    <id column="id" property="id" javaType="java.lang.Integer" jdbcType="INTEGER"></id>
+    <result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"></result>
+    <result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"></result>
+    <result column="enabled" property="enabled" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <result column="expired" property="expired" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <result column="locked" property="locked" javaType="java.lang.Integer" jdbcType="BOOLEAN"></result>
+    <association property="role" javaType="com.lee.mybatis.model.Role">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="name" property="name" jdbcType="VARCHAR"/>
+      <result column="is_active" property="isActive" jdbcType="BOOLEAN"/>
+      <result column="description" property="description" jdbcType="VARCHAR"/>
+      <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP"/>
+    </association>
+  </resultMap>
+
+  <select id="getAllUserInfo" resultMap="BaseUserModelResultMapInfo">
+    SELECT
+      u.id,
+      u.username,
+      u.password,
+      u.enabled,
+      u.expired,
+      u.locked,
+      r.id,
+      r.name,
+      r.is_active,
+      r.description,
+      r.last_update_time
+    FROM
+      user u
+      LEFT JOIN user_role ur ON u.id = ur.user_id
+      LEFT JOIN role r ON ur.role_id = r.id
+  </select>
+
+</mapper>

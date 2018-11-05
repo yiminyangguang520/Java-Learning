@@ -75,7 +75,7 @@
       distinct
     </if>
     <include refid="Base_Column_List"/>
-    from role_menu_xref role_menu
+    from role_menu role_menu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
@@ -86,27 +86,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
-    from role_menu_xref role_menu
+    from role_menu role_menu
     where role_menu.id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from role_menu_xref
+    delete from role_menu
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.lee.mybatis.model.MenuRoleExample">
-    delete from role_menu_xref role_menu
+    delete from role_menu role_menu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
   </delete>
   <insert id="insert" parameterType="com.lee.mybatis.model.MenuRole">
-    insert into role_menu_xref (id, role_id, menu_id, 
+    insert into role_menu (id, role_id, menu_id, 
       last_update_time)
     values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, 
       #{lastUpdateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.lee.mybatis.model.MenuRole">
-    insert into role_menu_xref
+    insert into role_menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -137,13 +137,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.lee.mybatis.model.MenuRoleExample" resultType="java.lang.Long">
-    select count(*) from role_menu_xref role_menu
+    select count(*) from role_menu role_menu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update role_menu_xref role_menu
+    update role_menu role_menu
     <set>
       <if test="record.id != null">
         role_menu.id = #{record.id,jdbcType=INTEGER},
@@ -163,7 +163,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update role_menu_xref role_menu
+    update role_menu role_menu
     set role_menu.id = #{record.id,jdbcType=INTEGER},
     role_menu.role_id = #{record.roleId,jdbcType=INTEGER},
     role_menu.menu_id = #{record.menuId,jdbcType=INTEGER},
@@ -173,7 +173,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.lee.mybatis.model.MenuRole">
-    update role_menu_xref
+    update role_menu
     <set>
       <if test="roleId != null">
         role_id = #{roleId,jdbcType=INTEGER},
@@ -188,7 +188,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.lee.mybatis.model.MenuRole">
-    update role_menu_xref
+    update role_menu
     set role_id = #{roleId,jdbcType=INTEGER},
       menu_id = #{menuId,jdbcType=INTEGER},
       last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}

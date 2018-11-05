@@ -13,7 +13,7 @@ public class Role {
 
   private String description;
 
-  private Byte isActive;
+  private Integer isActive;
 
   private Date lastUpdateTime;
 
@@ -45,11 +45,11 @@ public class Role {
     this.description = description == null ? null : description.trim();
   }
 
-  public Byte getIsActive() {
+  public Integer getIsActive() {
     return isActive;
   }
 
-  public void setIsActive(Byte isActive) {
+  public void setIsActive(Integer isActive) {
     this.isActive = isActive;
   }
 
