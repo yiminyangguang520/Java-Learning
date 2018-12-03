@@ -13,7 +13,7 @@
 
   <parent>
     <groupId>com.lee</groupId>
-    <artifactId>rocketmq</artifactId>
+    <artifactId>spring-boot-rocketmq-produce-consumer-exmple</artifactId>
     <version>0.0.1</version>
   </parent>
 
