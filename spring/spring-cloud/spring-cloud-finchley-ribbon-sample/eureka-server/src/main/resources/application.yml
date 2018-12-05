@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 1 #心跳间隔时间1s
+    lease-renewal-interval-in-seconds: 2    #连续2s未响应时将服务注销
+  client:
+    registerWithEureka: false # 是否注册到eureka,即不用将自己注册到Eureka
+    fetchRegistry: false # 是否从eureka获取注册信息,即不用发现Eureka中的服务
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # eureka服务器的地址（注意：地址最后面的 /eureka/ 这个是固定值）
+  server:
+    enable-self-preservation: false #在测试环境我们可以关掉Eureka的自我保护机制
+
+spring:
+  application:
+    name: eurka-server
