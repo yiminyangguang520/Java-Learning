@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
   <!-- 为当前服务提供者取个名字，并且提供给注册中心 -->
@@ -15,7 +15,6 @@
   <dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
 
   <!-- 暴露具体的服务接口 -->
-  <dubbo:service retries="3" interface="com.imooc.item.service.ItemsService"
-    ref="itemsService"></dubbo:service>
+  <dubbo:service retries="3" interface="com.imooc.item.service.ItemsService" ref="itemsService"></dubbo:service>
 
 </beans>
