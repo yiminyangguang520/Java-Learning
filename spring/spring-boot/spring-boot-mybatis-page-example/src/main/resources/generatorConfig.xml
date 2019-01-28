@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- http://www.mybatis.org/generator/configreference/xmlconfig.html -->
+
+<generatorConfiguration>
+  <classPathEntry location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+      connectionURL="jdbc:mysql://10.123.52.189:3306/oh_coupon"
+      userId="devdb"
+      password="d^V$0Fu!/6-&lt;">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.cjs.example.model" targetProject="src/main/java">
+      <property name="enableSubPackages" value="false"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+      <property name="enableSubPackages" value="false"/>
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.cjs.example.dao" targetProject="src/main/java">
+      <property name="enableSubPackages" value="false"/>
+    </javaClientGenerator>
+
+    <table tableName="tb_coupon" domainObjectName="Coupon">
+      <ignoreColumn column="FRED"/>
+    </table>
+
+  </context>
+</generatorConfiguration>
