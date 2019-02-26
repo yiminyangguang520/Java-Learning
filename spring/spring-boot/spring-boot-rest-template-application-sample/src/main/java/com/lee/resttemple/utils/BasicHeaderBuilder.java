@@ -7,8 +7,8 @@ import org.apache.tomcat.util.codec.binary.Base64;
  */
 public class BasicHeaderBuilder {
 
-  public static final String SERVICE_KEY = "kBuJzyH70hcm7SFUwALyHjsFKtnUI4gl";
-  public static final String SERVER_SECRET = "NAq5zQumk9VN5zUdGG6PehshEw5a7dhH";
+  public static final String SERVICE_KEY = "kBuJzyH70hcm7SFxUwALyHjsFKtnUI4gl";
+  public static final String SERVER_SECRET = "NAq5zQumk9VN5zUddGG6PehshEw5a7dhH";
 
   /**
    * 创建Basic认证头信息中的Key

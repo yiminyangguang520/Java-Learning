@@ -116,7 +116,7 @@ public class LoginServiceImpl implements LoginService {
     try {
       // 方式1: 例如  restTemplate.getForObject("http://example.com/hotels/{hotel}/rooms/{hotel2}", String.class, "42", "21")
       // ResponseEntity<String> response = restTemplate.exchange(Constant.VALIDATE_URL, HttpMethod.GET, entity, String.class, account);
-      // 方式2: map中的key应与https://account.glodon.com/api/identity?identity={identity}中占位符{}中的字符串一致
+      // 方式2: map中的key应与https://***.***.com/api/identity?identity={identity}中占位符{}中的字符串一致
       ResponseEntity<String> response = restTemplate.exchange(Constant.VALIDATE_URL, HttpMethod.GET, entity, String.class, Collections.singletonMap("identity", account));
       return response.getStatusCodeValue() == HttpStatus.OK.value();
     } catch (HttpClientErrorException ex) {

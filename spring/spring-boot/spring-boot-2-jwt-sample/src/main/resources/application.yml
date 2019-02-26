@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql.jcmob.net:3306/jc_dsp
+    username: root
+    password: jcmob123456
+
+
+jwt:
+  config:
+    secret: ameizi.net            # 加密串
+    ttl: 86400                    # 秒 一天：86400；七天：604800
