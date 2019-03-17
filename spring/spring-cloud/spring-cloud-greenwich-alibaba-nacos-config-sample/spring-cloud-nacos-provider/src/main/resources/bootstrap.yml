@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 111.230.254.127:8848
+      config:
+        group: test-group
+        server-addr: 111.230.254.127:8848
+        file-extension: yml
+        access-key:
+        secret-key:
+server:
+  port: 8080
+
+
+#debug: true

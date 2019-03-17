@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 111.230.254.127:8848
+      config:
+        group: test-group
+        server-addr: 111.230.254.127:8848
+        file-extension: yml

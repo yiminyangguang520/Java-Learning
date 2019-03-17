@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: organization-service
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
