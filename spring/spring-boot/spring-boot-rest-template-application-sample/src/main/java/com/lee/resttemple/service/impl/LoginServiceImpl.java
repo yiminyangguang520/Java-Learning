@@ -85,6 +85,28 @@ public class LoginServiceImpl implements LoginService {
     return validateByRestTemplate(account);
   }
 
+  /**
+   * validateToken
+   */
+  @Override
+  public Boolean validateToken(String token) throws IOException {
+    HttpHeaders headers = new HttpHeaders();
+    headers.set(BasicHeaderBuilder.headerKey(), BasicHeaderBuilder.headerValue());
+    headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+    MultiValueMap<String, String> postParameters = new LinkedMultiValueMap<>();
+    postParameters.add("token", token);
+
+    HttpEntity entity = new HttpEntity<>(postParameters, headers);
+    ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    try {
+      response = restTemplate.exchange("https://account.glodon.com/oauth2/check_token", HttpMethod.POST, entity, String.class);
+    } catch (RestClientException e) {
+      e.printStackTrace();
+    }
+    return false;
+  }
+
   protected Boolean validateByOkHttp(String account) throws IOException {
     HttpUrl.Builder urlBuilder = HttpUrl.parse(Constant.VALIDATE_URL_).newBuilder();
     urlBuilder.addQueryParameter("identity", account);

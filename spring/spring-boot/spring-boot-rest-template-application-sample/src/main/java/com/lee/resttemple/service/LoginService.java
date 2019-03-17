@@ -31,4 +31,12 @@ public interface LoginService {
    * @throws IOException
    */
   Boolean validate(String account) throws IOException;
+
+  /**
+   * validateToken
+   * @param token
+   * @return
+   * @throws IOException
+   */
+  Boolean validateToken(String token) throws IOException;
 }
