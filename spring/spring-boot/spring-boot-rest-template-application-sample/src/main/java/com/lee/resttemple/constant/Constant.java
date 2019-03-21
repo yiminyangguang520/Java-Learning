@@ -9,7 +9,7 @@ public class Constant {
 
   public static String VALIDATE_URL_ = "https://***.***.com/api/identity";
 
-  public static String URL = "https://account.glodon.com/oauth2/token";
+  public static String URL = "https://***.***.com/oauth2/token";
 
   public static String USERNAME = "username";
 

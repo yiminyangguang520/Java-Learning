@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mayi</groupId>
+  <artifactId>spring-microservices-kit</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>businessservice</module>
+    <module>bussnessservice-user</module>
+    <module>bussnessservice-user-client-feign</module>
+    <module>bussnessservice-user-client-feign-hystrix</module>
+    <module>bussnessservice-user-client-ribbon</module>
+    <module>bussnessservice-user-client-ribbon-hystrix</module>
+    <module>commonservice</module>
+    <module>commonservice-config</module>
+    <module>commonservice-eureka</module>
+    <module>commonservice-zuul</module>
+  </modules>
+
+</project>

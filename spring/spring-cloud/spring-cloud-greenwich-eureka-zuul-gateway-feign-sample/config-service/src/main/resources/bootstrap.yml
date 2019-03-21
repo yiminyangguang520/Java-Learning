@@ -1,0 +1,10 @@
+server:
+  port: 8088
+spring:
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config # Spring Cloud Config by default search for property sources inside the following locations: classpath:/, classpath:/config, file:./, file:./config
+  profiles:
+    active: native #设置为本地启动的方式，而不是通过git

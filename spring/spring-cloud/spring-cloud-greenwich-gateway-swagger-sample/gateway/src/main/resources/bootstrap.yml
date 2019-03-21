@@ -1,0 +1,25 @@
+server:
+  port: 3333
+
+spring:
+  application:
+    name: wd-gateway
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+      routes:
+        - id: wd-admin
+          uri: lb://wd-admin
+          predicates:
+            - Path=/admin/**
+          filters:
+#            - SwaggerHeaderFilter #升级到spring cloud Greenwich版本后，在网关中可以去掉SwaggerHeaderFilter，否则在swagger-ui中看到的Base URL为: localhost:3333/admin,admin/
+            - StripPrefix=1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

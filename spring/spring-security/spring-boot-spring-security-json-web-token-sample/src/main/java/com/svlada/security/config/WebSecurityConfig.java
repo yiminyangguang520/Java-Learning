@@ -14,6 +14,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,6 +26,10 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.session.FindByIndexNameSessionRepository;
+import org.springframework.session.Session;
+import org.springframework.session.data.redis.RedisOperationsSessionRepository;
+import org.springframework.session.security.SpringSessionBackedSessionRegistry;
 
 /**
  * WebSecurityConfig
@@ -101,13 +108,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
         .csrf().disable() // We don't need CSRF for JWT based authentication
         .exceptionHandling()
-        .authenticationEntryPoint(this.authenticationEntryPoint)
+        .authenticationEntryPoint(this.authenticationEntryPoint);
 
-        .and()
+    http
         .sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        .maximumSessions(1)
+        //false之后登录踢掉之前登录,true则不允许之后登录
+        .maxSessionsPreventsLogin(false)
+        .sessionRegistry(sessionRegistry());
 
-        .and()
+    http
         .authorizeRequests()
         .antMatchers(permitAllEndpointList.toArray(new String[permitAllEndpointList.size()]))
         .permitAll()
@@ -117,7 +128,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .addFilterBefore(new CustomCorsFilter(), UsernamePasswordAuthenticationFilter.class)
         .addFilterBefore(buildAjaxLoginProcessingFilter(AUTHENTICATION_URL), UsernamePasswordAuthenticationFilter.class)
-        .addFilterBefore(buildJwtTokenAuthenticationProcessingFilter(permitAllEndpointList,
-            API_ROOT_URL), UsernamePasswordAuthenticationFilter.class);
+        .addFilterBefore(buildJwtTokenAuthenticationProcessingFilter(permitAllEndpointList, API_ROOT_URL), UsernamePasswordAuthenticationFilter.class);
   }
+
+  @Autowired
+  FindByIndexNameSessionRepository<? extends Session> sessionRepository;
+
+  @Bean
+  SpringSessionBackedSessionRegistry sessionRegistry() {
+    return new SpringSessionBackedSessionRegistry<>(this.sessionRepository);
+  }
+
 }
