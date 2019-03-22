@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  * @author litz-a
  */
 @SpringBootApplication()
-@EnableAutoConfiguration()
 @EnableResourceServer
 public class Application {
 
