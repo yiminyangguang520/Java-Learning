@@ -1,0 +1,66 @@
+spring:
+  application:
+    name: cloud-gateway
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://192.168.10.100:9411/
+    enabled: true
+    sender:
+      type: RABBIT
+  rabbitmq:
+    addresses: 10.1.70.92
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: sleuth
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #服务发现组件结合,通过 serviceId 转发到具体的服务实例
+          enabled: true
+      routes:
+        #自定义路由
+        - id: user-api
+          uri: lb://USER-SERVICE
+          order: 1001
+          predicates:
+            - Path=/user/**
+          filters:
+            # 必须加上StripPrefix=1
+            - StripPrefix=1
+
+        - id: order-api
+          uri: lb://ORDER-SERVICE
+          order: 1002
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+server:
+  port: 9300
+
+#开启actuator管理api，后面要关闭
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.ipc.netty: debug

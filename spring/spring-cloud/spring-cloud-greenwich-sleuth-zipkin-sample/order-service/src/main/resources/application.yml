@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: order-service
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://10.1.70.92:9411/
+    enabled: true
+    sender:
+      type: RABBIT
+  rabbitmq:
+    addresses: 10.1.70.92
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: sleuth
+
+server:
+  port: 9120
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+      healthcheck:
+        enabled: true
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
+
+logging:
+  config: classpath:logback-spring.xml
+
+

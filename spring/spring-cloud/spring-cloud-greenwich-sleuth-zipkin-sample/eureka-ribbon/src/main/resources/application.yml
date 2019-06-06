@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka-ribbon
+
+server:
+  port: 9200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+

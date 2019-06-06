@@ -1,0 +1,21 @@
+---
+spring:
+  profiles:
+    active: dev
+  application:
+    name: client
+
+server:
+  port: 8102
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: 123456
+      access-token-uri: http://localhost:8101/oauth/token
+      user-authorization-uri: http://localhost:8101/oauth/authorize
+      scope: read
+      use-current-uri: false
+#      access-token-validity-seconds: 60000
+    resource:
+      user-info-uri: http://localhost:8101/oauth/user

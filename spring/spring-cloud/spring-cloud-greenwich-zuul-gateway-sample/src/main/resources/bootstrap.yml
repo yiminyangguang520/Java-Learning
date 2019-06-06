@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+  redis:
+      host: 127.0.0.1
+      port: 6379
+zuul:
+  routes:
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+      sensitiveHeaders:
+    user:
+      serviceId: user
+      sensitiveHeaders:
+#简洁的写法
+#    product: /myProduct/**
+  ignored-patterns:
+    - /**/product/test
+#    - /product/product/test
+#    - /myProduct/product/test
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+ribbon:
+  ReadTimeout: 5000
+  SocketTimeout: 5000
+

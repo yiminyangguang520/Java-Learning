@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+
+spring:
+  application:
+    name: account-service
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+server:
+  port: 8083
+security:
+  oauth2:
+    resource:
+      id: account-service
+      user-info-uri: http://localhost:5000/user
+      prefer-token-info: false
+

@@ -1,0 +1,12 @@
+FETCH AUTHENTICATION TOKEN
+	Url- http://localhost:8102/token
+	Note - The username and password must be sent in the request to validate the login credentials.
+	Request body-
+		{
+			"username": "Test",
+			"password": "1234"
+		}
+		
+WELCOME USER (PROTECTED URL)
+	Url - http://localhost:8102/welcome
+	Note- This request must contain bearer token in the header.

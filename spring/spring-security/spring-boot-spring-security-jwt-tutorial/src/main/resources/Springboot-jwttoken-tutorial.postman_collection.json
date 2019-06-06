@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "18e5747e-a327-4321-bc10-ffa3cb0e9da5",
+    "name": "Springboot-jwttoken-tutorial",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fetch authentication token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"username\": \"Test\",\n\t\"password\": \"1234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8102/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8102",
+          "path": [
+            "token"
+          ]
+        },
+        "description": "Request to validate the login credentials and get the secure authentication token."
+      },
+      "response": []
+    },
+    {
+      "name": "Welcome user",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoZW50aWNhdGlvbiB0b2tlbiIsInVzciI6IlRlc3QiLCJpc3MiOiJkdWNhdC1zcHJpbmdib290LWp3dHRva2VuIiwiaWF0IjoiMjAxOS0wNC0xNyAxNToxMzowNyIsInJvbCI6IkFkbWluaXN0cmF0b3IsIERldmVsb3BlciJ9.1sjolG2b458tUla-tzm_DQQmuqwQep7ksiXP-1jcicMCQwWHPDeXur6Ay3Z_J2_DloAuynVn1dYjl293gaq33Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "authorization",
+            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoZW50aWNhdGlvbiB0b2tlbiIsInVzciI6IlRlc3QiLCJpc3MiOiJkdWNhdC1zcHJpbmdib290LWp3dHRva2VuIiwiaWF0IjoiMjAxOS0wNC0xNyAxNDoyODo1MCIsInJvbCI6IkFkbWluaXN0cmF0b3IsIERldmVsb3BlciJ9.dL3LTzuvTPAFI2TUfmkNWIva3v5paKj3Q0NebPeaRuqewJEk1weMP8F-6VAd3zl7HdZZ1WMfjk_uw_J3Hc7rJA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8102/welcome",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8102",
+          "path": [
+            "welcome"
+          ]
+        },
+        "description": "This request will contain the authorization key (i.e. the bearer token) in the header."
+      },
+      "response": []
+    }
+  ]
+}

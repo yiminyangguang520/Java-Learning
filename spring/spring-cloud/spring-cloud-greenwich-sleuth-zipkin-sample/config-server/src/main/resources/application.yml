@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jarvisqi/spring-cloud-microservice
+          search-paths: config-server
+          username:
+          password:
+          default-label: master
+
+server:
+  port: 9400
+
+

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: eureka-feign-hystrix
+
+server:
+  port: 9220
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+#开启断路器hystrix配置
+feign:
+  hystrix:
+    enabled: true
+#请求和响应GZIP压缩支持
+  compression:
+    request:
+      enabled: true
+      #支持压缩的mime types
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+
+#断路器配置  使用@HystrixCommand配置
+hystrix:
+  metrics:
+    enabled: true
+    #刷新间隔
+    polling-interval-ms: 2000
+#暴露 endpoints 给 hystrix-dashboard监控面板
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+logging:
+  level:
+    root: debug
+    com:
+      eurekafeignhystrix:
+        service:
+          UserClient: debug
+
+
