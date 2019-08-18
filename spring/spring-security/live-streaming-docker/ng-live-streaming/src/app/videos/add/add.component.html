@@ -1,0 +1,27 @@
+<section class="py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="text-center mb-4">Upload video file</h5>
+            <form #uploadForm="ngForm" (ngSubmit)="upload(title.value, files.files)">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Video title" #title
+                       name="title" required>
+              </div>
+              <div class="form-group text-left">
+                <label for="file">Select video file</label>
+                <input type="file" id="file" class="form-control-file" #files>
+              </div>
+              <div class="d-flex flex-row justify-content-between mt-4">
+                <button type="submit" class="btn btn-primary">Upload</button>
+                <a [routerLink]="['/videos']" class="btn btn-light">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

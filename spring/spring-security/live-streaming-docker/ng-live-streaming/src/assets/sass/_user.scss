@@ -1,0 +1,62 @@
+.navbar-brand {
+  font-weight: 800;
+  color: $primary !important;
+}
+
+/*css loader*/
+.loader {
+  border: 5px solid $gray-300;
+  border-top: 5px solid $primary;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//vh-* and vw-*
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $key, $value in $sizes {
+      @if $breakpoint == 'xs' {
+        .vh-#{$key} {
+          height: #{$key}vh;
+        }
+
+        .vw-#{$key} {
+          width: #{$key}vw;
+        }
+      } @else {
+        .vh-#{$breakpoint}-#{$key} {
+          height: #{$key}vh;
+        }
+
+        .vw-#{$breakpoint}-#{$key} {
+          width: #{$key}vw;
+        }
+      }
+    }
+  }
+}
+
+.table {
+  thead th {
+    border-bottom: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-muted;
+  }
+}
+
+.svg-icon {
+  line-height: 0 !important;
+  flex: none !important;
+}

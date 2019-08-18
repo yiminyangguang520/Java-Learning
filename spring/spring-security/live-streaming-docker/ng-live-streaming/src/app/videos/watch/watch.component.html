@@ -1,0 +1,43 @@
+<section class="py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-10 m-auto" *ngIf="loaded">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-row justify-content-between mb-4">
+              <a [routerLink]="['/videos']" class="btn btn-light d-flex flex-row align-items-center">
+                <span class="svg-icon mr-2" [innerHTML]="'arrow-left' | feather:18"></span>Go Back
+              </a>
+              <button class="btn btn-primary d-flex flex-row align-items-center" (click)="downloadVideo()">
+                <span class="svg-icon mr-2" [innerHTML]="'download' | feather:18"></span>Download
+              </button>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+              <tr>
+                <td><strong>Name:</strong></td>
+                <td>{{video.title}}</td>
+              </tr>
+              <tr>
+                <td><strong>Size:</strong></td>
+                <td>{{video.size | bytes}}</td>
+              </tr>
+              <tr>
+                <td><strong>Created Date:</strong></td>
+                <td>{{video.created | date : 'mediumDate'}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!loaded" class="col-sm-12 py-5 my-auto">
+        <div class="loader d-block mx-auto my-5"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<video id="videoPlayer" controls>-->
+  <!--<source src="http://localhost:8080/videos/download/Race sanso ki.FLV" type="video/mp4">-->
+<!--</video>-->

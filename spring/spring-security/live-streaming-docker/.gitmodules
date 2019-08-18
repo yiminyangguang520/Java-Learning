@@ -1,0 +1,6 @@
+[submodule "live-streaming"]
+	path = live-streaming
+	url = https://github.com/attacomsian/live-streaming.git
+[submodule "ng-live-streaming"]
+	path = ng-live-streaming
+	url = https://github.com/attacomsian/ng-live-streaming.git

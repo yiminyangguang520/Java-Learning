@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  angular:
+    build: ng-live-streaming
+    ports:
+      - "4200:4200"
+  docker-mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=live-streaming
+      - MYSQL_PASSWORD=root
+  spring-boot-jpa-docker-webapp:
+    build: live-streaming
+    restart: on-failure
+    depends_on:
+      - docker-mysql
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_HOST=docker-mysql
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=live-streaming
+      - DATABASE_PORT=3306
