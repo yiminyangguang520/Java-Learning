@@ -3,27 +3,29 @@ package com.lee.java8;
 import com.lee.java8.modle.Dish;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by lee on 2016/10/20.
+ * @author lee
+ * @date 2016/10/20
  */
 public class StreamMap {
 
   public static void main(String[] args) {
 
-        /*List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 6, 7, 7, 1);
+    List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 6, 7, 7, 1);
 
-        List<Integer> result = list.stream().map(i -> i * 2).collect(toList());
+    List<Integer> result = list.stream().map(i -> i * 2).collect(Collectors.toList());
 
-        System.out.println(result);
+    System.out.println(result);
 
-        listDish().stream().map(d -> d.getName()).forEach(System.out::println);
+    listDish().stream().map(Dish::getName).forEach(System.out::println);
 
-        List<String> dishes = listDish().stream().map(d -> d.getName()).collect(toList());
-        System.out.println(dishes);
+    List<String> dishes = listDish().stream().map(Dish::getName).collect(Collectors.toList());
+    System.out.println(dishes);
 
-        //flatmap flat (扁平化)*/
+    //flatmap flat (扁平化)
 
     String[] words = {"Hello", "World"};
 
@@ -39,7 +41,7 @@ public class StreamMap {
 
 
   private static List<Dish> listDish() {
-    List<Dish> menu = Arrays.asList(
+    return Arrays.asList(
         new Dish("pork", false, 800, Dish.Type.MEAT),
         new Dish("beef", false, 700, Dish.Type.MEAT),
         new Dish("chicken", false, 400, Dish.Type.MEAT),
@@ -49,6 +51,5 @@ public class StreamMap {
         new Dish("pizza", true, 550, Dish.Type.OTHER),
         new Dish("prawns", false, 300, Dish.Type.FISH),
         new Dish("salmon", false, 450, Dish.Type.FISH));
-    return menu;
   }
 }

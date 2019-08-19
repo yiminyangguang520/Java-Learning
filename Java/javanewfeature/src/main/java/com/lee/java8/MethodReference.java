@@ -11,16 +11,17 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
- * Created by lee on 2016/10/16.
+ * @author lee
+ * @date 2016/10/16
  */
 public class MethodReference {
 
   public static void main(String[] args) {
 
-        /*Consumer<String> consumer = (s) -> System.out.println(s);
-        useConsumer(consumer, "Hello Alex");*/
+    Consumer<String> consumer = System.out::println;
+    useConsumer(consumer, "Hello Alex");
 
-    useConsumer(s -> System.out.println(s), "Hello Alex");
+    useConsumer(System.out::println, "Hello Alex");
 
     useConsumer(System.out::println, "Hello lee");
 
@@ -28,11 +29,11 @@ public class MethodReference {
 
     System.out.println(list);
 
-    list.sort((a1, a2) -> a1.getColor().compareTo(a2.getColor()));
+    list.sort(Comparator.comparing(Apple::getColor));
 
     System.out.println(list);
 
-    list.stream().forEach(a -> System.out.println(a));
+    list.stream().forEach(System.out::println);
 
     System.out.println("==========================");
     list.stream().forEach(System.out::println);
@@ -48,7 +49,7 @@ public class MethodReference {
     Character c = f2.apply("hello", 2);
     System.out.println(c);
 
-    String string = new String("Hello");
+    String string = "Hello";
     Function<Integer, Character> f3 = string::charAt;
     Character c2 = f3.apply(4);
     System.out.println(c2);

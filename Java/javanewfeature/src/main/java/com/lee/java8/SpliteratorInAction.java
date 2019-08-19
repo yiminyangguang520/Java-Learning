@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/11/3 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/11/3 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class SpliteratorInAction {

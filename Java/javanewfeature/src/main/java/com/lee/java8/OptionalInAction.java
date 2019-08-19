@@ -6,8 +6,8 @@ import com.lee.java8.modle.Person;
 import java.util.Optional;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/25 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/10/25 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class OptionalInAction {

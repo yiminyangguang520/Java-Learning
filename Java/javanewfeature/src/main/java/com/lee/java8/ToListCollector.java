@@ -12,8 +12,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/30 QQ:532500648
+ * @author Wang
+ * @date 2016/10/30 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class ToListCollector<T> implements Collector<T, List<T>, List<T>> {

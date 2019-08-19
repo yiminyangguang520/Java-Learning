@@ -6,7 +6,7 @@ import static java.util.stream.Collectors.toList;
 import com.lee.java8.modle.Dish;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -92,7 +92,7 @@ public class SimpleStream {
     }
 
     //sort
-    Collections.sort(lowCalories, (d1, d2) -> Integer.compare(d1.getCalories(), d2.getCalories()));
+    lowCalories.sort(Comparator.comparingInt(Dish::getCalories));
 
     List<String> dishNameList = new ArrayList<>();
     for (Dish d : lowCalories) {

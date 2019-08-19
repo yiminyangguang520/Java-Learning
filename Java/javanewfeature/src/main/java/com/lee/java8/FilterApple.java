@@ -6,7 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by lee on 2016/10/12.
+ * @author lee
+ * @date 2016/10/12
  */
 public class FilterApple {
 
@@ -16,7 +17,7 @@ public class FilterApple {
     boolean filter(Apple apple);
   }
 
-  public static List<Apple> findApple(List<Apple> apples, AppleFilter appleFilter) {
+  private static List<Apple> findApple(List<Apple> apples, AppleFilter appleFilter) {
     List<Apple> list = new ArrayList<>();
 
     for (Apple apple : apples) {
@@ -53,7 +54,7 @@ public class FilterApple {
     return list;
   }
 
-  public static List<Apple> findApple(List<Apple> apples, String color) {
+  private static List<Apple> findApple(List<Apple> apples, String color) {
     List<Apple> list = new ArrayList<>();
     for (Apple apple : apples) {
       if (color.equals(apple.getColor())) {
@@ -65,36 +66,26 @@ public class FilterApple {
 
   public static void main(String[] args) throws InterruptedException {
     List<Apple> list = Arrays.asList(new Apple("green", 150), new Apple("yellow", 120), new Apple("green", 170));
-//        List<Apple> greenApples = findGreenApple(list);
-//        assert greenApples.size() == 2;
+    List<Apple> greenApple = findGreenApple(list);
+    assert greenApple.size() == 2;
 
-       /* List<Apple> greenApples = findApple(list, "green");
-        System.out.println(greenApples);
+    List<Apple> greenApples = findApple(list, "green");
+    System.out.println(greenApples);
 
-        List<Apple> redApples = findApple(list, "red");
-        System.out.println(redApples);*/
-/*
-        List<Apple> result = findApple(list, new GreenAnd160WeightFilter());
-        System.out.println(result);
+    List<Apple> redApples = findApple(list, "red");
+    System.out.println(redApples);
 
-        List<Apple> yellowList = findApple(list, new AppleFilter() {
-            @Override
-            public boolean filter(Apple apple) {
-                return "yellow".equals(apple.getColor());
-            }
-        });
+    List<Apple> result = findApple(list, new GreenAnd160WeightFilter());
+    System.out.println(result);
 
-        System.out.println(yellowList);*/
+    List<Apple> yellowList = findApple(list, apple -> "yellow".equals(apple.getColor()));
 
-    List<Apple> lambdaResult = findApple(list, apple -> apple.getColor().equals("green"));
+    System.out.println(yellowList);
+
+    List<Apple> lambdaResult = findApple(list, apple -> "green".equals(apple.getColor()));
     System.out.println(lambdaResult);
 
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        System.out.println(Thread.currentThread().getName());
-      }
-    }).start();
+    new Thread(() -> System.out.println(Thread.currentThread().getName())).start();
 
     new Thread(() -> System.out.println(Thread.currentThread().getName())).start();
 

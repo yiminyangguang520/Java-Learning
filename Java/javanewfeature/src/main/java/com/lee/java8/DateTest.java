@@ -13,8 +13,8 @@ import java.time.temporal.ChronoField;
 import java.util.Date;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/11/13 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/11/13 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class DateTest {

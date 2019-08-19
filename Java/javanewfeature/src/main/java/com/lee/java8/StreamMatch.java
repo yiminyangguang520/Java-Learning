@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
- * Created by lee on 2016/10/22.
+ *
+ * @author lee
+ * @date 2016/10/22
  */
 public class StreamMatch {
 

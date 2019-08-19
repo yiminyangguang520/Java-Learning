@@ -1,7 +1,9 @@
 package com.lee.java8.modle;
 
 /**
- * Created by lee on 2016/10/12.
+ *
+ * @author lee
+ * @date 2016/10/12
  */
 public class Apple {
 

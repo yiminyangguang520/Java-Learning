@@ -1,11 +1,5 @@
 package com.lee.java8;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/10/29 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-
 import static com.lee.java8.CollectorsAction.menu;
 
 import com.lee.java8.modle.Dish;
@@ -16,6 +10,9 @@ import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
+/**
+ * @author litz-a
+ */
 public class CollectorsAction3 {
 
   public static void main(String[] args) {
@@ -57,13 +54,13 @@ public class CollectorsAction3 {
   private static void testReducingBinaryOperatorAndIdentiy() {
     System.out.println("testReducingBinaryOperatorAndIdentiy");
     Integer result = menu.stream()
-        .map(Dish::getCalories).collect(Collectors.reducing(0, (d1, d2) -> d1 + d2));
+        .map(Dish::getCalories).reduce(0, Integer::sum);
     System.out.println(result);
   }
 
   private static void testReducingBinaryOperatorAndIdentiyAndFunction() {
     System.out.println("testReducingBinaryOperatorAndIdentiyAndFunction");
-    Integer result = menu.stream().collect(Collectors.reducing(0, Dish::getCalories, (d1, d2) -> d1 + d2));
+    Integer result = menu.stream().map(Dish::getCalories).reduce(0, Integer::sum);
     System.out.println(result);
   }
 

@@ -2,6 +2,7 @@ package com.lee.java8;
 
 import com.lee.java8.modle.Dish;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -10,14 +11,14 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/27 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/10/27 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class CollectorsAction {
 
 
-  public static List<Dish> menu = Arrays.asList(
+  static List<Dish> menu = Arrays.asList(
       new Dish("pork", false, 800, Dish.Type.MEAT),
       new Dish("beef", false, 700, Dish.Type.MEAT),
       new Dish("chicken", false, 400, Dish.Type.MEAT),
@@ -62,16 +63,16 @@ public class CollectorsAction {
     System.out.println("testCollectingAndThen");
     Optional.ofNullable(menu.stream().collect(Collectors.collectingAndThen(Collectors.averagingInt(Dish::getCalories), a -> "The Average Calories is->" + a)))
         .ifPresent(System.out::println);
-/*
+
         List<Dish> list = menu.stream().filter(d -> d.getType().equals(Dish.Type.MEAT))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
         list.add(new Dish("", false, 100, Dish.Type.OTHER));
-        System.out.println(list);*/
+        System.out.println(list);
   }
 
   private static void testCounting() {
     System.out.println("testCounting");
-    Optional.of(menu.stream().collect(Collectors.counting())).ifPresent(System.out::println);
+    Optional.of((long) menu.size()).ifPresent(System.out::println);
   }
 
   private static void testGroupingByFunction() {

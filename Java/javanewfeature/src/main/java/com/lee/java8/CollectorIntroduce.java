@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * @author lee
+ */
 public class CollectorIntroduce {
 
   public static void main(String[] args) {
@@ -21,7 +24,7 @@ public class CollectorIntroduce {
         , new Apple("yellow", 120)
         , new Apple("green", 170));
 
-    List<Apple> greenList = list.stream().filter(a -> a.getColor().equals("green")).collect(Collectors.toList());
+    List<Apple> greenList = list.stream().filter(a -> "green".equals(a.getColor())).collect(Collectors.toList());
     Optional.ofNullable(greenList).ifPresent(System.out::println);
     Optional.ofNullable(groupByNormal(list)).ifPresent(System.out::println);
     System.out.println("===================================================");
@@ -31,13 +34,9 @@ public class CollectorIntroduce {
   }
 
   private static Map<String, List<Apple>> groupByNormal(List<Apple> apples) {
-    Map<String, List<Apple>> map = new HashMap<>();
+    Map<String, List<Apple>> map = new HashMap<>(4);
     for (Apple a : apples) {
-      List<Apple> list = map.get(a.getColor());
-      if (null == list) {
-        list = new ArrayList<>();
-        map.put(a.getColor(), list);
-      }
+      List<Apple> list = map.computeIfAbsent(a.getColor(), k -> new ArrayList<>());
       list.add(a);
     }
     return map;

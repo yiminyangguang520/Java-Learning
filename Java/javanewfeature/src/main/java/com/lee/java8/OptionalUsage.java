@@ -4,43 +4,42 @@ import com.lee.java8.modle.Insurance;
 import java.util.Optional;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/24 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/10/24 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class OptionalUsage {
 
   public static void main(String[] args) {
 
-    Optional<Insurance> insuranceOptional = Optional.<Insurance>empty();
+    Optional<Insurance> insuranceOptional = Optional.empty();
 
-//        insuranceOptional.get();
+    insuranceOptional.get();
 
     Optional<Insurance> insuranceOptional1 = Optional.of(new Insurance());
 
-        /*insuranceOptional1.get();
+    insuranceOptional1.get();
 
-        Optional<Insurance> objectOptional = Optional.ofNullable(null);
+    Optional<Insurance> objectOptional = Optional.ofNullable(null);
 
-        objectOptional.orElseGet(Insurance::new);
+    objectOptional.orElseGet(Insurance::new);
 
-        objectOptional.orElse(new Insurance());
+    objectOptional.orElse(new Insurance());
 
-        objectOptional.orElseThrow(RuntimeException::new);
+    objectOptional.orElseThrow(RuntimeException::new);
 
-        objectOptional.orElseThrow(() -> new RuntimeException("Not have reference"));
-*/
-/*
-        Insurance insurance = insuranceOptional1.filter(i -> i.getName() != null).get();
-        System.out.println(insurance);*/
+    objectOptional.orElseThrow(() -> new RuntimeException("Not have reference"));
 
-/*        Optional<String> nameOptional = insuranceOptional1.map(i -> i.getName());
+    Insurance insurance = insuranceOptional1.filter(i -> i.getName() != null).get();
+    System.out.println(insurance);
 
-        System.out.println(nameOptional.orElse("empty Value"));
+    Optional<String> nameOptional = insuranceOptional1.map(Insurance::getName);
 
-        System.out.println(nameOptional.isPresent());
+    System.out.println(nameOptional.orElse("empty Value"));
 
-        nameOptional.ifPresent(System.out::println);*/
+    System.out.println(nameOptional.isPresent());
+
+    nameOptional.ifPresent(System.out::println);
 
     System.out.println(getInsuranceName(null));
     System.out.println(getInsuranceNameByOptional(null));

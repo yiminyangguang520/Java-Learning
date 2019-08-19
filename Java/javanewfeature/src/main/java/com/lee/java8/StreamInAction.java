@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Created by lee on 2016/10/22.
+ *
+ * @author lee
+ * @date 2016/10/22
  */
 public class StreamInAction {
 
@@ -44,7 +46,7 @@ public class StreamInAction {
 
     //3.Find all traders from Cambridge and sort them by name.
     transactions.stream().map(Transaction::getTrader)
-        .filter(t -> t.getCity().equals("Cambridge"))
+        .filter(t -> "Cambridge".equals(t.getCity()))
         .distinct()
         .sorted(Comparator.comparing(Trader::getName))
         .forEach(System.out::println);
@@ -59,25 +61,26 @@ public class StreamInAction {
 
     //5. Are any traders based in Milan?
 
-    boolean liveInMilan1 = transactions.stream().anyMatch(t -> t.getTrader().getCity().equals("Milan"));
-    boolean liveInMilan2 = transactions.stream().map(Transaction::getTrader).anyMatch(t -> t.getCity().equals("Milan"));
+    boolean liveInMilan1 = transactions.stream().anyMatch(t -> "Milan".equals(t.getTrader().getCity()));
+    boolean liveInMilan2 = transactions.stream().map(Transaction::getTrader).anyMatch(t -> "Milan".equals(t.getCity()));
 
     System.out.println(liveInMilan1);
     System.out.println(liveInMilan2);
 
     //6.Print all transactions’ values from the traders living in Cambridge.
 
-    transactions.stream().filter(t -> t.getTrader().getCity().equals("Cambridge"))
+    transactions.stream().filter(t -> "Cambridge".equals(t.getTrader().getCity()))
         .map(Transaction::getValue)
         .forEach(System.out::println);
 
     //7.What’s the highest value of all the transactions?
     Optional<Integer> maxValue = transactions.stream().map(Transaction::getValue).reduce((i, j) -> i > j ? i : j);
-    System.out.println(maxValue.get());
+    maxValue.ifPresent(System.out::println);
 
     //8.Find the transaction with the smallest value.
     Optional<Integer> minValue = transactions.stream().map(Transaction::getValue).reduce(Integer::min);
-    System.out.println(minValue.get());
+    minValue.ifPresent(System.out::println);
+
   }
 
 }

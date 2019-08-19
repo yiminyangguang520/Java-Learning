@@ -1,4 +1,4 @@
-package com.lee.java8.maplistconverter.model;
+package com.lee.java8.maplistconverter;
 
 /**
  * @author litz-a

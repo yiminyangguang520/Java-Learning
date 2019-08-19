@@ -16,7 +16,9 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
- * Created by lee on 2016/10/15.
+ *
+ * @author lee
+ * @date 2016/10/15
  */
 public class LambdaUsage {
 

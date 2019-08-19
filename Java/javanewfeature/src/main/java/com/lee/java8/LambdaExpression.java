@@ -16,18 +16,13 @@ public class LambdaExpression {
 
   public static void main(String[] args) {
 
-    Comparator<Apple> byColor = new Comparator<Apple>() {
-      @Override
-      public int compare(Apple o1, Apple o2) {
-        return o1.getColor().compareTo(o2.getColor());
-      }
-    };
+    Comparator<Apple> byColor = Comparator.comparing(Apple::getColor);
 
     List<Apple> list = Collections.emptyList();
 
     list.sort(byColor);
 
-    Comparator<Apple> byColor2 = (o1, o2) -> o1.getColor().compareTo(o2.getColor());
+    Comparator<Apple> byColor2 = Comparator.comparing(Apple::getColor);
 
     Function<String, Integer> flambda = s -> s.length();
 

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collector;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/30 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/10/30 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 public class CustomerCollectorAction {

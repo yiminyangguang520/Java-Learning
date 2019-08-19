@@ -25,7 +25,7 @@ public class Java8Base64Image {
 
   }
 
-  public static String encoder(String imagePath) {
+  private static String encoder(String imagePath) {
     String base64Image = "";
     File file = new File(imagePath);
     try (FileInputStream imageInFile = new FileInputStream(file)) {
@@ -41,7 +41,7 @@ public class Java8Base64Image {
     return base64Image;
   }
 
-  public static void decoder(String base64Image, String pathFile) {
+  private static void decoder(String base64Image, String pathFile) {
     try (FileOutputStream imageOutFile = new FileOutputStream(pathFile)) {
       // Converting a Base64 String into Image byte array
       byte[] imageByteArray = Base64.getDecoder().decode(base64Image);

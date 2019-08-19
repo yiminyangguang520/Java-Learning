@@ -2,11 +2,9 @@ package com.lee.java8.modle;
 
 import java.util.Optional;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/10/24 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author litz-a
+ */
 public class Car {
 
   private Optional<Insurance> insurance;

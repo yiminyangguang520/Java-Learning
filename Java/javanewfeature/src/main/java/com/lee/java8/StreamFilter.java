@@ -6,7 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by lee on 2016/10/20.
+ *
+ * @author lee
+ * @date 2016/10/20
  */
 public class StreamFilter {
 
@@ -27,8 +29,8 @@ public class StreamFilter {
     System.out.println(result);
 
     list.forEach(System.out::println);
-    list.forEach(i -> System.out.println(i));
-    list.forEach((Integer i) -> System.out.println(i));
+    list.forEach(System.out::println);
+    list.forEach(System.out::println);
 
     for (int i : list) {
       System.out.println(i);

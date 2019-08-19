@@ -1,8 +1,8 @@
 package com.lee.java8;
 
 /***************************************
- * @author:Alex Wang
- * @Date:2016/10/29 QQ:532500648
+ * @author Alex Wang
+ * @date 2016/10/29 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
 
@@ -39,7 +39,7 @@ public class CollectorsAction4 {
 
   private static void testSummingDouble() {
     System.out.println("testSummingDouble");
-    Optional.of(menu.stream().collect(Collectors.summingDouble(Dish::getCalories)))
+    Optional.of(menu.stream().mapToDouble(Dish::getCalories).sum())
         .ifPresent(System.out::println);
 
     Optional.of(menu.stream().map(Dish::getCalories).mapToInt(Integer::intValue).sum())
@@ -48,13 +48,13 @@ public class CollectorsAction4 {
 
   private static void testSummingLong() {
     System.out.println("testSummingLong");
-    Optional.of(menu.stream().collect(Collectors.summingLong(Dish::getCalories)))
+    Optional.of(menu.stream().mapToLong(Dish::getCalories).sum())
         .ifPresent(System.out::println);
   }
 
   private static void testSummingInt() {
     System.out.println("testSummingInt");
-    Optional.of(menu.stream().collect(Collectors.summingInt(Dish::getCalories)))
+    Optional.of(menu.stream().mapToInt(Dish::getCalories).sum())
         .ifPresent(System.out::println);
   }
 
@@ -80,7 +80,7 @@ public class CollectorsAction4 {
   private static void testToConcurrentMapWithBinaryOperator() {
     System.out.println("testToConcurrentMapWithBinaryOperator");
     Optional.of(menu.stream()
-        .collect(Collectors.toConcurrentMap(Dish::getType, v -> 1L, (a, b) -> a + b)))
+        .collect(Collectors.toConcurrentMap(Dish::getType, v -> 1L, Long::sum)))
         .ifPresent(v -> {
           System.out.println(v);
           System.out.println(v.getClass());
@@ -95,7 +95,7 @@ public class CollectorsAction4 {
 
     System.out.println("testToConcurrentMapWithBinaryOperatorAndSupplier");
     Optional.of(menu.stream()
-        .collect(Collectors.toConcurrentMap(Dish::getType, v -> 1L, (a, b) -> a + b, ConcurrentSkipListMap::new)))
+        .collect(Collectors.toConcurrentMap(Dish::getType, v -> 1L, Long::sum, ConcurrentSkipListMap::new)))
         .ifPresent(v -> {
           System.out.println(v);
           System.out.println(v.getClass());
@@ -159,7 +159,7 @@ public class CollectorsAction4 {
   private static void testToMapWithBinaryOperator() {
     System.out.println("testToMapWithBinaryOperator");
     Optional.of(menu.stream()
-        .collect(Collectors.toMap(Dish::getType, v -> 1L, (a, b) -> a + b)))
+        .collect(Collectors.toMap(Dish::getType, v -> 1L, Long::sum)))
         .ifPresent(v -> {
           System.out.println(v);
           System.out.println(v.getClass());
@@ -172,7 +172,7 @@ public class CollectorsAction4 {
   private static void testToMapWithBinaryOperatorAndSupplier() {
     System.out.println("testToMapWithBinaryOperatorAndSupplier");
     Optional.of(menu.stream()
-        .collect(Collectors.toMap(Dish::getType, v -> 1L, (a, b) -> a + b, Hashtable::new)))
+        .collect(Collectors.toMap(Dish::getType, v -> 1L, Long::sum, Hashtable::new)))
         .ifPresent(v -> {
           System.out.println(v);
           System.out.println(v.getClass());

@@ -11,21 +11,23 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 /**
- * Created by lee on 2016/10/19.
+ *
+ * @author lee
+ * @date 2016/10/19
  */
 public class CreateStream {
 
   public static void main(String[] args) {
-        /*createStreamFromCollection().forEach(System.out::println);
-        createStreamFromValues().forEach(System.out::println);*/
-//        createStreamFromArrays().forEach(System.out::println);
+    createStreamFromCollection().forEach(System.out::println);
+    createStreamFromValues().forEach(System.out::println);
+    createStreamFromArrays().forEach(System.out::println);
 
-        /*Stream<String> streamFromFile = createStreamFromFile();
-        System.out.println(streamFromFile);
-        streamFromFile.forEach(System.out::println);*/
+    Stream<String> streamFromFile = createStreamFromFile();
+    System.out.println(streamFromFile);
+    streamFromFile.forEach(System.out::println);
 
-//        createStreamFromIterator().forEach(System.out::println);
-//        createStreamFromGenerate().forEach(System.out::println);
+    createStreamFromIterator().forEach(System.out::println);
+    createStreamFromGenerate().forEach(System.out::println);
     createObjStreamFromGenerate().forEach(System.out::println);
   }
 
@@ -90,7 +92,7 @@ public class CreateStream {
     private int id;
     private String name;
 
-    public Obj(int id, String name) {
+    Obj(int id, String name) {
       this.id = id;
       this.name = name;
     }
