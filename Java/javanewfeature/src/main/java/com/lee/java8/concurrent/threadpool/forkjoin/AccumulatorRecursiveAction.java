@@ -38,18 +38,18 @@ public class AccumulatorRecursiveAction extends RecursiveAction {
 
   static class AccumulatorHelper {
 
-    private static final AtomicInteger result = new AtomicInteger(0);
+    private static final AtomicInteger RESULT = new AtomicInteger(0);
 
     static void accumulate(int value) {
-      result.getAndAdd(value);
+      RESULT.getAndAdd(value);
     }
 
     public static int getResult() {
-      return result.get();
+      return RESULT.get();
     }
 
     static void rest() {
-      result.set(0);
+      RESULT.set(0);
     }
   }
 }

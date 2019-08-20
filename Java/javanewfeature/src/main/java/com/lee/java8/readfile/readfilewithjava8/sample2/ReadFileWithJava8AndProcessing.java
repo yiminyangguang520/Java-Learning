@@ -25,8 +25,6 @@ public class ReadFileWithJava8AndProcessing {
           .filter(line -> !line.endsWith("1"))
           .map(line -> line.substring(4, 5))
           .collect(Collectors.toList());
-
-
     } catch (IOException e) {
       e.printStackTrace();
     }

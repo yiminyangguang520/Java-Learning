@@ -2,17 +2,21 @@ package com.lee.java8.concurrent.sync;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by rajeevkumarsingh on 11/05/17.
+ *
+ * @author rajeevkumarsingh
+ * @date 11/05/17
  */
-
-
 public class RaceConditionExample {
 
   public static void main(String[] args) throws InterruptedException {
-    ExecutorService executorService = Executors.newFixedThreadPool(10);
+    ExecutorService executorService = new ThreadPoolExecutor(10, 10,
+        0L, TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<>());
 
     Counter counter = new Counter();
 

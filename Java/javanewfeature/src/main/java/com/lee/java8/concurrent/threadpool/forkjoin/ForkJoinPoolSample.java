@@ -11,18 +11,18 @@ import java.util.stream.LongStream;
  */
 public class ForkJoinPoolSample {
 
-  public static void giveRangeOfLongs_whenSummedInParallel_shouldBeEqualToExpectedTotal()
+  private static void giveRangeOfLongs_whenSummedInParallel_shouldBeEqualToExpectedTotal()
       throws InterruptedException, ExecutionException {
 
     long firstNum = 1;
     long lastNum = 1_000_000;
 
-    List<Long> aList = LongStream.rangeClosed(firstNum, lastNum).boxed()
+    List<Long> aList = LongStream.rangeClosed(firstNum, lastNum)
+        .boxed()
         .collect(Collectors.toList());
 
     ForkJoinPool customThreadPool = new ForkJoinPool();
-    long actualTotal = customThreadPool.submit(
-        () -> aList.parallelStream().reduce(0L, Long::sum)).get();
+    long actualTotal = customThreadPool.submit(() -> aList.parallelStream().reduce(0L, Long::sum)).get();
 
     System.out.println(actualTotal);
     System.out.println(((lastNum + firstNum) * lastNum / 2));

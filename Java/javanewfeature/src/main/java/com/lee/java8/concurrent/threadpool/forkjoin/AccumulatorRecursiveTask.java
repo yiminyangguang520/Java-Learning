@@ -2,11 +2,9 @@ package com.lee.java8.concurrent.threadpool.forkjoin;
 
 import java.util.concurrent.RecursiveTask;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/11/2 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author litz-a
+ */
 public class AccumulatorRecursiveTask extends RecursiveTask<Integer> {
 
   private final int start;

@@ -11,7 +11,9 @@ import java.util.concurrent.*;
 public class InvokeAnyExample {
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    ExecutorService executorService = Executors.newFixedThreadPool(5);
+    ExecutorService executorService = new ThreadPoolExecutor(5, 5,
+        0L, TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<>());
 
     Callable<String> task1 = () -> {
       Thread.sleep(2000);

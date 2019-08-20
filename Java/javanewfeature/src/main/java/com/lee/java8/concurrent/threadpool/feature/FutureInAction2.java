@@ -4,19 +4,21 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
+import java.util.concurrent.TimeUnit;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/11/7 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author litz-a
+ */
 public class FutureInAction2 {
 
-  public static void main(String[] args)
-      throws ExecutionException, InterruptedException, TimeoutException {
+  public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    ExecutorService executorService = new ThreadPoolExecutor(1, 1,
+            0L, TimeUnit.MILLISECONDS,
+            new LinkedBlockingQueue<>(), Executors.defaultThreadFactory(), new CallerRunsPolicy());
     Future<String> future = executorService.submit(() -> {
       try {
         Thread.sleep(10000L);
@@ -26,15 +28,13 @@ public class FutureInAction2 {
       }
     });
 
-    //...
-    //...
-    //...
-    //...
-    //String value = future.get(10, TimeUnit.MICROSECONDS);
+    // String value = future.get(10, TimeUnit.MICROSECONDS);
     while (!future.isDone()) {
       Thread.sleep(10);
     }
+
     System.out.println(future.get());
+
     executorService.shutdown();
   }
 }

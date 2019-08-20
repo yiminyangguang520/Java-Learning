@@ -1,24 +1,25 @@
 package com.lee.java8.concurrent.sync;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author rajeevkumarsingh
  * @date 11/05/17
  */
-
-
 public class SynchronizedMethodExample {
 
   public static void main(String[] args) throws InterruptedException {
-    ExecutorService executorService = Executors.newFixedThreadPool(10);
+    ExecutorService executorService = new ThreadPoolExecutor(10, 10,
+        0L, TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<>());
 
     SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
 
     for (int i = 0; i < 1000; i++) {
-      executorService.submit(() -> synchronizedCounter.increment());
+      executorService.submit(synchronizedCounter::increment);
     }
 
     executorService.shutdown();
@@ -32,7 +33,7 @@ public class SynchronizedMethodExample {
     private int count = 0;
 
     // Synchronized Method
-    public synchronized void increment() {
+    synchronized void increment() {
       System.out.println(Thread.currentThread().getName());
       count = count + 1;
     }

@@ -2,11 +2,9 @@ package com.lee.java8.concurrent.threadpool.forkjoin;
 
 import java.util.concurrent.ForkJoinPool;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/11/2 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author litz-a
+ */
 public class ForkJoinPoolTest {
 
   private static int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -26,8 +24,8 @@ public class ForkJoinPoolTest {
 
   private static int calc() {
     int result = 0;
-    for (int i = 0; i < data.length; i++) {
-      result += data[i];
+    for (int datum : data) {
+      result += datum;
     }
     return result;
   }

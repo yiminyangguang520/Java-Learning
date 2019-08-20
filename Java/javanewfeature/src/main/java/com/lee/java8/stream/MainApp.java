@@ -15,12 +15,17 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * @author litz-a
+ */
 public class MainApp {
 
   public static void main(String[] args) {
 
+    Pattern p = Pattern.compile("\\W");
+
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-    // Stream<Integer> streamInt = numbers.stream();
+    Stream<Integer> streamInt = numbers.stream();
     List<String> result = numbers.stream().filter(i -> (i % 2) == 0).map(i -> "[" + i + "]")
         .collect(Collectors.toList());
     System.out.println(result);
@@ -55,7 +60,7 @@ public class MainApp {
     }
 
     String name = "Java Sample Approach";
-    Stream<String> streamWords = Pattern.compile("\\W").splitAsStream(name);
+    Stream<String> streamWords = p.splitAsStream(name);
     streamWords.forEach(System.out::print);
     System.out.println();
 
@@ -95,7 +100,7 @@ public class MainApp {
     class Foo {
 
       public String name;
-      public List<String> bars = new ArrayList<>();
+      public List<String> bars;
 
       public Foo(String name, List<String> bars) {
         super();
@@ -104,7 +109,7 @@ public class MainApp {
       }
     }
 
-    List<Foo> fooList = new ArrayList<Foo>();
+    List<Foo> fooList = new ArrayList<>();
     List<String> l1 = Arrays.asList("Java", "Sample", "Approach");
     List<String> l2 = Arrays.asList("Java Tecnology", "Spring Framework", "Sample Code");
     fooList.add(new Foo("foo1", l1));

@@ -1,5 +1,12 @@
 package com.lee.java8.concurrent.thread;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
+import java.util.concurrent.TimeUnit;
+
 /**
  *
  * @author rajeevkumarsingh
@@ -31,8 +38,12 @@ public class ThreadSleepExample {
       }
     };
 
-    Thread thread = new Thread(runnable);
 
-    thread.start();
+    ExecutorService singleThreadPool = new ThreadPoolExecutor(1, 1,
+        0L, TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<>(), Executors.defaultThreadFactory(), new CallerRunsPolicy());
+
+    singleThreadPool.submit(runnable);
+    singleThreadPool.shutdown();
   }
 }

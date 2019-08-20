@@ -1,5 +1,8 @@
 package com.lee.java8.stream;
 
+/**
+ * @author litz-a
+ */
 public class Customer {
 
   private String firstName;

@@ -3,11 +3,9 @@ package com.lee.java8.concurrent.threadpool.feature;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/11/7 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author litz-a
+ */
 public class FutureInAction3 {
 
   public static void main(String[] args) {
