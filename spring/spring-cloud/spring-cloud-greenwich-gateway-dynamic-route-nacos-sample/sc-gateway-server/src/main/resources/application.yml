@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: sc-gateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: service1_v1
+          uri: http://localhost:8081/v1
+          predicates:
+            - Path=/test
+            - Weight=service1, 90   # weight中的group任意名字即可，但采用Weight谓词的话，group名字需保持一致
+        - id: service1_v2
+          uri: http://localhost:8082/v2
+          predicates:
+            - Path=/test
+            - Weight=service1, 10
+
+
+# 配置输出日志
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 8080
