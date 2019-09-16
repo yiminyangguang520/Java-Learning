@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>springframework-guru</groupId>
+  <artifactId>spring-boot-reactive-webclient-sample</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-BUILD-SNAPSHOT</version>
+
+  <name>spring-boot-reactive-webclient-sample</name>
+  <description>Spring Reactive WebClient Demo</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>movie-event-api</module>
+    <module>webclient-movie-api</module>
+  </modules>
+
+</project>
