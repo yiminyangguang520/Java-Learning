@@ -34,7 +34,7 @@ public class CustomerService implements InitializingBean, DisposableBean {
 
   @PostConstruct
   public void postConstructstroy() {
-    System.out.println("注解-执行CustomerService：preDestroy方法");
+    System.out.println("注解-执行CustomerService：postConstructstroy方法");
   }
 
   @PreDestroy

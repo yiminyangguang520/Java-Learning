@@ -4,7 +4,7 @@
 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="customerService" class="com.mkyong.customer.services.CustomerService" init-method="initMethod" destroy-method="destroyMethod">
-    <property name="message" value="i'm property message"/>
+    <property name="message" value="I'm property message"/>
   </bean>
 
 </beans>
