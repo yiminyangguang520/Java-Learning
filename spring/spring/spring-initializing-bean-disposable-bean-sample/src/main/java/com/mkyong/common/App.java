@@ -1,21 +1,22 @@
 package com.mkyong.common;
 
+import com.mkyong.customer.services.CustomerService;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.mkyong.customer.services.CustomerService;
+/**
+ * @author bruce
+ */
+public class App {
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-    	ConfigurableApplicationContext context = 
-    		new ClassPathXmlApplicationContext(new String[] {"Spring-Customer.xml"});
-	
-    	CustomerService cust = (CustomerService)context.getBean("customerService");
-    	
-    	System.out.println(cust);
-    	
-    	context.close();
-    }
+  public static void main(String[] args) {
+    ConfigurableApplicationContext context =
+      new ClassPathXmlApplicationContext(new String[]{"Spring-Customer.xml"});
+
+    CustomerService cust = (CustomerService) context.getBean("customerService");
+
+    System.out.println(cust);
+
+    context.close();
+  }
 }
