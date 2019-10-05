@@ -44,6 +44,7 @@ public class InstituteController implements BaseController<Institute, Integer> {
     return instituteService.findById(id);
   }
 
+  @Override
   @RequestMapping(value = "/api/institute", method = RequestMethod.PUT)
   public int update(@RequestBody Institute institute) {
     return instituteService.update(institute);

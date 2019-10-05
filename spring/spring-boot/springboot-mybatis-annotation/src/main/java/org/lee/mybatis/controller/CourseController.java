@@ -43,6 +43,7 @@ public class CourseController implements BaseController<Course, Integer> {
     return courseService.findById(id);
   }
 
+  @Override
   @RequestMapping(value = "/api/course", method = RequestMethod.PUT)
   public int update(@RequestBody Course course) {
     return courseService.update(course);

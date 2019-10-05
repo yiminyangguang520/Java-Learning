@@ -1,146 +1,154 @@
 package com.lee.mybatis.plugins;
 
 
+import java.util.Iterator;
+import java.util.List;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.OutputUtilities;
-import org.mybatis.generator.api.dom.java.*;
+import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
+import org.mybatis.generator.api.dom.java.JavaVisibility;
+import org.mybatis.generator.api.dom.java.Method;
+import org.mybatis.generator.api.dom.java.Parameter;
+import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.internal.util.JavaBeansUtil;
 
-import java.util.Iterator;
-import java.util.List;
-
 public class EqualsHashCodePlugin extends PluginAdapter {
-    private FullyQualifiedJavaType objects = new FullyQualifiedJavaType("java.util.Objects");
+
+  private FullyQualifiedJavaType objects = new FullyQualifiedJavaType("java.util.Objects");
 
 
-    public EqualsHashCodePlugin() {
+  public EqualsHashCodePlugin() {
+  }
+
+  @Override
+  public boolean validate(List<String> warnings) {
+    return true;
+  }
+
+  @Override
+  public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+    List columns;
+    if (introspectedTable.getRules().generateRecordWithBLOBsClass()) {
+      columns = introspectedTable.getNonBLOBColumns();
+    } else {
+      columns = introspectedTable.getAllColumns();
     }
 
-    public boolean validate(List<String> warnings) {
-        return true;
+    this.generateEquals(topLevelClass, columns, introspectedTable);
+    this.generateHashCode(topLevelClass, columns, introspectedTable);
+    return true;
+  }
+
+  @Override
+  public boolean modelPrimaryKeyClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+    this.generateEquals(topLevelClass, introspectedTable.getPrimaryKeyColumns(), introspectedTable);
+    this.generateHashCode(topLevelClass, introspectedTable.getPrimaryKeyColumns(), introspectedTable);
+    return true;
+  }
+
+  @Override
+  public boolean modelRecordWithBLOBsClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+    this.generateEquals(topLevelClass, introspectedTable.getAllColumns(), introspectedTable);
+    this.generateHashCode(topLevelClass, introspectedTable.getAllColumns(), introspectedTable);
+    return true;
+  }
+
+  protected void generateEquals(TopLevelClass topLevelClass, List<IntrospectedColumn> introspectedColumns, IntrospectedTable introspectedTable) {
+    Method method = new Method();
+    method.setVisibility(JavaVisibility.PUBLIC);
+    method.setReturnType(FullyQualifiedJavaType.getBooleanPrimitiveInstance());
+    method.setName("equals");
+    method.addParameter(new Parameter(FullyQualifiedJavaType.getObjectInstance(), "that"));
+    if (introspectedTable.isJava5Targeted()) {
+      method.addAnnotation("@Override");
     }
 
-    public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
-        List columns;
-        if (introspectedTable.getRules().generateRecordWithBLOBsClass()) {
-            columns = introspectedTable.getNonBLOBColumns();
-        } else {
-            columns = introspectedTable.getAllColumns();
-        }
+    this.context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
+    method.addBodyLine("if (this == that) {");
+    method.addBodyLine("return true;");
+    method.addBodyLine("}");
+    method.addBodyLine("if (that == null) {");
+    method.addBodyLine("return false;");
+    method.addBodyLine("}");
+    method.addBodyLine("if (getClass() != that.getClass()) {");
+    method.addBodyLine("return false;");
+    method.addBodyLine("}");
+    StringBuilder sb = new StringBuilder();
+    sb.append(topLevelClass.getType().getShortName());
+    sb.append(" other = (");
+    sb.append(topLevelClass.getType().getShortName());
+    sb.append(") that;");
+    method.addBodyLine(sb.toString());
+    boolean first = true;
 
-        this.generateEquals(topLevelClass, columns, introspectedTable);
-        this.generateHashCode(topLevelClass, columns, introspectedTable);
-        return true;
+    for (Iterator iter = introspectedColumns.iterator(); iter.hasNext(); method.addBodyLine(sb.toString())) {
+      IntrospectedColumn introspectedColumn = (IntrospectedColumn) iter.next();
+      sb.setLength(0);
+      if (first) {
+        sb.append("return (");
+        first = false;
+      } else {
+        OutputUtilities.javaIndent(sb, 1);
+        sb.append("&& (");
+      }
+
+      String getterMethod = JavaBeansUtil.getGetterMethodName(introspectedColumn.getJavaProperty(), introspectedColumn.getFullyQualifiedJavaType());
+      if (introspectedColumn.getFullyQualifiedJavaType().isPrimitive()) {
+        sb.append("this.");
+        sb.append(getterMethod);
+        sb.append("() == ");
+        sb.append("other.");
+        sb.append(getterMethod);
+        sb.append("())");
+      } else {
+        sb.append("this.");
+        sb.append(getterMethod);
+        sb.append("() == null ? other.");
+        sb.append(getterMethod);
+        sb.append("() == null : this.");
+        sb.append(getterMethod);
+        sb.append("().equals(other.");
+        sb.append(getterMethod);
+        sb.append("()))");
+      }
+
+      if (!iter.hasNext()) {
+        sb.append(';');
+      }
     }
 
-    public boolean modelPrimaryKeyClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
-        this.generateEquals(topLevelClass, introspectedTable.getPrimaryKeyColumns(), introspectedTable);
-        this.generateHashCode(topLevelClass, introspectedTable.getPrimaryKeyColumns(), introspectedTable);
-        return true;
+    topLevelClass.addMethod(method);
+  }
+
+  protected void generateHashCode(TopLevelClass topLevelClass, List<IntrospectedColumn> introspectedColumns, IntrospectedTable introspectedTable) {
+    topLevelClass.addImportedType(this.objects);
+    // Objects.hash(id, name, grade, classNumber, instituteId);
+
+    Method method = new Method();
+    method.setVisibility(JavaVisibility.PUBLIC);
+    method.setReturnType(FullyQualifiedJavaType.getIntInstance());
+    method.setName("hashCode");
+    if (introspectedTable.isJava5Targeted()) {
+      method.addAnnotation("@Override");
     }
-
-    public boolean modelRecordWithBLOBsClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
-        this.generateEquals(topLevelClass, introspectedTable.getAllColumns(), introspectedTable);
-        this.generateHashCode(topLevelClass, introspectedTable.getAllColumns(), introspectedTable);
-        return true;
+    this.context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
+    Iterator iterator = introspectedColumns.iterator();
+    StringBuilder sb = new StringBuilder();
+    sb.append("return Objects.hash(");
+    while (iterator.hasNext()) {
+      IntrospectedColumn introspectedColumn = (IntrospectedColumn) iterator.next();
+      String javaProperty = introspectedColumn.getJavaProperty();
+      sb.append(javaProperty);
+      if (iterator.hasNext()) {
+        sb.append(", ");
+      }
     }
+    sb.append(");");
 
-    protected void generateEquals(TopLevelClass topLevelClass, List<IntrospectedColumn> introspectedColumns, IntrospectedTable introspectedTable) {
-        Method method = new Method();
-        method.setVisibility(JavaVisibility.PUBLIC);
-        method.setReturnType(FullyQualifiedJavaType.getBooleanPrimitiveInstance());
-        method.setName("equals");
-        method.addParameter(new Parameter(FullyQualifiedJavaType.getObjectInstance(), "that"));
-        if (introspectedTable.isJava5Targeted()) {
-            method.addAnnotation("@Override");
-        }
-
-        this.context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
-        method.addBodyLine("if (this == that) {");
-        method.addBodyLine("return true;");
-        method.addBodyLine("}");
-        method.addBodyLine("if (that == null) {");
-        method.addBodyLine("return false;");
-        method.addBodyLine("}");
-        method.addBodyLine("if (getClass() != that.getClass()) {");
-        method.addBodyLine("return false;");
-        method.addBodyLine("}");
-        StringBuilder sb = new StringBuilder();
-        sb.append(topLevelClass.getType().getShortName());
-        sb.append(" other = (");
-        sb.append(topLevelClass.getType().getShortName());
-        sb.append(") that;");
-        method.addBodyLine(sb.toString());
-        boolean first = true;
-
-        for (Iterator iter = introspectedColumns.iterator(); iter.hasNext(); method.addBodyLine(sb.toString())) {
-            IntrospectedColumn introspectedColumn = (IntrospectedColumn) iter.next();
-            sb.setLength(0);
-            if (first) {
-                sb.append("return (");
-                first = false;
-            } else {
-                OutputUtilities.javaIndent(sb, 1);
-                sb.append("&& (");
-            }
-
-            String getterMethod = JavaBeansUtil.getGetterMethodName(introspectedColumn.getJavaProperty(), introspectedColumn.getFullyQualifiedJavaType());
-            if (introspectedColumn.getFullyQualifiedJavaType().isPrimitive()) {
-                sb.append("this.");
-                sb.append(getterMethod);
-                sb.append("() == ");
-                sb.append("other.");
-                sb.append(getterMethod);
-                sb.append("())");
-            } else {
-                sb.append("this.");
-                sb.append(getterMethod);
-                sb.append("() == null ? other.");
-                sb.append(getterMethod);
-                sb.append("() == null : this.");
-                sb.append(getterMethod);
-                sb.append("().equals(other.");
-                sb.append(getterMethod);
-                sb.append("()))");
-            }
-
-            if (!iter.hasNext()) {
-                sb.append(';');
-            }
-        }
-
-        topLevelClass.addMethod(method);
-    }
-
-    protected void generateHashCode(TopLevelClass topLevelClass, List<IntrospectedColumn> introspectedColumns, IntrospectedTable introspectedTable) {
-        topLevelClass.addImportedType(this.objects);
-        // Objects.hash(id, name, grade, classNumber, instituteId);
-
-        Method method = new Method();
-        method.setVisibility(JavaVisibility.PUBLIC);
-        method.setReturnType(FullyQualifiedJavaType.getIntInstance());
-        method.setName("hashCode");
-        if (introspectedTable.isJava5Targeted()) {
-            method.addAnnotation("@Override");
-        }
-        this.context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
-        Iterator iterator = introspectedColumns.iterator();
-        StringBuilder sb = new StringBuilder();
-        sb.append("return Objects.hash(");
-        while (iterator.hasNext()) {
-            IntrospectedColumn introspectedColumn = (IntrospectedColumn) iterator.next();
-            String javaProperty = introspectedColumn.getJavaProperty();
-            sb.append(javaProperty);
-            if (iterator.hasNext()) {
-                sb.append(", ");
-            }
-        }
-        sb.append(");");
-
-        method.addBodyLine(sb.toString());
-        topLevelClass.addMethod(method);
-    }
+    method.addBodyLine(sb.toString());
+    topLevelClass.addMethod(method);
+  }
 }
 

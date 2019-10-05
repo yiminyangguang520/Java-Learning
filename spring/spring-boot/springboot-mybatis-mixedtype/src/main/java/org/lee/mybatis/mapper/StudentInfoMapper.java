@@ -9,6 +9,9 @@ import org.apache.ibatis.annotations.Select;
 import org.lee.mybatis.model.StudentInfo;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author bruce
+ */
 @Mapper
 @Repository
 public interface StudentInfoMapper {
@@ -35,7 +38,7 @@ public interface StudentInfoMapper {
     "from student_info",
     "where id = #{id,jdbcType=INTEGER}"
   })
-  @ResultMap("org.ostenant.springboot.learning.examples.mapper.StudentInfoMapper.BaseResultMap")
+  @ResultMap("org.lee.mybatis.mapper.StudentInfoMapper.BaseResultMap")
   StudentInfo findById(Integer id);
 
   int update(StudentInfo record);

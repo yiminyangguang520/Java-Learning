@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.lee.mybatis.mapper.InstituteMapper">
   <resultMap id="BaseResultMap" type="org.lee.mybatis.model.Institute">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
   </resultMap>
 
 
@@ -14,7 +14,7 @@
 
   <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List"/>
     from institute
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -27,7 +27,7 @@
 
 
   <insert id="save" keyColumn="id" keyProperty="id"
-          parameterType="org.lee.mybatis.model.Institute" useGeneratedKeys="true">
+    parameterType="org.lee.mybatis.model.Institute" useGeneratedKeys="true">
     insert into institute (id, name)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR})
   </insert>

@@ -43,6 +43,7 @@ public class StudentController implements BaseController<Student, Integer> {
     return studentService.findById(id);
   }
 
+  @Override
   @RequestMapping(value = "/api/student", method = RequestMethod.PUT)
   public int update(@RequestBody Student student) {
     return studentService.update(student);

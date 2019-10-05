@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/learning?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
 
@@ -13,8 +13,7 @@ logging:
   level:
     root: INFO
     org:
-      ostenant:
-        springboot:
-          learning:
-            examples:
-              mapper: debug
+      lee:
+        mybatis:
+          page:
+            mapper: debug

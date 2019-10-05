@@ -1,10 +1,13 @@
 package org.lee.mybatis.model;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lee.mybatis.utils.JSONAttrGetter;
 import java.io.Serializable;
 import java.util.Objects;
-import org.ostenant.springboot.learning.examples.mybatis.utils.JSONAttrGetter;
 
+/**
+ * @author bruce
+ */
 public class Institute implements Serializable {
 
   /**

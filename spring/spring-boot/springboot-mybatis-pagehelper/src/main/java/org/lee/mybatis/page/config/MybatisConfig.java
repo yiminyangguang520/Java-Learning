@@ -1,6 +1,8 @@
 package org.lee.mybatis.page.config;
 
 import com.github.pagehelper.PageHelper;
+import java.util.Properties;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,9 +11,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
-import javax.sql.DataSource;
-import java.util.Properties;
-
 /**
  * @author bruce
  */
@@ -19,23 +18,23 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class MybatisConfig implements TransactionManagementConfigurer {
 
-    @Autowired
-    private DataSource dataSource;
+  @Autowired
+  private DataSource dataSource;
 
-    @Override
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(dataSource);
-    }
+  @Override
+  public PlatformTransactionManager annotationDrivenTransactionManager() {
+    return new DataSourceTransactionManager(dataSource);
+  }
 
-    @Bean
-    public PageHelper pageHelper() {
-        PageHelper pageHelper = new PageHelper();
-        Properties p = new Properties();
-        p.setProperty("rowBoundsWithCount", "true");
-        p.setProperty("offsetAsPageNum", "true");
-        p.setProperty("reasonable", "true");
-        p.setProperty("dialect", "mysql");
-        pageHelper.setProperties(p);
-        return pageHelper;
-    }
+  @Bean
+  public PageHelper pageHelper() {
+    PageHelper pageHelper = new PageHelper();
+    Properties p = new Properties();
+    p.setProperty("rowBoundsWithCount", "true");
+    p.setProperty("offsetAsPageNum", "true");
+    p.setProperty("reasonable", "true");
+    p.setProperty("dialect", "mysql");
+    pageHelper.setProperties(p);
+    return pageHelper;
+  }
 }

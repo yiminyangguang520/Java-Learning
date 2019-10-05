@@ -1,14 +1,16 @@
 package com.lee.async.service;
 
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
+/**
+ * @author bruce
+ */
 @Service
 public class WebAsyncService {
 
-    public String generateUUID() {
-        return UUID.randomUUID().toString();
-    }
+  public String generateUUID() {
+    return UUID.randomUUID().toString();
+  }
 
 }

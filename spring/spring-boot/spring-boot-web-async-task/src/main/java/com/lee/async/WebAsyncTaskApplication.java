@@ -9,10 +9,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @EnableAsync
 @SpringBootApplication
-public class SpringBootWebAsyncTaskApplication {
+public class WebAsyncTaskApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootWebAsyncTaskApplication.class, args);
+    SpringApplication.run(WebAsyncTaskApplication.class, args);
   }
 
 }

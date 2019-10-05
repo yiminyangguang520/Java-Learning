@@ -11,6 +11,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+/**
+ * @author bruce
+ */
 @Configuration
 @EnableTransactionManagement
 public class MybatisConfig implements TransactionManagementConfigurer {

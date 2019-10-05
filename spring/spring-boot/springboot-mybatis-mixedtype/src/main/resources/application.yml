@@ -1,12 +1,12 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/learning?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
 
 mybatis:
-  type-aliases-package: org.ostenant.springboot.learning.examples.model
+  type-aliases-package: org.lee.mybatis.model
   mapper-locations: classpath:mapper/*.xml
 
 logging:
