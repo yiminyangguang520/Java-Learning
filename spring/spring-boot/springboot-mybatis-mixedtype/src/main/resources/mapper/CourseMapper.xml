@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lee.mybatis.mapper.CourseMapper">
+  <resultMap id="BaseResultMap" type="org.lee.mybatis.model.Course">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="lesson_period" jdbcType="DOUBLE" property="lessonPeriod"/>
+    <result column="score" jdbcType="DOUBLE" property="score"/>
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    id, name, lesson_period, score
+  </sql>
+
+
+  <update id="update" parameterType="org.lee.mybatis.model.Course">
+    update course
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="lessonPeriod != null">
+        lesson_period = #{lessonPeriod,jdbcType=DOUBLE},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from course
+  </select>
+
+
+  <select id="findByIds" parameterType="java.util.List" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from course
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=",">
+      #{item,jdbcType=INTEGER}
+    </foreach>
+  </select>
+
+
+  <delete id="deleteByIds" parameterType="java.util.List">
+    delete from
+    course
+    where
+    id in
+    <foreach close=")" collection="list" item="item" open="(" separator=",">
+      #{item,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+
+
+  <insert id="saveBatch" keyColumn="id" keyProperty="id" parameterType="java.util.List" useGeneratedKeys="true">
+    insert into
+    course
+    (id, name, lesson_period, score)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.name,jdbcType=VARCHAR}, #{item.lessonPeriod,jdbcType=DOUBLE},
+      #{item.score,jdbcType=DOUBLE})
+    </foreach>
+  </insert>
+
+
+  <update id="updateBatch" parameterType="java.util.List">
+    update course
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.name != null">
+            when #{item.id,jdbcType=INTEGER} then #{item.name,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="lesson_period = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.lessonPeriod != null">
+            when #{item.id,jdbcType=INTEGER} then #{item.lessonPeriod,jdbcType=DOUBLE}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.score != null">
+            when #{item.id,jdbcType=INTEGER} then #{item.score,jdbcType=DOUBLE}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+
+</mapper>

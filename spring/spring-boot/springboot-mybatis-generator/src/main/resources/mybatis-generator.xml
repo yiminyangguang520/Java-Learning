@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <!-- XML节点配置顺序按需严格按照如下配置，不然使用maven执行“mybatis-generator:generate -e”时会报错
+       property*(plugin*,commentGenerator?,(connectionFactory|jdbcConnection),
+       javaTypeResolver?,javaModelGenerator,sqlMapGenerator?,javaClientGenerator?,table+) -->
+  <!-- 导入JDBC属性配置 -->
+  <properties resource="jdbc.properties"></properties>
+
+  <context id="MYSQL" targetRuntime="MyBatis3" defaultModelType="flat">
+    <!-- 生成的Java文件的编码-->
+    <property name="javaFileEncoding" value="UTF-8"/>
+
+    <!-- 格式化java代码-->
+    <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+
+    <!-- 格式化XML代码-->
+    <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
+
+    <!-- Plugin List -->
+    <!-- 配置生成自定义equals()和hashCode()方法的插件 -->
+    <!-- 配置生成toString()方法的插件 -->
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+    <!-- 配置大小写不敏感的插件 -->
+    <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+
+    <!-- 配置生成自定义hashCode()方法的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.EqualsHashCodePlugin"/>
+
+    <!-- 配置生成自定义Builder模式的withXXXProperty()方法的插件 -->
+    <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+
+    <!-- 配置生成自定义的类序列化接口的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.SerializablePlugin"/>
+
+    <!-- 配置生成EntityKey的内部类的插件-->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.InnerClassKeyPlugin"/>
+
+    <!-- 配置生成的fromJson()方法的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.FromJsonPlugin"/>
+
+    <!-- 配置生成的toJson()方法的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.ToJsonPlugin"/>
+
+    <!-- 配置生成所有字段的注释的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.FieldCommentPlugin"/>
+
+    <!-- 配置插入时自动生成主键的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.UseGeneratedKeysColumnPlugin"/>
+
+    <!-- 配置生成findAll()方法和sql查询statement的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.FindAllPlugin"/>
+
+    <!-- 配置生成findByIds()方法和sql查询statement的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.FindByIdsPlugin"/>
+
+    <!-- 配置生成deleteByIds()方法和sql查询statement的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.DeleteByIdsPlugin"/>
+
+    <!-- 配置生成saveBatch()方法和sql查询statement的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.SaveBatchPlugin"/>
+
+    <!-- 配置生成updateBatch()方法和sql查询statement的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.UpdateBatchPlugin"/>
+
+    <!-- 配置修改默认的方法名称和statement id的插件 -->
+    <plugin type="org.ostenant.springboot.learning.examples.mybatis.plugins.RenameStatementPlugin"/>
+
+    <!-- 配置对生成example进行重命名的插件 -->
+    <!--        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+                <property name="searchString" value="Example$"/>
+                <property name="replaceString" value="Criteria"/>
+            </plugin>-->
+
+    <!-- （非必需）用于创建class时，对注释进行控制 -->
+    <commentGenerator>
+      <!-- 去掉生成日期那行注释 -->
+      <property name="suppressDate" value="true"/>
+      <!-- 去掉生成代码中的所有注释 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <!-- jdbc的数据库连接 -->
+    <jdbcConnection driverClass="${jdbc.driverClass}"
+      connectionURL="${jdbc.connectionURL}"
+      userId="${jdbc.user}" password="${jdbc.password}">
+    </jdbcConnection>
+
+    <!-- （非必需）类型处理器，在数据库类型和java类型之间的转换控制-->
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+
+    <!-- 1. Model模型生成器,用来生成含有主键key的类，记录类以及查询Example类
+        targetPackage：指定生成的model生成所在的包名
+        targetProject：指定在该项目下所在的路径
+    -->
+    <javaModelGenerator targetPackage="org.ostenant.springboot.learning.examples.model"
+      targetProject="${entity.target.dir}">
+      <!-- 是否对model添加构造函数 -->
+      <property name="constructorBased" value="false"/>
+      <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+      <property name="enableSubPackages" value="true"/>
+      <!-- 建立的Model对象是否不可改变  即生成的Model对象不会有setter方法，只有构造方法 -->
+      <property name="immutable" value="false"/>
+      <!-- 给Model添加一个接口 -->
+      <property name="rootInterface" value="java.io.Serializable"/>
+      <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+
+    <!-- 2. Mapper XML映射文件生成所在的目录，为每一个数据库的表生成对应的SqlMap.xml文件 -->
+    <sqlMapGenerator targetPackage="mapper"
+      targetProject="${dao.resources.dir}">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+
+    <!-- 3. 对于mybatis来说，即生成Mapper接口，注意，如果没有配置该元素，那么默认不会生成Mapper接口
+        targetPackage/targetProject:同javaModelGenerator
+        type：选择怎么生成mapper接口（在MyBatis3/MyBatis3Simple下）：
+            1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
+            2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
+            3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
+        注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
+    -->
+    <javaClientGenerator type="XMLMAPPER"
+      targetPackage="org.ostenant.springboot.learning.examples.mapper"
+      implementationPackage="org.ostenant.springboot.learning.examples.dao.impl"
+      targetProject="${entity.target.dir}">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+
+    <!-- 所有的数据库表与实体对象
+        1，schema：数据库的schema；
+        2，catalog：数据库的catalog；
+        3，alias：为数据表设置的别名，如果设置了alias，那么生成的所有的SELECT SQL语句中，列名会变成：alias_actualColumnName
+        4，domainObjectName：生成的domain类的名字，如果不设置，直接使用表名作为domain类的名字；可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面；
+        5，enableInsert（默认true）：指定是否生成insert语句；
+        6，enableSelectByPrimaryKey（默认true）：指定是否生成按照主键查询对象的语句（就是getById或get）；
+        7，enableSelectByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询语句；
+        8，enableUpdateByPrimaryKey（默认true）：指定是否生成按照主键修改对象的语句（即update)；
+        9，enableDeleteByPrimaryKey（默认true）：指定是否生成按照主键删除对象的语句（即delete）；
+        10，enableDeleteByExample（默认true）：MyBatis3Simple为false，指定是否生成动态删除语句；
+        11，enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；
+        12，enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；
+        13，modelType：参考context元素的defaultModelType，相当于覆盖；
+        14，delimitIdentifiers：参考tableName的解释，注意，默认的delimitIdentifiers是双引号，如果类似MYSQL这样的数据库，使用的是`（反引号，那么还需要设置context的beginningDelimiter和endingDelimiter属性）
+        15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
+    -->
+    <table tableName="student" domainObjectName="Student"
+      enableCountByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      enableUpdateByExample="false">
+      <property name="useGeneratedKeys" value="true"></property>
+    </table>
+
+    <table tableName="course" domainObjectName="Course"
+      enableCountByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      enableUpdateByExample="false">
+      <property name="useGeneratedKeys" value="true"></property>
+    </table>
+
+    <table tableName="student_course" domainObjectName="StudentCourse"
+      enableCountByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      enableUpdateByExample="false">
+      <property name="useGeneratedKeys" value="true"></property>
+    </table>
+
+    <table tableName="student_info" domainObjectName="StudentInfo"
+      enableCountByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      enableUpdateByExample="false">
+      <property name="useGeneratedKeys" value="true"></property>
+    </table>
+
+    <table tableName="institute" domainObjectName="Institute"
+      enableCountByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      enableUpdateByExample="false">
+      <property name="useGeneratedKeys" value="true"></property>
+    </table>
+
+  </context>
+
+</generatorConfiguration>

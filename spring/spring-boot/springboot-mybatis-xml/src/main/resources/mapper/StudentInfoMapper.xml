@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lee.mybatis.mapper.StudentInfoMapper">
+  <resultMap id="BaseResultMap" type="org.lee.mybatis.model.StudentInfo">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="age" jdbcType="INTEGER" property="age"/>
+    <result column="address" jdbcType="VARCHAR" property="address"/>
+    <result column="email" jdbcType="VARCHAR" property="email"/>
+    <result column="student_id" jdbcType="INTEGER" property="studentId"/>
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+        id, age, address, email, student_id
+    </sql>
+
+
+  <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from student_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM student_info
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+
+  <insert id="save" keyColumn="id" keyProperty="id"
+    parameterType="org.lee.mybatis.model.StudentInfo" useGeneratedKeys="true">
+        INSERT INTO student_info (id, age, address,
+                                  email, student_id)
+        VALUES (#{id,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR}, #{studentId,jdbcType=INTEGER})
+    </insert>
+
+
+  <update id="update" parameterType="org.lee.mybatis.model.StudentInfo">
+    update student_info
+    <set>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from student_info
+  </select>
+
+
+  <select id="findByIds" parameterType="java.util.List" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from student_info
+    <foreach close=")" collection="list" item="item" open="(" separator=",">
+      #{item,jdbcType=INTEGER}
+    </foreach>
+  </select>
+
+
+  <delete id="deleteByIds" parameterType="java.util.List">
+    delete from
+    student_info
+    where
+    id in
+    <foreach close=")" collection="list" item="item" open="(" separator=",">
+      #{item,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+
+
+  <insert id="saveBatch" keyColumn="id" keyProperty="id" parameterType="java.util.List" useGeneratedKeys="true">
+    insert into
+    student_info
+    (id, age, address, email, student_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.age,jdbcType=INTEGER}, #{item.address,jdbcType=VARCHAR},
+      #{item.email,jdbcType=VARCHAR}, #{item.studentId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+
+  <update id="updateBatch" parameterType="java.util.List">
+    update student_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="age = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.age != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.age,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="address = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.address != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.address,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="email = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.email != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.email,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="student_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studentId != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.studentId,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where
+    <foreach collection="list" item="item" separator=", ">
+      id = #{id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+
+
+</mapper>
