@@ -1,0 +1,27 @@
+spring:
+  ldap:
+
+    # Spring LDAP
+    #
+    # In this example we use an embedded ldap server. When using a real one,
+    # you can configure the settings here.
+    #
+    # urls: ldap://localhost:12345
+    # base: dc=memorynotfound,dc=com
+    # username: uid=admin
+    # password: secret
+
+    embedded:
+      base-dn: dc=memorynotfound,dc=com
+      ldif: classpath:schema-test.ldif
+      port: 12345
+      validation:
+        enabled: false
+
+
+
+logging:
+  level:
+    - ".=info"
+    - "com.memorynotfound=debug"
+    - "org.springframework=info"

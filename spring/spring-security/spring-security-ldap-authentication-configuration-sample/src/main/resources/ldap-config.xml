@@ -1,0 +1,34 @@
+<mule-ss:security-manager>
+    <mule-ss:delegate-security-provider name="security-provider" delegate-ref="ldap-authentication-manager" />
+</mule-ss:security-manager>
+<spring:beans>
+    <ss:authentication-manager id="ldap-authentication-manager" alias="ldapAuthManager">
+        <ss:authentication-provider ref="ldap-auth-provider" />
+    </ss:authentication-manager>
+    <spring:bean id="ldap-auth-provider" class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider">
+        <spring:constructor-arg>
+            <spring:bean class="org.springframework.security.ldap.authentication.BindAuthenticator">
+                <spring:constructor-arg ref="security-context-source" />
+                <spring:property name="userSearch" ref="ldap-user-search"></spring:property>
+            </spring:bean>
+        </spring:constructor-arg>
+        <spring:property name="userDetailsContextMapper" ref="ldap-user-details-context-mapper" />
+    </spring:bean>
+    <spring:bean id="security-context-source" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+        <spring:constructor-arg value="${ldap.url}" />
+        <spring:property name="userDn" value="${ldap.authDn}" />
+        <spring:property name="password" value="${ldap.authPassword}" />
+        <spring:property name="baseEnvironmentProperties">
+            <spring:map>
+                <spring:entry key="java.naming.ldap.version" value="3" />
+            </spring:map>
+        </spring:property>
+    </spring:bean>
+    <spring:bean id="ldap-user-search" class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch">
+        <spring:constructor-arg index="0" value="${ldap.userSearchBaseDn}" />
+        <spring:constructor-arg index="1" value="${ldap.filter}" />
+        <spring:constructor-arg index="2" ref="security-context-source" />
+        <spring:property name="searchSubtree" value="true" />
+    </spring:bean>
+    <spring:bean id="ldap-user-details-context-mapper" class="com.mulesoft.secure.api.demo.UserDetailsContextMapper" />
+</spring:beans>
