@@ -11,6 +11,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class Age {
+
   private Integer year;
   private Integer month;
 }

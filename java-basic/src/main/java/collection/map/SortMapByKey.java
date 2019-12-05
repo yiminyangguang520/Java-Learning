@@ -24,16 +24,16 @@ public class SortMapByKey {
 
     //Sorted map by descending order
     Map<String, Integer> sortedMapByValueDesc = map.entrySet().stream()
-        .sorted(Map.Entry.comparingByKey())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.comparingByKey())
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
     System.out.println("Sorted Map " + sortedMapByValueDesc);
 
     //Sorted map by ascending order
 
     Map<String, Integer> sortedMapByValueasce = map.entrySet().stream()
-        .sorted(Map.Entry.<String, Integer>comparingByKey().reversed())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.<String, Integer>comparingByKey().reversed())
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     System.out.println("Sorted Map " + sortedMapByValueasce);
   }
 

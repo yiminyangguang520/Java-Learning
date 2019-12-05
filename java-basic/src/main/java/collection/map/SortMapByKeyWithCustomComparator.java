@@ -34,15 +34,15 @@ public class SortMapByKeyWithCustomComparator {
     Comparator<Name> byName = (Name o1, Name o2) -> o1.getFirstName().compareTo(o2.getFirstName());
 
     LinkedHashMap<Name, Integer> sortedMapByValueDesc = map.entrySet().stream()
-        .sorted(Map.Entry.<Name, Integer>comparingByKey(byName))
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.<Name, Integer>comparingByKey(byName))
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
     System.out.println("Sorted Map " + sortedMapByValueDesc);
 
     //Sort map by ascending order
     LinkedHashMap<Name, Integer> sortedMapByValueAsce = map.entrySet().stream()
-        .sorted(Map.Entry.<Name, Integer>comparingByKey(byName).reversed())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.<Name, Integer>comparingByKey(byName).reversed())
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
     System.out.println("Sorted Map " + sortedMapByValueAsce);
   }

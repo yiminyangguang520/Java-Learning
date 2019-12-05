@@ -22,7 +22,7 @@ public class SortByKey {
   private static void sortMapByKey() {
     Map<Integer, String> random = new HashMap<>(10);
     for (int i = 0; i < 10; i++) {
-      random.put((int)(Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
+      random.put((int) (Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
     }
 
     System.out.println("Initial Map: " + Arrays.toString(random.entrySet().toArray()));
@@ -34,7 +34,7 @@ public class SortByKey {
   private static void sortMapByKeyReverse() {
     Map<Integer, String> random = new HashMap<>(10);
     for (int i = 0; i < 10; i++) {
-      random.put((int)(Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
+      random.put((int) (Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
     }
 
     System.out.println("Initial Map: " + Arrays.toString(random.entrySet().toArray()));
@@ -47,7 +47,7 @@ public class SortByKey {
   private void sortMapByValue() {
     Map<Integer, String> random = new HashMap<>(10);
     for (int i = 0; i < 10; i++) {
-      random.put((int)(Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
+      random.put((int) (Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
     }
 
     System.out.println("Initial Map: " + Arrays.toString(random.entrySet().toArray()));
@@ -60,14 +60,14 @@ public class SortByKey {
   private static void sortByValueLambda() {
     Map<Integer, String> random = new HashMap<>(10);
     for (int i = 0; i < 10; i++) {
-      random.put((int)(Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
+      random.put((int) (Math.random() * 100), String.valueOf((int) (Math.random() * 100)));
     }
 
     System.out.println("Initial Map: " + Arrays.toString(random.entrySet().toArray()));
 
     Map<Integer, String> sortedMap = random.entrySet().stream()
-        .sorted(Map.Entry.comparingByValue())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.comparingByValue())
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     System.out.println("Sorted Map: " + Arrays.toString(sortedMap.entrySet().toArray()));
   }
 

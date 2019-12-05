@@ -42,15 +42,15 @@ public class SortMapByValueWithCustomComparator {
     Comparator<Age> byAge = (Age obj1, Age obj2) -> obj1.getYear().compareTo(obj2.getYear());
 
     LinkedHashMap<Name, Age> sortedMapByValueDesc = map.entrySet().stream()
-        .sorted(Map.Entry.<Name, Age>comparingByValue(byAge))
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.<Name, Age>comparingByValue(byAge))
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
     System.out.println("Sorted Map " + sortedMapByValueDesc);
 
     //Sort map by ascending order
     LinkedHashMap<Name, Age> sortedMapByValueAsce = map.entrySet().stream()
-        .sorted(Map.Entry.<Name, Age>comparingByValue(byAge).reversed())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+      .sorted(Map.Entry.<Name, Age>comparingByValue(byAge).reversed())
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
     System.out.println("Sorted Map " + sortedMapByValueAsce);
 

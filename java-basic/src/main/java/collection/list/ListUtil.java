@@ -10,6 +10,7 @@ public class ListUtil {
 
   /**
    * 两个集合是否有相等的元素
+   *
    * @param listA
    * @param listB
    * @return
@@ -20,6 +21,7 @@ public class ListUtil {
 
   /**
    * A中的元素时候都在B中出现过
+   *
    * @param listA
    * @param listB
    * @return
