@@ -30,6 +30,9 @@ class User {
   }
 }
 
+/**
+ * @author litz-a
+ */
 public class ArrayListUserDefinedObjectExample {
 
   public static void main(String[] args) {

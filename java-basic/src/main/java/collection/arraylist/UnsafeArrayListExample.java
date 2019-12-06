@@ -6,6 +6,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author litz-a
+ */
 public class UnsafeArrayListExample {
 
   public static void main(String[] args) throws InterruptedException {
@@ -34,7 +37,10 @@ public class UnsafeArrayListExample {
     System.out.println(unsafeArrayList);
   }
 
-  // Increment all the values in the ArrayList by one
+  /**
+   * Increment all the values in the ArrayList by one
+   * @param unsafeArrayList
+   */
   private static void incrementArrayList(List<Integer> unsafeArrayList) {
     for (int i = 0; i < unsafeArrayList.size(); i++) {
       Integer value = unsafeArrayList.get(i);

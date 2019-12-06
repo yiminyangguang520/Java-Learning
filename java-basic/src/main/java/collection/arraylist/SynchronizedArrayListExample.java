@@ -7,6 +7,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author litz-a
+ */
 public class SynchronizedArrayListExample {
 
   public static void main(String[] args) throws InterruptedException {
@@ -35,7 +38,10 @@ public class SynchronizedArrayListExample {
     System.out.println(safeArrayList);
   }
 
-  // Increment all the values in the ArrayList by one
+  /**
+   * Increment all the values in the ArrayList by one
+   * @param safeArrayList
+   */
   private static void incrementArrayList(List<Integer> safeArrayList) {
     synchronized (safeArrayList) {
       for (int i = 0; i < safeArrayList.size(); i++) {

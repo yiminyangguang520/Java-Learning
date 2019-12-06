@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author litz-a
+ */
 public class ArrayListIteratorRemoveExample {
 
   public static void main(String[] args) {

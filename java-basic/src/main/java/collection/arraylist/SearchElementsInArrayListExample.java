@@ -3,6 +3,9 @@ package collection.arraylist;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author litz-a
+ */
 public class SearchElementsInArrayListExample {
 
   public static void main(String[] args) {
