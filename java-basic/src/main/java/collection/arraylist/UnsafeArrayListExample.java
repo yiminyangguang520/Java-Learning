@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -18,12 +20,11 @@ public class UnsafeArrayListExample {
     unsafeArrayList.add(3);
 
     // Create a thread pool of size 10
-    ExecutorService executorService = Executors.newFixedThreadPool(10);
+    ExecutorService executorService = new ThreadPoolExecutor(10, 10,
+      0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), Executors.defaultThreadFactory());
 
     // Create a Runnable task that increments each element of the ArrayList by one
-    Runnable task = () -> {
-      incrementArrayList(unsafeArrayList);
-    };
+    Runnable task = () -> incrementArrayList(unsafeArrayList);
 
     // Submit the task to the executor service 100 times.
     // All the tasks will modify the ArrayList concurrently

@@ -18,9 +18,7 @@ public class IterateOverArrayListExample {
     tvShows.add("Prison break");
 
     System.out.println("=== Iterate using Java 8 forEach and lambda ===");
-    tvShows.forEach(tvShow -> {
-      System.out.println(tvShow);
-    });
+    tvShows.forEach(System.out::println);
 
     System.out.println("\n=== Iterate using an iterator() ===");
     Iterator<String> tvShowIterator = tvShows.iterator();
@@ -31,9 +29,7 @@ public class IterateOverArrayListExample {
 
     System.out.println("\n=== Iterate using an iterator() and Java 8 forEachRemaining() method ===");
     tvShowIterator = tvShows.iterator();
-    tvShowIterator.forEachRemaining(tvShow -> {
-      System.out.println(tvShow);
-    });
+    tvShowIterator.forEachRemaining(System.out::println);
 
     System.out.println("\n=== Iterate using a listIterator() to traverse in both directions ===");
     // Here, we start from the end of the list and traverse backwards.

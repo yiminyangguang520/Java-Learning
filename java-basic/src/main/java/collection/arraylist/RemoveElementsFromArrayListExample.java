@@ -47,10 +47,10 @@ public class RemoveElementsFromArrayListExample {
       }
     });
 
-        /*
-            The above removeIf() call can also be written using lambda expression like this -
-            programmingLanguages.removeIf(s -> s.startsWith("C"))
-        */
+    /*
+       The above removeIf() call can also be written using lambda expression like this -
+       programmingLanguages.removeIf(s -> s.startsWith("C"))
+    */
 
     System.out.println("After Removing all elements that start with \"C\": " + programmingLanguages);
 

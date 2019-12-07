@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author bruce
+ */
 public class ComparableExample {
 
   public static void main(String[] args) {
-    List<Employee> employees = new ArrayList<>();
+    List<Employee> employees = new ArrayList<>(16);
 
     employees.add(new Employee(1010, "Rajeev", 100000.00, LocalDate.of(2010, 7, 10)));
     employees.add(new Employee(1004, "Chris", 95000.50, LocalDate.of(2017, 3, 19)));
