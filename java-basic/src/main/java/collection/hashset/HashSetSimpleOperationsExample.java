@@ -3,6 +3,9 @@ package collection.hashset;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author bruce
+ */
 public class HashSetSimpleOperationsExample {
 
   public static void main(String[] args) {

@@ -4,6 +4,9 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * @author bruce
+ */
 public class CreateTreeMapCustomComparatorExample {
 
   public static void main(String[] args) {

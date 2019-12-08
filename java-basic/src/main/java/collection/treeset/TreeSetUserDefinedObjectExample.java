@@ -65,6 +65,9 @@ class Employee implements Comparable<Employee> {
 }
 
 
+/**
+ * @author bruce
+ */
 public class TreeSetUserDefinedObjectExample {
 
   public static void main(String[] args) {

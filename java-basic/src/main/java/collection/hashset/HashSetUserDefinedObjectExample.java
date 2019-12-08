@@ -56,6 +56,9 @@ class Customer {
   }
 }
 
+/**
+ * @author bruce
+ */
 public class HashSetUserDefinedObjectExample {
 
   public static void main(String[] args) {

@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * @author bruce
+ */
 public class IterateOverHashSetExample {
 
   public static void main(String[] args) {

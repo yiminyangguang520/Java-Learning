@@ -3,6 +3,9 @@ package collection.treemap;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * @author bruce
+ */
 public class AccessEntriesFromTreeMapExample {
 
   public static void main(String[] args) {
