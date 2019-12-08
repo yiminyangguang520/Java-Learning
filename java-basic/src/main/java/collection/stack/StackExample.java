@@ -2,6 +2,9 @@ package collection.stack;
 
 import java.util.Stack;
 
+/**
+ * @author bruce
+ */
 public class StackExample {
 
   public static void main(String[] args) {

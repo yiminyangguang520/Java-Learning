@@ -3,11 +3,14 @@ package collection.hashmap;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author bruce
+ */
 public class CreateHashMapExample {
 
   public static void main(String[] args) {
     // Creating a HashMap
-    Map<String, Integer> numberMapping = new HashMap<>();
+    Map<String, Integer> numberMapping = new HashMap<>(8);
 
     // Adding key-value pairs to a HashMap
     numberMapping.put("One", 1);

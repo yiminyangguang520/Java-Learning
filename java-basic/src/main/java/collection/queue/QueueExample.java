@@ -3,6 +3,9 @@ package collection.queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author bruce
+ */
 public class QueueExample {
 
   public static void main(String[] args) {

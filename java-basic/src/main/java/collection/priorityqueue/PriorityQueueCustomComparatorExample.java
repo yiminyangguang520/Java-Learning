@@ -3,6 +3,9 @@ package collection.priorityqueue;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * @author bruce
+ */
 public class PriorityQueueCustomComparatorExample {
 
   public static void main(String[] args) {

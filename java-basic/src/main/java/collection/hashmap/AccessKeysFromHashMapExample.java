@@ -3,10 +3,13 @@ package collection.hashmap;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author bruce
+ */
 public class AccessKeysFromHashMapExample {
 
   public static void main(String[] args) {
-    Map<String, String> userCityMapping = new HashMap<>();
+    Map<String, String> userCityMapping = new HashMap<>(4);
 
     // Check if a HashMap is empty
     System.out.println("is userCityMapping empty? : " + userCityMapping.isEmpty());

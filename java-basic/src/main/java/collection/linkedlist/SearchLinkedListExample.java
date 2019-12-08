@@ -2,6 +2,9 @@ package collection.linkedlist;
 
 import java.util.LinkedList;
 
+/**
+ * @author bruce
+ */
 public class SearchLinkedListExample {
 
   public static void main(String[] args) {

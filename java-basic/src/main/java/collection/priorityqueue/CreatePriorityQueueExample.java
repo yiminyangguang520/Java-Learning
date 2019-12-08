@@ -2,6 +2,9 @@ package collection.priorityqueue;
 
 import java.util.PriorityQueue;
 
+/**
+ * @author bruce
+ */
 public class CreatePriorityQueueExample {
 
   public static void main(String[] args) {

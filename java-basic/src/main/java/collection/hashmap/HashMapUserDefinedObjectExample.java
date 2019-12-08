@@ -48,11 +48,14 @@ class Employee {
   }
 }
 
+/**
+ * @author bruce
+ */
 public class HashMapUserDefinedObjectExample {
 
   public static void main(String[] args) {
 
-    Map<Integer, Employee> employeesMap = new HashMap<>();
+    Map<Integer, Employee> employeesMap = new HashMap<>(4);
     employeesMap.put(1001, new Employee(1001, "Rajeev", "Bengaluru"));
     employeesMap.put(1002, new Employee(1002, "David", "New York"));
     employeesMap.put(1003, new Employee(1003, "Jack", "Paris"));

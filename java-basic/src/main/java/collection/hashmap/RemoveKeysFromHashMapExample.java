@@ -3,10 +3,13 @@ package collection.hashmap;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author bruce
+ */
 public class RemoveKeysFromHashMapExample {
 
   public static void main(String[] args) {
-    Map<String, String> husbandWifeMapping = new HashMap<>();
+    Map<String, String> husbandWifeMapping = new HashMap<>(8);
     husbandWifeMapping.put("Jack", "Marie");
     husbandWifeMapping.put("Chris", "Lisa");
     husbandWifeMapping.put("Steve", "Jennifer");

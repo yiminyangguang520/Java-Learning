@@ -5,10 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author bruce
+ */
 public class IterateOverHashMap {
 
   public static void main(String[] args) {
-    Map<String, Double> employeeSalary = new HashMap<>();
+    Map<String, Double> employeeSalary = new HashMap<>(16);
     employeeSalary.put("David", 76000.00);
     employeeSalary.put("John", 120000.00);
     employeeSalary.put("Mark", 95000.00);

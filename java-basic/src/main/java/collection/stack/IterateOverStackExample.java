@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Stack;
 
+/**
+ * @author bruce
+ */
 public class IterateOverStackExample {
 
   public static void main(String[] args) {
@@ -15,9 +18,7 @@ public class IterateOverStackExample {
     stackOfPlates.add("Plate 4");
 
     System.out.println("=== Iterate over a Stack using Java 8 forEach() method ===");
-    stackOfPlates.forEach(plate -> {
-      System.out.println(plate);
-    });
+    stackOfPlates.forEach(System.out::println);
 
     System.out.println("\n=== Iterate over a Stack using iterator() ===");
     Iterator<String> platesIterator = stackOfPlates.iterator();

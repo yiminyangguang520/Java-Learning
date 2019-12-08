@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @author bruce
+ */
 public class IterateOverLinkedHashMapExample {
 
   public static void main(String[] args) {

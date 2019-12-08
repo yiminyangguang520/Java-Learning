@@ -2,6 +2,9 @@ package collection.linkedlist;
 
 import java.util.LinkedList;
 
+/**
+ * @author bruce
+ */
 public class RemoveElementsFromLinkedListExample {
 
   public static void main(String[] args) {
@@ -18,12 +21,12 @@ public class RemoveElementsFromLinkedListExample {
 
     System.out.println("Initial LinkedList = " + programmingLanguages);
 
-    // Remove the first element in the LinkedList
-    String element = programmingLanguages.removeFirst();   // Throws NoSuchElementException if the LinkedList is empty
+    // Remove the first element in the LinkedList，Throws NoSuchElementException if the LinkedList is empty
+    String element = programmingLanguages.removeFirst();
     System.out.println("Removed the first element " + element + " => " + programmingLanguages);
 
-    // Remove the last element in the LinkedList
-    element = programmingLanguages.removeLast();    // Throws NoSuchElementException if the LinkedList is empty
+    // Remove the last element in the LinkedList，Throws NoSuchElementException if the LinkedList is empty
+    element = programmingLanguages.removeLast();
     System.out.println("Removed the last element " + element + " => " + programmingLanguages);
 
     // Remove the first occurrence of the specified element from the LinkedList

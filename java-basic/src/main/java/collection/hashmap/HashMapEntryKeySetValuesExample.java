@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author bruce
+ */
 public class HashMapEntryKeySetValuesExample {
 
   public static void main(String[] args) {
-    Map<String, String> countryISOCodeMapping = new HashMap<>();
+    Map<String, String> countryISOCodeMapping = new HashMap<>(8);
 
     countryISOCodeMapping.put("India", "IN");
     countryISOCodeMapping.put("United States of America", "US");

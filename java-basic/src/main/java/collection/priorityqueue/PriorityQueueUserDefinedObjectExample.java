@@ -69,6 +69,9 @@ class Employee implements Comparable<Employee> {
 }
 
 
+/**
+ * @author bruce
+ */
 public class PriorityQueueUserDefinedObjectExample {
 
   public static void main(String[] args) {
