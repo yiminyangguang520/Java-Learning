@@ -2,6 +2,9 @@ package com.lee.java8.optional.with.optional;
 
 import java.util.Optional;
 
+/**
+ * @author litz-a
+ */
 public class MobileService {
 
   public Integer getMobileScreenWidth(Optional<Mobile> mobile) {
