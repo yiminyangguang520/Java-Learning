@@ -4,11 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collector;
 
-/***************************************
- * @author Alex Wang
- * @date 2016/10/30 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class CustomerCollectorAction {
 
   public static void main(String[] args) {
@@ -22,6 +20,5 @@ public class CustomerCollectorAction {
         .collect(collector);
 
     System.out.println(result);
-
   }
 }

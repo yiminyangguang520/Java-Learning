@@ -1,12 +1,9 @@
 package com.lee.java8;
 
-/***************************************
- * @author Alex Wang
- * @date 2016/11/5 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class DefaultInAction {
-
 
   public static void main(String[] args) {
     C c = new C();

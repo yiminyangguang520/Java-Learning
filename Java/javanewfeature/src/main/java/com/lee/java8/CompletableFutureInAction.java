@@ -9,11 +9,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-/***************************************
- * @author Alex Wang
- * @date 2016/11/8 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class CompletableFutureInAction {
 
   private static final Random random = new Random(System.currentTimeMillis());

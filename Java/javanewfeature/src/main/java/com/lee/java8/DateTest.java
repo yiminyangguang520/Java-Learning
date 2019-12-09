@@ -10,6 +10,7 @@ import java.time.LocalTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.util.Calendar;
 import java.util.Date;
 
 /***************************************
@@ -19,9 +20,10 @@ import java.util.Date;
  ***************************************/
 public class DateTest {
 
-  public static void main(String[] args) throws ParseException, InterruptedException {
-    Date date = new Date(116, 2, 18);
-    System.out.println(date);
+  public static void main(String[] args) throws InterruptedException {
+    Calendar calendar =  Calendar.getInstance();
+    calendar.set(116, Calendar.MARCH, 18);
+    System.out.println(calendar.getTime());
 
     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
     for (int i = 0; i < 30; i++) {

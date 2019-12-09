@@ -2,7 +2,7 @@ package com.lee.java8;
 
 import static com.lee.java8.CollectorsAction.menu;
 
-import com.lee.java8.modle.Dish;
+import com.lee.java8.model.Dish;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -10,11 +10,9 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.stream.Collectors;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/10/28 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class CollectorsAction2 {
 
   public static void main(String[] args) {

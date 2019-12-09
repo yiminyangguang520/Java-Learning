@@ -1,6 +1,6 @@
 package com.lee.java8;
 
-import com.lee.java8.modle.Dish;
+import com.lee.java8.model.Dish;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.IntSummaryStatistics;
@@ -10,15 +10,12 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-/***************************************
- * @author Alex Wang
- * @date 2016/10/27 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class CollectorsAction {
 
-
-  static List<Dish> menu = Arrays.asList(
+  public static List<Dish> menu = Arrays.asList(
       new Dish("pork", false, 800, Dish.Type.MEAT),
       new Dish("beef", false, 700, Dish.Type.MEAT),
       new Dish("chicken", false, 400, Dish.Type.MEAT),

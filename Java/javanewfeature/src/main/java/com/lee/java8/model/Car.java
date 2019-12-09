@@ -1,4 +1,4 @@
-package com.lee.java8.modle;
+package com.lee.java8.model;
 
 import java.util.Optional;
 

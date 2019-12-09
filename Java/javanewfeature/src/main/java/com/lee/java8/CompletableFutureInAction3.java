@@ -8,11 +8,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/11/13 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class CompletableFutureInAction3 {
 
   public static void main(String[] args) {

@@ -2,7 +2,7 @@ package com.lee.java8;
 
 import static com.lee.java8.CollectorsAction.menu;
 
-import com.lee.java8.modle.Dish;
+import com.lee.java8.model.Dish;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;

@@ -2,8 +2,8 @@ package com.lee.java8;
 
 import static java.util.stream.Collectors.toList;
 
-import com.lee.java8.modle.Trader;
-import com.lee.java8.modle.Transaction;
+import com.lee.java8.model.Trader;
+import com.lee.java8.model.Transaction;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

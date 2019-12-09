@@ -1,6 +1,6 @@
 package com.lee.java8;
 
-import com.lee.java8.modle.Apple;
+import com.lee.java8.model.Apple;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;

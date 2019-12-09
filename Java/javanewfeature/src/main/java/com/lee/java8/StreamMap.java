@@ -1,6 +1,6 @@
 package com.lee.java8;
 
-import com.lee.java8.modle.Dish;
+import com.lee.java8.model.Dish;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

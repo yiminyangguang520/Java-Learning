@@ -1,9 +1,5 @@
 package com.lee.java8;
 
-import com.lee.java8.modle.Car;
-import com.lee.java8.modle.Insurance;
-import com.lee.java8.modle.Person;
-
 /***************************************
  * @author:Alex Wang
  * @Date:2016/10/24 QQ:532500648

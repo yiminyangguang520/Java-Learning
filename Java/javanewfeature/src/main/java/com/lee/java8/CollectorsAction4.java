@@ -1,14 +1,8 @@
 package com.lee.java8;
 
-/***************************************
- * @author Alex Wang
- * @date 2016/10/29 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-
 import static com.lee.java8.CollectorsAction.menu;
 
-import com.lee.java8.modle.Dish;
+import com.lee.java8.model.Dish;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.LinkedList;

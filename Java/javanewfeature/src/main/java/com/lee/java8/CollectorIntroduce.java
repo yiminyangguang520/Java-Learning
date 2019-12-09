@@ -2,7 +2,7 @@ package com.lee.java8;
 
 import static java.util.stream.Collectors.groupingBy;
 
-import com.lee.java8.modle.Apple;
+import com.lee.java8.model.Apple;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
