@@ -2,6 +2,9 @@ package com.memorynotfound.spring.security.model;
 
 import java.util.Map;
 
+/**
+ * @author litz-a
+ */
 public class Mail {
 
   private String from;

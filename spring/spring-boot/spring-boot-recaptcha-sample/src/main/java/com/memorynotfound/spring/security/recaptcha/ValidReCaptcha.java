@@ -1,6 +1,7 @@
-package com.memorynotfound.spring.security.constraint;
+package com.memorynotfound.spring.security.recaptcha;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
+import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -13,27 +14,16 @@ import javax.validation.Payload;
 /**
  * @author litz-a
  */
-@Target({TYPE, ANNOTATION_TYPE})
-@Retention(RUNTIME)
-@Constraint(validatedBy = FieldMatchValidator.class)
 @Documented
-public @interface FieldMatch {
+@Constraint(validatedBy = ReCaptchaConstraintValidator.class)
+@Target({TYPE, FIELD, ANNOTATION_TYPE})
+@Retention(RUNTIME)
+public @interface ValidReCaptcha {
 
-  String message() default "{constraints.field-match}";
+  String message() default "Invalid ReCaptcha";
 
   Class<?>[] groups() default {};
 
   Class<? extends Payload>[] payload() default {};
 
-  String first();
-
-  String second();
-
-  @Target({TYPE, ANNOTATION_TYPE})
-  @Retention(RUNTIME)
-  @Documented
-  @interface List {
-
-    FieldMatch[] value();
-  }
 }

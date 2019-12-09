@@ -4,8 +4,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/spring_security_hibernate
-    username: breakpad
-    password: 1qaz2wsx!@#
+    username: root
+    password: root
 
 # ===============================
 # = JPA configurations
