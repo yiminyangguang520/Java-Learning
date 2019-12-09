@@ -7,6 +7,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author bruce
+ */
 public class CompletableFutureThenAccept {
 
   public AtomicInteger someStateVaribale = new AtomicInteger(1);
@@ -21,11 +24,9 @@ public class CompletableFutureThenAccept {
     try {
       TimeUnit.SECONDS.sleep(i);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
-
 
   public void notify(String str) {
     System.out.println(Thread.currentThread() + "Recived vlaue " + str);
@@ -41,6 +42,5 @@ public class CompletableFutureThenAccept {
         .join();
     assertEquals(100, someStateVaribale.get());
   }
-
 
 }

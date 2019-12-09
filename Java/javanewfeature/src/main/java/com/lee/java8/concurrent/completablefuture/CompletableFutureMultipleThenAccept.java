@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 public class CompletableFutureMultipleThenAccept {
 
-
   public int findAccountNumber() {
     System.out.println(Thread.currentThread() + " findAccountNumber");
     sleep(1);
@@ -31,7 +30,6 @@ public class CompletableFutureMultipleThenAccept {
     try {
       TimeUnit.SECONDS.sleep(seconds);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
@@ -46,6 +44,7 @@ public class CompletableFutureMultipleThenAccept {
     System.out.println(Thread.currentThread() + "Recived vlaue ");
   }
 
+
   @Test
   public void comletableFutureMultipleThenApply() {
     CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(this::findAccountNumber)
@@ -53,7 +52,6 @@ public class CompletableFutureMultipleThenAccept {
         .thenApply(this::notifyBalance);
     Integer balance = completableFuture.join();
     assertEquals(Integer.valueOf(balance), Integer.valueOf(100));
-
   }
 
 

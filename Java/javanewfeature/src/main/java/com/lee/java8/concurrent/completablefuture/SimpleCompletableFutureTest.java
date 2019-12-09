@@ -11,6 +11,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author bruce
+ */
 public class SimpleCompletableFutureTest {
 
   public AtomicInteger someStateVaribale = new AtomicInteger(1);
@@ -51,7 +54,6 @@ public class SimpleCompletableFutureTest {
     } catch (ExecutionException | InterruptedException e) {
       fail("No Exception expected");
     }
-
   }
 
   @Test
@@ -68,7 +70,6 @@ public class SimpleCompletableFutureTest {
   public void process() {
     System.out.println(Thread.currentThread() + " Process");
     someStateVaribale.set(100);
-
   }
 
   @Test
@@ -76,6 +77,5 @@ public class SimpleCompletableFutureTest {
     CompletableFuture<Void> runAsync = CompletableFuture.runAsync(() -> process());
     runAsync.join();
     assertEquals(100, someStateVaribale.get());
-
   }
 }

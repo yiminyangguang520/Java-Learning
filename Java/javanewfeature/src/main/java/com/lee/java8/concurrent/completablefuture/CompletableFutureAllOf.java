@@ -9,6 +9,9 @@ import java.util.stream.IntStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author bruce
+ */
 public class CompletableFutureAllOf {
 
   public CompletableFuture<String> findSomeValue() {

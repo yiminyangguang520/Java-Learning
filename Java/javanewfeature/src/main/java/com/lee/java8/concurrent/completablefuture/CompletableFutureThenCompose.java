@@ -6,8 +6,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author bruce
+ */
 public class CompletableFutureThenCompose {
-
 
   public CompletableFuture<Integer> findAccountNumber() {
     sleep(1);
@@ -25,27 +27,24 @@ public class CompletableFutureThenCompose {
     System.out.println(Thread.currentThread() + "Sending Notification");
     sleep(1);
     return CompletableFuture.completedFuture(balance);
-
   }
 
   private void sleep(int seconds) {
     try {
       TimeUnit.SECONDS.sleep(seconds);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
 
+
   @Test
   public void completableFutureThenCompose() {
-
     Integer join = findAccountNumber()
         .thenComposeAsync(this::calculateBalance)
         .thenCompose(this::notifyBalance)
         .join();
     assertEquals(new Integer(100), join);
-
   }
 
 }

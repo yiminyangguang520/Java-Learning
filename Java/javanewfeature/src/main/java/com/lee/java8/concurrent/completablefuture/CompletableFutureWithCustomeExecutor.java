@@ -8,6 +8,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author bruce
+ */
 public class CompletableFutureWithCustomeExecutor {
 
   public int findAccountNumber() {
@@ -32,7 +35,6 @@ public class CompletableFutureWithCustomeExecutor {
     try {
       TimeUnit.SECONDS.sleep(seconds);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
@@ -41,6 +43,7 @@ public class CompletableFutureWithCustomeExecutor {
     sleep(1);
     System.out.println(Thread.currentThread() + "Recived vlaue " + str);
   }
+
 
   @Test
   public void completableFutureWithExecutorService() {
@@ -51,7 +54,6 @@ public class CompletableFutureWithCustomeExecutor {
             .thenApply(this::notifyBalance);
     Integer balance = completableFuture.join();
     assertEquals(Integer.valueOf(balance), Integer.valueOf(100));
-
   }
 
 }
