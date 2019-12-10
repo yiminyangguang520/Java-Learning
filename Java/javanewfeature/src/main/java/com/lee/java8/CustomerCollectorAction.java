@@ -12,8 +12,6 @@ public class CustomerCollectorAction {
   public static void main(String[] args) {
     Collector<String, List<String>, List<String>> collector = new ToListCollector<>();
 
-    String[] arrs = new String[]{"Alex", "Wang", "Hello", "Lambda", "Collector", "Java 8", "Stream"};
-
     List<String> result = Arrays.asList("Alex", "Wang", "Hello", "Lambda", "Collector", "Java 8", "Stream")
         .parallelStream()
         .filter(s -> s.length() >= 5)

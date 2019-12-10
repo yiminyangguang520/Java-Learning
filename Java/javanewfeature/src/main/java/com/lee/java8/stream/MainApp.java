@@ -25,9 +25,10 @@ public class MainApp {
     Pattern p = Pattern.compile("\\W");
 
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-    Stream<Integer> streamInt = numbers.stream();
-    List<String> result = numbers.stream().filter(i -> (i % 2) == 0).map(i -> "[" + i + "]")
-        .collect(Collectors.toList());
+
+    List<String> result = numbers.stream()
+      .filter(i -> (i % 2) == 0).map(i -> "[" + i + "]")
+      .collect(Collectors.toList());
     System.out.println(result);
 
     int[] arr_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -91,8 +92,7 @@ public class MainApp {
     System.out.println();
 
     // map
-    List<Integer> mapnumbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-    Stream<String> mapstream = mapnumbers.stream().map(i -> i.toString());
+    Stream<String> mapstream = ftnumbers.stream().map(i -> i.toString());
     mapstream.forEach(System.out::print);
     System.out.println();
 

@@ -10,11 +10,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2016/10/27 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * @author bruce
+ */
 public class CollectorReduce {
 
   public static void main(String[] args) {
@@ -30,10 +28,11 @@ public class CollectorReduce {
         new Dish("salmon", false, 450, Dish.Type.FISH));
 
     long count = menu.stream().filter(Dish::isVegetarian).count();
-
-    Long collect = menu.stream().filter(Dish::isVegetarian).count();
+    System.out.println("the count of vegetarian dish is " + count);
 
     Optional<Integer> maxCalory = menu.stream().map(Dish::getCalories).reduce(Integer::max);
+    maxCalory.ifPresent(calory -> System.out.println("the max calory of dish is " + calory));
+
     Optional<Dish> maxCalories = menu.stream().reduce((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2);
     maxCalories.ifPresent(System.out::println);
 

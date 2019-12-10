@@ -15,9 +15,7 @@ public class StreamMap {
   public static void main(String[] args) {
 
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 6, 7, 7, 1);
-
     List<Integer> result = list.stream().map(i -> i * 2).collect(Collectors.toList());
-
     System.out.println(result);
 
     listDish().stream().map(Dish::getName).forEach(System.out::println);

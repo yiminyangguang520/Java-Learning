@@ -44,7 +44,7 @@ public class CompletableFutureExamples {
 
   public static void completeExceptionallyExample() {
     CompletableFuture<String> cf = CompletableFuture.completedFuture("message")
-        .thenApplyAsync(String::toUpperCase, CompletableFuture.delayedExecutor(1, TimeUnit.SECONDS));
+        .thenApplyAsync(String::toUpperCase);
 
     CompletableFuture<String> exceptionHandler = cf.handle((s, th) -> (th != null) ? "message upon cancel" : "");
     cf.completeExceptionally(new RuntimeException("completed exceptionally"));
@@ -114,8 +114,8 @@ public class CompletableFutureExamples {
   }
 
   public static void cancelExample() {
-    CompletableFuture<String> cf = CompletableFuture.completedFuture("message").thenApplyAsync(String::toUpperCase,
-        CompletableFuture.delayedExecutor(1, TimeUnit.SECONDS));
+    CompletableFuture<String> cf = CompletableFuture.completedFuture("message")
+      .thenApplyAsync(String::toUpperCase);
     CompletableFuture<String> cf2 = cf.exceptionally(throwable -> "canceled message");
     Assert.assertTrue("Was not canceled", cf.cancel(true));
     Assert.assertTrue("Was not completed exceptionally", cf.isCompletedExceptionally());

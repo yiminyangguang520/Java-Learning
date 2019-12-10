@@ -25,10 +25,10 @@ public class CollectorIntroduce {
         , new Apple("green", 170));
 
     List<Apple> greenList = list.stream().filter(a -> "green".equals(a.getColor())).collect(Collectors.toList());
-    Optional.ofNullable(greenList).ifPresent(System.out::println);
-    Optional.ofNullable(groupByNormal(list)).ifPresent(System.out::println);
+    Optional.of(greenList).ifPresent(System.out::println);
+    Optional.of(groupByNormal(list)).ifPresent(System.out::println);
     System.out.println("===================================================");
-    Optional.ofNullable(groupByFunction(list)).ifPresent(System.out::println);
+    Optional.of(groupByFunction(list)).ifPresent(System.out::println);
     System.out.println("===================================================");
     Optional.ofNullable(groupByCollector(list)).ifPresent(System.out::println);
   }

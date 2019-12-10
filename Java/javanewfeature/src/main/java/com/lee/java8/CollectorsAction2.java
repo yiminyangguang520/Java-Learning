@@ -32,7 +32,7 @@ public class CollectorsAction2 {
 
     ConcurrentMap<Dish.Type, List<Dish>> collect = menu.stream().collect(Collectors.groupingByConcurrent(Dish::getType));
     Optional.ofNullable(collect.getClass()).ifPresent(System.out::println);
-    Optional.ofNullable(collect).ifPresent(System.out::println);
+    Optional.of(collect).ifPresent(System.out::println);
   }
 
 
@@ -48,7 +48,7 @@ public class CollectorsAction2 {
     ConcurrentMap<Dish.Type, Double> collect = menu.stream()
         .collect(Collectors.groupingByConcurrent(Dish::getType, ConcurrentSkipListMap::new, Collectors.averagingInt(Dish::getCalories)));
     Optional.of(collect.getClass()).ifPresent(System.out::println);
-    Optional.ofNullable(collect).ifPresent(System.out::println);
+    Optional.of(collect).ifPresent(System.out::println);
   }
 
   private static void testJoining() {
@@ -71,7 +71,7 @@ public class CollectorsAction2 {
 
   private static void testMapping() {
     System.out.println("testMapping");
-    Optional.of(menu.stream().collect(Collectors.mapping(Dish::getName, Collectors.joining(","))))
+    Optional.of(menu.stream().map(Dish::getName).collect(Collectors.joining(",")))
         .ifPresent(System.out::println);
   }
 
