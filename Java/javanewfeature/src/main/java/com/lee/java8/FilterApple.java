@@ -14,6 +14,11 @@ public class FilterApple {
   @FunctionalInterface
   public interface AppleFilter {
 
+    /**
+     * filter
+     * @param apple 苹果
+     * @return true or false
+     */
     boolean filter(Apple apple);
   }
 
@@ -25,6 +30,7 @@ public class FilterApple {
         list.add(apple);
       }
     }
+
     return list;
   }
 

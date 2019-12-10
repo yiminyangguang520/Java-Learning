@@ -58,8 +58,7 @@ public class DateTest {
     System.out.println(localDate.getDayOfYear());
     System.out.println(localDate.getDayOfMonth());
     System.out.println(localDate.getDayOfWeek());
-
-    localDate.get(ChronoField.DAY_OF_MONTH);
+    System.out.println(localDate.get(ChronoField.DAY_OF_MONTH));
   }
 
   private static void testLocalTime() {
@@ -95,7 +94,7 @@ public class DateTest {
   }
 
   private static void testPeriod() {
-    Period period = Period.between(LocalDate.of(2014, 1, 10), LocalDate.of(2016, 1, 10));
+    Period period = Period.between(LocalDate.of(2014, 6, 15), LocalDate.of(2016, 1, 10));
     System.out.println(period.getMonths());
     System.out.println(period.getDays());
     System.out.println(period.getYears());

@@ -30,8 +30,8 @@ public class LambdaUsage {
         result.add(a);
       }
     }
-    return result;
 
+    return result;
   }
 
   private static List<Apple> filterByWeight(List<Apple> source, LongPredicate predicate) {
@@ -41,6 +41,7 @@ public class LambdaUsage {
         result.add(a);
       }
     }
+
     return result;
   }
 
@@ -120,7 +121,8 @@ public class LambdaUsage {
     Apple a = testBiFunction("Blue", 130, (s, w) -> new Apple(s, w));
     System.out.println(a);
 
-    Supplier<String> s = String::new;   //method inference.
+    // method inference.
+    Supplier<String> s = String::new;
     System.out.println(s.get().getClass());
 
     System.out.println("================");
@@ -152,7 +154,6 @@ public class LambdaUsage {
     BiConsumer<Test, String> say = Test::say;
 
     Consumer<String> c = System.out::println;
-
   }
 
   public static void useTest(BiConsumer<Test, String> con, List<String> list) {
@@ -168,7 +169,6 @@ public class LambdaUsage {
   }
 
   interface Test {
-
-    public void say(String s);
+    void say(String s);
   }
 }

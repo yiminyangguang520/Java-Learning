@@ -25,6 +25,5 @@ public class StreamMatch {
     stream = Arrays.stream(new Integer[]{1, 2, 3, 4, 5, 6, 7});
     matched = stream.noneMatch(i -> i < 0);
     System.out.println(matched);
-
   }
 }

@@ -17,9 +17,7 @@ public class LambdaExpression {
   public static void main(String[] args) {
 
     Comparator<Apple> byColor = Comparator.comparing(Apple::getColor);
-
     List<Apple> list = Collections.emptyList();
-
     list.sort(byColor);
 
     Comparator<Apple> byColor2 = Comparator.comparing(Apple::getColor);
@@ -32,6 +30,5 @@ public class LambdaExpression {
     };
 
     Function<Apple, Boolean> f = (a) -> a.getColor().equals("green");
-
   }
 }
