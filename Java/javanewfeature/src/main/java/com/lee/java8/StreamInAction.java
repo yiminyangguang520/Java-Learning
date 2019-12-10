@@ -52,7 +52,6 @@ public class StreamInAction {
         .forEach(System.out::println);
 
     //4.Return a string of all traders’ names sorted alphabetically
-
     String value = transactions.stream().map(t -> t.getTrader().getName())
         .distinct()
         .sorted()
