@@ -88,3 +88,4 @@ static_deploy/
 
 # IDEA files
 *.iml
+spring/dubbo/springboot-rpc-dubbox/.DS_Store

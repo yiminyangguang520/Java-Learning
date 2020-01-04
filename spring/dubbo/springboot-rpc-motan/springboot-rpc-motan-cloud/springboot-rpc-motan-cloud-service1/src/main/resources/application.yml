@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: cloud
+
+server:
+  port: 28000
+
+## 日志打印
+logging:
+  level:
+    root: DEBUG

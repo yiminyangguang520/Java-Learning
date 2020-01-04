@@ -1,0 +1,5 @@
+server:
+  port: 33066
+  tomcat:
+    accesslog:
+      debug: true #请求响应数据调试
