@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class ArrayListIteratorRemoveExample {
 
