@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:motan="http://api.weibo.com/schema/motan"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://api.weibo.com/schema/motan http://api.weibo.com/schema/motan.xsd">
+
+    <!-- 服务注册中心配置Zookeeper -->
+    <motan:registry regProtocol="zookeeper"
+                    name="registry"
+                    address="192.168.127.132:2181,192.168.127.132:2182,192.168.127.132:2183"
+                    connectTimeout="2000"/>
+
+
+    <!-- 协议配置 为防止多个业务配置冲突 推荐使用id表示具体协议 -->
+    <motan:protocol id="service2-motan"
+                    default="true"
+                    name="motan"
+                    maxServerConnection="80000"
+                    maxContentLength="1048576"
+                    maxWorkerThread="800"
+                    minWorkerThread="20"/>
+
+
+    <!-- 通用配置 多个rpc服务使用相同的基础配置 group和module定义具体的服务池 export格式为"protocol_id:提供服务的端口" -->
+    <motan:basicService export="service2-motan:50020"
+                        group="g2"
+                        accessLog="false"
+                        shareChannel="true"
+                        module="m2"
+                        application="motan-service"
+                        registry="registry"
+                        id="motanBasicService"/>
+
+
+    <!-- 业务具体实现类 -->
+    <bean id="courseService" class="org.ostenant.springboot.learning.examples.service.CourseServiceImpl"/>
+
+    <bean id="courseRepository" class="org.ostenant.springboot.learning.examples.repository.CourseRepository"/>
+
+
+    <!-- 具体rpc服务配置声明 用于声明实现的接口类 -->
+    <motan:service interface="org.ostenant.springboot.learning.examples.service.course.ICourseService"
+                   ref="courseService"
+                   basicService="motanBasicService"/>
+
+
+</beans>

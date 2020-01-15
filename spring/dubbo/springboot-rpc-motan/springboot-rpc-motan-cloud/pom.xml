@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>springboot-rpc-motan</artifactId>
+        <groupId>org.ostenant.springboot.learning.examples</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>springboot-rpc-motan-cloud</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>springboot-rpc-motan-cloud-api</module>
+        <module>springboot-rpc-motan-cloud-client</module>
+        <module>springboot-rpc-motan-cloud-service1</module>
+        <module>springboot-rpc-motan-cloud-service2</module>
+    </modules>
+
+    <properties>
+        <motan.version>0.3.1</motan.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <motan.registry>local</motan.registry>
+            </properties>
+        </profile>
+        <profile>
+            <id>consul</id>
+            <properties>
+                <motan.registry>consul</motan.registry>
+            </properties>
+        </profile>
+        <profile>
+            <id>zookeeper</id>
+            <properties>
+                <motan.registry>zookeeper</motan.registry>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-core</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-transport-netty</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-springsupport</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-registry-consul</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-registry-zookeeper</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-protocol-yar</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-protocol-restful</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-transport-netty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-springsupport</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

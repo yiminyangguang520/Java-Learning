@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ostenant.springboot.learning.examples</groupId>
+    <artifactId>springboot-rpc-dubbox-provider</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>springboot-rpc-dubbox-provider</name>
+    <description>Springboot rpc dubbox service provider project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.ostenant.springboot.learning.examples</groupId>
+        <artifactId>springboot-rpc-dubbox</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <start-class>org.ostenant.springboot.learning.examples.Application</start-class>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <profileActive>local</profileActive>
+
+                <!-- dubbo -->
+                <dubbo.container>logback,spring</dubbo.container>
+                <dubbo.shutdown.hook>true</dubbo.shutdown.hook>
+                <dubbo.application.name>springboot-rpc-dubbox-provider</dubbo.application.name>
+                <dubbo.application.owner>madison</dubbo.application.owner>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+                <dubbo.registry.address>127.0.0.1:2181</dubbo.registry.address>
+                <dubbo.registry.client>curator</dubbo.registry.client>
+                <dubbo.registry.file>
+                    E://zookeeper-3.3.6//data//springboot-rpc-dubbox-provider.cache
+                </dubbo.registry.file>
+                <dubbo.protocol.dubbo.port>20000</dubbo.protocol.dubbo.port>
+                <dubbo.application.logger>slf4j</dubbo.application.logger>
+                <dubbo.logback.level>info</dubbo.logback.level>
+                <dubbo.monitor.protocol/>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+
+                <!-- dubbo -->
+                <dubbo.container>logback,spring</dubbo.container>
+                <dubbo.shutdown.hook>true</dubbo.shutdown.hook>
+                <dubbo.application.name>springboot-rpc-dubbox-provider</dubbo.application.name>
+                <dubbo.application.owner>madison</dubbo.application.owner>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+                <dubbo.registry.address>127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183</dubbo.registry.address>
+                <dubbo.registry.client>curator</dubbo.registry.client>
+                <dubbo.registry.file>/data/zookeeper/springboot-rpc-dubbox-provider.cache</dubbo.registry.file>
+                <dubbo.protocol.dubbo.port>20000</dubbo.protocol.dubbo.port>
+                <dubbo.application.logger>slf4j</dubbo.application.logger>
+                <dubbo.logback.level>error</dubbo.logback.level>
+                <dubbo.monitor.protocol>registry</dubbo.monitor.protocol>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+
+                <!-- dubbo -->
+                <dubbo.container>logback,spring</dubbo.container>
+                <dubbo.shutdown.hook>true</dubbo.shutdown.hook>
+                <dubbo.application.name>springboot-rpc-dubbox-provider</dubbo.application.name>
+                <dubbo.application.owner>madison</dubbo.application.owner>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+                <dubbo.registry.address>127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183</dubbo.registry.address>
+                <dubbo.registry.client>curator</dubbo.registry.client>
+                <dubbo.registry.file>/data/zookeeper/springboot-rpc-dubbox-provider.cache</dubbo.registry.file>
+                <dubbo.protocol.dubbo.port>20000</dubbo.protocol.dubbo.port>
+                <dubbo.application.logger>slf4j</dubbo.application.logger>
+                <dubbo.logback.level>error</dubbo.logback.level>
+                <dubbo.monitor.protocol>registry</dubbo.monitor.protocol>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <!-- 所有的服务接口 -->
+        <dependency>
+            <groupId>org.ostenant.springboot.learning.examples</groupId>
+            <artifactId>springboot-rpc-dubbox-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 开启Maven提供的Profile配置策略 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Google Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <!-- Apache commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+
+        <!-- Zookeeper Start -->
+        <dependency>
+            <groupId>com.netflix.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>zookeeper</artifactId>
+                    <groupId>org.apache.zookeeper</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>zookeeper</artifactId>
+                    <groupId>org.apache.zookeeper</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+
+        <!-- Mybatis -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: registry
+
+server:
+  port: 20001
+
+## 日志打印
+logging:
+  level:
+    root: DEBUG

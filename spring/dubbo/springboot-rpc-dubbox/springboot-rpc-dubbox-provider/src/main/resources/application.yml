@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Springboot Dubbo Service Provider
+  profiles:
+    active: @profileActive@
