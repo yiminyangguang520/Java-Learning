@@ -100,7 +100,7 @@ public class LoginServiceImpl implements LoginService {
     HttpEntity entity = new HttpEntity<>(postParameters, headers);
     ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     try {
-      response = restTemplate.exchange("https://account.glodon.com/oauth2/check_token", HttpMethod.POST, entity, String.class);
+      response = restTemplate.exchange("https://*******.*******.com/oauth2/check_token", HttpMethod.POST, entity, String.class);
     } catch (RestClientException e) {
       e.printStackTrace();
     }
