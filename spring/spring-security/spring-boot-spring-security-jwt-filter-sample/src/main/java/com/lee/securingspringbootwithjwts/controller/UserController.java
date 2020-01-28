@@ -1,6 +1,6 @@
-package com.glodon.securingspringbootwithjwts.controller;
+package com.lee.securingspringbootwithjwts.controller;
 
-import com.glodon.securingspringbootwithjwts.model.JsonResult;
+import com.lee.securingspringbootwithjwts.model.JsonResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;

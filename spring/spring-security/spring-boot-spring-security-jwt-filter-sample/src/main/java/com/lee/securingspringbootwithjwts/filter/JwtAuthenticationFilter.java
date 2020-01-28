@@ -1,6 +1,6 @@
-package com.glodon.securingspringbootwithjwts.filter;
+package com.lee.securingspringbootwithjwts.filter;
 
-import com.glodon.securingspringbootwithjwts.service.TokenAuthenticationService;
+import com.lee.securingspringbootwithjwts.service.TokenAuthenticationService;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

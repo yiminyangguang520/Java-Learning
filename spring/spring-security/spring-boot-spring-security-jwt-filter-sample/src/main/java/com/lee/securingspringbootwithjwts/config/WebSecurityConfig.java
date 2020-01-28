@@ -1,8 +1,8 @@
-package com.glodon.securingspringbootwithjwts.config;
+package com.lee.securingspringbootwithjwts.config;
 
-import com.glodon.securingspringbootwithjwts.filter.JwtAuthenticationFilter;
-import com.glodon.securingspringbootwithjwts.filter.JwtLoginFilter;
-import com.glodon.securingspringbootwithjwts.security.CustomAuthenticationProvider;
+import com.lee.securingspringbootwithjwts.filter.JwtAuthenticationFilter;
+import com.lee.securingspringbootwithjwts.filter.JwtLoginFilter;
+import com.lee.securingspringbootwithjwts.security.CustomAuthenticationProvider;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

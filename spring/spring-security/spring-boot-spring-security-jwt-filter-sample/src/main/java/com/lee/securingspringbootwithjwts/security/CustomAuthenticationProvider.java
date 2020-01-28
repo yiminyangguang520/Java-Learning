@@ -1,6 +1,6 @@
-package com.glodon.securingspringbootwithjwts.security;
+package com.lee.securingspringbootwithjwts.security;
 
-import com.glodon.securingspringbootwithjwts.model.GrantedAuthorityImpl;
+import com.lee.securingspringbootwithjwts.model.GrantedAuthorityImpl;
 import java.util.ArrayList;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

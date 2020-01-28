@@ -1,4 +1,4 @@
-package com.glodon.securingspringbootwithjwts;
+package com.lee.securingspringbootwithjwts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

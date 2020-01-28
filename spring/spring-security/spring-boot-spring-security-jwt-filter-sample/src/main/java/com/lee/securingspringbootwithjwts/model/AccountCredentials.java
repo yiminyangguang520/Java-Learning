@@ -1,4 +1,4 @@
-package com.glodon.securingspringbootwithjwts.model;
+package com.lee.securingspringbootwithjwts.model;
 
 import lombok.Getter;
 import lombok.Setter;

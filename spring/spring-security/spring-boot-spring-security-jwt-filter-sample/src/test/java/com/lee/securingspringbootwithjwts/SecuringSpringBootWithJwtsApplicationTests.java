@@ -1,4 +1,4 @@
-package com.glodon.securingspringbootwithjwts;
+package com.lee.securingspringbootwithjwts;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

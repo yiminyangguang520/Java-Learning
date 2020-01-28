@@ -1,6 +1,6 @@
-package com.glodon.securingspringbootwithjwts.service;
+package com.lee.securingspringbootwithjwts.service;
 
-import com.glodon.securingspringbootwithjwts.model.JsonResult;
+import com.lee.securingspringbootwithjwts.model.JsonResult;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

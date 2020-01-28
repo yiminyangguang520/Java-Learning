@@ -1,9 +1,9 @@
-package com.glodon.securingspringbootwithjwts.filter;
+package com.lee.securingspringbootwithjwts.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.glodon.securingspringbootwithjwts.model.AccountCredentials;
-import com.glodon.securingspringbootwithjwts.model.JsonResult;
-import com.glodon.securingspringbootwithjwts.service.TokenAuthenticationService;
+import com.lee.securingspringbootwithjwts.model.AccountCredentials;
+import com.lee.securingspringbootwithjwts.model.JsonResult;
+import com.lee.securingspringbootwithjwts.service.TokenAuthenticationService;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
