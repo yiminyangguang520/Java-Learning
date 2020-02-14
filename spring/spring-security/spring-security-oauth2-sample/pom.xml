@@ -11,7 +11,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<springframework.version>5.1.11.RELEASE</springframework.version>
+		<springframework.version>5.2.3.RELEASE</springframework.version>
 		<springsecurity.version>5.0.6.RELEASE</springsecurity.version>
 		<springsecurityoauth2.version>2.3.3.RELEASE</springsecurityoauth2.version>
 		<jackson.library>2.9.6</jackson.library>
