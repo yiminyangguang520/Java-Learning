@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "spring.datasource.druid.master",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.master'"
+  },
+  {
+    "name": "spring.datasource.druid.slave.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.slave.url'"
+  },
+  {
+    "name": "spring.datasource.master.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.master.jdbc-url'"
+  },
+  {
+    "name": "spring.datasource.master.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.master.password'"
+  },
+  {
+    "name": "spring.datasource.slave.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.slave.jdbc-url'"
+  },
+  {
+    "name": "spring.datasource.slave.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.slave.username'"
+  },
+  {
+    "name": "spring.datasource.master.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.master.username'"
+  },
+  {
+    "name": "spring.datasource.slave.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.slave.password'"
+  },
+  {
+    "name": "spring.datasource.slave.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.slave.driver-class-name'"
+  },
+  {
+    "name": "spring.datasource.master.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.master.driver-class-name'"
+  }
+]}
