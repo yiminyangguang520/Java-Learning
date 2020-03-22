@@ -10,7 +10,8 @@ spring:
     cache: false
     mode: HTML5
   resources:
-    cache-period: 0
+    cache:
+      period: 0s
 
   ## H2 Servlet setting
   h2:
@@ -44,8 +45,10 @@ spring:
 
 # Turn off Security for Actuator:
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 
 ##---------------------------------------------------------------------------##
