@@ -6,7 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * A utility class that can be used to convert passwords to use BCrypt. Implementation of PasswordEncoder that uses the BCrypt strong hashing function.
+ * A utility class that can be used to convert passwords to use BCrypt.
+ * Implementation of PasswordEncoder that uses the BCrypt strong hashing function.
  *
  * @author Mick Knutson
  * @see BCryptPasswordEncoder

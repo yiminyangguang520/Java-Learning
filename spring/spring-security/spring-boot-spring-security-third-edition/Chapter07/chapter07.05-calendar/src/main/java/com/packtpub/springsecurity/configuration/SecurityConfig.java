@@ -200,9 +200,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Thymeleaf needs to use the Thymeleaf configured FilterSecurityInterceptor
     // and not the default Filter from AutoConfiguration.
     final HttpSecurity http = getHttp();
-    web.postBuildAction(() -> {
-      web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class));
-    });
+    web.postBuildAction(() -> web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class)));
   }
 
   @Bean

@@ -117,6 +117,7 @@ public class CalendarUser implements Principal, Serializable {
   /**
    * Gets the full name in a formatted fashion. Note in a real application a formatter may be more appropriate, but in this application simplicity is more important.
    */
+  @Override
   @JsonIgnore
   public String getName() {
     return getEmail();

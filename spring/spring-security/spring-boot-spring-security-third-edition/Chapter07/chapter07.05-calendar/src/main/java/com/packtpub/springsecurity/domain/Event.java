@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * An {@link Event} is an item on a calendar that contains an owner (the person who created it), an attendee (someone who was invited to the event), when the event will
@@ -28,10 +28,13 @@ public class Event implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
+
   @NotEmpty(message = "Summary is required")
   private String summary;
+
   @NotEmpty(message = "Description is required")
   private String description;
+
   @NotNull(message = "When is required")
   private Calendar when;
 
@@ -40,6 +43,7 @@ public class Event implements Serializable {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "owner", referencedColumnName = "id")
   private CalendarUser owner;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "attendee", referencedColumnName = "id")
   private CalendarUser attendee;

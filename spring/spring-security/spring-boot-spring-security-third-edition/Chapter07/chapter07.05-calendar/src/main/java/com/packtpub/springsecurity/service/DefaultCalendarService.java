@@ -21,8 +21,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class DefaultCalendarService implements CalendarService {
 
-  private static final Logger logger = LoggerFactory
-      .getLogger(DefaultCalendarService.class);
+  private static final Logger logger = LoggerFactory.getLogger(DefaultCalendarService.class);
 
   private final EventDao eventDao;
   private final CalendarUserDao userDao;

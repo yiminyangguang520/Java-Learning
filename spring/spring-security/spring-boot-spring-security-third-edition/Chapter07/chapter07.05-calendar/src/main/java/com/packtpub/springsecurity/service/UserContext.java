@@ -12,6 +12,7 @@ public interface UserContext {
 
   /**
    * Gets the currently logged in {@link CalendarUser} or null if there is no authenticated user.
+   * @return
    */
   CalendarUser getCurrentUser();
 
