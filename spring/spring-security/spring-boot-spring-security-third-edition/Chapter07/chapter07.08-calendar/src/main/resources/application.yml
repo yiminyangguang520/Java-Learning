@@ -10,7 +10,8 @@ spring:
     cache: false
     mode: HTML5
   resources:
-    cache-period: 0
+    cache:
+      period: 0s
 
   ## H2 Servlet setting
   h2:
@@ -43,9 +44,11 @@ spring:
               create-target: build/create.sql
 
 # Turn off Security for Actuator:
-management:
-  security:
-    enabled: false
 
 
 ##---------------------------------------------------------------------------##
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

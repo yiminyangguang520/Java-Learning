@@ -12,9 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- *
  * @author Mick Knutson
- *
  */
 @DirtiesContext
 @RunWith(SpringRunner.class)
@@ -24,14 +22,14 @@ import org.springframework.transaction.annotation.Transactional;
 @DataJpaTest
 public class JpaTokenRepositoryCleanerTests {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+  private Logger logger = LoggerFactory.getLogger(getClass());
 
-    //    @Autowired
-    private JpaTokenRepositoryCleaner repository;
+  //    @Autowired
+  private JpaTokenRepositoryCleaner repository;
 
-    @Test
-    public void noop(){}
-
+  @Test
+  public void noop() {
+  }
 
 
 } // The End...
