@@ -5,6 +5,52 @@
     <title id="pageTitle">myCalendar - Please Login</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <style>
+        .form-list {
+            width: 406px;
+            margin: 0 auto;
+            margin-top: 120px;
+            list-style: none;
+        }
+        .form-list li + li {
+            margin-top: 8px;
+        }
+        .form-list li label {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+            font-size: 14px;
+        }
+        .form-list li input.input-text {
+            width: 282px;
+            height: 32px;
+            font-size: 16px;
+            border: 1px solid #9c9c9c;
+            padding: 0 4px;
+            border-radius: 4px;
+            outline: none;
+        }
+        .form-list li input.input-text:hover, .form-list li input.input-text:focus {
+            border-color: #269ce6;
+        }
+        .form-list li .controls {
+            height: 28px;
+        }
+        .form-list li #submit {
+            width: 80px;
+            height: 32px;
+            border-radius: 4px;
+            cursor: pointer;
+            background: #fff;
+            color: #0080CC;
+            border: 1px solid #0080CC;
+            float: right;
+        }
+        .form-list li #submit:hover {
+            background: #0080CC;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,15 +70,24 @@
             You have been logged out.
         </div>
 
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" autofocus="autofocus"/>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password"/>
-        <div class="control-group">
-            <div class="controls">
-                <input id="submit" type="submit" name="submit" value="Login"/>
-            </div>
-        </div>
+        <ul class="form-list">
+            <li>
+                <label for="username">Username</label>
+                <input class="input-text" type="text" id="username" name="username" autofocus="autofocus"/>
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <input class="input-text" type="password" id="password" name="password"/>
+            </li>
+            <li>
+                <div class="control-group">
+                    <div class="controls">
+                        <input id="submit" type="submit" name="submit" value="Login"/>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
     </form>
 
 </div>
