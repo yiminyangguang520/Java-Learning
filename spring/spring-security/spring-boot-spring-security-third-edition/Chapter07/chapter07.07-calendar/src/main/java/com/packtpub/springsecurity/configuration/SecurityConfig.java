@@ -173,13 +173,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   @Bean
-  public IpAwarePersistentTokenRepository ipAwarePersistentTokenRepository(RememberMeTokenRepository rmtr) {
-    return new IpAwarePersistentTokenRepository(
-      new JpaPersistentTokenRepository(rmtr)
-    );
-  }
-
-  @Bean
   public RememberMeServices rememberMeServices(PersistentTokenRepository ptr) {
     PersistentTokenBasedRememberMeServices rememberMeServices =
       new PersistentTokenBasedRememberMeServices("jbcpCalendar", userDetailsService, ptr);
