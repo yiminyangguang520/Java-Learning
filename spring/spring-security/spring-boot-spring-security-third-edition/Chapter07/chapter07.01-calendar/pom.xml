@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.packtpub.springsecurity</groupId>
-  <artifactId>chapter05.04-calendar</artifactId>
-  <version>5.5.4-SNAPSHOT</version>
+  <artifactId>chapter07.01-calendar</artifactId>
+  <version>7.7.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <parent>
@@ -72,6 +72,11 @@
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
+      <artifactId>webjars-locator</artifactId>
+      <version>0.39</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
       <artifactId>jquery</artifactId>
       <version>3.3.1-1</version>
     </dependency>
@@ -79,6 +84,11 @@
       <groupId>org.webjars</groupId>
       <artifactId>bootstrap</artifactId>
       <version>3.3.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <version>5.1.4.RELEASE</version>
     </dependency>
   </dependencies>
 

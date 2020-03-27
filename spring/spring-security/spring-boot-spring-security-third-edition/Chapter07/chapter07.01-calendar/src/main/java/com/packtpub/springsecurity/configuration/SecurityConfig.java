@@ -1,9 +1,6 @@
 package com.packtpub.springsecurity.configuration;
 
-import com.packtpub.springsecurity.repository.RememberMeTokenRepository;
 import com.packtpub.springsecurity.service.UserDetailsServiceImpl;
-import com.packtpub.springsecurity.web.authentication.rememberme.IpAwarePersistentTokenRepository;
-import com.packtpub.springsecurity.web.authentication.rememberme.JpaPersistentTokenRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +19,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
-import org.springframework.security.web.authentication.RememberMeServices;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 /**
  * Spring Security Config Class
  *
- * @author bruce
+ * @author litz-a
  * @see {@link WebSecurityConfigurerAdapter}
- * @since chapter07.00
+ * @since chapter05.00
  */
 @Configuration
 @EnableWebSecurity//(debug = true)
@@ -42,16 +36,11 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private static final Logger logger = LoggerFactory
-    .getLogger(SecurityConfig.class);
+      .getLogger(SecurityConfig.class);
 
   @Autowired
   private UserDetailsService userDetailsService;
 
-  @Autowired
-  private PersistentTokenRepository persistentTokenRepository;
-
-  @Autowired
-  private RememberMeServices rememberMeServices;
 
   /**
    * Configure AuthenticationManager.
@@ -75,8 +64,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   public void configure(final AuthenticationManagerBuilder auth) throws Exception {
     auth
-      .userDetailsService(userDetailsService)
-      .passwordEncoder(passwordEncoder())
+        .userDetailsService(userDetailsService)
+        .passwordEncoder(passwordEncoder())
     ;
   }
 
@@ -129,31 +118,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(final HttpSecurity http) throws Exception {
     http.authorizeRequests()
-      // FIXME: TODO: Allow anyone to use H2 (NOTE: NOT FOR PRODUCTION USE EVER !!! )
-      .antMatchers("/admin/h2/**").permitAll()
+        // FIXME: TODO: Allow anyone to use H2 (NOTE: NOT FOR PRODUCTION USE EVER !!! )
+        .antMatchers("/admin/h2/**").permitAll()
 
-      .antMatchers("/").permitAll()
-      .antMatchers("/login/*").permitAll()
-      .antMatchers("/logout").permitAll()
-      .antMatchers("/signup/*").permitAll()
-      .antMatchers("/errors/**").permitAll()
-      .antMatchers("/admin/*").access("hasRole('ADMIN') and isFullyAuthenticated()")
-      .antMatchers("/events/").hasRole("ADMIN")
-      .antMatchers("/**").hasRole("USER");
+        .antMatchers("/").permitAll()
+        .antMatchers("/login/*").permitAll()
+        .antMatchers("/logout").permitAll()
+        .antMatchers("/signup/*").permitAll()
+        .antMatchers("/errors/**").permitAll()
+        .antMatchers("/admin/*").hasRole("ADMIN")
+        .antMatchers("/events/").hasRole("ADMIN")
+        .antMatchers("/**").hasRole("USER");
 
     http.formLogin()
-      .loginPage("/login/form")
-      .loginProcessingUrl("/login")
-      .failureUrl("/login/form?error")
-      .usernameParameter("username")
-      .passwordParameter("password")
-      .defaultSuccessUrl("/default", true)
-      .permitAll();
+        .loginPage("/login/form")
+        .loginProcessingUrl("/login")
+        .failureUrl("/login/form?error")
+        .usernameParameter("username")
+        .passwordParameter("password")
+        .defaultSuccessUrl("/default", true)
+        .permitAll();
 
     http.logout()
-      .logoutUrl("/logout")
-      .logoutSuccessUrl("/login/form?logout")
-      .permitAll();
+        .logoutUrl("/logout")
+        .logoutSuccessUrl("/login/form?logout")
+        .permitAll();
 
     http.anonymous();
 
@@ -164,21 +153,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.exceptionHandling().accessDeniedPage("/errors/403");
 
     // remember me configuration
-    http.rememberMe()
-      .key("jbcpCalendar")
-      .rememberMeServices(rememberMeServices);
+    http.rememberMe().key("jbcpCalendar");//.rememberMeParameter("_spring_security_remember_me");
 
     // Enable <frameset> in order to use H2 web console
     http.headers().frameOptions().disable();
   }
-
-  @Bean
-  public RememberMeServices rememberMeServices(PersistentTokenRepository ptr) {
-    PersistentTokenBasedRememberMeServices rememberMeServices =
-      new PersistentTokenBasedRememberMeServices("jbcpCalendar", userDetailsService, ptr);
-    return rememberMeServices;
-  }
-
 
   /**
    * This is the equivalent to:
@@ -196,23 +175,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // Ignore static resources and webjars from Spring Security
     web.ignoring()
-      .antMatchers("/resources/**")
-      .antMatchers("/css/**")
-      .antMatchers("/webjars/**")
+        .antMatchers("/resources/**")
+        .antMatchers("/css/**")
+        .antMatchers("/webjars/**")
     ;
 
     // Thymeleaf needs to use the Thymeleaf configured FilterSecurityInterceptor
     // and not the default Filter from AutoConfiguration.
     final HttpSecurity http = getHttp();
-    web.postBuildAction(() -> {
-      web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class));
-    });
+    web.postBuildAction(() -> web.securityInterceptor(http.getSharedObject(FilterSecurityInterceptor.class)));
   }
 
   @Bean
   @Override
   public AuthenticationManager authenticationManagerBean()
-    throws Exception {
+      throws Exception {
     return super.authenticationManagerBean();
   }
 
