@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 @Service
 public class PrinterService {
@@ -27,7 +27,7 @@ public class PrinterService {
   public Either<ErrorResponse, Printer> create(CreatePrinterRequest request) {
     Printer printer = new Printer();
     printer.name = request.name;
-    printerRepository.set(printer.id, printer);
+    printerRepository.save(printer);
     return Either.right(printer);
   }
 

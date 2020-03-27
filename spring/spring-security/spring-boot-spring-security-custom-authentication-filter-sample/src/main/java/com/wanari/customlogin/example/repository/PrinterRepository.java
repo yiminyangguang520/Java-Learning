@@ -2,17 +2,15 @@ package com.wanari.customlogin.example.repository;
 
 import com.wanari.customlogin.example.domain.Printer;
 import java.util.List;
-import org.springframework.boot.actuate.metrics.util.SimpleInMemoryRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 @Repository
-public class PrinterRepository extends SimpleInMemoryRepository<Printer> {
+public interface PrinterRepository extends CrudRepository<Printer, String> {
 
   @Override
-  public List<Printer> findAll() {
-    return (List<Printer>) super.findAll();
-  }
+  List<Printer> findAll();
 }

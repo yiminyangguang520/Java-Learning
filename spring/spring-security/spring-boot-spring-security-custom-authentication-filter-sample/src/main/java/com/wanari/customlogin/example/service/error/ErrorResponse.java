@@ -3,7 +3,7 @@ package com.wanari.customlogin.example.service.error;
 import org.springframework.http.HttpStatus;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class ErrorResponse {
 

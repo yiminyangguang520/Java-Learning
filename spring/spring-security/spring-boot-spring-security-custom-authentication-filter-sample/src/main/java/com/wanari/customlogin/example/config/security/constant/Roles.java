@@ -1,7 +1,7 @@
 package com.wanari.customlogin.example.config.security.constant;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public final class Roles {
 

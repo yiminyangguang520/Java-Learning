@@ -1,25 +1,47 @@
 package com.wanari.customlogin.example.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
- * @author litz-a
+ * @author bruce
  */
-public class User {
+@Getter
+@Setter
+@Entity(name = "user")
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
+public class User implements Serializable {
+
+  @Id
+  @JsonIgnore
+  @GeneratedValue(generator = "jpa-uuid")
+  private String id;
 
   @JsonIgnore
-  public String id;
+  private String password;
 
-  @JsonIgnore
-  public String password;
+  private String login;
 
-  public String login;
-  public List<String> roles = new ArrayList<>();
+  private String roles;
 
   public User() {
-    this.id = UUID.randomUUID().toString();
   }
+
+  public User(String login, String password) {
+    this.login = login;
+    this.password = password;
+  }
+
+  public User(String login, String password, String roles) {
+    this.login = login;
+    this.password = password;
+    this.roles = roles;
+  }
+
 }

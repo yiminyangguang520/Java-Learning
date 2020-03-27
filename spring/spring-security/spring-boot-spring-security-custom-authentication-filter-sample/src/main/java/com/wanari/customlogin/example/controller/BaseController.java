@@ -4,7 +4,7 @@ import com.wanari.customlogin.example.service.error.ErrorResponse;
 import org.springframework.http.ResponseEntity;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class BaseController {
 

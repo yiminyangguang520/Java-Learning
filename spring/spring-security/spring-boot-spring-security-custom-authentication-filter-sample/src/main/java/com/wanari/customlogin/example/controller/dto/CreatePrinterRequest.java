@@ -1,7 +1,7 @@
 package com.wanari.customlogin.example.controller.dto;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class CreatePrinterRequest {
 

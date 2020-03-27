@@ -4,25 +4,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.wanari</groupId>
-  <artifactId>spring-boot-spring-security-custom-authentication-filter-sample</artifactId>
+  <artifactId>spring-boot-spring-security-custom-usernamepassword-authentication-filter-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-spring-security-custom-authentication-filter-sample</name>
+  <name>spring-boot-spring-security-custom-usernamepassword-authentication-filter-example</name>
   <description>Demo project Custom Login Example</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.11.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <version>2.2.5.RELEASE</version>
   </parent>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <io.vavr.version>0.9.1</io.vavr.version>
     <commons-io.version>2.6</commons-io.version>
   </properties>
 
@@ -31,6 +28,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -41,27 +39,44 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.vavr</groupId>
-      <artifactId>vavr</artifactId>
-      <version>${io.vavr.version}</version>
-    </dependency>
+
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>${commons-io.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>io.vavr</groupId>
+      <artifactId>vavr</artifactId>
+      <version>0.10.2</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-actuator</artifactId>
-      <version>1.5.11.RELEASE</version>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <url> https://repo1.maven.org/maven2/</url>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>

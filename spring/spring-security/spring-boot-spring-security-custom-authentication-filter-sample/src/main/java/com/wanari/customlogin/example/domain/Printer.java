@@ -1,18 +1,27 @@
 package com.wanari.customlogin.example.domain;
 
-import java.util.UUID;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
- * @author litz-a
- */ //TODO printer entity, you probably want to store data in a DB, but this is just an example app so I used SimpleInMemoryRepository
-public class Printer {
+ * @author bruce
+ * */
+@Getter
+@Setter
+@Entity(name = "printer")
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
+public class Printer implements Serializable {
 
+  @Id
+  @GeneratedValue(generator = "jpa-uuid")
   public String id;
-  public String name;
-  public Boolean isDetonated;
 
-  public Printer() {
-    this.id = UUID.randomUUID().toString();
-    this.isDetonated = false;
-  }
+  public String name;
+
+  public Boolean isDetonated;
 }

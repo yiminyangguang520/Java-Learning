@@ -1,7 +1,7 @@
 package com.wanari.customlogin.example.config.security.dto;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class LoginRequest {
 

@@ -15,11 +15,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-  private static final Log log = LogFactory.getLog(RequestBodyReaderAuthenticationFilter.class);
+  private static final Log LOG = LogFactory.getLog(RequestBodyReaderAuthenticationFilter.class);
 
   private static final String ERROR_MESSAGE = "Something went wrong while parsing /login request body";
 
@@ -35,14 +35,15 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
       requestBody = IOUtils.toString(request.getReader());
       LoginRequest authRequest = objectMapper.readValue(requestBody, LoginRequest.class);
 
-      UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(authRequest.login, authRequest.password);
+      UsernamePasswordAuthenticationToken token
+          = new UsernamePasswordAuthenticationToken(authRequest.login, authRequest.password);
 
       // Allow subclasses to set the "details" property
       setDetails(request, token);
 
       return this.getAuthenticationManager().authenticate(token);
     } catch (IOException e) {
-      log.error(ERROR_MESSAGE, e);
+      LOG.error(ERROR_MESSAGE, e);
       throw new InternalAuthenticationServiceException(ERROR_MESSAGE, e);
     }
   }

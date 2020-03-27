@@ -3,23 +3,17 @@ package com.wanari.customlogin.example.repository;
 import com.wanari.customlogin.example.domain.User;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.boot.actuate.metrics.util.SimpleInMemoryRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 @Repository
-public class UserRepository extends SimpleInMemoryRepository<User> {
+public interface UserRepository extends CrudRepository<User, String> {
 
   @Override
-  public List<User> findAll() {
-    return (List<User>) super.findAll();
-  }
+  List<User> findAll();
 
-  public Optional<User> findByLogin(String login) {
-    return findAll().stream()
-        .filter(user -> user.login.equals(login))
-        .findAny();
-  }
+  Optional<User> findByLogin(String login);
 }
