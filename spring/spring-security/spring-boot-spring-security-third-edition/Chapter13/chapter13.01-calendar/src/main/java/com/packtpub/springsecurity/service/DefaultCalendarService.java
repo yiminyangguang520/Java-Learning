@@ -95,5 +95,4 @@ public class DefaultCalendarService implements CalendarService {
     return userId;
   }
 
-
-} // The End...
+}

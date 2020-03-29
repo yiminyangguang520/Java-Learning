@@ -1,7 +1,13 @@
 package com.packtpub.springsecurity.web.configuration;
 
+import com.packtpub.springsecurity.repository.RememberMeTokenRepository;
+import com.packtpub.springsecurity.web.authentication.rememberme.IpAwarePersistentTokenRepository;
+import com.packtpub.springsecurity.web.authentication.rememberme.JpaPersistentTokenRepository;
+import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Description;
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -61,18 +67,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
     registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
   }
 
-//    @Description("JPA based IP Away Remember me token repository")
-//    @Bean
-//    public IpAwarePersistentTokenRepository ipAwarePersistentTokenRepository(RememberMeTokenRepository rmtr) {
-//        return new IpAwarePersistentTokenRepository(
-//                new JpaPersistentTokenRepository(rmtr)
-//        );
-//    }
+    @Description("JPA based IP Away Remember me token repository")
+    @Bean
+    public IpAwarePersistentTokenRepository ipAwarePersistentTokenRepository(RememberMeTokenRepository rmtr) {
+        return new IpAwarePersistentTokenRepository(new JpaPersistentTokenRepository(rmtr));
+    }
 
-//    @Description("OrderedRequestContextFilter")
-//    @Bean
-//    public OrderedRequestContextFilter requestContextFilter() {
-//        return new OrderedRequestContextFilter();
-//    }
+    @Description("OrderedRequestContextFilter")
+    @Bean
+    public OrderedRequestContextFilter requestContextFilter() {
+        return new OrderedRequestContextFilter();
+    }
 
 }

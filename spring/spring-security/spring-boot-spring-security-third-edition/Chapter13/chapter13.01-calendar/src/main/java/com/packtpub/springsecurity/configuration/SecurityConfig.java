@@ -1,28 +1,42 @@
 package com.packtpub.springsecurity.configuration;
 
 import com.packtpub.springsecurity.authentication.CalendarUserAuthenticationProvider;
+import com.packtpub.springsecurity.core.userdetails.CalendarUserDetailsService;
+import com.packtpub.springsecurity.service.DefaultCalendarService;
+import com.packtpub.springsecurity.service.UserDetailsServiceImpl;
 import com.packtpub.springsecurity.web.access.expression.CustomWebSecurityExpressionHandler;
 import com.packtpub.springsecurity.web.access.intercept.FilterInvocationServiceSecurityMetadataSource;
+import com.packtpub.springsecurity.web.authentication.rememberme.IpAwarePersistentTokenRepository;
+import java.util.Arrays;
+import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.access.AccessDecisionManager;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.web.authentication.RememberMeServices;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 /**
  * Spring Security Config Class
@@ -53,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   private CustomWebSecurityExpressionHandler customWebSecurityExpressionHandler;
 
+
   /**
    * Configure AuthenticationManager.
    *
@@ -70,7 +85,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    * @param auth AuthenticationManagerBuilder
    * @throws Exception Authentication exception
    * @see {@link super.userDetailsService()}
-   * @see {@link com.packtpub.springsecurity.service.DefaultCalendarService}
+   * @see {@link DefaultCalendarService}
    */
   @Override
   public void configure(final AuthenticationManagerBuilder auth) throws Exception {
@@ -85,6 +100,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Description("Standard PasswordEncoder")
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder(4);
+  }
+
+  @Bean
+  @Override
+  public AuthenticationManager authenticationManagerBean() throws Exception {
+    return super.authenticationManagerBean();
   }
 
 
