@@ -15,7 +15,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * @author litz-a
  */
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
@@ -24,8 +24,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(
                     "/js/**",
                     "/*.js",
+                    "/favicon.ico",
                     "/css/**",
                     "/img/**",
+                    "/error",
                     "/webjars/**");
   }
 

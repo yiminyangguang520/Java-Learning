@@ -1,10 +1,14 @@
-
-# ===============================
-# = Logging configurations
-# ===============================
-logging:
-  level:
-    root: WARN
-    com.memorynotfound: DEBUG
-    org.springframework.web: INFO
-    org.springframework.security: TRACE
+#
+## ===============================
+## = Logging configurations
+## ===============================
+#logging:
+#  level:
+#    root: WARN
+#    com.memorynotfound: DEBUG
+#    org.springframework.web: INFO
+#    org.springframework.security: DEBUG
+server:
+  error:
+    include-exception: true
+    include-stacktrace: on_trace_param
