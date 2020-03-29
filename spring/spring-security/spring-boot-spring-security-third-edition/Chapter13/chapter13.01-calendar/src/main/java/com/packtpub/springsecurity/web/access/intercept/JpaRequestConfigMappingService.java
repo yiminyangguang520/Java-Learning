@@ -35,13 +35,12 @@ public class JpaRequestConfigMappingService implements RequestConfigMappingServi
    */
   @Override
   public List<RequestConfigMapping> getRequestConfigMappings() {
-    List<RequestConfigMapping> rcm = securityFilterMetadataRepository
+    return securityFilterMetadataRepository
         .findAll()
         .stream()
         .sorted(Comparator.comparingInt(SecurityFilterMetadata::getSortOrder))
         .map(md -> new RequestConfigMapping(new AntPathRequestMatcher(md.getAntPattern()), new SecurityConfig(md.getExpression())))
         .collect(toList());
-    return rcm;
   }
 
 }
