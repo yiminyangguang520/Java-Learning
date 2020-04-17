@@ -3,7 +3,7 @@ package org.baeldung.performancemonitor;
 import java.time.LocalDate;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Person {
 

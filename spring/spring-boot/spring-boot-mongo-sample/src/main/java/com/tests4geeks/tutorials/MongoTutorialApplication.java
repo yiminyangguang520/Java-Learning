@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableMongoRepositories("com.tests4geeks.tutorials.repository")

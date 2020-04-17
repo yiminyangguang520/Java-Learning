@@ -7,7 +7,7 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.RedisSerializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Log4j2
 @Configuration

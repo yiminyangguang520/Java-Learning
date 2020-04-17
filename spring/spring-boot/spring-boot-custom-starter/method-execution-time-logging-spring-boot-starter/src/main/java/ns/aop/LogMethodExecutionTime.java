@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

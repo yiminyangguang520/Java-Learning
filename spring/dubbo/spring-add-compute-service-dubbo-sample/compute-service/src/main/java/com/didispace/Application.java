@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @SpringBootApplication

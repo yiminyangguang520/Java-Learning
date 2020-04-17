@@ -1,7 +1,7 @@
 package com.mkyong.common;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Address {
 

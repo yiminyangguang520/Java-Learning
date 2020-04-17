@@ -312,9 +312,9 @@ public class ClientApplication {
 
 根据源码， 也可以将access_token放入header中
 
-![1556412904038](C:\Users\litz-a\AppData\Roaming\Typora\typora-user-images\1556412904038.png)
+![1556412904038](C:\Users\min\AppData\Roaming\Typora\typora-user-images\1556412904038.png)
 
-![1556412820721](C:\Users\litz-a\AppData\Roaming\Typora\typora-user-images\1556412820721.png)
+![1556412820721](C:\Users\min\AppData\Roaming\Typora\typora-user-images\1556412820721.png)
 
 点击提交后即可获取到结果。
 

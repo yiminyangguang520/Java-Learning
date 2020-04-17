@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableElasticsearchRepositories

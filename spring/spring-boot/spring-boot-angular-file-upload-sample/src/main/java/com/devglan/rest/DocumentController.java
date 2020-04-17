@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 @RequestMapping(value = "/doc")

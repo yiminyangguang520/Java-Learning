@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CORSFilter extends OncePerRequestFilter {
 

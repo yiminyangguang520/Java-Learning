@@ -8,7 +8,7 @@ import thymeleafexamples.springmail.business.SpringMailConfig;
 import thymeleafexamples.springmail.web.SpringWebConfig;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SpringWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

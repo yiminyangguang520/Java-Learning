@@ -17,7 +17,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class FileSystemStorageService implements StorageService {

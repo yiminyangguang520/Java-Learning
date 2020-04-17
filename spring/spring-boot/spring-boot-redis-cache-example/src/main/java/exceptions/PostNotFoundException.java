@@ -1,7 +1,7 @@
 package com.example.exceptions;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PostNotFoundException extends Exception {
 

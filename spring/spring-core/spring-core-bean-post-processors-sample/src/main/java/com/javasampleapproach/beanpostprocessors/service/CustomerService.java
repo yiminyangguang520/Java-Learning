@@ -7,7 +7,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerService implements InitializingBean, DisposableBean {
 

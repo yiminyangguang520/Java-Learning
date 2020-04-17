@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /**
- * @author litz-a
+ * @author min
  */
 //@EnableMongoRepositories
 

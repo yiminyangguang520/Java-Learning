@@ -28,8 +28,8 @@ public class Application implements ApplicationRunner {
         log.info("Sending Email with Thymeleaf HTML Template Example");
 
         Mail mail = new Mail();
-        mail.setFrom("litz-a@glodon.com");
-        mail.setTo("litz-a@glodon.com");
+        mail.setFrom("min@glodon.com");
+        mail.setTo("min@glodon.com");
         mail.setSubject("Sending Email with Thymeleaf HTML Template Example");
 
         Map<String, Object> model = new HashMap<>(3);

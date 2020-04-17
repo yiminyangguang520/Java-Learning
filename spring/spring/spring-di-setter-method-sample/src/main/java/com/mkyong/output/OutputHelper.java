@@ -1,7 +1,7 @@
 package com.mkyong.output;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class OutputHelper {
 

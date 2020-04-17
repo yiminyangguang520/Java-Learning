@@ -1,7 +1,7 @@
 package org.baeldung.aspectj;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Account {
 

@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Application {
 

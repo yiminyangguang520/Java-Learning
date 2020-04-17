@@ -4,7 +4,7 @@ import com.zhisheng.model.Gag;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2017/8/9.
  */
 public interface IGagService {

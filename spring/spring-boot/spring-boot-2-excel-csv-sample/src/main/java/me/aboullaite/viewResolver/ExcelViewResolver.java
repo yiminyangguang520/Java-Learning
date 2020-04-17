@@ -6,7 +6,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-24.
  */
 public class ExcelViewResolver implements ViewResolver {

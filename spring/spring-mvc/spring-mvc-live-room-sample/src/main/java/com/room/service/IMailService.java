@@ -1,7 +1,7 @@
 package com.room.service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/1 8:53).
  */
 public interface IMailService {

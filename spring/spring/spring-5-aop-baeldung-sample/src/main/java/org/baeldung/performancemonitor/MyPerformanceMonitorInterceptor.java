@@ -6,7 +6,7 @@ import org.apache.commons.logging.Log;
 import org.springframework.aop.interceptor.AbstractMonitoringInterceptor;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MyPerformanceMonitorInterceptor extends AbstractMonitoringInterceptor {
 

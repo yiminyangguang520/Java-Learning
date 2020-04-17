@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @ConditionalOnProperty(name = "logging.api.enabled", havingValue = "true", matchIfMissing = false)

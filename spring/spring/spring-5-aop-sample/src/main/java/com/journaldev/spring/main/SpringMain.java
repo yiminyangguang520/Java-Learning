@@ -4,7 +4,7 @@ import com.journaldev.spring.service.EmployeeService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SpringMain {
 

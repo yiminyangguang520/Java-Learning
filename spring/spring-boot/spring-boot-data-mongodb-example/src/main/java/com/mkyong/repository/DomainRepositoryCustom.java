@@ -1,7 +1,7 @@
 package com.mkyong.repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface DomainRepositoryCustom {
 

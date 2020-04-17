@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.query.Update;
 //Impl postfix of the name on it compared to the core repository interface
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DomainRepositoryImpl implements DomainRepositoryCustom {
 

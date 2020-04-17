@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author litz-a
+ * @author min
  * Created by JavaDeveloperZone on 19-07-2017.
  * @ComponentScan // Using a root package also allows the @ComponentScan annotation to be used without needing to specify a basePackage attribute
  */

@@ -1,7 +1,7 @@
 package com.example.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface TransService {
 

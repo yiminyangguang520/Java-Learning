@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class Document {

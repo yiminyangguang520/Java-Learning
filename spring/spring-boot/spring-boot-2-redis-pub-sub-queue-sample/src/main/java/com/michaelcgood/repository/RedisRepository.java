@@ -4,7 +4,7 @@ import com.michaelcgood.model.Movie;
 import java.util.Map;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface RedisRepository {
 

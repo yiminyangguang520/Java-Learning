@@ -3,7 +3,7 @@ package com.mkyong.common;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Customer {
 

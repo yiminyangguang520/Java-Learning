@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DefaultType {
 

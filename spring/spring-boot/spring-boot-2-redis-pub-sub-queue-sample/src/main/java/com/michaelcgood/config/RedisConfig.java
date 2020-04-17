@@ -20,7 +20,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @ComponentScan("com.michaelcgood")

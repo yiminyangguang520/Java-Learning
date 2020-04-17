@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface DocumentService {
 

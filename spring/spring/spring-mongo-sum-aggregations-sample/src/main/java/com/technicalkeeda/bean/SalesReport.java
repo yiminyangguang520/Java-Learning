@@ -1,7 +1,7 @@
 package com.technicalkeeda.bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SalesReport {
 

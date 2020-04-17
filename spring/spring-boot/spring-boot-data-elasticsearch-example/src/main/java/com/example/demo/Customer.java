@@ -26,7 +26,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
- * @author litz-a
+ * @author min
  */
 @AllArgsConstructor
 @NoArgsConstructor

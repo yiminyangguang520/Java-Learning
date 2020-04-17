@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/28 22:00).
  */
 public class AdminInterceptor extends HandlerInterceptorAdapter {

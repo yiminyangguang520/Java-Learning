@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)

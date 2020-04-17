@@ -3,7 +3,7 @@ package com.acm.infra.proxy;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JWTTokenExtractException extends JWTVerificationException {
 

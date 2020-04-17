@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
- * @author litz-a
+ * @author min
  * @EnableCaching// 开启缓存，需要显示的指定
  */
 @SpringBootApplication

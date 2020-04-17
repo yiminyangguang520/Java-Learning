@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UpdateApp {
 

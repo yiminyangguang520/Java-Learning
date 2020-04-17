@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public class RedisRepositoryImpl implements RedisRepository {

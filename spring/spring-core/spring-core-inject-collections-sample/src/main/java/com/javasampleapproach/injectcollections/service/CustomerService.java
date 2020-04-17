@@ -7,7 +7,7 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerService {
 

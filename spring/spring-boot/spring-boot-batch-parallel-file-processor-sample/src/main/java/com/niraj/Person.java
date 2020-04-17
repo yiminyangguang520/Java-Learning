@@ -1,7 +1,7 @@
 package com.niraj;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Person {
 

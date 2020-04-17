@@ -1,7 +1,7 @@
 package com.devglan.springbootgoogleoauth.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum UserType {

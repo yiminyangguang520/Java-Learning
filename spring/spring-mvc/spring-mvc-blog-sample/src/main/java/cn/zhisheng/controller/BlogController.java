@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2016/12/22.
  */
 @Controller

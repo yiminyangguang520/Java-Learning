@@ -17,7 +17,7 @@ import org.springframework.session.SessionRepository;
 import org.springframework.session.data.redis.RedisOperationsSessionRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableCaching

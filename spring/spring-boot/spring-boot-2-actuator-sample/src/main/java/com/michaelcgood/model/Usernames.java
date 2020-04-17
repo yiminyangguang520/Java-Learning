@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class Usernames {

@@ -1,7 +1,7 @@
 package com.example.entity;
 
 /**
- * @author litz-a
+ * @author min
  */
 import java.util.ArrayList;
 import java.util.List;

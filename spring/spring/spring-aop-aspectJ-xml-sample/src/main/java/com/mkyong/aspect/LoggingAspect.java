@@ -5,7 +5,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class LoggingAspect {
 

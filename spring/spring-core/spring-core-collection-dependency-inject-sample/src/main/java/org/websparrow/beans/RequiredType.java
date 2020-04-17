@@ -6,7 +6,7 @@ import java.util.TreeSet;
 import java.util.Vector;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RequiredType {
 

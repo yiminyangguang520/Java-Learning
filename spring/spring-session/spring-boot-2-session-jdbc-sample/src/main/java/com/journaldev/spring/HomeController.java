@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class HomeController {

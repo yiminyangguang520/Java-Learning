@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class EmployeeMapper implements RowMapper {
 

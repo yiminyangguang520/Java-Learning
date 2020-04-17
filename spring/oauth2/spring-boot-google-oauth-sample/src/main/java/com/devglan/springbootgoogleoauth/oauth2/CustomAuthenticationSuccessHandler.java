@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {

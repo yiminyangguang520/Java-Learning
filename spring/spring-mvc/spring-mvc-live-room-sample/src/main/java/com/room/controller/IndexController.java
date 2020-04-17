@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/11/24 13:52).
  * 前台视图控制器，可以不用，只需要使用html调用RESTful API
  */

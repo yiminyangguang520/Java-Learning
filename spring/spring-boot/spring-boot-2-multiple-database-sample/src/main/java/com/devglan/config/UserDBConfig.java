@@ -24,7 +24,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableTransactionManagement

@@ -3,7 +3,7 @@ package com.journaldev.spring.aspect;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class EmployeeXMLConfigAspect {
 

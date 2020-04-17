@@ -3,7 +3,7 @@ package com.journaldev.spring.model;
 import com.journaldev.spring.aspect.Loggable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Employee {
 

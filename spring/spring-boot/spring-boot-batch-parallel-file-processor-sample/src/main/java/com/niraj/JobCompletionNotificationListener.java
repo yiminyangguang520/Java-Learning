@@ -12,7 +12,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {

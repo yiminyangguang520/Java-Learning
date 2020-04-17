@@ -4,7 +4,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/4 18:26).
  */
 public class Customer {

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/11/28 21:33).
  * 登录认证的拦截器
  */

@@ -1,7 +1,7 @@
 package org.baeldung.logger;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SampleAdder {
 

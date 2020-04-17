@@ -1,7 +1,7 @@
 package com.mkyong.customer.bo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CustomerBo {
 

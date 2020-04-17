@@ -6,7 +6,7 @@ import org.springframework.amqp.core.MessagePostProcessor;
 
 /**
  * 设置队列消息的过期时间（针对每个消息）
- * @author litz-a
+ * @author min
  */
 public class ExpirationMessagePostProcessor implements MessagePostProcessor {
 

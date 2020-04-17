@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class Application {

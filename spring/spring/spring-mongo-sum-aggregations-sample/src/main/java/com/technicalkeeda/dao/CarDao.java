@@ -5,7 +5,7 @@ import com.technicalkeeda.bean.SalesReport;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CarDao {
 

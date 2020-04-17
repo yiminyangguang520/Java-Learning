@@ -3,7 +3,7 @@ package com.devglan.springbootgoogleoauth.service;
 import com.devglan.springbootgoogleoauth.model.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

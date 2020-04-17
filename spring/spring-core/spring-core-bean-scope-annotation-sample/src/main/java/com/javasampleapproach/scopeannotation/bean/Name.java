@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Scope(value = "singleton")
 @Component

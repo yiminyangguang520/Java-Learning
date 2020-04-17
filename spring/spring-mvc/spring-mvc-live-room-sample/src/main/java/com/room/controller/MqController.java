@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/26 23:38).
  */
 @Controller

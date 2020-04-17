@@ -4,7 +4,7 @@ import com.devglan.model.UserDetails;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserDao {
 

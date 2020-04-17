@@ -3,7 +3,7 @@ package com.example.service;
 import com.example.entity.Student;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface StudentService {
 

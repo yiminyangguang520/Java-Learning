@@ -3,7 +3,7 @@ package com.lee.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Result<T> implements Serializable {
 

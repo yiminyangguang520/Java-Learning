@@ -4,7 +4,7 @@ import com.javainterviewpoint.entity.Employee;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface EmployeeDAO {
 

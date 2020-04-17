@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class CustomMessageSender {

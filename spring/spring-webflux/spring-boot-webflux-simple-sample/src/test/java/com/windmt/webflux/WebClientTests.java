@@ -18,7 +18,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * @author: litz-a
+ * @author: min
  * @create: 2018-04-25
  **/
 public class WebClientTests {

@@ -3,7 +3,7 @@ package me.aboullaite.model;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-23.
  * In a real world app, this should be an Entity!
  */

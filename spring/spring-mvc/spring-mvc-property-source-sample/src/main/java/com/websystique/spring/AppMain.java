@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AppMain {
 

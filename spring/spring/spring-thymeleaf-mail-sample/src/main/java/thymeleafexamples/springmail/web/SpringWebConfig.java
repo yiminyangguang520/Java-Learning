@@ -17,7 +17,7 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * @author litz-a
+ * @author min
  * Spring MVC and Thymeleaf configuration.
  */
 @Configuration

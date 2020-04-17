@@ -1,7 +1,7 @@
 package com.room.entity;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/11/28 19:01).
  */
 public class StatusMessage {

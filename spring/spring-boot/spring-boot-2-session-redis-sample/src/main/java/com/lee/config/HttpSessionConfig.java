@@ -12,7 +12,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 
 /**
  * 存在自定义SessionRepository时,redisNamespace命名空间无效,SessionRepository优先级高,需在SessionRepository设置
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableRedisHttpSession(redisNamespace = "spring:lee")

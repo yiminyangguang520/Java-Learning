@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**
  * Spring MongoDB configuration file
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class SpringMongoConfig {

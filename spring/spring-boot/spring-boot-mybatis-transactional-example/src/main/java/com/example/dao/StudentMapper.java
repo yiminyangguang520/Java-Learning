@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.context.annotation.Lazy;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface StudentMapper {
 

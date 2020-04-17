@@ -1,7 +1,7 @@
 package com.javasampleapproach.beaninheritance.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerService {
 

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.websparrow.beans.DefaultType;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DefaultClient {
 

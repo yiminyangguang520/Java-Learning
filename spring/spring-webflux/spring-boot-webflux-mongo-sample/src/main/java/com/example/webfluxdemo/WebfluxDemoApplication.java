@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableReactiveMongoRepositories

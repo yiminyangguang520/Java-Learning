@@ -1,7 +1,7 @@
 package com.devglan.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ResponseMetadata {
 

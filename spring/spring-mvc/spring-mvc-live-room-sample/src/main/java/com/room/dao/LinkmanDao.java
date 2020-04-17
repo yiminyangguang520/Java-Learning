@@ -5,7 +5,7 @@ import java.util.List;
 
 
 /**
- * @author litz-a
+ * @author min
  * DAO接口,mybatis动态完成Impl
  */
 public interface LinkmanDao {

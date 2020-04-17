@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {

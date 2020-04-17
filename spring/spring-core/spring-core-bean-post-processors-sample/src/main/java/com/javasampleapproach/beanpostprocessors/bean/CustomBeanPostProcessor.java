@@ -4,7 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomBeanPostProcessor implements BeanPostProcessor {
 

@@ -33,7 +33,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableBatchProcessing

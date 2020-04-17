@@ -12,7 +12,7 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @ComponentScan("com.memorynotfound")

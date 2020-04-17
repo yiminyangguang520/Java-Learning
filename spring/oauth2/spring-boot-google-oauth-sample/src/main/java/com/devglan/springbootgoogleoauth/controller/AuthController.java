@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 @RequestMapping("/auth")

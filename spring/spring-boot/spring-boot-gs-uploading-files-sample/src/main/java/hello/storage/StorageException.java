@@ -1,7 +1,7 @@
 package hello.storage;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class StorageException extends RuntimeException {
 

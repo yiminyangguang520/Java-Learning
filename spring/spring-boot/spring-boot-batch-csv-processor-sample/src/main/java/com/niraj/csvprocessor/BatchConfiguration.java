@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableBatchProcessing

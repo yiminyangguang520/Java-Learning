@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.ChannelTopic;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class PubConfig {

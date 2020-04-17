@@ -1,7 +1,7 @@
 package com.javasampleapproach.beanpostprocessors.bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Customer {
 

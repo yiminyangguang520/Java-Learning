@@ -3,7 +3,7 @@ package com.mkyong.aop;
 import org.springframework.aop.ThrowsAdvice;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class HijackThrowException implements ThrowsAdvice {
 

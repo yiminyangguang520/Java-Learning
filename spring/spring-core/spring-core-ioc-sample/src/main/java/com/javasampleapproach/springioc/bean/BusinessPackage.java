@@ -1,7 +1,7 @@
 package com.javasampleapproach.springioc.bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class BusinessPackage implements CustomerPackage {
 

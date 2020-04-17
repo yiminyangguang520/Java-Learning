@@ -15,7 +15,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-23.
  */
 public class ExcelView extends AbstractXlsView {

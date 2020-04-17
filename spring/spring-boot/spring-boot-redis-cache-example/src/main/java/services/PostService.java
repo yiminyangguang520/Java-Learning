@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class PostService {

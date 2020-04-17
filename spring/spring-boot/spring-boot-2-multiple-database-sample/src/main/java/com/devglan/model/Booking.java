@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table

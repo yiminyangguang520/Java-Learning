@@ -3,7 +3,7 @@ package com.journaldev.spring.service;
 import com.journaldev.spring.model.Employee;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class EmployeeService {
 

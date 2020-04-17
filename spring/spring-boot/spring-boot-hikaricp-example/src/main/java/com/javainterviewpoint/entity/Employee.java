@@ -1,7 +1,7 @@
 package com.javainterviewpoint.entity;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Employee {
 

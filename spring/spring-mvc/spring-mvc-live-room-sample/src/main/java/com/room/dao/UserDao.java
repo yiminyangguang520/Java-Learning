@@ -3,7 +3,7 @@ package com.room.dao;
 import com.room.entity.User;
 
 /**
- * @author litz-a
+ * @author min
  * DAO接口,mybatis动态完成Impl
  */
 public interface UserDao {

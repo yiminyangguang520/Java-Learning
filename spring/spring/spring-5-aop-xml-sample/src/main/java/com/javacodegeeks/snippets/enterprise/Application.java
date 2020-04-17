@@ -5,7 +5,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Application {
 

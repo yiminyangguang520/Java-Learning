@@ -15,7 +15,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableJpaRepositories(basePackages = {"com.onlinetutorialspoint.repository.db1"},

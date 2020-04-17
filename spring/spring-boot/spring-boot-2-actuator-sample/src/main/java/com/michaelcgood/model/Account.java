@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class Account {

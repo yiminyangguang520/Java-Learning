@@ -3,7 +3,7 @@ package com.memorynotfound.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class User implements Serializable {
 

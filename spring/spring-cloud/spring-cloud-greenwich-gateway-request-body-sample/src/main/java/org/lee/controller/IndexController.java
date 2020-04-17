@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class IndexController {

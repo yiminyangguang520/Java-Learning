@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SessionScope
 @Component

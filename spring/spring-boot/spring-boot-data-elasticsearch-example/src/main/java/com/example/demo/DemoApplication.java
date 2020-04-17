@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchPr
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @SpringBootApplication

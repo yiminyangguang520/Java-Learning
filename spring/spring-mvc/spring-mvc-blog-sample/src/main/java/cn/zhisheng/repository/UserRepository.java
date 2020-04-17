@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2016/12/21.
  */
 @Repository

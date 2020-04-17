@@ -4,7 +4,7 @@ import com.room.entity.StatusMessage;
 import javax.servlet.http.HttpSession;
 
 /**
- * @author litz-a 
+ * @author min 
  * Created by Doublestar on 2017/11/29 16:26).
  */
 public interface IUserService {

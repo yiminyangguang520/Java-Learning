@@ -1,7 +1,7 @@
 package com.devglan.springbootgoogleoauth.common;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Constants {
 

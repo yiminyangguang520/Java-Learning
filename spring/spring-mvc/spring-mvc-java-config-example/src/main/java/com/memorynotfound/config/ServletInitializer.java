@@ -3,7 +3,7 @@ package com.memorynotfound.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

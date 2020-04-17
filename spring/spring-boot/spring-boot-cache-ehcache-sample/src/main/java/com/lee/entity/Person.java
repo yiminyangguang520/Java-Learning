@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 /**
- * @author litz-a
+ * @author min
  * @Entity // @Entity注解指明这是一个和数据库表映射的实体类。
  */
 @Entity

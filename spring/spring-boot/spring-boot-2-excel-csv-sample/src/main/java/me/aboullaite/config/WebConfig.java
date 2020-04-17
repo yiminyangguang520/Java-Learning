@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-24.
  */
 

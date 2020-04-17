@@ -1,7 +1,7 @@
 package com.javasampleapproach.injectcollections.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Bilingual {
 

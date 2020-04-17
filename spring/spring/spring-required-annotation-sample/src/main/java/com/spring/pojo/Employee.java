@@ -3,7 +3,7 @@ package com.spring.pojo;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Employee {
 

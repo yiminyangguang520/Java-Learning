@@ -3,7 +3,7 @@ package com.example.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Author implements Serializable {
 

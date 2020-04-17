@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.view.AbstractView;
 
 /**
- * @author litz-a
+ * @author min
  */
 public abstract class AbstractCsvView extends AbstractView {
 

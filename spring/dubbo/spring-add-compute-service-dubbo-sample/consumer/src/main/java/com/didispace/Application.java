@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @ImportResource({"classpath:dubbo.xml"})

@@ -3,7 +3,7 @@ package com.michaelcgood.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Movie implements Serializable {
 

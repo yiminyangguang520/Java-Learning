@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Component

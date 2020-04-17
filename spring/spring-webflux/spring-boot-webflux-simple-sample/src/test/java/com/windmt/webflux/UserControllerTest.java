@@ -7,7 +7,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
 /**
- * @author: litz-a
+ * @author: min
  * @create: 2018-04-25
  **/
 public class UserControllerTest {

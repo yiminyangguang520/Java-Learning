@@ -1,7 +1,7 @@
 package com.mkyong.core;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerBo {
 

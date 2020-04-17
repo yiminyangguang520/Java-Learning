@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class CustomOidcUserService extends OidcUserService {

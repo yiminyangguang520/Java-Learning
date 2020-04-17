@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UsernamesRepository extends JpaRepository<Usernames, Long> {
 

@@ -2,7 +2,7 @@ package com.room.entity;
 
 
 /**
- * @author litz-a
+ * @author min
  * 实体类：属性对应数据库表的字段
  */
 public class User {

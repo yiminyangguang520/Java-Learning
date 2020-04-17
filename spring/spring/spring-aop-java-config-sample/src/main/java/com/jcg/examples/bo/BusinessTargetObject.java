@@ -3,7 +3,7 @@ package com.jcg.examples.bo;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class BusinessTargetObject {

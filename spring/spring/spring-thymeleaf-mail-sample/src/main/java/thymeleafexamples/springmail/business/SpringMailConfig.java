@@ -22,7 +22,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.StringTemplateResolver;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @PropertySource("classpath:mail/emailconfig.properties")

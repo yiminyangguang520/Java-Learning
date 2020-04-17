@@ -1,7 +1,7 @@
 package com.devglan.springbootgoogleoauth.dto;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class GoogleOAuth2UserInfo {
 

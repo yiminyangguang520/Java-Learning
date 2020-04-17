@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Builder
 @Getter

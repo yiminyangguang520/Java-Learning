@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CarDaoImpl implements CarDao {
 

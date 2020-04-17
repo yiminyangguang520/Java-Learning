@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class SpringBeanLifeCycleApplication {

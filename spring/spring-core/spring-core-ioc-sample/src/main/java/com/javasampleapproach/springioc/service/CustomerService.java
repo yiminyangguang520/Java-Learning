@@ -3,7 +3,7 @@ package com.javasampleapproach.springioc.service;
 import com.javasampleapproach.springioc.bean.CustomerPackage;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerService {
 

@@ -1,7 +1,7 @@
 package com.mkyong.hello;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface HelloWorld {
 

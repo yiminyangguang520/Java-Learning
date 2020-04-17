@@ -3,7 +3,7 @@ package com.mkyong.customer.dao;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public class CustomerDAO {

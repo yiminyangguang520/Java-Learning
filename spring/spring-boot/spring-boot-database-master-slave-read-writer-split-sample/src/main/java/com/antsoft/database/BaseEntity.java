@@ -32,7 +32,7 @@ import javax.persistence.Transient;
 
 /**
  * 基础信息
- * @author litz-a
+ * @author min
  */
 public class BaseEntity {
 

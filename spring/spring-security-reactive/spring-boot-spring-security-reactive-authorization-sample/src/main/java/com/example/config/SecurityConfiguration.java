@@ -12,7 +12,7 @@ import org.springframework.security.web.server.csrf.ServerCsrfTokenRepository;
 import org.springframework.security.web.server.csrf.WebSessionServerCsrfTokenRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 @Slf4j

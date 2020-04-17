@@ -10,7 +10,7 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class SubConfig {

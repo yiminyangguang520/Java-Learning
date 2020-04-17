@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.view.AbstractView;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-25.
  */
 public abstract class AbstractPdfView extends AbstractView {

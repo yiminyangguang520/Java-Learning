@@ -6,7 +6,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class RedisService {

@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class InsertApp {
 

@@ -23,7 +23,7 @@ import java.util.List;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CustomerRepository extends ElasticsearchRepository<Customer, String> {
 

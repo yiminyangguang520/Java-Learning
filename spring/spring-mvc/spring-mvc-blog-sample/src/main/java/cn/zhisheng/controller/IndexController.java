@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author litz-a
+ * @author min
  * 采用注解的方式，可以明确地定义该类为处理请求的Controller类
  */
 @Controller

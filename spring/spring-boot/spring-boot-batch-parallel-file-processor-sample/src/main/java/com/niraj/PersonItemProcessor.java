@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PersonItemProcessor implements ItemProcessor<Person, Person> {
 

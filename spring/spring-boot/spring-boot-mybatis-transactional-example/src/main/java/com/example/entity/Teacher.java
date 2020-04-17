@@ -1,7 +1,7 @@
 package com.example.entity;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Teacher {
 

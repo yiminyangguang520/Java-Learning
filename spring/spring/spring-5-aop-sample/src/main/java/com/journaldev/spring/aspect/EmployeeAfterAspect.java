@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Aspect
 public class EmployeeAfterAspect {

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/6 16:30).
  */
 @RestController

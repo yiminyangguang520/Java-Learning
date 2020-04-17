@@ -1,7 +1,7 @@
 package com.javasampleapproach.beanscope;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Name {
 

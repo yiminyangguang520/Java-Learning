@@ -18,7 +18,7 @@ import org.springframework.messaging.handler.annotation.support.DefaultMessageHa
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableRabbit

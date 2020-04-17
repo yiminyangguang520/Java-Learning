@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2017/8/9.
  */
 @Controller

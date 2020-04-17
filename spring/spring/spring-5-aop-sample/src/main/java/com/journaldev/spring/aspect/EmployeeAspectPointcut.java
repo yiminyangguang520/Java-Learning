@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Aspect
 public class EmployeeAspectPointcut {

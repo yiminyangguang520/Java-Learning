@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2016/12/22.
  */
 @Repository

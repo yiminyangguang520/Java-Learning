@@ -1,7 +1,7 @@
 package com.jcombat.bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Employee {
 

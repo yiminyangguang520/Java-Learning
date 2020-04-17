@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/{userId}/usernames")

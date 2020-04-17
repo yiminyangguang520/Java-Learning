@@ -6,7 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Aspect
 public class EmployeeAspectJoinPoint {

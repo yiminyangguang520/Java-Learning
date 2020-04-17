@@ -6,7 +6,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface StorageService {
 

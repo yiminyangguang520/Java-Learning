@@ -4,7 +4,7 @@ import java.util.Random;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by aboullaite on 2017-02-23.
  */
 @Component

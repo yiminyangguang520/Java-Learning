@@ -1,7 +1,7 @@
 package com.room.service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/27 23:49).
  */
 public interface IWordService {

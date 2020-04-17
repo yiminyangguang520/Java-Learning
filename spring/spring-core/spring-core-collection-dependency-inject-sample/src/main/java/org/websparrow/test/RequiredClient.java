@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.websparrow.beans.RequiredType;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RequiredClient {
 

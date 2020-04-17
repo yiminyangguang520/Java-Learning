@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PersonService {
 

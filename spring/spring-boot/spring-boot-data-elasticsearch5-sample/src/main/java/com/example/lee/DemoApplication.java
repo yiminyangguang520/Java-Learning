@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableElasticsearchRepositories

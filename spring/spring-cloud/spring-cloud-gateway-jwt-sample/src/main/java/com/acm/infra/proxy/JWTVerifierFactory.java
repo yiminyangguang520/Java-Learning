@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class JWTVerifierFactory {

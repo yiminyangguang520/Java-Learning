@@ -3,7 +3,7 @@ package hello.storage;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author litz-a
+ * @author min
  */
 @ConfigurationProperties("storage")
 public class StorageProperties {

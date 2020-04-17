@@ -5,7 +5,7 @@ import com.room.entity.StatusMessage;
 import java.util.List;
 
 /**
- * @author litz-a 
+ * @author min 
  * Created by Doublestar on 2017/12/5 21:06).
  */
 public interface ILinkmanService {

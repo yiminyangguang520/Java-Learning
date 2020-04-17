@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/27 22:05).
  */
 @Component("wordUtils")

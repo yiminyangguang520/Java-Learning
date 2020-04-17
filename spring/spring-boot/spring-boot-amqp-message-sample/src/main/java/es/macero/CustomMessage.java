@@ -3,7 +3,7 @@ package es.macero;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class CustomMessage implements Serializable {
 

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableConfigurationProperties({
