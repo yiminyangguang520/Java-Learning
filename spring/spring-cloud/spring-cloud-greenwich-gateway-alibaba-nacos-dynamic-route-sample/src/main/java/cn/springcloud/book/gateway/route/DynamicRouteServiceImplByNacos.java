@@ -11,7 +11,7 @@ import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class DynamicRouteServiceImplByNacos {

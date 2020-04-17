@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author litz-a
+ * @author min
  */
 @ControllerAdvice(basePackages = "cn.iocoder.springboot.lab22.validation.controller")
 public class GlobalExceptionHandler {

@@ -13,7 +13,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class TokenFilter extends ZuulFilter {

@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 import org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true, proxyTargetClass = true)

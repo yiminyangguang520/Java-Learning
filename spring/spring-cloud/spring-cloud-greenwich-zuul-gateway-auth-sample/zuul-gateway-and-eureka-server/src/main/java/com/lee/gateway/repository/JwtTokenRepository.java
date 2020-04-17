@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public interface JwtTokenRepository extends MongoRepository<JwtToken, String> {

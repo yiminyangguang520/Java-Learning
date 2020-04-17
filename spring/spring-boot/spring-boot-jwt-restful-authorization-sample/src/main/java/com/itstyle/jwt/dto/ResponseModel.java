@@ -1,7 +1,7 @@
 package com.itstyle.jwt.dto;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ResponseModel {
 

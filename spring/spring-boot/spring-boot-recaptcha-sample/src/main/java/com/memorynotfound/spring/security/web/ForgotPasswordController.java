@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 @RequestMapping("/forgot-password")

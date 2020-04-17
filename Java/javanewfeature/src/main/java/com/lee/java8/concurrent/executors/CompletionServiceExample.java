@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  *
  * 将Executor和BlockingQueue功能融合在一起，可以将Callable的任务提交给它来执行，然后使用take()方法获得已经完成的结果
  *
- * @author litz-a
+ * @author min
  */
 public class CompletionServiceExample {
 

@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * mybaits配置
  *
- * @author litz-a
+ * @author min
  */
 @Configuration
 @MapperScan("cn.lqdev.learning.springboot.chapter35.biz.mapper")

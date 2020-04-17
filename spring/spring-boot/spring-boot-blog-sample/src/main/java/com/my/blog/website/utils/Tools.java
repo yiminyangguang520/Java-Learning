@@ -13,7 +13,7 @@ import sun.misc.BASE64Encoder;
 
 /**
  * 工具类
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/9.
  */
 public class Tools {

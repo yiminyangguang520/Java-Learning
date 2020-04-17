@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 比对验证码的工具类
- * @author litz-a
+ * @author min
  */
 public class CodeUtil {
 

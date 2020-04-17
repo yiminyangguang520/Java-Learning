@@ -1,7 +1,7 @@
 package com.example.filedemo.exception;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FileStorageException extends RuntimeException {
 

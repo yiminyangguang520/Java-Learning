@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * xml映射
  *
- * @author litz-a
+ * @author min
  */
 public interface UserXmlMapper {
 

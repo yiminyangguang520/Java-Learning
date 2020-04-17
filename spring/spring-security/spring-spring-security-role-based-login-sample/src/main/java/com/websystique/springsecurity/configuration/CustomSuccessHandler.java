@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {

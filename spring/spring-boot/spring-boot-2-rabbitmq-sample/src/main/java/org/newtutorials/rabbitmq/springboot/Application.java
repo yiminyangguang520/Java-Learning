@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by dani on 5/22/2017.
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @ComponentScan("org.newtutorials.rabbitmq")

@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate.ReturnCallback;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service("returnCallBackListener")
 public class ReturnCallBackListener implements ReturnCallback {

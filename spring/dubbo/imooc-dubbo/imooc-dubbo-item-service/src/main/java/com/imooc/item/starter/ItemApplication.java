@@ -3,7 +3,7 @@ package com.imooc.item.starter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ItemApplication {
 

@@ -20,7 +20,7 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableCaching

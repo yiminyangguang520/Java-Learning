@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * 用户管理
- * @author litz-a
+ * @author min
  */
 public interface UserRepository extends JpaRepository<User, Integer> {
 

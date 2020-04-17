@@ -6,7 +6,7 @@
 //import com.concretepage.reactive.ex1.News;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //public class ReactiveNewsApp {
 //

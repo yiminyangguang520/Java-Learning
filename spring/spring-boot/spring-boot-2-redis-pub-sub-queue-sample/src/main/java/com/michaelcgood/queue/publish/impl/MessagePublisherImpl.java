@@ -7,7 +7,7 @@ import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class MessagePublisherImpl implements MessagePublisher {

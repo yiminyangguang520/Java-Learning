@@ -3,7 +3,7 @@ package com.brahalla.cerberus.model.json.response;
 import com.brahalla.cerberus.model.base.ModelBase;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AuthenticationResponse extends ModelBase {
 

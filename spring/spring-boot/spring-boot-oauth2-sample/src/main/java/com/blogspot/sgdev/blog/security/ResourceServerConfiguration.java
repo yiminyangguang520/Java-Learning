@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableResourceServer

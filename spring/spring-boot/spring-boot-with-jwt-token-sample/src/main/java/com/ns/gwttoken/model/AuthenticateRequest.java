@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 @Getter

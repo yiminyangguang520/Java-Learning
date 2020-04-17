@@ -5,7 +5,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.StandardSt
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class Jackson2SerializationStrategy extends StandardStringSerializationStrategy {

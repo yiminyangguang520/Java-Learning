@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {

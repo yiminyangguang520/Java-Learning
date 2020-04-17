@@ -1,7 +1,7 @@
 package com.imooc.common.enums;
 
 /**
- * @author litz-a
+ * @author min
  * @Description: 是否枚举
  */
 public enum YesOrNo {

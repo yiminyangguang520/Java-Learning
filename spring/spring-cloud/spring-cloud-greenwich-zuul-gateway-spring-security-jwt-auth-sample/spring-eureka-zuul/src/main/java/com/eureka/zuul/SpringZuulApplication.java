@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableEurekaClient  // It acts as a eureka client

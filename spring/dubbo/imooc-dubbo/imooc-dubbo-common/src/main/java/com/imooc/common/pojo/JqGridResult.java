@@ -3,7 +3,7 @@ package com.imooc.common.pojo;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  * @Description: 用来返回jqGrid的数据格式
  */
 public class JqGridResult {

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 

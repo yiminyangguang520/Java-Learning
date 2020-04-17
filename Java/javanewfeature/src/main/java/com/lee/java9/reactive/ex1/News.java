@@ -3,7 +3,7 @@ package com.lee.java9.reactive.ex1;
 import java.util.Date;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class News {
 

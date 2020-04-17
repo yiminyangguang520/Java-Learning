@@ -1,7 +1,7 @@
 package com.grokonez.uploadmultifiles.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FileInfo {
 

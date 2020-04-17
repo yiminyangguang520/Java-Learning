@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 /**
  * 自定义身份认证验证组件
- * @author litz-a
+ * @author min
  */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 

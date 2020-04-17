@@ -3,7 +3,7 @@ package com.memorynotfound.spring.core.autowired;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public class MysqlMessageRepository implements MessageRepository {

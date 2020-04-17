@@ -7,7 +7,7 @@ import org.springframework.data.couchbase.core.query.ViewIndexed;
 import org.springframework.data.couchbase.repository.CouchbaseRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @N1qlPrimaryIndexed
 @ViewIndexed(designDoc = "customer", viewName = "all")

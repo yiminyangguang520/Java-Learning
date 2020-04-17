@@ -1,7 +1,7 @@
 package com.imooc.common.enums;
 
 /**
- * @author litz-a
+ * @author min
  * @Description: 男女枚举
  */
 public enum SexEnum {

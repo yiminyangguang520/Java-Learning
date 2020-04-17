@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/7.
  */
 @Service

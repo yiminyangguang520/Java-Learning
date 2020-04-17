@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @description:
- * @author: litz-a
+ * @author: min
  * @create: 2018-04-09 22:07
  **/
 @Data // 生成无参构造方法/getter/setter/hashCode/equals/toString

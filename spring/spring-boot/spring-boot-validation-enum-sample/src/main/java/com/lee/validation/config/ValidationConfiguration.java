@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class ValidationConfiguration {

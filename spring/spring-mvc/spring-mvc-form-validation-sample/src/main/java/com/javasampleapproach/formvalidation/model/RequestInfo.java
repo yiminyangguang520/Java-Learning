@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RequestInfo {
 

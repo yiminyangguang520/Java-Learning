@@ -3,9 +3,9 @@ package com.logicbig.example.web;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /**
- * AbstractSecurityWebApplicationInitializerÊµÏÖÁËWebApplicationInitializer£¬Òò´Ë
- * Spring»á·¢ÏÖËü£¬²¢ÓÃËüÔÚWebÈİÆ÷ÖĞ×¢²áDelegatingFilterProxy
- * @author litz-a
+ * AbstractSecurityWebApplicationInitializerÊµï¿½ï¿½ï¿½ï¿½WebApplicationInitializerï¿½ï¿½ï¿½ï¿½ï¿½
+ * Springï¿½á·¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Webï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½DelegatingFilterProxy
+ * @author min
  */
 public class SpringSecurityInitializer extends AbstractSecurityWebApplicationInitializer {
 

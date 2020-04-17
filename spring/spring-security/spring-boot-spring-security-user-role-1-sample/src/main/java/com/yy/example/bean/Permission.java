@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md
- * @author litz-a
+ * @author min
  */
 @Service
 public class CouponServiceImpl implements CouponService {

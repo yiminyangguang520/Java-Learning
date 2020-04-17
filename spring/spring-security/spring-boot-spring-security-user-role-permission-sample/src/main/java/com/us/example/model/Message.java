@@ -3,7 +3,7 @@ package com.us.example.model;
 import lombok.AllArgsConstructor;
 
 /**
- * @author litz-a
+ * @author min
  */
 @AllArgsConstructor
 public class Message {

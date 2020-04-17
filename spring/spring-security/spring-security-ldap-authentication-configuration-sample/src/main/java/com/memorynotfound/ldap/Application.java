@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 // Enable if you want to use Spring Security + LDAP Authentication XML Configuration

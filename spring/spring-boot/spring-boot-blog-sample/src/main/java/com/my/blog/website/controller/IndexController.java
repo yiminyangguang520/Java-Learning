@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 首页
- * @author litz-a
+ * @author min
  * Created by Administrator on 2017/3/8 008.
  */
 @Controller

@@ -6,7 +6,7 @@ import org.springframework.web.reactive.config.ViewResolverRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class WebConfig implements WebFluxConfigurer {

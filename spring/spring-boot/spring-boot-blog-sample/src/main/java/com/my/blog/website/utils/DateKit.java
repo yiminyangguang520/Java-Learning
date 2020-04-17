@@ -10,7 +10,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Administrator on 2017/3/10 010.
  */
 public class DateKit {

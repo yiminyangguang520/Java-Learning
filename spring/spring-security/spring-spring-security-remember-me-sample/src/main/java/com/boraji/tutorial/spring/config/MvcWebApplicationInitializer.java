@@ -3,7 +3,7 @@ package com.boraji.tutorial.spring.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

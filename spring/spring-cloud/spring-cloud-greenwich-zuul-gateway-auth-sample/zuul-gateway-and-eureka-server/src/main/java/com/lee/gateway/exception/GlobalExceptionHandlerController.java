@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestControllerAdvice
 public class GlobalExceptionHandlerController {

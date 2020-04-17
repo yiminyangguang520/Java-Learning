@@ -4,7 +4,7 @@ import com.lee.validation.core.validator.IntArrayValuable;
 import java.util.Arrays;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum GenderEnum implements IntArrayValuable {

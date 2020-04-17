@@ -4,7 +4,7 @@ import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AccumulatorRecursiveAction extends RecursiveAction {
 

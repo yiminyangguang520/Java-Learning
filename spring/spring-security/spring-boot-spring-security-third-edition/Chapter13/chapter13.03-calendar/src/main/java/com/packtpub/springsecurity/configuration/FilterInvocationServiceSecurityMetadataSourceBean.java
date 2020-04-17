@@ -10,7 +10,7 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class FilterInvocationServiceSecurityMetadataSourceBean implements BeanPostProcessor {

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * <p> 未经本公司许可，不得以任何方式复制或使用本程序任何部分 <p>
  * User: 12360 Date: 2016/8/16 Time: 16:16
  *
- * @author litz-a
+ * @author min
  */
 @Data
 @Service

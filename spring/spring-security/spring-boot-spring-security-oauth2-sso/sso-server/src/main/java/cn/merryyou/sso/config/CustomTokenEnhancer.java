@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomTokenEnhancer implements TokenEnhancer {
 

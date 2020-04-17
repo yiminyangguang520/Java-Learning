@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 用户后台登录/登出
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/11.
  */
 @Controller

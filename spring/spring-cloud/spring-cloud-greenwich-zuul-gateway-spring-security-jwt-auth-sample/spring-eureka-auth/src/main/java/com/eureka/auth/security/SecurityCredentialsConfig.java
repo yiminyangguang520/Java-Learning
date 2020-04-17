@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebSecurity  // Enable security config. This annotation denotes config for spring security.
 

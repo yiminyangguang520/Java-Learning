@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * mongodb原生的访问方式。
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class MyMongoCollection {

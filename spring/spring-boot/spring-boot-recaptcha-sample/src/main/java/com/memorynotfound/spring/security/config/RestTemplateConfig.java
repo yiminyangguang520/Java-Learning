@@ -10,7 +10,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class RestTemplateConfig {

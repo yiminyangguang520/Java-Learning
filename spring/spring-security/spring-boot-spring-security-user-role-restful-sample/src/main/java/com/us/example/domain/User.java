@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * implements UserDetails 用于登录时 @AuthenticationPrincipal 标签取值
- * @author litz-a
+ * @author min
  */
 public class User implements UserDetails {
 

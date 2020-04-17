@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebMvc

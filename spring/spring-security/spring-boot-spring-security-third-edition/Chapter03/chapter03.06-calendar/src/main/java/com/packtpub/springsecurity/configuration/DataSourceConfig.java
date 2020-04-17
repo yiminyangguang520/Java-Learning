@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableTransactionManagement

@@ -3,7 +3,7 @@ package com.lee.rocketmq.service;
 import com.lee.rocketmq.dto.OperationResult;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface RocketMQService {
 

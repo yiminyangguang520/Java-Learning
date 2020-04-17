@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class SpringBootTutorialBasicsApplication {

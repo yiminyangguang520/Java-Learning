@@ -1,7 +1,7 @@
 package com.svlada.security.model.token;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface JwtToken {
 

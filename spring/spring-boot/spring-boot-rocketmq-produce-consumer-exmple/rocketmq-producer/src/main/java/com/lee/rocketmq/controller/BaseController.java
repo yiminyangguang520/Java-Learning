@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 请求基类
- * @author litz-a
+ * @author min
  */
 @RestController
 public class BaseController {

@@ -19,7 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {

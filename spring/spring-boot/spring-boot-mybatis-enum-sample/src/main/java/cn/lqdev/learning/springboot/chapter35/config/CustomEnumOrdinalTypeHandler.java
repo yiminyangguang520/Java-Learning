@@ -6,7 +6,7 @@ import org.apache.ibatis.type.MappedTypes;
 
 /**
  * 枚举索引处理类
- * @author litz-a
+ * @author min
  */
 @MappedTypes(value = {StatusEnum.class})
 public class CustomEnumOrdinalTypeHandler<E extends Enum<E>> extends EnumOrdinalTypeHandler<E> {

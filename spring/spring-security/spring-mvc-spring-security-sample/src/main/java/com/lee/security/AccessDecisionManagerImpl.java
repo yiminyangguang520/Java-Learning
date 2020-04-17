@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 /**
  * 访问决策管理器
  * 决策某个资源（页面）是否可被当前用户所属的角色访问
- * @author litz-a
+ * @author min
  */
 public class AccessDecisionManagerImpl implements AccessDecisionManager {
 

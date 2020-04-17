@@ -1,7 +1,7 @@
 package com.javasampleapproach.corsxmlconfig.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Customer {
 

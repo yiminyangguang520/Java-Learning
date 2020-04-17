@@ -4,7 +4,7 @@ import com.memorynotfound.spring.security.constraint.FieldMatch;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match")
 public class PasswordResetDto {

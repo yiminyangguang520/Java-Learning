@@ -14,7 +14,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AuthenticationFilter extends ZuulFilter {
 

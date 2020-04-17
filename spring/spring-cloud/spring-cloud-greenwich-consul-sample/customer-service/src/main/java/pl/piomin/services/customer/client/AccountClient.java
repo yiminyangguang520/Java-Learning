@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import pl.piomin.services.customer.model.Account;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "account-service")
 public interface AccountClient {

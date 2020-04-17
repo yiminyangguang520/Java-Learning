@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by dani on 5/22/2017.
  *
- * @author litz-a
+ * @author min
  */
 public class SimpleMessage implements Serializable {
 

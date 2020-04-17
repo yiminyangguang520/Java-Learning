@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JwtAuthTokenFilter extends OncePerRequestFilter {
 

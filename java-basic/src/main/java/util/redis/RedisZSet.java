@@ -7,7 +7,7 @@ import redis.clients.jedis.Jedis;
 /**
  * RedisZSet通用工具类
  *
- * @author litz-a
+ * @author min
  */
 public class RedisZSet {
 

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class InspectHeaderFilter implements Filter {

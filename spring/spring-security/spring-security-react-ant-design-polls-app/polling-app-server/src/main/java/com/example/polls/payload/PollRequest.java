@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

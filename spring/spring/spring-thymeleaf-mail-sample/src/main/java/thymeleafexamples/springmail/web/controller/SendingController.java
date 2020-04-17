@@ -32,7 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
 import thymeleafexamples.springmail.business.service.EmailService;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class SendingController {

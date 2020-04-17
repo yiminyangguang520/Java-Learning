@@ -3,7 +3,7 @@ package com.imooc.order.service;
 import com.imooc.order.pojo.Orders;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface OrdersService {
 

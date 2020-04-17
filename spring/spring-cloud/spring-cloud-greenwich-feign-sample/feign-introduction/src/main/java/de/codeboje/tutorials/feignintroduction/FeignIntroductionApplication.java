@@ -14,7 +14,7 @@ import de.codeboje.tutorials.feignintroduction.model.Confirmation;
 import de.codeboje.tutorials.feignintroduction.model.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableFeignClients
 @SpringBootApplication

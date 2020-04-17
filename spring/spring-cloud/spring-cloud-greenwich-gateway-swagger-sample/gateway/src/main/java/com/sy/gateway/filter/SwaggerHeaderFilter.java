@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class SwaggerHeaderFilter extends AbstractGatewayFilterFactory {

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class WebController {

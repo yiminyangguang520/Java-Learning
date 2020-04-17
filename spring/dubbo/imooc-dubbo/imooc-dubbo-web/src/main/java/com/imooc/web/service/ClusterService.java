@@ -1,7 +1,7 @@
 package com.imooc.web.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ClusterService {
 

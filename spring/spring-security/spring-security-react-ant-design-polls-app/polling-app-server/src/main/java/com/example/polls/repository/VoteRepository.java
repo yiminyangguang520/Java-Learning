@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author litz-a
+ * @author min
  */
 @Repository
 public interface VoteRepository extends JpaRepository<Vote, Long> {

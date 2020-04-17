@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author litz-a
+ * @author min
  */
 @MapperScan("com.my.blog.website.dao")
 @SpringBootApplication

@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import org.apache.commons.io.FilenameUtils;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FilenameUtilsExample2 {
 

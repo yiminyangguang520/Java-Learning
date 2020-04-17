@@ -7,7 +7,7 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RealLifeCompletableFutureExample {
 

@@ -4,12 +4,12 @@ import com.logicbig.example.config.AppConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
   /**
-   * Ö¸¶¨¸ùÅäÖÃÀà,¿ÉÓÃÀ´×éºÏ¸÷ÖÖÅäÖÃÎÄ¼ş,ContextLoderListener
+   * Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½,ContextLoderListener
    * @return
    */
   @Override
@@ -18,7 +18,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
   }
 
   /**
-   * Ö¸¶¨webÅäÖÃÀà,DispatcherServlet
+   * Ö¸ï¿½ï¿½webï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,DispatcherServlet
    * @return
    */
   @Override
@@ -27,7 +27,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
   }
 
   /**
-   * ½«DispatcherServletÓ³Éäµ½"/"
+   * ï¿½ï¿½DispatcherServletÓ³ï¿½äµ½"/"
    * @return
    */
   @Override

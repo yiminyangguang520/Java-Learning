@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "service-user")
 public interface UserFeignClient {

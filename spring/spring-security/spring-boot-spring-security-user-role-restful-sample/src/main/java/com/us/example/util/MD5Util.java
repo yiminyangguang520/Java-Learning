@@ -3,7 +3,7 @@ package com.us.example.util;
 import java.security.MessageDigest;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MD5Util {
 

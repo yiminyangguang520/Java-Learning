@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableHystrix
 @EnableEurekaClient

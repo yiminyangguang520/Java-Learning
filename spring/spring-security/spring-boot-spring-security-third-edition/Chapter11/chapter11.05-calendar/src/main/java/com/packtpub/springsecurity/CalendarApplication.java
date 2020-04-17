@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication(scanBasePackages = {
     "com.packtpub.springsecurity",

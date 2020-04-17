@@ -5,7 +5,7 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DoAroundMethod2 implements MethodInterceptor {
 

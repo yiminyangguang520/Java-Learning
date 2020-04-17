@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class MQConfig {

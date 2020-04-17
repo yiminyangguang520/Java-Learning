@@ -1,7 +1,7 @@
 package ch.rasc.twofa.security;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SignupResponse {
 

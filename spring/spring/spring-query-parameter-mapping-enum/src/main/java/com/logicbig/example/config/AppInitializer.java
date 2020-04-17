@@ -3,7 +3,7 @@ package com.logicbig.example.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

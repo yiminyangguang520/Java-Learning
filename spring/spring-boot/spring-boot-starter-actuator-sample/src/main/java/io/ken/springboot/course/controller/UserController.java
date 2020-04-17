@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 @RequestMapping("/user")

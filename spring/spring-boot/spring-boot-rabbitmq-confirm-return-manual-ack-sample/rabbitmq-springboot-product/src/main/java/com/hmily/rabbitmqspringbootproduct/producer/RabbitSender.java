@@ -18,7 +18,7 @@ import com.hmily.rabbitmqspringbootproduct.domain.Order;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @Component

@@ -6,7 +6,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import java.util.concurrent.Callable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RequestContextHolderCallable<V> implements Callable<V> {
 

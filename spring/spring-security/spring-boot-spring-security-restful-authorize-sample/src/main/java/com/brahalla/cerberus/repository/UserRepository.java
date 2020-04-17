@@ -5,7 +5,7 @@ import com.brahalla.cerberus.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserRepository extends JpaRepository<User, Long> {
 

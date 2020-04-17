@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import pl.piomin.services.account.model.Account;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AccountRepository {
 

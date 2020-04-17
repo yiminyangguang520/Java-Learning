@@ -1,7 +1,7 @@
 package com.brahalla.cerberus.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface SecurityService {
 

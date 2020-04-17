@@ -1,7 +1,7 @@
 package com.boraji.tutorial.spring.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class User {
   private String username;

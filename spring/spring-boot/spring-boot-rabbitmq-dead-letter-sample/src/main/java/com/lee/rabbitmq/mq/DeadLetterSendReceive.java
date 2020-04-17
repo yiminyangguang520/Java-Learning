@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.lee.rabbitmq.domain.ExampleObject;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class DeadLetterSendReceive {

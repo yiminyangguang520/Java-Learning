@@ -28,7 +28,7 @@ import org.springframework.security.web.savedrequest.NullRequestCache;
  * Spring Security Config Class
  * Thymeleaf needs to use the Thymeleaf configured FilterSecurityInterceptor and not the default Filter from AutoConfiguration.
  *
- * @author litz-a
+ * @author min
  * @see {@link WebSecurityConfigurerAdapter}
  * @since chapter11.00
  */

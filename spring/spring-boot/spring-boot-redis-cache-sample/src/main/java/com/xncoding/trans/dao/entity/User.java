@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.enums.IdType;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 @TableName(value = "t_user")
 public class User extends Model<User> {

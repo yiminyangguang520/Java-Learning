@@ -10,7 +10,7 @@ import org.jboss.aerogear.security.otp.api.Hash;
 import org.jboss.aerogear.security.otp.api.Hmac;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomTotp {
 

@@ -31,7 +31,7 @@ class User {
 }
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ArrayListUserDefinedObjectExample {
 

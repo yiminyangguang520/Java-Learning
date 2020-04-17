@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class ResourceServiceApplication {

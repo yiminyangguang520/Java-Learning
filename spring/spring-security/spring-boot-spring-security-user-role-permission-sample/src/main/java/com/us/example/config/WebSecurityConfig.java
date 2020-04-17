@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebSecurity

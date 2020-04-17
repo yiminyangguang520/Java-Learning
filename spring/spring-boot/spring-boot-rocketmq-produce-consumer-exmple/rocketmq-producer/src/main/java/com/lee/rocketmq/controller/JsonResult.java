@@ -4,7 +4,7 @@ import com.lee.rocketmq.constant.CodeStatus;
 import lombok.Data;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 public class JsonResult {

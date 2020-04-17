@@ -4,7 +4,7 @@ import com.packtpub.springsecurity.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface RoleRepository extends JpaRepository<Role, Integer> {
 

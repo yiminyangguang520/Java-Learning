@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @PropertySource("classpath:app-props.properties")
 @Configuration

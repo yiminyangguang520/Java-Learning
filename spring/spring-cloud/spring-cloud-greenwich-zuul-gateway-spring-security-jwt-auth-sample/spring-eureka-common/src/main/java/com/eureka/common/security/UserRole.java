@@ -1,7 +1,7 @@
 package com.eureka.common.security;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum UserRole {

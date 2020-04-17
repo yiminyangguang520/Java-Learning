@@ -5,7 +5,7 @@ import com.netflix.zuul.context.RequestContext;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AddResponseIDHeaderFilter extends ZuulFilter {
 

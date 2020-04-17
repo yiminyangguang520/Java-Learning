@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Document(indexName = "gcrs-crash", type = "crash")
 public class Crash implements Serializable {

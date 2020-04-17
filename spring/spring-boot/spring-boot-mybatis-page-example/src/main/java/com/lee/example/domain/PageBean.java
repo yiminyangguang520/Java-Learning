@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 格式要求 https://github.com/wenzhixin/bootstrap-table-examples/blob/master/json/data2.json
- * @author litz-a
+ * @author min
  */
 public class PageBean<T> implements Serializable {
 

@@ -4,7 +4,7 @@ import com.lee.servicefeign.clients.SchedualServiceHi;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class SchedualServiceHiHystricImpl implements SchedualServiceHi {

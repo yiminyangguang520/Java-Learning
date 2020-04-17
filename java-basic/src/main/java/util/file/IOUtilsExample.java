@@ -15,7 +15,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class IOUtilsExample {
 

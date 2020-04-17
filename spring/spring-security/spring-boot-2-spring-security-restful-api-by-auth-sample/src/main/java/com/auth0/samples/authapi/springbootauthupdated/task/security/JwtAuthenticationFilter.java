@@ -20,7 +20,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

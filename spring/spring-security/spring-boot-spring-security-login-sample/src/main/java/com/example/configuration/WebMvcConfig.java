@@ -6,7 +6,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

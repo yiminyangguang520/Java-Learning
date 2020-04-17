@@ -1,7 +1,7 @@
 package com.imooc.common.enums;
 
 /**
- * @author litz-a
+ * @author min
  * @Description: 订单状态
  */
 public enum OrderStatusEnum {

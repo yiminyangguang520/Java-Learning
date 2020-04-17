@@ -6,7 +6,7 @@ import java.util.Random;
 
 /**
  * 封装UUID
- * @author litz-a
+ * @author min
  */
 public abstract class UUID {
 

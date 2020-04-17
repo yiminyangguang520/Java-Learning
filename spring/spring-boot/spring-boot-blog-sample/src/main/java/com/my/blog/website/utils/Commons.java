@@ -21,7 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * 主题公共函数
  * <p>
  * Created by 13 on 2017/2/21.

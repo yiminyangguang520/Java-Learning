@@ -3,7 +3,7 @@ package com.eureka.gallery.entities;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Gallery {
 

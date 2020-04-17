@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.reactive.config.EnableWebFlux;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebFlux
 @SpringBootApplication

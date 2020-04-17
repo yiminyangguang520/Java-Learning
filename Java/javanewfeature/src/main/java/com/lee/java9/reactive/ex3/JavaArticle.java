@@ -1,7 +1,7 @@
 package com.lee.java9.reactive.ex3;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JavaArticle {
 

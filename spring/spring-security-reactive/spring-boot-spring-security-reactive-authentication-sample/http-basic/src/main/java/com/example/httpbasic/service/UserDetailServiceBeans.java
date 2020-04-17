@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class UserDetailServiceBeans {

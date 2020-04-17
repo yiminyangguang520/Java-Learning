@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {

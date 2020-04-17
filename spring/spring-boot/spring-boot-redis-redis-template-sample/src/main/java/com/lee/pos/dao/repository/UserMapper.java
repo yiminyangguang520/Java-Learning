@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.lee.pos.dao.entity.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserMapper extends BaseMapper<User> {
 

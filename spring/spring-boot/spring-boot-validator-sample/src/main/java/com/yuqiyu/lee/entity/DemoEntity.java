@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DemoEntity implements Serializable {
 

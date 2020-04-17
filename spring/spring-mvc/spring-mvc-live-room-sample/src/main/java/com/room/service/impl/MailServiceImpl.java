@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/1 8:54).
  */
 @Service

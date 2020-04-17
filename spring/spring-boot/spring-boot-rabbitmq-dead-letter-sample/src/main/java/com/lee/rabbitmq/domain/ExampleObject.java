@@ -3,7 +3,7 @@ package com.lee.rabbitmq.domain;
 import java.util.Date;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ExampleObject {
 

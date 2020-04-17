@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MainApp {
 

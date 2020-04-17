@@ -7,7 +7,7 @@ import javax.servlet.ServletRegistration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

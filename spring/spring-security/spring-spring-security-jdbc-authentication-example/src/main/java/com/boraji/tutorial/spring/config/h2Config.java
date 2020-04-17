@@ -17,7 +17,7 @@ import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @PropertySource("classpath:h2.properties")
@@ -36,7 +36,7 @@ public class h2Config {
   private Environment env;
 
   /**
-   * h2SampleDataSourceºÍh2DataSourceÈÎÑ¡ÆäÒ»¼´¿É
+   * h2SampleDataSourceï¿½ï¿½h2DataSourceï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
    * @return
    */
   @Bean("h2SampleDataSource")

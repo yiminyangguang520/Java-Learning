@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 import springframework.guru.webclientdemo.domain.MovieEvent;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class MovieClientEventServiceImpl implements MovieClientEventService {

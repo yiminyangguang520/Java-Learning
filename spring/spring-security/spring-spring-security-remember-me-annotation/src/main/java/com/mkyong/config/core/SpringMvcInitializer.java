@@ -4,7 +4,7 @@ import com.mkyong.config.AppConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

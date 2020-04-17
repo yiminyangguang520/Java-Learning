@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class CrashServiceImpl implements CrashService {

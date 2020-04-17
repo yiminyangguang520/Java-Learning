@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import javax.servlet.Filter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableEurekaClient

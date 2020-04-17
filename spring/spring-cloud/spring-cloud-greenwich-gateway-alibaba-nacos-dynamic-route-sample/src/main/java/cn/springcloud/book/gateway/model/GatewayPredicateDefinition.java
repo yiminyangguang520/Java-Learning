@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 路由断言定义模型
- * @author litz-a
+ * @author min
  */
 public class GatewayPredicateDefinition {
 

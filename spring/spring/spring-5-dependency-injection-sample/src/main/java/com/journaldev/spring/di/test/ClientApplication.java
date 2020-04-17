@@ -5,7 +5,7 @@ import com.journaldev.spring.di.consumer.MyApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ClientApplication {
 

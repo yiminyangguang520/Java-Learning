@@ -5,7 +5,7 @@ import org.spring.springboot.domain.Blog;
 import org.spring.springboot.domain.Comment;
 
 /**
- * Created by litz-a on 2017/5/23.
+ * Created by min on 2017/5/23.
  */
 public interface CommentDao {
 

@@ -1,7 +1,7 @@
 package com.lee.java8.maplistconverter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Model {
 

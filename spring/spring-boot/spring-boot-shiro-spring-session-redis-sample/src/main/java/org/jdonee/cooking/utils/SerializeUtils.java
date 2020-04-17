@@ -8,7 +8,7 @@ import java.io.Serializable;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 public final class SerializeUtils {

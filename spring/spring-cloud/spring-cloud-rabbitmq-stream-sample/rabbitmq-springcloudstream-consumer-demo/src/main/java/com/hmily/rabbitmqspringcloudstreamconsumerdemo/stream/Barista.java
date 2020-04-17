@@ -4,7 +4,7 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
 /**
- * @author litz-a
+ * @author min
  * 这里的Barista接口是定义来作为后面类的参数， 这一接口定义来通道类型和通道名称。 通道名称是作为配置用， 通道类型则决定了app会使用这一通道进行发送消息还是从中接收消息。
  */
 public interface Barista {

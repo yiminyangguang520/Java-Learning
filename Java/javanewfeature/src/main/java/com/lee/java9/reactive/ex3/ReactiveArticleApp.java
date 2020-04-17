@@ -6,7 +6,7 @@
 //import java.util.function.Function;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //public class ReactiveArticleApp {
 //

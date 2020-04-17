@@ -18,7 +18,7 @@ import pl.piomin.services.product.model.Product;
 import pl.piomin.services.product.repository.ProductRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class ProductController {

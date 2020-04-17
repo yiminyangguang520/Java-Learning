@@ -6,7 +6,7 @@ import redis.clients.jedis.Jedis;
 /**
  * RedisString通用工具类
  *
- * @author litz-a
+ * @author min
  */
 public class RedisString {
 

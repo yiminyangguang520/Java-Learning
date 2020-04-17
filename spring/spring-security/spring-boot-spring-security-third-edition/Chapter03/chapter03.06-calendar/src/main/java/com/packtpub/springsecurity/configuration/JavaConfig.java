@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @Import({SecurityConfig.class, DataSourceConfig.class})

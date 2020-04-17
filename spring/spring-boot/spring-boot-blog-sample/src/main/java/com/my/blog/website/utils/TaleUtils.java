@@ -34,7 +34,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 /**
  * Tale工具类
- * @author litz-a
+ * @author min
  * Created by 13 on 2017/2/21.
  */
 public class TaleUtils {

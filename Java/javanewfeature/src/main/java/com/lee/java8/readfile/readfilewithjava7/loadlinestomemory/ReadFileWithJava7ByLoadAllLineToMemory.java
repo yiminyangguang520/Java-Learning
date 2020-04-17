@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ReadFileWithJava7ByLoadAllLineToMemory {
 

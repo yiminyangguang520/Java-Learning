@@ -1,7 +1,7 @@
 package com.zhou.essearch.page;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SimplePage implements Paginable {
 

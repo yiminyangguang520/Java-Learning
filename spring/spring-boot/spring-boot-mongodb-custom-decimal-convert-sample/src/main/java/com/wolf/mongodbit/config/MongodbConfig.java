@@ -19,7 +19,7 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 /**
  * 自定义的配置类，配置mongodb访问对象MongoTemplate，将定义的BigDecimal和Decimal128的自动转换器，注册到转换器。
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class MongodbConfig extends AbstractMongoConfiguration {

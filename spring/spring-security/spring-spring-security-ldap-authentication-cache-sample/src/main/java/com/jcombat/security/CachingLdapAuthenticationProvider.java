@@ -13,7 +13,7 @@ import org.springframework.security.ldap.authentication.LdapAuthenticator;
 import org.springframework.security.ldap.userdetails.LdapAuthoritiesPopulator;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CachingLdapAuthenticationProvider extends LdapAuthenticationProvider {
 

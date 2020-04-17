@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by wangq on 2017/3/20.
  */
 @Service

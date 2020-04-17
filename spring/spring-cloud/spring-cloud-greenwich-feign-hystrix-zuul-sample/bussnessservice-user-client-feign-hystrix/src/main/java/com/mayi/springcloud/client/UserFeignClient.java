@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "service-user", fallback = UserFallback.class)
 public interface UserFeignClient {

@@ -10,7 +10,7 @@
 //import org.springframework.context.annotation.Configuration;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //@Configuration
 //@MapperScan(basePackages = "com.shihuc.dbconn.dao.mysql")

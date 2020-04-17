@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author litz-a
+ * @author min
  */
 public interface CalendarUserRepository extends JpaRepository<CalendarUser, Integer> {
 

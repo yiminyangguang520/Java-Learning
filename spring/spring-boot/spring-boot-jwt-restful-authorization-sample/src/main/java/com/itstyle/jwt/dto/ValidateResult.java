@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * 验证信息
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

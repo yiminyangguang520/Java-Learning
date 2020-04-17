@@ -5,7 +5,7 @@ import javax.validation.constraints.AssertTrue;
 
 /**
  * 用户更新状态 DTO
- * @author litz-a
+ * @author min
  */
 public class UserUpdateStatusDTO {
 

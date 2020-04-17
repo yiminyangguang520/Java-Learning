@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.webjars.RequireJS;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication(scanBasePackages = {
     "com.packtpub.springsecurity",

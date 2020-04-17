@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2017/8/9.
  */
 @Service

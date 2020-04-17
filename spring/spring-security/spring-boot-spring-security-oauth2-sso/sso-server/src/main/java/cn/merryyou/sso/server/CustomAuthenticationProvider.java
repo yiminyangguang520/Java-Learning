@@ -12,7 +12,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {

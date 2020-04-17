@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Locale;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController("/message")
 public class TranslationController {

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 通过mongoTemplate直接调用提供的方法。 黑名单业务处理controller
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/mongodb")

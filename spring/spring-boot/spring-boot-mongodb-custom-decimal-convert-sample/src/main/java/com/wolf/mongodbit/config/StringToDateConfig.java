@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 定义配置类 定义字符串转时间的转换格式，使字符串自动转换为时间。注册到注册中心。
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class StringToDateConfig implements WebMvcConfigurer {

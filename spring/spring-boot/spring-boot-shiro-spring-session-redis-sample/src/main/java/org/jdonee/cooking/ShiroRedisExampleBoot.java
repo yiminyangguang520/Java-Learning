@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @MapperScan("org.jdonee.cooking.mapper")

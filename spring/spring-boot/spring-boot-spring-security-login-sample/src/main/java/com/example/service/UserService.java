@@ -3,7 +3,7 @@ package com.example.service;
 import com.example.model.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

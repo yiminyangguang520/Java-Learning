@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 订购商品controller
- * @author litz-a
+ * @author min
  */
 @Controller
 public class PayController {

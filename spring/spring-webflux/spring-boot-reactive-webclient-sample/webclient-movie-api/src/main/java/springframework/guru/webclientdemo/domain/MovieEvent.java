@@ -3,7 +3,7 @@ package springframework.guru.webclientdemo.domain;
 import java.util.Date;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MovieEvent {
 

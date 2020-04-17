@@ -11,7 +11,7 @@ import org.springframework.security.access.SecurityConfig;
 /**
  * 角色-资源数据访问类
  * 可以在此处使用需要的方式获取信息，如从数据库、XML、文本等获取
- * @author litz-a
+ * @author min
  */
 public class ResourceDao {
 

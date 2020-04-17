@@ -1,7 +1,7 @@
 package pl.piomin.services.product.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Product {
 

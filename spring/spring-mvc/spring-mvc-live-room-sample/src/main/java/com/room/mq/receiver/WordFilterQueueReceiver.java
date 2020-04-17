@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Doublestar on 2017/12/28 16:13).
  */
 @Component("wordFilterQueueReceiver")

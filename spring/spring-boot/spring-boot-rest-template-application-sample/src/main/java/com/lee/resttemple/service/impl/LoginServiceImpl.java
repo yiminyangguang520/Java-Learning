@@ -28,7 +28,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class LoginServiceImpl implements LoginService {

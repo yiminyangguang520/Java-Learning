@@ -2,7 +2,7 @@ package com.my.blog.website.dto;
 
 /**
  * 日志表的action字段
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/4.
  */
 public enum LogActions {

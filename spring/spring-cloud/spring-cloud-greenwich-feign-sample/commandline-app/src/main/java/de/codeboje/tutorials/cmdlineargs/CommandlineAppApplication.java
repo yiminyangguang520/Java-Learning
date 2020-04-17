@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class CommandlineAppApplication implements ApplicationRunner {

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class IterateOverArrayListExample {
 

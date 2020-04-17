@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class UploadFileController {

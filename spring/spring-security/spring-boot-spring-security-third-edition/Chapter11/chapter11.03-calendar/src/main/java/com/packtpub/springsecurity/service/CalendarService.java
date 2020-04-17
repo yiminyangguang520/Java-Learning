@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CalendarService {
 

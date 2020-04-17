@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class RequestContextHolderHystrixConcurrencyStrategy extends HystrixConcurrencyStrategy {

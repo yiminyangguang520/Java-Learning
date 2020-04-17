@@ -12,7 +12,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class LanguageRequestInterceptor implements RequestInterceptor {

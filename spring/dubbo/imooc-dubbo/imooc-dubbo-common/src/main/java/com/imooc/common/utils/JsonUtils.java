@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  * @Description: 自定义响应结构, 转换类
  */
 public class JsonUtils {

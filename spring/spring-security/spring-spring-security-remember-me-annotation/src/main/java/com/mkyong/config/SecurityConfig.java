@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.rememberme.JdbcTokenRepos
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebSecurity

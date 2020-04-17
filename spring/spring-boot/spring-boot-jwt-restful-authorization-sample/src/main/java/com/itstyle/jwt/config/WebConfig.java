@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 拦截配置--调用链
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

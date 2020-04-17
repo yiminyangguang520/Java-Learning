@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author litz-a
+ * @author min
  * Created by luoshupeng on 2018-03-20 10:53
  */
 @Configuration

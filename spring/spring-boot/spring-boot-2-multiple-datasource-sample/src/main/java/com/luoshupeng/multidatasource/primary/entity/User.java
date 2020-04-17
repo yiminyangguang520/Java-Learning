@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author litz-a
+ * @author min
  * Created by luoshupeng on 2018-03-20 10:01
  */
 @Entity

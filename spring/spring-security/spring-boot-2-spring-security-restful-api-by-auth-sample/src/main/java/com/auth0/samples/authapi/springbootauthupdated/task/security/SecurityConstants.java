@@ -1,7 +1,7 @@
 package com.auth0.samples.authapi.springbootauthupdated.task.security;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SecurityConstants {
 

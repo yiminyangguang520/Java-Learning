@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableEurekaClient    // Enable eureka client.

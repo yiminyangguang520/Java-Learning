@@ -8,7 +8,7 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class TomcatConfigApplication implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {

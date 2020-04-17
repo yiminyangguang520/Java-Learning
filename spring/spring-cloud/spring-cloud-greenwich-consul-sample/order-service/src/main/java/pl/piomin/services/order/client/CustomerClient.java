@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import pl.piomin.services.order.model.Customer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "customer-service")
 public interface CustomerClient {

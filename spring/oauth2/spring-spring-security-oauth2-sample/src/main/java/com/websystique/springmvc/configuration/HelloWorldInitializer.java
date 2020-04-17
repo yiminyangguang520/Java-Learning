@@ -4,7 +4,7 @@ import javax.servlet.Filter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class HelloWorldInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

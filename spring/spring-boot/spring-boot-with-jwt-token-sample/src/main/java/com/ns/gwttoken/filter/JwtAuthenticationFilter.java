@@ -16,7 +16,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

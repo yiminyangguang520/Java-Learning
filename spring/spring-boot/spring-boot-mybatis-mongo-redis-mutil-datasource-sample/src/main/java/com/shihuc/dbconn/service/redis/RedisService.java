@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by chengsh05 on 2017/7/14.
- * @author litz-a
+ * @author min
  */
 @Service("redisService")
 public class RedisService implements IRedisService {

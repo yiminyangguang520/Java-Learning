@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class DownloadFileController {

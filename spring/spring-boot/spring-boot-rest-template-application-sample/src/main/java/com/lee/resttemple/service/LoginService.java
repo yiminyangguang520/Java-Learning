@@ -5,7 +5,7 @@ import com.lee.resttemple.result.AccessToken;
 import java.io.IOException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface LoginService {
 

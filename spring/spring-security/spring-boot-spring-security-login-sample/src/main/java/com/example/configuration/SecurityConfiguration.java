@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebSecurity

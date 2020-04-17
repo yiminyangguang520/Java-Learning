@@ -12,7 +12,7 @@ import org.springframework.http.client.ClientHttpResponse;
 import pl.piomin.services.gateway.fallback.response.AccountFallbackResponse;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AccountFallbackProvider implements FallbackProvider {
 

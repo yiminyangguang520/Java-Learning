@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface RememberMeTokenRepository extends JpaRepository<PersistentLogin, String> {
 

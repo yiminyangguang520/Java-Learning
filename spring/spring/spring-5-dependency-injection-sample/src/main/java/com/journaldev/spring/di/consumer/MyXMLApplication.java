@@ -3,7 +3,7 @@ package com.journaldev.spring.di.consumer;
 import com.journaldev.spring.di.services.MessageService;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MyXMLApplication {
 

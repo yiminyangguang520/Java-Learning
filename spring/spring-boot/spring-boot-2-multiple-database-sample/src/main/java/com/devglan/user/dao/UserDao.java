@@ -4,7 +4,7 @@ import com.devglan.model.UserDetails;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserDao extends CrudRepository<UserDetails, Long> {
 

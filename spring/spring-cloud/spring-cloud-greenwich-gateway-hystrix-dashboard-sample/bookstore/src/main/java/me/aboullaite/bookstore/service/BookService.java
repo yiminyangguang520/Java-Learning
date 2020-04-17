@@ -10,7 +10,7 @@ import me.aboullaite.bookstore.model.Book;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class BookService {

@@ -15,7 +15,7 @@ import org.bouncycastle.util.encoders.Base64;
 
 /**
  * jwt加密和解密的工具类
- * @author litz-a
+ * @author min
  */
 public class JwtUtils {
 

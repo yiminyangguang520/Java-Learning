@@ -5,7 +5,7 @@ import java.util.Set;
 import org.jdonee.cooking.domain.UserInfo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

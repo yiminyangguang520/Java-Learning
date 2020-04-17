@@ -6,7 +6,7 @@ import org.springframework.core.convert.converter.Converter;
 
 /**
  * 自定义的类型转换器Decimal128ToBigDecimal
- * @author litz-a
+ * @author min
  */
 
 public class Decimal128ToBigDecimalConverter implements Converter<Decimal128, BigDecimal> {

@@ -2,7 +2,7 @@ package com.hmily.apigateway.constant;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CookieConstant {
 

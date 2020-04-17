@@ -12,7 +12,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.SEND_RESPONSE_FILTER_ORDER;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class AddResponseHeaderFilter extends ZuulFilter {

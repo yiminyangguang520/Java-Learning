@@ -41,7 +41,7 @@ import org.thymeleaf.context.Context;
 import thymeleafexamples.springmail.business.SpringMailConfig;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class EmailService {

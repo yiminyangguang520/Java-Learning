@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FutureInAction2 {
 

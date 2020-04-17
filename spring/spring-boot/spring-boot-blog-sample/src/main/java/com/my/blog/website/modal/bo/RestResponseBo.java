@@ -2,7 +2,7 @@ package com.my.blog.website.modal.bo;
 
 /**
  * rest返回对象
- * @author litz-a
+ * @author min
  */
 public class RestResponseBo<T> {
 

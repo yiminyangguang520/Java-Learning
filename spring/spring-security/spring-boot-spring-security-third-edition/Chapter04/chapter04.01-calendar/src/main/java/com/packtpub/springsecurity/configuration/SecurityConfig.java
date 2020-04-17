@@ -20,7 +20,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 /**
  * Spring Security Config Class
  *
- * @author litz-a
+ * @author min
  * @see {@link WebSecurityConfigurerAdapter}
  * @since chapter04.01
  */

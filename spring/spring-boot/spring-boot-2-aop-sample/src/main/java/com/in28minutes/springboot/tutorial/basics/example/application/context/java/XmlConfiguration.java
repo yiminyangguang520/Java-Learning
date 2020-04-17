@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @ImportResource({"classpath*:applicationContext.xml"})

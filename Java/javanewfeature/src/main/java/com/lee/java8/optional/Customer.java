@@ -3,7 +3,7 @@ package com.lee.java8.optional;
 import java.util.Optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Customer {
   // private String name;

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableFeignClients("com.arnoldgalovics.blog.feigninterceptor.testapp.client")

@@ -3,7 +3,7 @@ package com.lee.securingspringbootwithjwts.model;
 import org.json.JSONObject;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JsonResult {
 

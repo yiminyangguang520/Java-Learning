@@ -4,7 +4,7 @@ import com.packtpub.springsecurity.domain.CalendarUser;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CalendarUserRepository extends MongoRepository<CalendarUser, Integer> {
 

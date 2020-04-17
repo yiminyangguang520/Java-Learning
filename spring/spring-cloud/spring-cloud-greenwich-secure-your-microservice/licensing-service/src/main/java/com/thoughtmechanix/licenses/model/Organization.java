@@ -3,7 +3,7 @@ package com.thoughtmechanix.licenses.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Organization implements Serializable {
 

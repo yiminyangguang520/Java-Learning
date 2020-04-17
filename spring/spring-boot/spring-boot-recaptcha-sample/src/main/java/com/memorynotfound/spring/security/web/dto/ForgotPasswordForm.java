@@ -5,7 +5,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ForgotPasswordForm {
 

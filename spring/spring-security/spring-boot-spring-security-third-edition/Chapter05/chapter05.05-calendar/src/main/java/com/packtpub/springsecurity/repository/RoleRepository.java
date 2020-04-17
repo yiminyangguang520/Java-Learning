@@ -4,7 +4,7 @@ import com.packtpub.springsecurity.domain.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface RoleRepository extends MongoRepository<Role, Integer> {
 

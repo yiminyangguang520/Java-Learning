@@ -12,7 +12,7 @@ import me.aboullaite.moviestore.model.Movie;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class MoviesService {

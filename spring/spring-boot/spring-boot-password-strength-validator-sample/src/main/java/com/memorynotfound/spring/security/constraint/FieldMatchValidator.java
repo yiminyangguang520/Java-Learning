@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 

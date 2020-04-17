@@ -5,7 +5,7 @@ import com.couchbase.client.java.repository.annotation.Id;
 import org.springframework.data.couchbase.core.mapping.Document;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Document
 public class Customer {

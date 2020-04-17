@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class RocketMQServiceApplication extends SpringBootServletInitializer {

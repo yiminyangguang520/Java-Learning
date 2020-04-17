@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 

@@ -3,7 +3,7 @@ package com.tests4geeks.tutorials.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Document(collection = "cars")
 public class Car {

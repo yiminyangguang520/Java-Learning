@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * @author litz-a
+ * @author min
  * Created by luoshupeng on 2018-03-20 10:42
  */
 @Configuration

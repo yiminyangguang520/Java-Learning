@@ -6,7 +6,7 @@ import org.jdonee.cooking.domain.UserInfo;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public interface UserMapper {

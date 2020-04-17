@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface BookingDao extends CrudRepository<Booking, Long> {
 

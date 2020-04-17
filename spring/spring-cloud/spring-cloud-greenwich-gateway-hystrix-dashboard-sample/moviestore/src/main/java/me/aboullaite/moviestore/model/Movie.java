@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Movie {
 

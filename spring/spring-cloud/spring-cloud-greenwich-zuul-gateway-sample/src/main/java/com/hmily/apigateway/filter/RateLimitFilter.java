@@ -10,7 +10,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.SERVLET_DETECTION_FILTER_ORDER;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class RateLimitFilter extends ZuulFilter {

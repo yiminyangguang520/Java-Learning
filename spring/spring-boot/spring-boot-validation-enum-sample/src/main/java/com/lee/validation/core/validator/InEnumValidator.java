@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class InEnumValidator implements ConstraintValidator<InEnum, Integer> {
 

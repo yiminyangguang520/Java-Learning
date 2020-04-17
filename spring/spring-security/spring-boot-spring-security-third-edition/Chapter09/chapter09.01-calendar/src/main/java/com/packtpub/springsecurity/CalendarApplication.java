@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.ApplicationContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication(scanBasePackages = {
     "com.packtpub.springsecurity",

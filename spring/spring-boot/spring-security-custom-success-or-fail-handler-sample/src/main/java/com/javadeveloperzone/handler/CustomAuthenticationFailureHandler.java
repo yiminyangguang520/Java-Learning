@@ -9,7 +9,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 
 
 /**
- * @author litz-a
+ * @author min
  * Created by JavaDeveloperZone on 13-11-2017. Spring Security will send control to CustomAuthenticationFailureHandler when authentication will get failed
  */
 public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {

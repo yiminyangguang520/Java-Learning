@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.apache.rocketmq.spring.starter.core.RocketMQTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class RocketMQServiceImpl implements RocketMQService {

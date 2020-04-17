@@ -7,7 +7,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 
 /**
  * Registers the {@link DelegatingFilterProxy} to use the springSecurityFilterChain before any other registered {@link Filter}
- * @author litz-a
+ * @author min
  */
 @Order(1)
 public class SecurityWebAppInitializer extends AbstractSecurityWebApplicationInitializer {

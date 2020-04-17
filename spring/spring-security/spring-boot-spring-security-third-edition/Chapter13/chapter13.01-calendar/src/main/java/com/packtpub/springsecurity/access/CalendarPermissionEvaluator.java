@@ -8,7 +8,7 @@ import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class CalendarPermissionEvaluator implements PermissionEvaluator {
 

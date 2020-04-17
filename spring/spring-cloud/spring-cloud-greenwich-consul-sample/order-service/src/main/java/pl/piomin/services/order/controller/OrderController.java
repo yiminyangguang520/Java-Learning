@@ -27,7 +27,7 @@ import pl.piomin.services.order.model.Product;
 import pl.piomin.services.order.repository.OrderRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class OrderController {

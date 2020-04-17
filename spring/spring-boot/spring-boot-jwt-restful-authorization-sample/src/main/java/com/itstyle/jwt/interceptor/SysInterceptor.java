@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 拦截器 用户权限校验
  *
- * @author litz-a
+ * @author min
  */
 @Slf4j
 public class SysInterceptor implements HandlerInterceptor {

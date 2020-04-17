@@ -19,7 +19,7 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Transient;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

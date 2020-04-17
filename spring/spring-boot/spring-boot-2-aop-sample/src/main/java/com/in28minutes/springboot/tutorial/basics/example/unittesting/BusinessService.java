@@ -3,7 +3,7 @@ package com.in28minutes.springboot.tutorial.basics.example.unittesting;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class BusinessService {

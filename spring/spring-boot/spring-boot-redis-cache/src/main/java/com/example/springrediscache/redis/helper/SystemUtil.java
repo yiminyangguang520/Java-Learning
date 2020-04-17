@@ -7,7 +7,7 @@ import java.util.Properties;
 import java.util.UUID;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SystemUtil {
 

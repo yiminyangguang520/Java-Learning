@@ -2,7 +2,7 @@ package com.example.filedemo.payload;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UploadFileResponse {
 

@@ -5,7 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AppUserAuthentication implements Authentication {
 

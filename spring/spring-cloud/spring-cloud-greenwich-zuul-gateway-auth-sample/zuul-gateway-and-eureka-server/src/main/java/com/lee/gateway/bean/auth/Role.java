@@ -1,7 +1,7 @@
 package com.lee.gateway.bean.auth;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Role {
 

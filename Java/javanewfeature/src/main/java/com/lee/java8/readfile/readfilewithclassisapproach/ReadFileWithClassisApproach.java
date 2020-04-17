@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ReadFileWithClassisApproach {
 

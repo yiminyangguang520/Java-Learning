@@ -6,7 +6,7 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AppUserDetail {
 

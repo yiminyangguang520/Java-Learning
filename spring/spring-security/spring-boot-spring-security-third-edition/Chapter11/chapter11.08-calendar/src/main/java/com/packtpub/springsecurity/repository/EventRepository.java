@@ -4,7 +4,7 @@ import com.packtpub.springsecurity.domain.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface EventRepository extends JpaRepository<Event, Integer> {
 

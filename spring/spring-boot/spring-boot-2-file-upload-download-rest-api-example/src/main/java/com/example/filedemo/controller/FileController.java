@@ -23,7 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class FileController {

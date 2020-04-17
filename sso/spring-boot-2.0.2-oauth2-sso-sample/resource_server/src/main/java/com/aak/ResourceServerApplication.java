@@ -18,7 +18,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @Configuration

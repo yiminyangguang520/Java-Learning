@@ -3,7 +3,7 @@ package com.mkyong.output.impl;
 import com.mkyong.output.IOutputGenerator;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CsvOutputGenerator implements IOutputGenerator {
 

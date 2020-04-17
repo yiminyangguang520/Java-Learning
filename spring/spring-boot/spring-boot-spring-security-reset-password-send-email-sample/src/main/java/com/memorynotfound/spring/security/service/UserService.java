@@ -5,7 +5,7 @@ import com.memorynotfound.spring.security.dto.UserRegistrationDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService extends UserDetailsService {
 

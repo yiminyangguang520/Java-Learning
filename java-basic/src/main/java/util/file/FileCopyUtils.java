@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import org.apache.commons.io.FileUtils;
 
 /**
- * @author litz-a
+ * @author min
  * As you can see FileChannels is the best way to copy large files.
  * If you work with even larger files you will notice a much bigger speed difference
  */

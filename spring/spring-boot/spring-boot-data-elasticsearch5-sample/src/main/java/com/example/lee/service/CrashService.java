@@ -4,7 +4,7 @@ package com.example.lee.service;
 import com.example.lee.entity.Crash;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CrashService {
 

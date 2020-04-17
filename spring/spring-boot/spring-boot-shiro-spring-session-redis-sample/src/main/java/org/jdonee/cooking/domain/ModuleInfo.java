@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 public class ModuleInfo implements Serializable {

@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 @Document(collection = "blacklist")

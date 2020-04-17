@@ -6,7 +6,7 @@ import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service("receiveConfirmTestListener")
 public class ReceiveConfirmTestListener implements ChannelAwareMessageListener {

@@ -1,7 +1,7 @@
 package com.websystique.spring.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface FileService {
 

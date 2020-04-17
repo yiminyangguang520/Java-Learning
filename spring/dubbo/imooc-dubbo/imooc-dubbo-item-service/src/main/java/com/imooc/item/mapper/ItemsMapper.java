@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ItemsMapper {
 

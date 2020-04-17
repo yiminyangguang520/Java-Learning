@@ -4,7 +4,7 @@ import com.example.lee.entity.Crash;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CrashRepository extends ElasticsearchRepository<Crash, String> {
 

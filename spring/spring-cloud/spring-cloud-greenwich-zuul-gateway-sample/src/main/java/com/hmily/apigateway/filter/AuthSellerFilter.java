@@ -18,7 +18,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 
 /**
  * 权限拦截（区分买家和卖家）
- * @author litz-a
+ * @author min
  */
 @Component
 public class AuthSellerFilter extends ZuulFilter {

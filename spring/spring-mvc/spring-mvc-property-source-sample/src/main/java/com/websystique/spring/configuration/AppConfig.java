@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @ComponentScan(basePackages = "com.websystique.spring")

@@ -3,7 +3,7 @@ package jcg.demo.zheng.springbootbatchdemo.step;
 import org.springframework.batch.item.ItemProcessor;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SimpleProcessor implements ItemProcessor<String, String> {
 

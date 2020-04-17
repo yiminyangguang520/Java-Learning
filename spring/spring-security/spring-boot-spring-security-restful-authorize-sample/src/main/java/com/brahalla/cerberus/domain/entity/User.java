@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "users")

@@ -7,7 +7,7 @@ import org.apache.rocketmq.spring.starter.core.RocketMQListener;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @Service

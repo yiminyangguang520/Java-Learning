@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.retry.annotation.EnableRetry;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableRetry

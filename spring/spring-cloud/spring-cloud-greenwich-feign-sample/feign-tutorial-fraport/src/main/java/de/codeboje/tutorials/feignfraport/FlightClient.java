@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "FlightClient", url = "https://developer.fraport.de/api/flights/1.0")
 public interface FlightClient {

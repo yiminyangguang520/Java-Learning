@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

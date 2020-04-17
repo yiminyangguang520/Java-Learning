@@ -1,7 +1,7 @@
 package com.arnoldgalovics.blog.feigninterceptor.testapp.client;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MessageResponse {
 

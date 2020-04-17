@@ -23,7 +23,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class UserServiceImpl implements UserService {

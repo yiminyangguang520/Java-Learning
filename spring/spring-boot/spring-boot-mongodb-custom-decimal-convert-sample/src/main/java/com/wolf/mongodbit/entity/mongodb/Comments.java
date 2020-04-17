@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import lombok.Data;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 public class Comments {

@@ -10,7 +10,7 @@ import pl.piomin.services.gateway.fallback.AccountFallbackProvider;
 import pl.piomin.services.gateway.filter.AddResponseIDHeaderFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableZuulProxy

@@ -15,7 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class TokenAuthenticationService {
 

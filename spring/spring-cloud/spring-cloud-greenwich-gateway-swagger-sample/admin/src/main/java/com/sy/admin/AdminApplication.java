@@ -5,7 +5,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringCloudApplication
 @ComponentScan(basePackages = {"com.sy.admin"})

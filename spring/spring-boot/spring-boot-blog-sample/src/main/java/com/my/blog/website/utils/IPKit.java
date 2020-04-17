@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * ip工具类
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/9.
  */
 public class IPKit {

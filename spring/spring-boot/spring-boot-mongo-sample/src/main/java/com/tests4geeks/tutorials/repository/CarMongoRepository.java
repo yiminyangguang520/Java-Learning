@@ -4,7 +4,7 @@ import com.tests4geeks.tutorials.model.Car;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CarMongoRepository extends CrudRepository<Car, String> {
 

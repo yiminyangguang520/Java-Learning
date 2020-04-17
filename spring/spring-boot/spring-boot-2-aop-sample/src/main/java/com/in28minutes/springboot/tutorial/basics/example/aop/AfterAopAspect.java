@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * aop configuration
- * @author litz-a
+ * @author min
  */
 @Aspect
 @Configuration

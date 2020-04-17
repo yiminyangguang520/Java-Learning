@@ -15,7 +15,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
- * @author litz-a
+ * @author min
  * 接口aop
  * Created by wangq on 2017/3/24.
  */

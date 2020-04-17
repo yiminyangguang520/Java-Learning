@@ -11,7 +11,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class EmailService {

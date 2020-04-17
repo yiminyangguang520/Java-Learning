@@ -13,7 +13,7 @@ import org.springframework.security.web.server.authentication.logout.RedirectSer
 import org.springframework.security.web.server.authentication.logout.ServerLogoutSuccessHandler;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @Configuration

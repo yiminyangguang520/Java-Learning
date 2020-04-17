@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * FilterInvocationServiceSecurityMetadataSource Requires {@link FilterInvocation}
- * @author litz-a
+ * @author min
  */
 @Component("filterInvocationServiceSecurityMetadataSource")
 public class FilterInvocationServiceSecurityMetadataSource

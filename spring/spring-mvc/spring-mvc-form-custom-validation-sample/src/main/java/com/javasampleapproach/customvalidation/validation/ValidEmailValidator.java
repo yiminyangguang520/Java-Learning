@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.apache.commons.validator.routines.EmailValidator;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ValidEmailValidator implements ConstraintValidator<ValidEmail, String> {
 

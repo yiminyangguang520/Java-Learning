@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.approval.UserApprovalHandler
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableAuthorizationServer

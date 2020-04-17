@@ -1,7 +1,7 @@
 package com.hmily.apigateway.exception;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RateLimitException extends RuntimeException {
 

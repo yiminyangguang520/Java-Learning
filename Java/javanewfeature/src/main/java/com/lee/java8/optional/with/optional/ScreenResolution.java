@@ -1,7 +1,7 @@
 package com.lee.java8.optional.with.optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ScreenResolution {
 

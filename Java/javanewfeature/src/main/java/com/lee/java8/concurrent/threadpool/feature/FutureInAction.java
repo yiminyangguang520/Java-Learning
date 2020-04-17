@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FutureInAction {
 

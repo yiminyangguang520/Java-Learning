@@ -9,7 +9,7 @@ import org.springframework.messaging.Message;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 @Service

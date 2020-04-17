@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableAuthorizationServer

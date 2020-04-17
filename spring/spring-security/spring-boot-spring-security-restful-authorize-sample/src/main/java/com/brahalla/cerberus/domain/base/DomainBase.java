@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DomainBase implements Serializable {
 

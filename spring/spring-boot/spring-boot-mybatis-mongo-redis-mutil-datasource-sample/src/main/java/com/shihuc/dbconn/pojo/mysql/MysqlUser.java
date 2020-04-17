@@ -3,7 +3,7 @@ package com.shihuc.dbconn.pojo.mysql;
 import com.shihuc.dbconn.pojo.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MysqlUser extends User {
 

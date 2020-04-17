@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 通过Redis存储和验证token的实现类
- * @author litz-a
+ * @author min
  */
 @Component
 public class RedisTokenManagerImpl implements TokenManager {

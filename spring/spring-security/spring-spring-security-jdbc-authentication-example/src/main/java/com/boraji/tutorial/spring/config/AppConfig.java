@@ -12,7 +12,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @PropertySource("classpath:db.properties")

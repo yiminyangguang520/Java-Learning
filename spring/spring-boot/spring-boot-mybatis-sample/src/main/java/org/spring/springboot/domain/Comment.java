@@ -2,7 +2,7 @@ package org.spring.springboot.domain;
 
 
 /**
- * Created by litz-a on 2017/5/23.
+ * Created by min on 2017/5/23.
  */
 
 import java.util.Date;

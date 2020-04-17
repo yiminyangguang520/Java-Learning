@@ -12,7 +12,7 @@ import pl.piomin.services.customer.model.CustomerType;
 import pl.piomin.services.customer.repository.CustomerRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableDiscoveryClient

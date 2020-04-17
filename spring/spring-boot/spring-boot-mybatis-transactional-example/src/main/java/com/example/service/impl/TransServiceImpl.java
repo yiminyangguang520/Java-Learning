@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class TransServiceImpl implements TransService {

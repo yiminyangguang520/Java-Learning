@@ -1,7 +1,7 @@
 package com.example.polls.util;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface AppConstants {
 

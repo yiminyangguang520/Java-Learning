@@ -7,7 +7,7 @@ import com.github.pagehelper.PageInfo;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CouponService {
 

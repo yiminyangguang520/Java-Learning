@@ -1,7 +1,7 @@
 package pl.piomin.services.gateway.fallback.response;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AccountFallbackResponse {
 

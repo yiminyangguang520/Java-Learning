@@ -5,7 +5,7 @@ import com.lee.rocketmq.constant.SystemCode;
 import lombok.NoArgsConstructor;
 
 /**
- * @author litz-a
+ * @author min
  */
 @NoArgsConstructor
 public class OperationResult<T> {

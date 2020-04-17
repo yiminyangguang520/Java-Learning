@@ -10,7 +10,7 @@ import org.springframework.security.jackson2.SecurityJackson2Modules;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 1800, redisNamespace = "lee")

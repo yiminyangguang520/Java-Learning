@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 @Builder

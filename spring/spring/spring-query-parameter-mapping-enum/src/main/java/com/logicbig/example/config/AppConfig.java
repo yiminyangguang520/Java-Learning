@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.logicbig.example" })

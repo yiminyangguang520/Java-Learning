@@ -11,7 +11,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Target({TYPE, ANNOTATION_TYPE})
 @Retention(RUNTIME)

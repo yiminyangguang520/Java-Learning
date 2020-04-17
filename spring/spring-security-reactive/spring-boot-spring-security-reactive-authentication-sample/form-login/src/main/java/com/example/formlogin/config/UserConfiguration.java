@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class UserConfiguration {

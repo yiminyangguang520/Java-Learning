@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * @author litz-a
+ * @author min
  */
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Company.class)
 public class Company {

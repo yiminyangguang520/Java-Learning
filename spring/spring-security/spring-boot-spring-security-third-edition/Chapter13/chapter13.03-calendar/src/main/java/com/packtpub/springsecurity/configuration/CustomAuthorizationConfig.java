@@ -22,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.expression.WebExpressionVoter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class CustomAuthorizationConfig {

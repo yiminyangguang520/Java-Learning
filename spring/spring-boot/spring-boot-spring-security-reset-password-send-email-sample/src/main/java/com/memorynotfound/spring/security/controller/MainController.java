@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class MainController {

@@ -1,7 +1,7 @@
 package com.memorynotfound.spring.core.lifecycle;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Student {
 

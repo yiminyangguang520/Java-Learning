@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * @author litz-a
+ * @author min
  */
 @JsonDeserialize(as = MongoUserDetails.class)
 public class MongoUserDetails implements UserDetails {

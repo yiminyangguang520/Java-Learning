@@ -3,7 +3,7 @@ package util.file;
 import org.apache.commons.io.FilenameUtils;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FilenameUtilsExample1 {
 

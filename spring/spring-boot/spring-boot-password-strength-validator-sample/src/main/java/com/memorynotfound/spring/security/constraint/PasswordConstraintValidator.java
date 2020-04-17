@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PasswordConstraintValidator implements ConstraintValidator<ValidPassword, String> {
 

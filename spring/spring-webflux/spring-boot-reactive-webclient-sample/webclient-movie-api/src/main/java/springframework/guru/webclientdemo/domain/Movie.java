@@ -3,7 +3,7 @@ package springframework.guru.webclientdemo.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Movie {
 

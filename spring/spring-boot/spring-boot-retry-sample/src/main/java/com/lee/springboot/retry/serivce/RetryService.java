@@ -1,7 +1,7 @@
 package com.lee.springboot.retry.serivce;
 
 /**
- * @author litz-a
+ * @author min
  * @data 2018/5/8.
  */
 public interface RetryService {

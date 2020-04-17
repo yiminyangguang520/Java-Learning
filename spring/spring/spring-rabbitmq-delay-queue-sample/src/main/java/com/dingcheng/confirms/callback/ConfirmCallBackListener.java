@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate.ConfirmCallback;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service("confirmCallBackListener")
 public class ConfirmCallBackListener implements ConfirmCallback {

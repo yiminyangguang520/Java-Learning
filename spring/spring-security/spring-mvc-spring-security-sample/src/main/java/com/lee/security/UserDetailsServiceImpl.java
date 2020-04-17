@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 /**
  * 用户详细信息类
  * 负责以{@link UserDetails}方式提供用户信息
- * @author litz-a
+ * @author min
  */
 public class UserDetailsServiceImpl implements UserDetailsService {
 

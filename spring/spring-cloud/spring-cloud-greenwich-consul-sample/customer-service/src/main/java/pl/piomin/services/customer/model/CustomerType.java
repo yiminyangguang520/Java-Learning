@@ -1,7 +1,7 @@
 package pl.piomin.services.customer.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum CustomerType {

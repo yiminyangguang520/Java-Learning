@@ -4,7 +4,7 @@ import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AntUrlPathMatcher implements UrlMatcher {
 

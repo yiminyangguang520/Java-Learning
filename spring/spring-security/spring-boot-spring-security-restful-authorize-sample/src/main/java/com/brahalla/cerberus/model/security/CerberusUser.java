@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CerberusUser implements UserDetails {
 

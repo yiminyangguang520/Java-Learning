@@ -11,7 +11,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
- * @author litz-a
+ * @author min
  * Created by 10412 on 2017/8/9.
  */
 @Service

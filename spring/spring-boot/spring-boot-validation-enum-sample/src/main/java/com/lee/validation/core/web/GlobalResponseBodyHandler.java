@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
  * 只拦截我们的 Controller 所在包，避免其它类似 swagger 提供的 API 被切面拦截
- * @author litz-a
+ * @author min
  */
 @ControllerAdvice(basePackages = "cn.iocoder.springboot.lab22.validation.controller")
 public class GlobalResponseBodyHandler implements ResponseBodyAdvice {

@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ReadFileWithJava8 {
 

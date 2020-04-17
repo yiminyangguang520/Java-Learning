@@ -8,7 +8,7 @@ import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CalendarService {
 

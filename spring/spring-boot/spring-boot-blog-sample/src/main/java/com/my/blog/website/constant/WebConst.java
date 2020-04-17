@@ -7,7 +7,7 @@ import java.util.Set;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/3.
  */
 @Component

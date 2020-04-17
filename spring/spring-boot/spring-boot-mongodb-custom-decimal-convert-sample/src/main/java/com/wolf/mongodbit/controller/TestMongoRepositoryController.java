@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 注意通过继承MongoRepository，访问mongodb也是通过MongoTemplate，所以不需要对MongoTemplate再进行处理了。
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/tmongodb")

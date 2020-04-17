@@ -13,7 +13,7 @@ import org.springframework.social.connect.UserProfile;
  * Social Authentication
  *
  * <pre>SocialAuthenticationUtils.authenticate(connection)</pre>
- * @author litz-a
+ * @author min
  */
 public class SocialAuthenticationUtils {
 

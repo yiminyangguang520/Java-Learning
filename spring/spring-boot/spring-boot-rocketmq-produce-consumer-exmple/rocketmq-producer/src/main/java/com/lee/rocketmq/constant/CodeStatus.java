@@ -2,7 +2,7 @@ package com.lee.rocketmq.constant;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CodeStatus {
 

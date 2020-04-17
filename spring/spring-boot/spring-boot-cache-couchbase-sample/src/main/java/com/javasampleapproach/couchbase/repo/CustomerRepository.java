@@ -3,7 +3,7 @@ package com.javasampleapproach.couchbase.repo;
 import com.javasampleapproach.couchbase.model.Customer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface CustomerRepository {
 

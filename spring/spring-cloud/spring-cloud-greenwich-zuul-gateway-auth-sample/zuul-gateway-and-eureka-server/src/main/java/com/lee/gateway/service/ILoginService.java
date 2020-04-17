@@ -3,7 +3,7 @@ package com.lee.gateway.service;
 import com.lee.gateway.bean.auth.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ILoginService {
 

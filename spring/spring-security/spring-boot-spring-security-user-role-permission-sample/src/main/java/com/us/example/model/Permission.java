@@ -1,7 +1,7 @@
 package com.us.example.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Permission {
 

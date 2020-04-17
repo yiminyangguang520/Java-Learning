@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "licenses")

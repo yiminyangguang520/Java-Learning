@@ -3,7 +3,7 @@ package com.itstyle.jwt.service;
 import com.itstyle.jwt.model.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

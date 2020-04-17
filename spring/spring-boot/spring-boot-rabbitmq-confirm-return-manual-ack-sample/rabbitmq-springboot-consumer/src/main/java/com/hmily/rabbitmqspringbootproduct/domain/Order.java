@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter
 @Setter

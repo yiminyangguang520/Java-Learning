@@ -3,7 +3,7 @@ package com.mkyong.hello.impl;
 import com.mkyong.hello.HelloWorld;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class HelloWorldImpl implements HelloWorld {
 

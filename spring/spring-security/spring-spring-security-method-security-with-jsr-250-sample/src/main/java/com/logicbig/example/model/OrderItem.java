@@ -1,7 +1,7 @@
 package com.logicbig.example.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class OrderItem {
 

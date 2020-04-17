@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * TODO: How does this get the data for the web requests?
- * @author litz-a
+ * @author min
  */
 @Component
 @DependsOn("defaultMethodSecurityExpressionHandler")

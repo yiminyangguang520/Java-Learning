@@ -10,7 +10,7 @@ import org.springframework.security.web.access.expression.WebSecurityExpressionR
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class CustomWebSecurityExpressionHandler extends DefaultWebSecurityExpressionHandler {

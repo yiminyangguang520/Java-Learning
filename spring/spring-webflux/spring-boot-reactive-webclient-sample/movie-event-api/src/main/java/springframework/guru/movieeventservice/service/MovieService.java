@@ -5,7 +5,7 @@ import springframework.guru.movieeventservice.domain.MovieEvent;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface MovieService {
 

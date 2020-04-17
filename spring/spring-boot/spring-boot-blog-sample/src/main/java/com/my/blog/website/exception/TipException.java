@@ -1,7 +1,7 @@
 package com.my.blog.website.exception;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class TipException extends RuntimeException {
 

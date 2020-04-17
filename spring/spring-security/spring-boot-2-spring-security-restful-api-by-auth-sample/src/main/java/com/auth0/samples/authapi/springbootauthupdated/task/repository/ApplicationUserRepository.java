@@ -4,7 +4,7 @@ import com.auth0.samples.authapi.springbootauthupdated.task.model.ApplicationUse
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ApplicationUserRepository extends JpaRepository<ApplicationUser, Long> {
 

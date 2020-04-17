@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class ReCaptchaService {

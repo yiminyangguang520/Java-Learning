@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableCaching
 @Configuration

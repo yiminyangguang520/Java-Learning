@@ -3,7 +3,7 @@ package com.mkyong.customer.bo.impl;
 import com.mkyong.customer.bo.CustomerBo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerBoImpl implements CustomerBo {
 

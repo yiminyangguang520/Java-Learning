@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService, UserService {

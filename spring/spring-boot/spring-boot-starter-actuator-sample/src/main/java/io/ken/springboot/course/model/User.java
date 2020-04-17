@@ -1,7 +1,7 @@
 package io.ken.springboot.course.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class User {
 

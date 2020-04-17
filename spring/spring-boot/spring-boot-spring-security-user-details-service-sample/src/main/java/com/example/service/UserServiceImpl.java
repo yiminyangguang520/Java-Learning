@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {

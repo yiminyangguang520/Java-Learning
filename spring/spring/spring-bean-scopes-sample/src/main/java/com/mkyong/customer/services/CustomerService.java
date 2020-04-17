@@ -1,7 +1,7 @@
 package com.mkyong.customer.services;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomerService {
 

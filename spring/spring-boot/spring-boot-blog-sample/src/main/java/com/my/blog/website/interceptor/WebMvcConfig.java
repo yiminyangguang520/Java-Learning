@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * 向mvc中添加自定义组件
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/9.
  */
 @Component

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface MessageMapper {
 

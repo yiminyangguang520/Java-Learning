@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  * @date 17/2/15
  */
 @Getter

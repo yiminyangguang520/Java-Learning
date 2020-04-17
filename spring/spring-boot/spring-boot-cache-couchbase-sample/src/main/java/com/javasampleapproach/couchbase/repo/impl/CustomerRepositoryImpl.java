@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {

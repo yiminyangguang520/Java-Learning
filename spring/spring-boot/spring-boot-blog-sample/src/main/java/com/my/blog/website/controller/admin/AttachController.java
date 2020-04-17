@@ -34,7 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 附件管理
- * @author litz-a
+ * @author min
  * Created by 13 on 2017/2/21.
  */
 @Controller

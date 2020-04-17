@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import pl.piomin.services.order.model.Account;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FeignClient(name = "account-service")
 public interface AccountClient {

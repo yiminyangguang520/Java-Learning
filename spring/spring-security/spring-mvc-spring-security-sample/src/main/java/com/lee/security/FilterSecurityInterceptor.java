@@ -15,7 +15,7 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 
 /**
  * 自定义过滤器
- * @author litz-a
+ * @author min
  */
 public class FilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 

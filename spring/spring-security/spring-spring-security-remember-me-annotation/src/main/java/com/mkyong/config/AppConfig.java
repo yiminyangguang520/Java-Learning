@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebMvc
 @Configuration

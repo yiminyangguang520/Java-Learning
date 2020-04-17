@@ -1,7 +1,7 @@
 package com.journaldev.spring.di.services;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface MessageService {
 

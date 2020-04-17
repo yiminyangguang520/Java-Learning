@@ -9,7 +9,7 @@
 //import com.concretepage.reactive.ex3.JavaArticle;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //public class ArticleTransformProcessor extends SubmissionPublisher<JavaArticle> implements Processor<Article, JavaArticle> {
 //

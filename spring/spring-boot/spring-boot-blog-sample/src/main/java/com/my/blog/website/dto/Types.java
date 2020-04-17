@@ -1,7 +1,7 @@
 package com.my.blog.website.dto;
 
 /**
- * @author litz-a
+ * @author min
  */
 public enum Types {
   TAG("tag"),

@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.boraji.tutorial.spring.model.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UserDetailsServiceImp implements UserDetailsService {
 

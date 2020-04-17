@@ -1,7 +1,7 @@
 package com.lee.java8.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Insurance {
 

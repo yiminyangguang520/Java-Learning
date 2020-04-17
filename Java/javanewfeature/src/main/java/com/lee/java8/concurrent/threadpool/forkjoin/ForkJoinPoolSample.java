@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ForkJoinPoolSample {
 

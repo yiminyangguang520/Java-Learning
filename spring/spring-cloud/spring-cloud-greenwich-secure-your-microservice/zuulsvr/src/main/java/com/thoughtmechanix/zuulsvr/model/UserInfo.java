@@ -1,7 +1,7 @@
 package com.thoughtmechanix.zuulsvr.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UserInfo {
 

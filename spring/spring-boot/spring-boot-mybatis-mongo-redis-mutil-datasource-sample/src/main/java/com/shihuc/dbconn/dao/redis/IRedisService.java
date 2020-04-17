@@ -2,7 +2,7 @@ package com.shihuc.dbconn.dao.redis;
 
 /**
  * Created by chengsh05 on 2017/7/19.
- * @author litz-a
+ * @author min
  */
 public interface IRedisService {
 

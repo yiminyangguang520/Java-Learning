@@ -12,7 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebSecurity  // Enable security config. This annotation denotes config for spring security.
 

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 以dom方式处理
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/dommongodb")

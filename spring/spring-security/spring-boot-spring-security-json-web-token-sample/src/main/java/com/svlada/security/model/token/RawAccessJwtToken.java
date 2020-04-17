@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RawAccessJwtToken implements JwtToken {
 

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class PasswordEncoder {

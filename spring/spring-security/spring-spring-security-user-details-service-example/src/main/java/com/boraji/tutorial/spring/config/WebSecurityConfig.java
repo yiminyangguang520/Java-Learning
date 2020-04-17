@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.boraji.tutorial.spring.service.UserDetailsServiceImp;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

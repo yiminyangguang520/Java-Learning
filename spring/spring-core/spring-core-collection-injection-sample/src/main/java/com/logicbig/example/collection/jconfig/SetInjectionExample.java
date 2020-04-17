@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SetInjectionExample {
 

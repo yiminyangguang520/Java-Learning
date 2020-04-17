@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class CustomWebConfig implements WebMvcConfigurer {

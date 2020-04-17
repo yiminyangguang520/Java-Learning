@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * Created by chengsh05 on 2017/7/14.
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class RedisConfig {

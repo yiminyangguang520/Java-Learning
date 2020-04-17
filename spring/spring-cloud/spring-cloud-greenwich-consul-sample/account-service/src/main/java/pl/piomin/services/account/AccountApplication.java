@@ -12,7 +12,7 @@ import pl.piomin.services.account.model.Account;
 import pl.piomin.services.account.repository.AccountRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableDiscoveryClient

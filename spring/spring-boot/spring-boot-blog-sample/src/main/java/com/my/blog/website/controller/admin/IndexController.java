@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 后台管理首页
- * @author litz-a
+ * @author min
  * Created by Administrator on 2017/3/9 009.
  */
 @Controller("adminIndexController")

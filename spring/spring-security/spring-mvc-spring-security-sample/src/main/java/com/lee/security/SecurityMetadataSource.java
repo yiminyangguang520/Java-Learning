@@ -13,7 +13,7 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 /**
  * 资源元数据类
  * 负责提供资源数据信息
- * @author litz-a
+ * @author min
  */
 public class SecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class ArrayInjectOrderExample {

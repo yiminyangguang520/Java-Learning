@@ -3,7 +3,7 @@ package com.lee.java8.concurrent.threadpool.forkjoin;
 import java.util.concurrent.ForkJoinPool;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ForkJoinPoolTest {
 

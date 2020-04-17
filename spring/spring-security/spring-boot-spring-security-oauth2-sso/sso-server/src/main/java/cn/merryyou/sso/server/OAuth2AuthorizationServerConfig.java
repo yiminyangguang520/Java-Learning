@@ -33,7 +33,7 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
- * @author litz-a
+ * @author min
  */
 //@Configuration
 //@EnableAuthorizationServer

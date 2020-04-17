@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.LdapShaPasswordEncoder;
 import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebSecurity

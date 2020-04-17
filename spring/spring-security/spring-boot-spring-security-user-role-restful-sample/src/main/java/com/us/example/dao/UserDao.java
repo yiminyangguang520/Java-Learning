@@ -4,7 +4,7 @@ import com.us.example.domain.User;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserDao {
 

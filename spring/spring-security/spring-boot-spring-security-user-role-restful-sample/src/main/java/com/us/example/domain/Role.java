@@ -2,7 +2,7 @@ package com.us.example.domain;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Role {
 

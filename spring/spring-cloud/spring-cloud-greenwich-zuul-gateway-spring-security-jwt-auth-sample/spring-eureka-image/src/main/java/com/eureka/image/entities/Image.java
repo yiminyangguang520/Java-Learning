@@ -1,7 +1,7 @@
 package com.eureka.image.entities;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Image {
 

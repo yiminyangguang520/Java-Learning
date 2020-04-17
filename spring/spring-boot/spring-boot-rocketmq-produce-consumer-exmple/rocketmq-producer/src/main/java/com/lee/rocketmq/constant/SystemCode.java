@@ -1,7 +1,7 @@
 package com.lee.rocketmq.constant;
 
 /**
- * @author litz-a
+ * @author min
  */
 public enum SystemCode implements CodeStatus {
 

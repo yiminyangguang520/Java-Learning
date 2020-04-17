@@ -1,7 +1,7 @@
 package com.michaelcgood.queue.publish;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface MessagePublisher {
 

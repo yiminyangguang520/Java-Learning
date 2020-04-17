@@ -1,7 +1,7 @@
 package cn.merryyou.sso.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

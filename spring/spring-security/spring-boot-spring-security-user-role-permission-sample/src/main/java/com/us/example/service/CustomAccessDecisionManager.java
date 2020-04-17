@@ -11,7 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class CustomAccessDecisionManager implements AccessDecisionManager {

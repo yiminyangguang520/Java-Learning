@@ -3,7 +3,7 @@ package cn.itsource.dubbo.domain;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PayInfo implements Serializable {
 

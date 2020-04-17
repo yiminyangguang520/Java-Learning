@@ -12,7 +12,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Documented
 @Constraint(validatedBy = ReCaptchaConstraintValidator.class)

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * mybaits集成
  *
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @Slf4j

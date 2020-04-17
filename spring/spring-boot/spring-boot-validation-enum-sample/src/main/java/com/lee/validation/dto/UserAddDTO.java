@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 /**
  * 用户添加 DTO
- * @author litz-a
+ * @author min
  */
 public class UserAddDTO {
 

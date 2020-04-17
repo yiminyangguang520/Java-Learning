@@ -4,7 +4,7 @@
 //import java.util.concurrent.Flow.Subscription;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //public class JavaSubscriber implements Subscriber<JavaArticle> {
 //

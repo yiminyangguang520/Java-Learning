@@ -3,7 +3,7 @@ package com.lee.java8.model;
 import java.util.Optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Car {
 

@@ -11,7 +11,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Backup {
 

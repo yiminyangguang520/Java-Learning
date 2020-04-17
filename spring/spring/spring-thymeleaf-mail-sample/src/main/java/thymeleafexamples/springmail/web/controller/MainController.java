@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import thymeleafexamples.springmail.business.service.EmailService;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class MainController {

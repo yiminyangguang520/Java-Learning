@@ -10,7 +10,7 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
 import pl.piomin.services.order.repository.OrderRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableDiscoveryClient

@@ -5,7 +5,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.expression.WebSecurityExpressionRoot;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomWebSecurityExpressionRoot extends WebSecurityExpressionRoot {
 

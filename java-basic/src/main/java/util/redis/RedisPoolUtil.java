@@ -8,7 +8,7 @@ import redis.clients.jedis.Protocol;
 /**
  * RedisConfig 初始化连接池
  *
- * @author litz-a
+ * @author min
  */
 public abstract class RedisPoolUtil {
 

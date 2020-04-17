@@ -1,7 +1,7 @@
 package com.lee.common;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Constant {
 

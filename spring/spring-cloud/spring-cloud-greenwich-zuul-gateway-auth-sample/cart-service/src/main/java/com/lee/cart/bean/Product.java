@@ -1,7 +1,7 @@
 package com.lee.cart.bean;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Product {
 

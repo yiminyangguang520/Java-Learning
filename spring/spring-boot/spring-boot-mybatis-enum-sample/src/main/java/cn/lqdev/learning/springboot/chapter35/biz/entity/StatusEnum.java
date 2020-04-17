@@ -1,7 +1,7 @@
 package cn.lqdev.learning.springboot.chapter35.biz.entity;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum StatusEnum {

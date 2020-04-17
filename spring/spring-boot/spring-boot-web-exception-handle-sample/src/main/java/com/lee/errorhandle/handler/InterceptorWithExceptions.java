@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
- * @author litz-a
+ * @author min
  * @date 2018-05-22
  */
 @Component

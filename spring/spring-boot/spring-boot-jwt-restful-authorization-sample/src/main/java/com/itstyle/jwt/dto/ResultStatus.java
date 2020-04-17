@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * 自定义请求状态码
- * @author litz-a
+ * @author min
  */
 @AllArgsConstructor
 public enum ResultStatus {

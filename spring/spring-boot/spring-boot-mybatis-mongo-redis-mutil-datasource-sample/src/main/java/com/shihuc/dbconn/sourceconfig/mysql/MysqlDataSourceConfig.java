@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @MapperScan(basePackages = "com.shihuc.dbconn.dao.mysql")

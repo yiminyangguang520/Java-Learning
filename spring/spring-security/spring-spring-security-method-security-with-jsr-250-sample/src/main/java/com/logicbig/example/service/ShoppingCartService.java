@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.security.RolesAllowed;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ShoppingCartService {
 

@@ -3,7 +3,7 @@ package cn.springcloud.book.gateway.route;
 import com.alibaba.nacos.api.PropertyKeyConst;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class NacosConstant extends PropertyKeyConst {
 

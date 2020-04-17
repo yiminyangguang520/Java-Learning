@@ -6,7 +6,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class DomainUsernamePasswordAuthenticationToken extends UsernamePasswordAuthenticationToken {
 

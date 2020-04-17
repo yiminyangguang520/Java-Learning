@@ -3,7 +3,7 @@ package com.imooc.item.service;
 import com.imooc.item.pojo.Items;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ItemsService {
 

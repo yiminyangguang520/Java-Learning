@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import org.springframework.aop.AfterReturningAdvice;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DoAfterReturningMethod implements AfterReturningAdvice {
 

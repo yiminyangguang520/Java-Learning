@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Initialize the initial data in the MongoDb This replaces data.sql
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class MongoDataInitializer {

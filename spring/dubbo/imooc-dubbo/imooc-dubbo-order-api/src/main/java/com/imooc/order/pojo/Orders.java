@@ -1,7 +1,7 @@
 package com.imooc.order.pojo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Orders {
 

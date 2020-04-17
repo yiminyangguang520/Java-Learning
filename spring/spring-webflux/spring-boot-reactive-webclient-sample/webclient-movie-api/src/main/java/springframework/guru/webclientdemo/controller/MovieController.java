@@ -20,7 +20,7 @@ import springframework.guru.webclientdemo.service.MovieClientEventService;
 import springframework.guru.webclientdemo.service.MovieClientService;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/api/v1")

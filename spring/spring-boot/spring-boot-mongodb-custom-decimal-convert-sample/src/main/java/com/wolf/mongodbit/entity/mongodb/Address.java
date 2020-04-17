@@ -3,7 +3,7 @@ package com.wolf.mongodbit.entity.mongodb;
 import lombok.Data;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 public class Address {

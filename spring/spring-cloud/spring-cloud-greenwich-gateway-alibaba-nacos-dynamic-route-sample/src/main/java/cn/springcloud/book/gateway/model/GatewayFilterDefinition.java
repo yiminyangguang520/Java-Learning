@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 过滤器定义模型
- * @author litz-a
+ * @author min
  */
 public class GatewayFilterDefinition {
 

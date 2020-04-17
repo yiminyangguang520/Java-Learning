@@ -1,7 +1,7 @@
 package com.javacodegeeks.snippets.enterprise.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SimpleService {
 

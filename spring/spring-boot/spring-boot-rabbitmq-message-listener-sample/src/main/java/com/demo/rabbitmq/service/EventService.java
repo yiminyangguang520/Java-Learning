@@ -1,7 +1,7 @@
 package com.demo.rabbitmq.service;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface EventService {
 

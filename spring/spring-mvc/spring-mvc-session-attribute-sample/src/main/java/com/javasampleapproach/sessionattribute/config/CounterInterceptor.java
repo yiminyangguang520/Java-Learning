@@ -9,7 +9,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class CounterInterceptor implements HandlerInterceptor {

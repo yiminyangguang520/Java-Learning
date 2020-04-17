@@ -12,7 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository("requestConfigMappingService")
 public class JpaRequestConfigMappingService implements RequestConfigMappingService {

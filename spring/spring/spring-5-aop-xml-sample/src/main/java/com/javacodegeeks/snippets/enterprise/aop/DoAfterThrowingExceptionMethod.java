@@ -3,7 +3,7 @@ package com.javacodegeeks.snippets.enterprise.aop;
 import org.springframework.aop.ThrowsAdvice;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class DoAfterThrowingExceptionMethod implements ThrowsAdvice {
 

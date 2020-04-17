@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Gateway的路由定义模型
- * @author litz-a
+ * @author min
  */
 public class GatewayRouteDefinition {
 

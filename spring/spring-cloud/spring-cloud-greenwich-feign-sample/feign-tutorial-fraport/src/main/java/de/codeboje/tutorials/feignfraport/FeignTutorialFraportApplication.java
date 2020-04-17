@@ -15,7 +15,7 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableFeignClients
 @SpringBootApplication

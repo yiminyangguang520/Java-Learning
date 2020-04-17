@@ -1,7 +1,7 @@
 package pl.piomin.services.account.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Account {
 

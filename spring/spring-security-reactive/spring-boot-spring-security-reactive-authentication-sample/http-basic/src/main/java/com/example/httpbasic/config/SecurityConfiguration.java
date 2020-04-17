@@ -14,7 +14,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 @Slf4j

@@ -26,7 +26,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 /**
  * Spring Security Config Class
  *
- * @author litz-a
+ * @author min
  * @see {@link WebSecurityConfigurerAdapter}
  * @since chapter05.00
  */

@@ -9,7 +9,7 @@ import org.apache.commons.io.LineIterator;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FileUtilsExample {
 

@@ -3,7 +3,7 @@ package com.lee.java8.optional.with.optional;
 import java.util.Optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class MobileTesterWithOptional {
 

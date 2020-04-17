@@ -15,7 +15,7 @@ import org.apache.ibatis.type.JdbcType;
 /**
  * 注解配置
  *
- * @author litz-a
+ * @author min
  */
 public interface UserMapper {
 

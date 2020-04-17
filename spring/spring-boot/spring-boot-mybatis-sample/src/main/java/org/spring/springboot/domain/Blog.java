@@ -3,7 +3,7 @@ package org.spring.springboot.domain;
 import java.util.List;
 
 /**
- * Created by litz-a on 2017/5/23.
+ * Created by min on 2017/5/23.
  */
 public class Blog {
     private Integer id;

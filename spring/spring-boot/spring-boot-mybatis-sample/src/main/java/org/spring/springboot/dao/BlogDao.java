@@ -6,7 +6,7 @@ import org.spring.springboot.domain.Comment;
 import java.util.List;
 
 /**
- * Created by litz-a on 2017/5/23.
+ * Created by min on 2017/5/23.
  */
 public interface BlogDao {
     Blog selectBlog(int id);

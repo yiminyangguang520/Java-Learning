@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {

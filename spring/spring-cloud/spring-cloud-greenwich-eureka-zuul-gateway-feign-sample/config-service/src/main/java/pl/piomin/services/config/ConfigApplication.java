@@ -5,7 +5,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 @EnableConfigServer

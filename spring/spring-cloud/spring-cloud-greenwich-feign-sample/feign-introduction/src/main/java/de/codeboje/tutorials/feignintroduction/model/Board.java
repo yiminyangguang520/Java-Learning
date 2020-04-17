@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 @NoArgsConstructor

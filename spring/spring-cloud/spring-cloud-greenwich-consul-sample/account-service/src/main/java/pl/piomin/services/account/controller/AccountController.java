@@ -18,7 +18,7 @@ import pl.piomin.services.account.model.Account;
 import pl.piomin.services.account.repository.AccountRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class AccountController {

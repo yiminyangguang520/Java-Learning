@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class CalendarPermissionEvaluator implements PermissionEvaluator {
 

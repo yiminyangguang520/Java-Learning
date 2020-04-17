@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author litz-a
+ * @author min
  **/
 @FeignClient(value = "service-client", fallback = SchedualServiceHiHystricImpl.class)
 public interface SchedualServiceHi {

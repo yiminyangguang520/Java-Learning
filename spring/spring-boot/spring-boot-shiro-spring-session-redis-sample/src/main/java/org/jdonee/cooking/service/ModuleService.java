@@ -5,7 +5,7 @@ import java.util.List;
 import org.jdonee.cooking.domain.ModuleInfo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ModuleService {
 

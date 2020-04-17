@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))

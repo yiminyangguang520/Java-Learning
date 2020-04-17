@@ -4,7 +4,7 @@ import com.javasampleapproach.customvalidation.validation.ValidEmail;
 import javax.validation.constraints.Size;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RequestInfo {
 

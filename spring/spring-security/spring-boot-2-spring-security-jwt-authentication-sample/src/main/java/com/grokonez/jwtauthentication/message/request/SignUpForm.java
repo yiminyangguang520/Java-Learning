@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SignUpForm {
 

@@ -13,7 +13,7 @@ import org.springframework.web.reactive.socket.server.support.WebSocketHandlerAd
 
 /**
  * @description:
- * @author: litz-a
+ * @author: min
  * @create: 2018-04-09 22:49
  **/
 @Configuration

@@ -2,7 +2,7 @@ package com.itstyle.jwt.constant;
 
 /**
  * 系统级静态变量
- * @author litz-a
+ * @author min
  */
 public class Constant {
 

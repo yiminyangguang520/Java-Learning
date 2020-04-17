@@ -6,7 +6,7 @@ import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SimpleReader implements ItemReader<String> {
 

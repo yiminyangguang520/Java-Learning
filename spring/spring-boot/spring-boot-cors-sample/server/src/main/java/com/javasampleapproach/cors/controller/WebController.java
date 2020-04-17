@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
  * – /data:
  * @CrossOrigin(origins = { "http://localhost:9000" }, maxAge = 3000)
 
- * @author litz-a
+ * @author min
  */
 @CrossOrigin(origins = {"http://localhost:9000"}, maxAge = 3000)
 @RestController

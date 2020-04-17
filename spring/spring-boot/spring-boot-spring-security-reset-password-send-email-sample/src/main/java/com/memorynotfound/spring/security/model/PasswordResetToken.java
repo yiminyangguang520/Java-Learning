@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class PasswordResetToken {

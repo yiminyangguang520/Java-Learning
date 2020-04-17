@@ -19,7 +19,7 @@ import pl.piomin.services.customer.model.Customer;
 import pl.piomin.services.customer.repository.CustomerRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class CustomerController {

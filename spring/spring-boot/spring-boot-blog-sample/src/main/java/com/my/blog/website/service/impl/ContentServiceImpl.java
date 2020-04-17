@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Administrator on 2017/3/13 013.
  */
 @Service

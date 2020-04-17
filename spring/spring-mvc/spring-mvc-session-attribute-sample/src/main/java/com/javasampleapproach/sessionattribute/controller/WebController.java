@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class WebController {

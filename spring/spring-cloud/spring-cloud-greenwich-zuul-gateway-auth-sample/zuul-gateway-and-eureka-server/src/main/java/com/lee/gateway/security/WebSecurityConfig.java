@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)

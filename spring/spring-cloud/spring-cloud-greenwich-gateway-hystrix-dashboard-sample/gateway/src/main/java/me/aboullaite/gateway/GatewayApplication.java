@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import reactor.core.publisher.Mono;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableHystrix
 @EnableEurekaClient

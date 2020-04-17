@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AuthenticationTokenFilter extends UsernamePasswordAuthenticationFilter {
 

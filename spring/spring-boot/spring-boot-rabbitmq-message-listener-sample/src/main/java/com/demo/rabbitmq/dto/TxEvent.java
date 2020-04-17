@@ -3,7 +3,7 @@ package com.demo.rabbitmq.dto;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class TxEvent implements Serializable {
 

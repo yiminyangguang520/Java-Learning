@@ -1,7 +1,7 @@
 package com.memorynotfound.spring.core.autowired;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface MessageRepository {
 

@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 import java.util.stream.StreamSupport;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class HelloKafkaController {

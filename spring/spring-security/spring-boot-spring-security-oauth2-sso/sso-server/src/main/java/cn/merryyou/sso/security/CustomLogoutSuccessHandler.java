@@ -9,7 +9,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler {
 

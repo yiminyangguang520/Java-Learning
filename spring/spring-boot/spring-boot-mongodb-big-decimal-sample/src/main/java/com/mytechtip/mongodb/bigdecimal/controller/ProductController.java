@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class ProductController {

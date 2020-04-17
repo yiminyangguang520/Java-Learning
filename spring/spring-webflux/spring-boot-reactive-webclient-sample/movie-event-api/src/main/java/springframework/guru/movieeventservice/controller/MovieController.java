@@ -10,7 +10,7 @@ import springframework.guru.movieeventservice.domain.MovieEvent;
 import springframework.guru.movieeventservice.service.MovieService;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping(path = "/api/v1/movies")

@@ -3,7 +3,7 @@ package com.memorynotfound.spring.core.autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Person {
 

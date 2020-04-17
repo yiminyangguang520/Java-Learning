@@ -1,7 +1,7 @@
 package com.imooc.item.pojo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Items {
 

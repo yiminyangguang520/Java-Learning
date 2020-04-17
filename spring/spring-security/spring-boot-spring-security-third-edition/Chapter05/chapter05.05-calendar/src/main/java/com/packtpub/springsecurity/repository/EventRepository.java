@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface EventRepository extends MongoRepository<Event, Integer> {
 

@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * @date 17/2/7
  */
 @Service

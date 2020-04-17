@@ -9,7 +9,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {

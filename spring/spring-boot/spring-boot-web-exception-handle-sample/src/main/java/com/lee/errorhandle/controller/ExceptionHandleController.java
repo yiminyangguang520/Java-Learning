@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author litz-a
+ * @author min
  * @date 2018-05-21
  */
 @Controller

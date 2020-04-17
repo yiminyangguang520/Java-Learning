@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 @Validated

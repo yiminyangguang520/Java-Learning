@@ -1,7 +1,7 @@
 package com.example.polls.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ChoiceVoteCount {
 

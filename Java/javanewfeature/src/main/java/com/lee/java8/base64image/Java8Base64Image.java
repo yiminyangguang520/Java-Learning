@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Base64;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Java8Base64Image {
 

@@ -8,7 +8,7 @@ import org.apache.activemq.command.ActiveMQBytesMessage;
 import org.springframework.stereotype.Component;
 
 /**
- * @author litz-a
+ * @author min
  * Created by Administrator on 2017/3/27 0027.
  */
 @Component("queueReceiver2")

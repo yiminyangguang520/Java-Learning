@@ -7,7 +7,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.util.Assert;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class RequestConfigMapping {
 

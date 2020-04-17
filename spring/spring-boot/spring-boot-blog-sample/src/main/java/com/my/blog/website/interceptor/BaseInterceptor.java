@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 自定义拦截器
- * @author litz-a
+ * @author min
  * Created by BlueT on 2017/3/9.
  */
 @Component

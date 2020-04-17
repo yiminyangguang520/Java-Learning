@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FlagValidatorClass implements ConstraintValidator<FlagValidator, Object> {
 

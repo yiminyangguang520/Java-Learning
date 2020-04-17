@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class ExampleRestController {

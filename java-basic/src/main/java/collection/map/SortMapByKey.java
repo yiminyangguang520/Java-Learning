@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SortMapByKey {
 

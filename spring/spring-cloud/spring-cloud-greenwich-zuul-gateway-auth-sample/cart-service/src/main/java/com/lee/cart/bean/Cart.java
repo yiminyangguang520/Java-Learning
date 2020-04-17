@@ -3,7 +3,7 @@ package com.lee.cart.bean;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Cart {
 

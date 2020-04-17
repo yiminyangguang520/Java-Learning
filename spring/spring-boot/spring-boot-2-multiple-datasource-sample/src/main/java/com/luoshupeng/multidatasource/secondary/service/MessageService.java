@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * Created by luoshupeng on 2018-03-20 10:27
  */
 @Service

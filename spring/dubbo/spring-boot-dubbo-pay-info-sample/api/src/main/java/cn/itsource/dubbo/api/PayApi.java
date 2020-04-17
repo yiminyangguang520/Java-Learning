@@ -3,7 +3,7 @@ package cn.itsource.dubbo.api;
 import cn.itsource.dubbo.domain.PayInfo;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface PayApi {
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.security.access.annotation.Secured;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface ShoppingCartService {
 

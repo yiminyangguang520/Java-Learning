@@ -3,7 +3,7 @@ package com.in28minutes.springboot.tutorial.basics.example.unittesting;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Repository
 public class DataService {

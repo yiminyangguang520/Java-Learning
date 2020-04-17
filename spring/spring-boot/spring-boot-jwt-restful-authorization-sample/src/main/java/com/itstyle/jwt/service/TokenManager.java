@@ -4,7 +4,7 @@ import com.itstyle.jwt.model.User;
 
 /**
  * 对Token进行操作的接口
- * @author litz-a
+ * @author min
  */
 public interface TokenManager {
 

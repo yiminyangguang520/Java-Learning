@@ -3,7 +3,7 @@ package com.memorynotfound.spring.security.model;
 import java.util.Map;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Mail {
 

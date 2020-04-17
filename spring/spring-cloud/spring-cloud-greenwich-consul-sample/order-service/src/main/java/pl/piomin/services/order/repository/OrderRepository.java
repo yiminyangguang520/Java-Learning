@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import pl.piomin.services.order.model.Order;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class OrderRepository {
 

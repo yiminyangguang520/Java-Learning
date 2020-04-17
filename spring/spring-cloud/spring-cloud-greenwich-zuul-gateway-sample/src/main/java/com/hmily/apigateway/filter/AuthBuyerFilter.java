@@ -18,7 +18,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class AuthBuyerFilter extends ZuulFilter {

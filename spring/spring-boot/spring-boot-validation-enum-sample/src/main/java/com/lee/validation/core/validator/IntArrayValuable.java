@@ -2,7 +2,7 @@ package com.lee.validation.core.validator;
 
 /**
  * 可生成 Int 数组的接口
- * @author litz-a
+ * @author min
  */
 public interface IntArrayValuable {
 

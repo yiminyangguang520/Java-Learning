@@ -1,7 +1,7 @@
 package com.javasampleapproach.requestattribute.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Counter {
 

@@ -5,7 +5,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringCloudApplication
 public class GatewayApplication {

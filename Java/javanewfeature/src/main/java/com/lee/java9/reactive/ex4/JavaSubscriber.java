@@ -6,7 +6,7 @@
 //import com.concretepage.reactive.ex3.JavaArticle;
 //
 ///**
-// * @author litz-a
+// * @author min
 // */
 //public class JavaSubscriber implements Subscriber<JavaArticle> {
 //

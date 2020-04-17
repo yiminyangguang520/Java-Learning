@@ -11,7 +11,7 @@ import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CollectorsAction3 {
 

@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class CorsConfig {

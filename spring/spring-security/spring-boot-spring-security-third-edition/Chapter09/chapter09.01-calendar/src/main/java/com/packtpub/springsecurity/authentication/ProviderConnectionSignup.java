@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * This ConnectionSignUp can be used to put the Social User into your local database.
- * @author litz-a
+ * @author min
  */
 @Service
 public class ProviderConnectionSignup implements ConnectionSignUp {

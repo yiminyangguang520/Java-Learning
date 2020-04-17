@@ -29,7 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * 允许所有域名访问
- * @author litz-a
+ * @author min
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @Controller

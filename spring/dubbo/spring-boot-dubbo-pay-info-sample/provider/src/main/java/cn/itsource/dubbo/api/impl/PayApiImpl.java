@@ -5,7 +5,7 @@ import cn.itsource.dubbo.domain.PayInfo;
 import com.alibaba.dubbo.config.annotation.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service(
     version = "${demo.service.version}",

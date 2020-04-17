@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * 用户更新性别 DTO
- * @author litz-a
+ * @author min
  */
 public class UserUpdateGenderDTO {
 

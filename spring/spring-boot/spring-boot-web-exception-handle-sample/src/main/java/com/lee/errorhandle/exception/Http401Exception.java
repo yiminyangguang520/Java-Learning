@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * @author litz-a
+ * @author min
  * @date 2018-05-22
  */
 @ResponseStatus(HttpStatus.UNAUTHORIZED)

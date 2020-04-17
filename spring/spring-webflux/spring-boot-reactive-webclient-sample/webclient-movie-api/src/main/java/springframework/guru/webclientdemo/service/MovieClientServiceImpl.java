@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 import springframework.guru.webclientdemo.domain.Movie;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class MovieClientServiceImpl implements MovieClientService {

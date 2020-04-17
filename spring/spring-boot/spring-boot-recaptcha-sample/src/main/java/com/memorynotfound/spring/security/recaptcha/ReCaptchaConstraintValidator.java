@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ReCaptchaConstraintValidator implements ConstraintValidator<ValidReCaptcha, String> {
 

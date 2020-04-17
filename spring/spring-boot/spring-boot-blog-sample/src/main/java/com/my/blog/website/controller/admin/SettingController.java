@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author litz-a
+ * @author min
  * Created by wangq on 2017/3/20.
  */
 @Controller

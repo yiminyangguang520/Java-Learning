@@ -2,7 +2,7 @@ package com.lee.validation.constants;
 
 /**
  * 业务异常枚举
- * @author litz-a
+ * @author min
  */
 public enum ServiceExceptionEnum {
 

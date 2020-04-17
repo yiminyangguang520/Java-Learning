@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Actor {
 

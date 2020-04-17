@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 // Don't expect Spring will autowire the fields inside that class object.
 
 /**
- * @author litz-a
+ * @author min
  */
 @Getter    // lombok will create getters auto.
 @ToString    // [IMP] You need to install lombok jar file: https://stackoverflow.com/a/11807022

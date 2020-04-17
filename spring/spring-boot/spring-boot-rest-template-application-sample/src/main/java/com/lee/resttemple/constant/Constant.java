@@ -1,7 +1,7 @@
 package com.lee.resttemple.constant;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Constant {
 

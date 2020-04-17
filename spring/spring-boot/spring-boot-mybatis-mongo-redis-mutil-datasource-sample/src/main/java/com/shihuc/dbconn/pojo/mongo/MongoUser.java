@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Document(collection = "user")
 @CompoundIndexes(@CompoundIndex(name = "username", def = "{ username : 1}"))

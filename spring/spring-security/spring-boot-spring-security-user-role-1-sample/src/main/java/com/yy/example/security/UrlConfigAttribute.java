@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.access.ConfigAttribute;
 
 /**
- * @author litz-a
+ * @author min
  * @date 17/2/15
  */
 public class UrlConfigAttribute implements ConfigAttribute {

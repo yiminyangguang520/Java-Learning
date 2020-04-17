@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Data
 @AllArgsConstructor

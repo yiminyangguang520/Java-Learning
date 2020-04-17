@@ -6,7 +6,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @author litz-a
+ * @author min
  */
 @FieldMatch.List({
     @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),

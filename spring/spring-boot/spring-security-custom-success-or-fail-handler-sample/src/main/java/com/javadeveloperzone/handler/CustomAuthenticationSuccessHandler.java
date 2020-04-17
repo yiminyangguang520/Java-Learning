@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
- * @author litz-a
+ * @author min
  * Created by JavaDeveloperZone on 13-11-2017. Spring Security will send control to AuthenticationSuccessHandler when authentication will get success
  */
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {

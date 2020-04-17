@@ -3,7 +3,7 @@ package com.wolf.mongodbit.service;
 import com.wolf.mongodbit.entity.mongodb.Blacklist;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface BlacklistService {
 

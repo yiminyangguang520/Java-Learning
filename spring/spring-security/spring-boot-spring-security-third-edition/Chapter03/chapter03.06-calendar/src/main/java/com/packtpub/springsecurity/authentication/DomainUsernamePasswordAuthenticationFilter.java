@@ -8,7 +8,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class DomainUsernamePasswordAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

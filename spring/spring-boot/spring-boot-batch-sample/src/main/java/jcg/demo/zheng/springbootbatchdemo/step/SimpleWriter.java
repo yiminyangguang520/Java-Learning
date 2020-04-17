@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.batch.item.ItemWriter;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SimpleWriter implements ItemWriter<String> {
 

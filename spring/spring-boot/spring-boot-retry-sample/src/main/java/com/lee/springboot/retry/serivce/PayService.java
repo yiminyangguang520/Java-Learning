@@ -9,7 +9,7 @@ import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  * @data 2018/5/8.
  */
 @Service

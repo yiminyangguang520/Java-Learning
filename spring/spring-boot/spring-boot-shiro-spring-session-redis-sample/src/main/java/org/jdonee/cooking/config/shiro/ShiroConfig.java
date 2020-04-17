@@ -29,7 +29,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @Slf4j

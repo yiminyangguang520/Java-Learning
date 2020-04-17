@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class Student {

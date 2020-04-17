@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 /**
  * Spring Security Config Class
  *
- * @author litz-a
+ * @author min
  * @see {@link WebSecurityConfigurerAdapter}
  */
 @Configuration

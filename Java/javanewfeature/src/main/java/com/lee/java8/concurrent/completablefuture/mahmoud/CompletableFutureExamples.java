@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 import org.junit.Assert;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CompletableFutureExamples {
 

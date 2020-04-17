@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * 黑名单枚举处理
- * @author litz-a
+ * @author min
  */
 @Getter
 public enum BlackEnum {

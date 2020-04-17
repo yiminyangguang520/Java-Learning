@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import pl.piomin.services.product.model.Product;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ProductRepository {
 

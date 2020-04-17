@@ -3,7 +3,7 @@ package io.tpd.kafkaexample.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class PracticalAdvice {
 

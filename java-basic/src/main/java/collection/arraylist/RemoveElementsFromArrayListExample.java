@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class RemoveElementsFromArrayListExample {
 

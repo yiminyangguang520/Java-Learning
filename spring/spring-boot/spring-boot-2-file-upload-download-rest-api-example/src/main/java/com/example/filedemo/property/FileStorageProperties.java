@@ -3,7 +3,7 @@ package com.example.filedemo.property;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author litz-a
+ * @author min
  */
 @ConfigurationProperties(prefix = "file")
 public class FileStorageProperties {

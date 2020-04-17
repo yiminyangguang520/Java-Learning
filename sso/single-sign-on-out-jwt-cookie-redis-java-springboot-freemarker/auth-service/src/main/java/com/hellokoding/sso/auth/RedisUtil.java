@@ -5,7 +5,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum RedisUtil {

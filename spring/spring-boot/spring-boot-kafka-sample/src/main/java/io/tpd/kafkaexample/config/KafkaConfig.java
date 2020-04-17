@@ -22,7 +22,7 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class KafkaConfig {

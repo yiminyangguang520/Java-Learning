@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 /**
- * @author: litz-a
+ * @author: min
  * @create: 2018-04-25
  **/
 @Configuration

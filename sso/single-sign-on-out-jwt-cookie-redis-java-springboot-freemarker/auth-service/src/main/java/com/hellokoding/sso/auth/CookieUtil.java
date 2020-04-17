@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.util.WebUtils;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CookieUtil {
 

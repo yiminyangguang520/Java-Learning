@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableResourceServer

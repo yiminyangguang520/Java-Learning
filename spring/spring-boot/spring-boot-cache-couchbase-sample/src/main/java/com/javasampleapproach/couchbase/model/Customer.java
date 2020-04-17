@@ -3,7 +3,7 @@ package com.javasampleapproach.couchbase.model;
 import java.io.Serializable;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Customer implements Serializable {
 

@@ -9,7 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UserPrincipal implements UserDetails {
 

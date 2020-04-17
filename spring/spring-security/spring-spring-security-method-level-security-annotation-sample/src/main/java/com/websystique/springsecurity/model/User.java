@@ -1,7 +1,7 @@
 package com.websystique.springsecurity.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class User {
 

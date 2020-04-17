@@ -7,7 +7,7 @@ import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class MessageSubscriber implements MessageListener {

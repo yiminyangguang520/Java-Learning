@@ -8,7 +8,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * zip压缩工具类
- * @author litz-a
+ * @author min
  */
 public class ZipUtils {
 

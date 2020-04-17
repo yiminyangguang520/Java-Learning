@@ -7,7 +7,7 @@ import org.springframework.util.Assert;
 /**
  * 通用返回结果
  *
- * @author litz-a
+ * @author min
  * @param <T> 结果泛型
  */
 public class CommonResult<T> implements Serializable {

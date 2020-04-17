@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class AccountController {

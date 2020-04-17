@@ -16,7 +16,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Slf4j
 public class ShrioRedisCache<K, V> implements Cache<K, V> {

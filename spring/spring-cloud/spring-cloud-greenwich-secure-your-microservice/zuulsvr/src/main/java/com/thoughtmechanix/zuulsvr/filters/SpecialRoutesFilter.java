@@ -37,7 +37,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class SpecialRoutesFilter extends ZuulFilter {
