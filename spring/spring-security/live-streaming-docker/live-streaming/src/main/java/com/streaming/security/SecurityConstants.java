@@ -1,7 +1,7 @@
 package com.streaming.security;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class SecurityConstants {
 

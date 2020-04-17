@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by Shuangyao 22:50 2018/9/2
- * @author litz-a
+ * @author min
  */
 @Service
 public class AuthenticationFailHandler extends SimpleUrlAuthenticationFailureHandler {

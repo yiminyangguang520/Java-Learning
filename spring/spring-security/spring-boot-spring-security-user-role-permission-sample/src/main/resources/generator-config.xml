@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-  <classPathEntry location="C:\Users\litz-a\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
+  <classPathEntry location="C:\Users\min\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
   <context id="generate" targetRuntime="MyBatis3">
 
     <!-- 注释 -->
@@ -23,7 +23,7 @@
 
     <!-- generate Model-->
     <javaModelGenerator targetPackage="com.us.example.model"
-      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
+      targetProject="C:\Users\min\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
       <property name="enableSubPackages" value="true"/>
       <!-- 是否针对string类型的字段在set的时候进行trim调用 -->
       <property name="trimStrings" value="true"/>
@@ -31,13 +31,13 @@
 
     <!-- generate xml -->
     <sqlMapGenerator targetPackage="mapper"
-      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\resources">
+      targetProject="C:\Users\min\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\resources">
       <property name="enableSubPackages" value="true"/>
     </sqlMapGenerator>
 
     <!-- generate Mapper -->
     <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.us.example.dao"
-      targetProject="C:\Users\litz-a\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
+      targetProject="C:\Users\min\Desktop\20180803\springBoot\springboot-SpringSecurity1\src\main\java">
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
 

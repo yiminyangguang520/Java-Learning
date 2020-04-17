@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import static java.util.Collections.emptyList;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

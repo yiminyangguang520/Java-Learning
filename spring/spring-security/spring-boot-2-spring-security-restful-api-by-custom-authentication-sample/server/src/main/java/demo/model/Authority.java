@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class Authority extends BaseModel implements GrantedAuthority {

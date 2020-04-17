@@ -3,7 +3,7 @@ package com.streaming.services;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author litz-a
+ * @author min
  */
 @ConfigurationProperties(prefix = "file")
 public class FileStorageProperties {

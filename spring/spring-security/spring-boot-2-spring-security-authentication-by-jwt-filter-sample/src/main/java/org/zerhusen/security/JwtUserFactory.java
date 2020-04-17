@@ -8,7 +8,7 @@ import org.zerhusen.model.security.Authority;
 import org.zerhusen.model.security.User;
 
 /**
- * @author litz-a
+ * @author min
  */
 public final class JwtUserFactory {
 

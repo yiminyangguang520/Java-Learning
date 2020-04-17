@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "APP_USER")

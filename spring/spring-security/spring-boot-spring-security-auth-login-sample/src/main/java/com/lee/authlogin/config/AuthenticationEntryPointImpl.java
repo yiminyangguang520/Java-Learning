@@ -8,7 +8,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service("authenticationEntryPointImpl")
 public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {

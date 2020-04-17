@@ -21,7 +21,7 @@ import org.zerhusen.security.JwtAuthorizationTokenFilter;
 import org.zerhusen.security.service.JwtUserDetailsService;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 @EnableWebSecurity

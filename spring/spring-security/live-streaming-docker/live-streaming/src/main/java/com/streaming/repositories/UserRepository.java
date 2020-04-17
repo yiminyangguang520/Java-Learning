@@ -4,7 +4,7 @@ import com.streaming.domains.User;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 

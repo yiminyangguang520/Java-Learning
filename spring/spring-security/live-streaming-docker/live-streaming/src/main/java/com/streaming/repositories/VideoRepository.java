@@ -6,7 +6,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface VideoRepository extends PagingAndSortingRepository<Video, Long> {
 

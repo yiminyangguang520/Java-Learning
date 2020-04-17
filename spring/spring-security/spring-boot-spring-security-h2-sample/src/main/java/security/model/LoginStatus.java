@@ -1,7 +1,7 @@
 package security.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class LoginStatus {
 

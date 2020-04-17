@@ -43,7 +43,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)

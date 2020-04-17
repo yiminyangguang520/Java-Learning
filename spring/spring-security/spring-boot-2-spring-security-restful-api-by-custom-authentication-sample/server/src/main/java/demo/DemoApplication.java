@@ -21,7 +21,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableJpaRepositories(basePackages="demo.repository")
 @EntityScan("demo.model")

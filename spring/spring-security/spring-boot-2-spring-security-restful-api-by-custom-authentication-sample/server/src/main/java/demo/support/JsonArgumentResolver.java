@@ -12,7 +12,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JsonArgumentResolver implements HandlerMethodArgumentResolver {
 

@@ -1,7 +1,7 @@
 package org.zerhusen.model.security;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum AuthorityName {

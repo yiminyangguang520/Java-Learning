@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Controller
 public class LoginController {

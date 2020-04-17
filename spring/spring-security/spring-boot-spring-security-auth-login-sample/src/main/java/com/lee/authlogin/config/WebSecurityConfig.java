@@ -12,7 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)

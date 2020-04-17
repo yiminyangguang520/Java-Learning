@@ -10,7 +10,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "sys_user")

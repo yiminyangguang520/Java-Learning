@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {

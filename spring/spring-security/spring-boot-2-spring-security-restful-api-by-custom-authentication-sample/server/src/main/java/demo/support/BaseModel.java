@@ -7,7 +7,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 /**
- * @author litz-a
+ * @author min
  */
 @MappedSuperclass
 public abstract class BaseModel {

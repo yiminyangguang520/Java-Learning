@@ -4,7 +4,7 @@ import com.octoperf.security.User;
 import java.util.Optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserAuthenticationService {
 

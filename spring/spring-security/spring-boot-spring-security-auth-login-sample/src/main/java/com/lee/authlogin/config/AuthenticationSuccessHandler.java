@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {

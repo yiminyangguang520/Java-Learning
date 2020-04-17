@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/api/v1.0/users")

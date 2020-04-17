@@ -3,7 +3,7 @@ package murraco.model;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum Role implements GrantedAuthority {

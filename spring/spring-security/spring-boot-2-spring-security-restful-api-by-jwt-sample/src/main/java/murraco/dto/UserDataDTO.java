@@ -5,7 +5,7 @@ import java.util.List;
 import murraco.model.Role;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UserDataDTO {
 

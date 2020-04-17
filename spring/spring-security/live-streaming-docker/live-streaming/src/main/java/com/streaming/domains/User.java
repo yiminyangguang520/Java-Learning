@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "users")

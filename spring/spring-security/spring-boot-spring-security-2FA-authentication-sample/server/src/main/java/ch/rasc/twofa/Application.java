@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.request.WebRequest;
 
 /**
- * @author litz-a
+ * @author min
  */
 @SpringBootApplication
 public class Application {

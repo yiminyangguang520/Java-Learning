@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import security.model.LoginStatus;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/api/login")

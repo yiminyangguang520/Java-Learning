@@ -12,7 +12,7 @@ import org.zerhusen.security.JwtTokenUtil;
 import org.zerhusen.security.JwtUser;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class UserRestController {

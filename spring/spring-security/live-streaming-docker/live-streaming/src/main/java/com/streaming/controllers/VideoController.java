@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 @RequestMapping("/api/v1.0/videos")

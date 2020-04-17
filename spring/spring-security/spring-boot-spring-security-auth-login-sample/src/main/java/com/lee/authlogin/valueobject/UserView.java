@@ -3,7 +3,7 @@ package com.lee.authlogin.valueobject;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class UserView {
 

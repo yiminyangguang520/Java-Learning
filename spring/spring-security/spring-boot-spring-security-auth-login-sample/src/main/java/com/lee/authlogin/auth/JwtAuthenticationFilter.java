@@ -1,7 +1,7 @@
 package com.lee.authlogin.auth;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JwtAuthenticationFilter {
   //1.reads JWT authentication token from the Authorization header of all the requests

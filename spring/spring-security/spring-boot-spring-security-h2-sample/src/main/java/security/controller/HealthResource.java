@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import security.model.Health;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class HealthResource {

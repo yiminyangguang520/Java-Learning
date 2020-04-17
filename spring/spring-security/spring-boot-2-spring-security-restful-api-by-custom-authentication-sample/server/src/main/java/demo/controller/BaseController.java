@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class BaseController {
 

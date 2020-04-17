@@ -1,7 +1,7 @@
 package com.streaming.exceptions;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class FileStorageException extends RuntimeException {
 

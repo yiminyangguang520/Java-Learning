@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class User {

@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.util.Objects;
 
 /**
- * @author litz-a
+ * @author min
  */
 public abstract class PassUtil {
 

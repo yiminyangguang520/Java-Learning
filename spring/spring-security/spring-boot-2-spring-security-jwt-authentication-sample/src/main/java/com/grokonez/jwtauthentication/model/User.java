@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.NaturalId;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "users", uniqueConstraints = {

@@ -11,7 +11,7 @@ import javax.persistence.ManyToMany;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class User extends BaseModel implements UserDetails {

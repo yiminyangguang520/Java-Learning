@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import static com.streaming.security.SecurityConstants.*;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 

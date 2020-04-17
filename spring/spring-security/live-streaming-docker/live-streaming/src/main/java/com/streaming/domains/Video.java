@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "videos")

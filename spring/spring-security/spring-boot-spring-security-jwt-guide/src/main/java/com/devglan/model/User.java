@@ -14,7 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 public class User {

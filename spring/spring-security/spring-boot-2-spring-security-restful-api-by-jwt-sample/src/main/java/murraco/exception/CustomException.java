@@ -3,7 +3,7 @@ package murraco.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CustomException extends RuntimeException {
 

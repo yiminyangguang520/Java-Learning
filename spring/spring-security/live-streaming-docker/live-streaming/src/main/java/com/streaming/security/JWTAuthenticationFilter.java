@@ -21,7 +21,7 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 import static com.streaming.security.SecurityConstants.*;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

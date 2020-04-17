@@ -20,7 +20,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class Tokencontroller {

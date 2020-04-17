@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.NaturalId;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "roles")

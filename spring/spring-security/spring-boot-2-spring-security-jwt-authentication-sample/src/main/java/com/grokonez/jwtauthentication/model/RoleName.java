@@ -1,7 +1,7 @@
 package com.grokonez.jwtauthentication.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum RoleName {

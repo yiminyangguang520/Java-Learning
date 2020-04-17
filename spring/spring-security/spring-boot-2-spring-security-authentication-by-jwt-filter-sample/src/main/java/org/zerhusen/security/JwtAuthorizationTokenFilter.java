@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Component
 public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {

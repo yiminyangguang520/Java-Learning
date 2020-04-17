@@ -22,7 +22,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureException;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class JwtAuthfilter extends OncePerRequestFilter {
 

@@ -5,7 +5,7 @@ import com.devglan.model.UserDto;
 import java.util.List;
 
 /**
- * @author litz-a
+ * @author min
  */
 public interface UserService {
 

@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache
 import org.springframework.util.Assert;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableCaching
 @Configuration

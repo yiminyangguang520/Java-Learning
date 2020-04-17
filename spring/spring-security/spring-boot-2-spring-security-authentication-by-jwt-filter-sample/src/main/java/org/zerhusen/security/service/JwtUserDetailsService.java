@@ -10,7 +10,7 @@ import org.zerhusen.security.JwtUserFactory;
 import org.zerhusen.security.repository.UserRepository;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class JwtUserDetailsService implements UserDetailsService {

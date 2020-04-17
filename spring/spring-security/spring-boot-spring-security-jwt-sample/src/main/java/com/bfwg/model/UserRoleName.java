@@ -1,7 +1,7 @@
 package com.bfwg.model;
 
 /**
- * @author litz-a
+ * @author min
  */
 
 public enum UserRoleName {

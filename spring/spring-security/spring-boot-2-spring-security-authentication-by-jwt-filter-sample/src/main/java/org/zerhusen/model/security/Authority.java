@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Entity
 @Table(name = "AUTHORITY")

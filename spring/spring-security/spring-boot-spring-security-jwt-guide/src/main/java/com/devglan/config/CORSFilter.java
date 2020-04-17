@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class CORSFilter implements Filter {
 

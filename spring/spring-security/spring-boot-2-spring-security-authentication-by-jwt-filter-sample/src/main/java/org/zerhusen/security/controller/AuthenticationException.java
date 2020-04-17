@@ -1,7 +1,7 @@
 package org.zerhusen.security.controller;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class AuthenticationException extends RuntimeException {
 

@@ -24,7 +24,7 @@ import org.zerhusen.security.JwtUser;
 import org.zerhusen.security.service.JwtAuthenticationResponse;
 
 /**
- * @author litz-a
+ * @author min
  */
 @RestController
 public class AuthenticationRestController {
