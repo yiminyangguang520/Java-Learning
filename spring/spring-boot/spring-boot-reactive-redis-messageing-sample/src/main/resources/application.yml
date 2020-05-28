@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: webFlux-redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 200
+        max-idle: 20
+        min-idle: 5
+        max-wait: 1000
