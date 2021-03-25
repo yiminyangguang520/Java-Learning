@@ -3,7 +3,7 @@ package com.lee.dp.adapter.example5;
 import java.util.*;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class Client {
 

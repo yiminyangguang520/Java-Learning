@@ -6,7 +6,7 @@ import lombok.Cleanup;
 
 /**
  * 实现对日志文件的操作
- * @author litz-a
+ * @author bruce
  */
 public class LogFileOperate implements LogFileOperateApi {
 

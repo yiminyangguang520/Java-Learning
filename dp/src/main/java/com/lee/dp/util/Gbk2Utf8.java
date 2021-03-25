@@ -8,7 +8,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  * convert GBK encoding to UTF-8
- * @author litz-a
+ * @author bruce
  */
 public class Gbk2Utf8 {
 

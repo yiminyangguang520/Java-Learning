@@ -1,7 +1,7 @@
 package com.lee.dp.proxy.example7;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class Lion implements Cat {
 

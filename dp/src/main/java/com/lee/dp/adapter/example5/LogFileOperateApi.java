@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 日志文件操作接口
- * @author litz-a
+ * @author bruce
  */
 public interface LogFileOperateApi {
 
