@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * 日志数据对象
- * @author litz-a
+ * @author bruce
  */
 public class LogModel implements Serializable {
 

@@ -1,7 +1,7 @@
 package com.lee.dp.util;
 
 /**
- * @author litz-a
+ * @author bruce
  */
 public class Encoding {
 

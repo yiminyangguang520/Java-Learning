@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 类适配器对象
- * @author litz-a
+ * @author bruce
  */
 public class ClassAdapter extends LogFileOperate implements LogDbOperateApi {
 

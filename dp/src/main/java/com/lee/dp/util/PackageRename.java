@@ -10,7 +10,7 @@ import org.apache.commons.io.FileUtils;
 /**
  * package rename for java files and corresponding configurations
  *
- * @author litz-a
+ * @author bruce
  */
 public class PackageRename {
 
