@@ -2,6 +2,7 @@ package com.lee.dp.adapter.example1;
 
 /**
  * 使用适配器的客户端
+ * @author bruce
  */
 public class Client {
 

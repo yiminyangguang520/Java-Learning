@@ -4,6 +4,7 @@ import java.io.*;
 
 /**
  * 日志数据对象
+ * @author bruce
  */
 public class LogModel implements Serializable {
 
@@ -56,6 +57,7 @@ public class LogModel implements Serializable {
     this.logContent = logContent;
   }
 
+  @Override
   public String toString() {
     return "logId=" + logId + ",operateUser=" + operateUser + ",operateTime" + operateTime + ",logContent=" + logContent;
   }

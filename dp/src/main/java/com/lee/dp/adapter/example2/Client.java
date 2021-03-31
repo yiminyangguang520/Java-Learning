@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.lee.dp.adapter.example3.LogDbOperateApi;
 
+/**
+ * @author bruce
+ */
 public class Client {
 
   public static void main(String[] args) {
@@ -15,7 +18,7 @@ public class Client {
     lm1.setOperateTime("2010-03-02 10:08:18");
     lm1.setLogContent("这是一个测试");
 
-    List<LogModel> list = new ArrayList<LogModel>();
+    List<LogModel> list = new ArrayList<>();
     list.add(lm1);
 
     //创建操作日志文件的对象
@@ -26,7 +29,5 @@ public class Client {
     //读取日志文件的内容
     List<LogModel> readLog = api.readLogFile();
     System.out.println("readLog=" + readLog);
-
-    LogDbOperateApi api2 = null;
   }
 }
