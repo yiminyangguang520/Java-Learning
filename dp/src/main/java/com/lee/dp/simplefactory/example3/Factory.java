@@ -2,6 +2,7 @@ package com.lee.dp.simplefactory.example3;
 
 /**
  * 工厂类，用来创造Api对象
+ * @author bruce
  */
 public class Factory {
 
