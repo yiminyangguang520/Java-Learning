@@ -2,6 +2,7 @@ package com.lee.dp.observer.example1;
 
 /**
  * 具体的目标对象，负责把有关状态存入到相应的观察者对象， 并在自己状态发生改变时，通知各个观察者
+ * @author bruce
  */
 public class ConcreteSubject extends Subject {
 

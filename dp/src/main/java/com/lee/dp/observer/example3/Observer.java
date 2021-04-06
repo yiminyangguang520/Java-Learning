@@ -2,6 +2,7 @@ package com.lee.dp.observer.example3;
 
 /**
  * 观察者，比如报纸的读者
+ * @author bruce
  */
 public interface Observer {
 
@@ -10,5 +11,5 @@ public interface Observer {
    *
    * @param content 报纸的内容
    */
-  public void update(String content);
+  void update(String content);
 }
