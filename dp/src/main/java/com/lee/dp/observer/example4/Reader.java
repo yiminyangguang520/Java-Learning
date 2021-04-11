@@ -4,6 +4,7 @@ import java.util.Observable;
 
 /**
  * 真正的读者，为了简单就描述一下姓名
+ * @author bruce
  */
 public class Reader implements java.util.Observer {
 
@@ -20,6 +21,7 @@ public class Reader implements java.util.Observer {
     this.name = name;
   }
 
+  @Override
   public void update(Observable o, Object obj) {
     //同时支持 推模型 和 拉模型
 
