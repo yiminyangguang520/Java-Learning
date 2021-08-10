@@ -1,9 +1,8 @@
 package com.lee.dp.observer.example3;
 
-import java.util.*;
-
 /**
  * 报纸对象，具体的目标实现
+ * @author bruce
  */
 public class NewsPaper extends Subject {
 
@@ -28,7 +27,7 @@ public class NewsPaper extends Subject {
    */
   public void setContent(String content) {
     this.content = content;
-    //内容有了，说明又出报纸了，那就通知所有的读者
+    // 内容有了，说明又出报纸了，那就通知所有的读者
     notifyObservers(content);
   }
 }

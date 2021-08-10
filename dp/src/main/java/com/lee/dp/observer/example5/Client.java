@@ -1,5 +1,8 @@
 package com.lee.dp.observer.example5;
 
+/**
+ * @author bruce
+ */
 public class Client {
 
   public static void main(String[] args) {

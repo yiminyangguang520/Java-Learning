@@ -2,6 +2,9 @@ package com.lee.dp.adapter.example3;
 
 import java.util.List;
 
+/**
+ * @author bruce
+ */
 public class DefaultAdapter implements LogDbOperateApi {
 
   @Override

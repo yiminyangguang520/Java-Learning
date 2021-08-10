@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 适配器对象，把记录日志到文件的功能适配成第二版需要的增删改查的功能
+ * @author bruce
  */
 public class Adapter implements LogDbOperateApi {
   //优先使用对象组合，而不是使用对象继承
@@ -13,7 +14,7 @@ public class Adapter implements LogDbOperateApi {
    */
   private LogFileOperateApi adaptee;
 
-  private TimeUtil adaptee2 = null;
+  private TimeUtil adaptee2;
 
   /**
    * 构造方法，传入需要被适配的对象
@@ -25,6 +26,7 @@ public class Adapter implements LogDbOperateApi {
     this.adaptee2 = times;
   }
 
+  @Override
   public void createLog(LogModel lm) {
     this.adaptee2.begin();
     //1：先读取文件的内容
@@ -37,10 +39,12 @@ public class Adapter implements LogDbOperateApi {
     this.adaptee2.show();
   }
 
+  @Override
   public List<LogModel> getAllLog() {
     return adaptee.readLogFile();
   }
 
+  @Override
   public void removeLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = adaptee.readLogFile();
@@ -50,6 +54,7 @@ public class Adapter implements LogDbOperateApi {
     adaptee.writeLogFile(list);
   }
 
+  @Override
   public void updateLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = adaptee.readLogFile();

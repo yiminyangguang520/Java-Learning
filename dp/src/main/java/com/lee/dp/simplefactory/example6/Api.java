@@ -2,6 +2,7 @@ package com.lee.dp.simplefactory.example6;
 
 /**
  * 某个接口(通用的、抽象的、非具体的功能的)
+ * @author bruce
  */
 public interface Api {
 
@@ -10,5 +11,5 @@ public interface Api {
    *
    * @param s 任意想要打印输出的字符串
    */
-  public void test1(String s);
+  void test1(String s);
 }

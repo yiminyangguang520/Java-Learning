@@ -1,5 +1,8 @@
 package com.lee.dp.simplefactory;
 
+/**
+ * @author bruce
+ */
 public class MyUtil {
 
   private MyUtil() {

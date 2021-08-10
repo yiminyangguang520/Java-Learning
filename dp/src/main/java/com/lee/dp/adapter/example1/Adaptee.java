@@ -2,6 +2,7 @@ package com.lee.dp.adapter.example1;
 
 /**
  * 已经存在的接口，这个接口需要被适配
+ * @author bruce
  */
 public class Adaptee {
 

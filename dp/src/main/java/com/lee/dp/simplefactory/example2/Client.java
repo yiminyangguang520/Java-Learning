@@ -2,6 +2,7 @@ package com.lee.dp.simplefactory.example2;
 
 /**
  * 客户端，使用Api接口
+ * @author bruce
  */
 public class Client {
 

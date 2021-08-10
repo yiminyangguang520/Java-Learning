@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 双向适配器对象
+ * @author bruce
  */
 public class TwoDirectAdapter implements LogDbOperateApi, LogFileOperateApi {
 
@@ -28,6 +29,7 @@ public class TwoDirectAdapter implements LogDbOperateApi, LogFileOperateApi {
   }
 
   /*-----以下是把文件操作的方式适配成为DB实现方式的接口-----*/
+  @Override
   public void createLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = fileLog.readLogFile();
@@ -37,10 +39,12 @@ public class TwoDirectAdapter implements LogDbOperateApi, LogFileOperateApi {
     fileLog.writeLogFile(list);
   }
 
+  @Override
   public List<LogModel> getAllLog() {
     return fileLog.readLogFile();
   }
 
+  @Override
   public void removeLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = fileLog.readLogFile();
@@ -50,6 +54,7 @@ public class TwoDirectAdapter implements LogDbOperateApi, LogFileOperateApi {
     fileLog.writeLogFile(list);
   }
 
+  @Override
   public void updateLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = fileLog.readLogFile();
@@ -64,15 +69,18 @@ public class TwoDirectAdapter implements LogDbOperateApi, LogFileOperateApi {
     fileLog.writeLogFile(list);
   }
 
+  @Override
   public void removeAll() {
     System.out.println("now in two direct remove all");
   }
 
   /*-----以下是把DB操作的方式适配成为文件实现方式的接口-----*/
+  @Override
   public List<LogModel> readLogFile() {
     return dbLog.getAllLog();
   }
 
+  @Override
   public void writeLogFile(List<LogModel> list) {
     //1：最简单的实现思路，先删除数据库中的数据
     dbLog.removeAll();

@@ -2,6 +2,9 @@ package com.lee.dp.adapter.example3;
 
 import java.util.*;
 
+/**
+ * @author bruce
+ */
 public class Client {
 
   public static void main(String[] args) {
@@ -12,7 +15,7 @@ public class Client {
     lm1.setOperateTime("2010-03-02 10:08:18");
     lm1.setLogContent("这是一个测试");
 
-    List<LogModel> list = new ArrayList<LogModel>();
+    List<LogModel> list = new ArrayList<>();
     list.add(lm1);
 
     //创建操作日志文件的对象
@@ -20,8 +23,6 @@ public class Client {
 
     //创建新版的操作日志的接口对象
     LogDbOperateApi api = new MyAdapter(logFileApi, new TimeUtil());
-
-//		LogDbOperateApi api = null;
 
     /////////////////////////真正的操作
     //保存日志文件

@@ -2,6 +2,7 @@ package com.lee.dp.observer.example2;
 
 /**
  * 观察者，比如报纸的读者
+ * @author bruce
  */
 public interface Observer {
 
@@ -10,5 +11,5 @@ public interface Observer {
    *
    * @param subject 具体的目标对象，可以获取报纸的内容
    */
-  public void update(Subject subject);
+  void update(Subject subject);
 }

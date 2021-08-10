@@ -2,9 +2,11 @@ package com.lee.dp.adapter.example4;
 
 import java.io.*;
 import java.util.*;
+import lombok.Cleanup;
 
 /**
  * 实现对日志文件的操作
+ * @author bruce
  */
 public class LogFileOperate implements LogFileOperateApi {
 
@@ -26,47 +28,34 @@ public class LogFileOperate implements LogFileOperateApi {
     }
   }
 
+  @Override
   public List<LogModel> readLogFile() {
-    List<LogModel> list = null;
-    ObjectInputStream oin = null;
+    List<LogModel> list = new ArrayList<>(10);
     try {
       File f = new File(logFilePathName);
       if (f.exists()) {
-        oin = new ObjectInputStream(
-            new BufferedInputStream(new FileInputStream(f))
+        @Cleanup ObjectInputStream oin = new ObjectInputStream(
+          new BufferedInputStream(new FileInputStream(f))
         );
         list = (List<LogModel>) oin.readObject();
       }
     } catch (Exception e) {
       e.printStackTrace();
-    } finally {
-      try {
-        if (oin != null) {
-          oin.close();
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
+
     return list;
   }
 
+  @Override
   public void writeLogFile(List<LogModel> list) {
     File f = new File(logFilePathName);
-    ObjectOutputStream oout = null;
     try {
-      oout = new ObjectOutputStream(
-          new BufferedOutputStream(new FileOutputStream(f))
+      @Cleanup ObjectOutputStream oout = new ObjectOutputStream(
+        new BufferedOutputStream(new FileOutputStream(f))
       );
       oout.writeObject(list);
     } catch (IOException e) {
       e.printStackTrace();
-    } finally {
-      try {
-        oout.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
   }
 }

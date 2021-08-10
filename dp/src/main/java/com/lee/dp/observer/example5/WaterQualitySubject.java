@@ -5,13 +5,14 @@ import java.util.List;
 
 /**
  * 定义水质监测的目标对象
+ * @author bruce
  */
 public abstract class WaterQualitySubject {
 
   /**
    * 用来保存注册的观察者对象
    */
-  protected List<WatcherObserver> observers = new ArrayList<WatcherObserver>();
+  protected List<WatcherObserver> observers = new ArrayList<>();
 
   /**
    * 注册观察者对象

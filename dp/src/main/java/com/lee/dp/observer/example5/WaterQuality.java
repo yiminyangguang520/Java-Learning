@@ -1,11 +1,8 @@
 package com.lee.dp.observer.example5;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Observable;
-
 /**
  * 具体的水质监测对象
+ * @author bruce
  */
 public class WaterQuality extends WaterQualitySubject {
 
@@ -19,6 +16,7 @@ public class WaterQuality extends WaterQualitySubject {
    *
    * @return 水质污染的级别
    */
+  @Override
   public int getPolluteLevel() {
     return polluteLevel;
   }
@@ -37,6 +35,7 @@ public class WaterQuality extends WaterQualitySubject {
   /**
    * 通知相应的观察者对象
    */
+  @Override
   public void notifyWatchers() {
     //循环所有注册的观察者
     for (WatcherObserver watcher : observers) {

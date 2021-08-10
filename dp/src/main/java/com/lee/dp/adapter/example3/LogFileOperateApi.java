@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 日志文件操作接口
+ * @author bruce
  */
 public interface LogFileOperateApi {
 
@@ -12,12 +13,12 @@ public interface LogFileOperateApi {
    *
    * @return 存储的日志列表对象
    */
-  public List<LogModel> readLogFile();
+  List<LogModel> readLogFile();
 
   /**
    * 写日志文件，把日志列表写出到日志文件中去
    *
    * @param list 要写到日志文件的日志列表
    */
-  public void writeLogFile(List<LogModel> list);
+  void writeLogFile(List<LogModel> list);
 }

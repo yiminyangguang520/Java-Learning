@@ -2,6 +2,9 @@ package com.lee.dp.adapter.example3;
 
 import java.util.List;
 
+/**
+ * @author bruce
+ */
 public class MyAdapter extends DefaultAdapter {
 
   /**
@@ -9,7 +12,7 @@ public class MyAdapter extends DefaultAdapter {
    */
   private LogFileOperateApi adaptee;
 
-  private TimeUtil adaptee2 = null;
+  private TimeUtil adaptee2;
 
   /**
    * 构造方法，传入需要被适配的对象
@@ -22,10 +25,12 @@ public class MyAdapter extends DefaultAdapter {
   }
 
 
+  @Override
   public List<LogModel> getAllLog() {
     return adaptee.readLogFile();
   }
 
+  @Override
   public void removeLog(LogModel lm) {
     //1：先读取文件的内容
     List<LogModel> list = adaptee.readLogFile();

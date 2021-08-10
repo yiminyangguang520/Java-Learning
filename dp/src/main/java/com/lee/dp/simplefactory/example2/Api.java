@@ -2,6 +2,7 @@ package com.lee.dp.simplefactory.example2;
 
 /**
  * 接口的定义，该接口可以通过简单工厂来创建
+ * @author bruce
  */
 public interface Api {
 
@@ -10,5 +11,5 @@ public interface Api {
    *
    * @param s 示意，需要的参数
    */
-  public void operation(String s);
+  void operation(String s);
 }
