@@ -3,7 +3,7 @@ package com.example.quartzdemo.payload;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * @author litz-a
+ * @author min
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ScheduleEmailResponse {

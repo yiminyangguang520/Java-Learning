@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class ScheduleEmailRequest {
 

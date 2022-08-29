@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Configuration
 public class CoffeeConfiguration {
