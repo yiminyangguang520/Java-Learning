@@ -24,7 +24,7 @@
     <jsp-api.version>2.0</jsp-api.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <commons-io.version>2.6</commons-io.version>
-    <commons-net.version>3.3</commons-net.version>
+    <commons-net.version>3.9.0</commons-net.version>
     <pagehelper.version>5.1.8</pagehelper.version>
     <jsqlparser.version>1.2</jsqlparser.version>
     <!-- 使用redisTamplate结合jedisPoolConifg 必须使用jedis版本2.9.0 -->
